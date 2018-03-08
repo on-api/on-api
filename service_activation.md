@@ -13,7 +13,8 @@ Content-Type: application/json
     "operation": "ACTIVATE",
     "forcedTakeover": false,
     "equipment": [
-        { "vendorId": "CH_BROADBAND" }
+        { "vendorId": "CH_BROADBAND" },
+        { "macAddress": "00:00:00:00:00:00" }
     ],
     "spReference": ""
 }
@@ -131,9 +132,19 @@ Content-Type: application/json
                 <code>equipment.vendorId</code>
             </td>
             <td>
-                <em>text, obligatoriskt</em><br>
+                <em>text</em><br>
                 <br>
                 Exempel: "CH_BROADBAND"
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>equipment.macAddress</code>
+            </td>
+            <td>
+                <em>text, skall vara 12 tecken hex, utan ":" eller "-"</em><br>
+                <br>
+                Exempel: "000000000000"
             </td>
         </tr>
         <tr>
@@ -142,7 +153,7 @@ Content-Type: application/json
             </td>
             <td>
                 `spReference` anger TLs referens på tjänsten. Används av TL för korrelering.<br>
-                <em>Sträng, max 255 tecken</em>
+                <em>Sträng, max 255 tecken, obligatorisk</em>
             </td>
         </tr>
     </tbody>
