@@ -13,8 +13,10 @@ Content-Type: application/json
     "operation": "ACTIVATE",
     "forcedTakeover": false,
     "equipment": [
-        { "vendorId": "CH_BROADBAND" },
-        { "macAddress": "00:00:00:00:00:00" }
+        { 
+            "vendorId": "CH_BROADBAND",
+            "macAddress": "00:00:00:00:00:00"
+         }
     ],
     "spReference": ""
 }
@@ -142,9 +144,9 @@ Content-Type: application/json
                 <code>equipment.macAddress</code>
             </td>
             <td>
-                <em>text, skall vara 12 tecken hex, utan ":" eller "-"</em><br>
+                <em>text, formateras som oktetter delimiterade med ":" </em><br>
                 <br>
-                Exempel: "000000000000"
+                Exempel: "00:00:00:00:00:00"
             </td>
         </tr>
         <tr>
