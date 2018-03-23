@@ -6,7 +6,7 @@ Feasibility API används av Tjänsteleverantör för att kunna hitta avlämnings
 
 Request:
 ```http
-GET /api/2.3/accesses/ HTTP/1.1
+GET /api/2.3.1/accesses/ HTTP/1.1
 ```
 
 Response:
@@ -255,7 +255,7 @@ Exempel på anropssekvens:
 
 Request:
 ```http
-GET /api/2.3/accesses/ HTTP/1.1
+GET /api/2.3.1/accesses/ HTTP/1.1
 ```
 
 Response:
@@ -270,7 +270,7 @@ Vid påföljande anrop skickas "If-Modified-Since"-header för att bara be om up
 
 Request:
 ```http
-GET /api/2.3/accesses/ HTTP/1.1
+GET /api/2.3.1/accesses/ HTTP/1.1
 If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
 ...
 ```

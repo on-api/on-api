@@ -1,3 +1,7 @@
+# ON-API 2.3.1
+
+API 2.3.1 innehåller mindre kompletering av möjliga parametrar i anropen för orderläggning respektive kundinformation.
+
 # Provider API 2.3
 
 API 2.3 innehåller ändringar motiverade av [GDPR][wikipedia-gdpr].

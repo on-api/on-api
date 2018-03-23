@@ -4,7 +4,7 @@
 
 Request:
 ```http
-POST /api/2.3/orders/ HTTP/1.1
+POST /api/2.3.1/orders/ HTTP/1.1
 Content-Type: application/json
 
 {
@@ -26,11 +26,11 @@ Response:
 ```http
 HTTP/1.1 201 CREATED
 Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-Location: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+Location: /api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 Content-Type: application/json
 
 {
-    "path": "/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
+    "path": "/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "ACTIVATE",
@@ -43,7 +43,7 @@ Content-Type: application/json
 
 Request:
 ```http
-POST /api/2.3/orders/ HTTP/1.1
+POST /api/2.3.1/orders/ HTTP/1.1
 Content-Type: application/json
 
 {
@@ -57,11 +57,11 @@ Response:
 ```http
 HTTP/1.1 201 CREATED
 Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-Location: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+Location: /api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 Content-Type: application/json
 
 {
-    "path": "/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
+    "path": "/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "DEACTIVATE",
@@ -170,10 +170,10 @@ Vid order med korrekt format och korrekt innehåll skall svaret se ut på följa
 ```http
 HTTP/1.1 201 CREATED
 Content-Type: application/json
-Location: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+Location: /api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 
 {
-    "path": "/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
+    "path": "/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "ACTIVATE",
@@ -216,7 +216,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-    "path": "/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
+    "path": "/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "ACTIVATE",
@@ -254,7 +254,7 @@ Content-Type: application/json
 
 Request:
 ```http
-GET /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061 HTTP/1.1
+GET /api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061 HTTP/1.1
 ```
 
 Response:
@@ -263,7 +263,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-    "path": "/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
+    "path": "/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "ACTIVATE",

@@ -6,7 +6,7 @@ Syftet med API är att låta TL hämta en förteckning över alla sina aktiva tj
 
 Request:
 ```http
-GET /api/2.3/services/
+GET /api/2.3.1/services/
 ```
 
 Response:

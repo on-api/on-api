@@ -7,7 +7,7 @@ Link Status API används för felsökning av tjänster. Det erbjuder aktuell inf
 Anrop:
 
 ```http
-GET /api/2.3/accesses/STTA0001/link HTTP/1.1
+GET /api/2.3.1/accesses/STTA0001/link HTTP/1.1
 ```
 
 Svar när länken är uppe:
