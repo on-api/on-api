@@ -8,7 +8,7 @@ Syftet med API är att låta KO hämta kundinformation om en access från Tjäns
 
 Request:
 ```http
-GET /api/2.3/services/?spReference=WloKMvmArcCFiV679uhWpAAtNgyvHxma HTTP/1.1
+GET /api/2.3.1/services/?spReference=WloKMvmArcCFiV679uhWpAAtNgyvHxma HTTP/1.1
 ```
 
 Response:

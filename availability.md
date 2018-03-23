@@ -8,7 +8,7 @@ Typiskt används frågan för att kunna svara kund om vilka tekniska tjänster s
 
 Request:
 ```http
-GET /api/2.3/accesses/STTA0001 HTTP/1.1
+GET /api/2.3.1/accesses/STTA0001 HTTP/1.1
 ```
 
 Response:
