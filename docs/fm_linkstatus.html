@@ -1,0 +1,509 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>FM Link Status API · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="co_active_services.html" />
+    
+    
+    <link rel="prev" href="web_portal.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="changelog.html">
+            
+                <a href="changelog.html">
+            
+                    
+                    Ändringar mot tidigare versioner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="feasibility.html">
+            
+                <a href="feasibility.html">
+            
+                    
+                    Feasibility API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="availability.html">
+            
+                <a href="availability.html">
+            
+                    
+                    Availability API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="service_activation.html">
+            
+                <a href="service_activation.html">
+            
+                    
+                    Service Activation API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="order_events.html">
+            
+                <a href="order_events.html">
+            
+                    
+                    Order Events API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="option82_lookup.html">
+            
+                <a href="option82_lookup.html">
+            
+                    
+                    Option82 Lookup API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="web_portal.html">
+            
+                <a href="web_portal.html">
+            
+                    
+                    Web Portal API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="fm_linkstatus.html">
+            
+                <a href="fm_linkstatus.html">
+            
+                    
+                    FM Link Status API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="co_active_services.html">
+            
+                <a href="co_active_services.html">
+            
+                    
+                    KO: Alla aktiva tjänster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="access_customer_info.html">
+            
+                <a href="access_customer_info.html">
+            
+                    
+                    TL Kundinformations API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="query_sp.html">
+            
+                <a href="query_sp.html">
+            
+                    
+                    TL: Sökning av beställda tjänster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="option82.html">
+            
+                <a href="option82.html">
+            
+                    
+                    Option82
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="misc.html">
+            
+                <a href="misc.html">
+            
+                    
+                    Övergripande
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >FM Link Status API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="fault-management-link-status-api">Fault Management: Link Status API</h1>
+<p>Link Status API anv&#xE4;nds f&#xF6;r fels&#xF6;kning av tj&#xE4;nster. Det erbjuder aktuell information of kunds l&#xE4;nk i access-switch/router.</p>
+<h3 id="exempel">Exempel</h3>
+<p>Anrop:</p>
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3/accesses/STTA0001/link</span> HTTP/1.1
+</code></pre>
+<p>Svar n&#xE4;r l&#xE4;nken &#xE4;r uppe:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;UP&quot;</span>,
+    <span class="hljs-attr">&quot;up&quot;</span>: {
+        <span class="hljs-attr">&quot;since&quot;</span>: <span class="hljs-string">&quot;2014-08-14T14:09:23Z&quot;</span>,
+        <span class="hljs-attr">&quot;mbps&quot;</span>: <span class="hljs-number">1000</span>,
+        <span class="hljs-attr">&quot;clients&quot;</span>: [
+            {
+                <span class="hljs-attr">&quot;mac&quot;</span>: <span class="hljs-string">&quot;DE:AD:BE:EF:00:01&quot;</span>,
+                <span class="hljs-attr">&quot;ip&quot;</span>: <span class="hljs-string">&quot;10.10.1.181&quot;</span>
+            }
+        ]
+    }
+}
+</span></code></pre>
+<p>Svar n&#xE4;r l&#xE4;nken &#xE4;r nere:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;DOWN&quot;</span>
+}
+</span></code></pre>
+<h2 id="f&#xE4;ltbeskrivningar">F&#xE4;ltbeskrivningar</h2>
+<ul>
+<li><code>null</code> eller <code>&quot;&quot;</code> &#xE4;r inte ett giltiga v&#xE4;rden f&#xF6;r n&#xE5;got f&#xE4;lt.</li>
+</ul>
+<table>
+    <tbody>
+        <tr>
+            <td><strong>F&#xE4;lt</strong></td>
+            <td><strong>F&#xF6;rklaring</strong></td>
+        </tr>
+    <tr>
+            <td>
+                <code>link</code>
+            </td>
+            <td>
+            Anger status p&#xE5; l&#xE4;nken.<br>
+        Giltiga v&#xE4;rden &#xE4;r &quot;UP&quot; och &quot;DOWN&quot;.
+            </td>
+        </tr>
+    <tr>
+            <td>
+                <code>up</code>
+            </td>
+            <td>
+            Inneh&#xE5;ller information om l&#xE4;nken, f&#xF6;rutsatt att den &#xE4;r uppe.<br>
+        Noden skall enbart finnas n&#xE4;r link = &quot;UP&quot;.
+            </td>
+        </tr>
+     <tr>
+            <td>
+                <code>up / since</code>
+            </td>
+            <td>
+                Anger tidpunkt d&#xE5; porten gick up och sedan n&#xE4;r den haft l&#xE4;nk<br>
+        Formatet &#xE4;r &quot;YYYY-MM-DDThh:mm:ssZ&quot; enligt ISO-8601.<br>
+        Avslutande &quot;Z&quot; inneb&#xE4;r att tiden alltid &#xE4;r i UTC.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>up / mbps</code>
+            </td>
+            <td>
+            Anger l&#xE4;nkens faktiskta l&#xE4;nkhastighet.<br>
+        Enheten &#xE4;r mbps, giltiga v&#xE4;rden &#xE4;r: 10, 100, 1000.
+            </td>
+        </tr>
+    <tr>
+            <td>
+                <code>up / clients</code>
+            </td>
+            <td>
+            Lista som inneh&#xE5;ller de enheter som finns p&#xE5; porten.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>up / clients / mac</code>
+            </td>
+            <td>
+                MAC-adress p&#xE5; enheten.<br>
+        MAC-adressen representeras genom 6 par av hexadecimala siffror konkatenerade med kolon &apos;:&apos;. Den skall utelstutande vara i uppercase.<br>
+        MAC-adressen &#xE4;r alltid exakt 17 tecken l&#xE5;ng.<br>
+        Exempel: &quot;DE:AD:BE:EF:00:01&quot;.  
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <code>up / clients / ip</code>
+            </td>
+            <td>
+            Tilldelad IPv4-adress p&#xE5; enheten.<br>
+        IP-adress representeras som fyra decimala tal mellan 0 och 255 konkatenerade med punkter&apos;.&apos;.<br>
+        Noden skall enbart finnas n&#xE4;r enheten har en ipv4-adress.<br>
+        Exempel: &quot;10.101.1.181&quot;.
+            </td>
+        </tr>
+     </tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="web_portal.html" class="navigation navigation-prev " aria-label="Previous page: Web Portal API">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="co_active_services.html" class="navigation navigation-next " aria-label="Next page: KO: Alla aktiva tjänster">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"FM Link Status API","level":"1.9","depth":1,"next":{"title":"KO: Alla aktiva tjänster","level":"1.10","depth":1,"path":"co_active_services.md","ref":"co_active_services.md","articles":[]},"previous":{"title":"Web Portal API","level":"1.8","depth":1,"path":"web_portal.md","ref":"web_portal.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"fm_linkstatus.md","mtime":"2018-03-23T11:19:33.659Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T11:32:17.683Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

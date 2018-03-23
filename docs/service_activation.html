@@ -1,0 +1,668 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Service Activation API · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="order_events.html" />
+    
+    
+    <link rel="prev" href="availability.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="changelog.html">
+            
+                <a href="changelog.html">
+            
+                    
+                    Ändringar mot tidigare versioner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="feasibility.html">
+            
+                <a href="feasibility.html">
+            
+                    
+                    Feasibility API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="availability.html">
+            
+                <a href="availability.html">
+            
+                    
+                    Availability API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="service_activation.html">
+            
+                <a href="service_activation.html">
+            
+                    
+                    Service Activation API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="order_events.html">
+            
+                <a href="order_events.html">
+            
+                    
+                    Order Events API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="option82_lookup.html">
+            
+                <a href="option82_lookup.html">
+            
+                    
+                    Option82 Lookup API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="web_portal.html">
+            
+                <a href="web_portal.html">
+            
+                    
+                    Web Portal API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="fm_linkstatus.html">
+            
+                <a href="fm_linkstatus.html">
+            
+                    
+                    FM Link Status API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="co_active_services.html">
+            
+                <a href="co_active_services.html">
+            
+                    
+                    KO: Alla aktiva tjänster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="access_customer_info.html">
+            
+                <a href="access_customer_info.html">
+            
+                    
+                    TL Kundinformations API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="query_sp.html">
+            
+                <a href="query_sp.html">
+            
+                    
+                    TL: Sökning av beställda tjänster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="option82.html">
+            
+                <a href="option82.html">
+            
+                    
+                    Option82
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="misc.html">
+            
+                <a href="misc.html">
+            
+                    
+                    Övergripande
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Service Activation API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="service-activation-api">Service Activation API</h1>
+<h2 id="orderl&#xE4;ggning-exempel-aktivering">Orderl&#xE4;ggning, Exempel: Aktivering</h2>
+<p>Request:</p>
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/api/2.3/orders/</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
+    <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
+    <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
+    <span class="hljs-attr">&quot;forcedTakeover&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">&quot;equipment&quot;</span>: [
+        { 
+            <span class="hljs-attr">&quot;vendorId&quot;</span>: <span class="hljs-string">&quot;CH_BROADBAND&quot;</span>,
+            <span class="hljs-attr">&quot;macAddress&quot;</span>: <span class="hljs-string">&quot;00:00:00:00:00:00&quot;</span>
+         }
+    ],
+    <span class="hljs-attr">&quot;spReference&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+}
+</span></code></pre>
+<p>Response:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> CREATED
+<span class="hljs-attribute">Last-Modified</span>: Fri, 31 Aug 2012 12:03:28 GMT
+<span class="hljs-attribute">Location</span>: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
+    <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
+    <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
+    <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;RECEIVED&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+}
+</span></code></pre>
+<h2 id="orderl&#xE4;ggning-exempel-avaktivering">Orderl&#xE4;ggning, Exempel: Avaktivering</h2>
+<p>Request:</p>
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/api/2.3/orders/</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
+    <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
+    <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;DEACTIVATE&quot;</span>
+}
+</span></code></pre>
+<p>Response:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> CREATED
+<span class="hljs-attribute">Last-Modified</span>: Fri, 31 Aug 2012 12:03:28 GMT
+<span class="hljs-attribute">Location</span>: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
+    <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
+    <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;DEACTIVATE&quot;</span>,
+    <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;RECEIVED&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+}
+</span></code></pre>
+<h2 id="orderl&#xE4;ggning---f&#xE4;ltbeskrivningar">Orderl&#xE4;ggning - F&#xE4;ltbeskrivningar</h2>
+<table>
+    <tbody>
+        <tr>
+            <td><strong>F&#xE4;lt</strong></td>
+            <td><strong>F&#xF6;rklaring</strong></td>
+        </tr>
+        <tr>
+            <td>
+                <code>accessId</code>
+            </td>
+            <td>
+                Ett, per kommunikationsoperat&#xF6;r, unikt ID p&#xE5; en access.<br>F&#xE5;r enbart best&#xE5; av tecknen a-z, A-Z, 0-9. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9]+</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>service</code>
+            </td>
+            <td>
+                Anger teknisk tj&#xE4;nst som skall aktiveras/avaktiveras p&#xE5; accessen. <br>
+                V&#xE4;rden f&#xF6;r tekniska tj&#xE4;nster &#xE4;r KO-specifika och erh&#xE5;lls genom Feasibility-APIt. <em>text, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>operation</code>
+            </td>
+            <td>
+               Anger om tj&#xE4;nsten skall aktiveras eller avaktiveras.<br>
+               Giltiga v&#xE4;rden: &quot;ACTIVATE&quot;, &quot;DEACTIVATE&quot;. <em>text, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>forcedTakeover</code>
+            </td>
+            <td>
+                Anger om anropande TLs best&#xE4;llning skall ers&#xE4;tta annan Service Providers aktiva tj&#xE4;nster. Det beh&#xF6;ver enbart fungera om Feasibility indikerat att funktionen skall fungera. Det g&#xE4;ller enbart f&#xF6;r ACTIVATE-ordrar. Skall inte skickas vid DEACTIVATE. <br>St&#xF6;d f&#xF6;r forcedTakeover &#xE4;r inte obligatoriskt, men i de fall det inte st&#xF6;ds skall tj&#xE4;nsten &#xE4;nd&#xE5; kunna ta emot en fullst&#xE4;ndig best&#xE4;llning med &quot;forcedTakeover: false&quot;.
+                <em>boolean (true/false), obligatoriskt f&#xF6;r ACTIVATE</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>equipment</code>
+            </td>
+            <td>
+                Equipment inneh&#xE5;ller en lista &#xF6;ver den utrustning som kan anv&#xE4;ndas f&#xF6;r att avg&#xF6;ra vilken tj&#xE4;nst/KO en tj&#xE4;nst tillh&#xF6;r hos kunden.<br>
+                <br>
+                Ett use-case &#xE4;r vid Single-Play-Telefoni, d&#xE4;r en TL anv&#xE4;nder en tr&#xE5;dl&#xF6;s router f&#xF6;r enbart Telefoni. D&#xE5; beh&#xF6;ver KO kunna avg&#xF6;ra att VendorId CH_BROADBAND skall anv&#xE4;ndas f&#xF6;r Telefoni ist&#xE4;llet f&#xF6;r bredband.<br>
+                <br>
+                Listan &#xE4;r per tj&#xE4;nst, och den fullst&#xE4;ndiga listan skall alltid skickas vid varje aktivering.<br>
+                <br>
+                Vid avaktivering skall listan av equipment rensas.<br>
+                <br>
+                N&#xE4;r en order enbart avser &#xE4;ndring av utrustning kan KO v&#xE4;lja att starta en order f&#xF6;r det, eller svara direkt med att det &#xE4;r utf&#xF6;rt.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>equipment.vendorId</code>
+            </td>
+            <td>
+                <em>text</em><br>
+                <br>
+                Exempel: &quot;CH_BROADBAND&quot;
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>equipment.macAddress</code>
+            </td>
+            <td>
+                <em>text, formateras som oktetter delimiterade med &quot;:&quot; </em><br>
+                <br>
+                Exempel: &quot;00:00:00:00:00:00&quot;
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>spReference</code>
+            </td>
+            <td>
+                `spReference` anger TLs referens p&#xE5; tj&#xE4;nsten. Anv&#xE4;nds av TL f&#xF6;r korrelering.<br>
+                <em>Str&#xE4;ng, max 255 tecken, obligatorisk</em>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Gemensamt f&#xF6;r alla f&#xE4;lt &#xE4;r att de m&#xE5;ste finnas i JSON-strukturen och inte vara null.</p>
+<h2 id="felhantering-och-beteende-vid-orderl&#xE4;ggning">Felhantering och beteende vid orderl&#xE4;ggning</h2>
+<p>Vid order med korrekt format och korrekt inneh&#xE5;ll skall svaret se ut p&#xE5; f&#xF6;ljande s&#xE4;tt:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> CREATED
+<span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Location</span>: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+
+<span class="json">{
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
+    <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
+    <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
+    <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;RECEIVED&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+}
+</span></code></pre>
+<p>Vid en inkorrekt order skall svar ske direkt med &quot;400 Bad Request&quot;.</p>
+<p>Det skall ske vid:</p>
+<ul>
+<li>Felaktig JSON</li>
+<li>Saknade f&#xE4;lt</li>
+<li>Felaktigt inneh&#xE5;ll i f&#xE4;lt</li>
+<li>Felaktigt AccessId</li>
+<li>Felaktig Service f&#xF6;r acceses.</li>
+</ul>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">400</span> Bad Request
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{ <span class="hljs-attr">&quot;cause&quot;</span>: <span class="hljs-string">&quot;Unknown service: &apos;INTERNET_FLUGA&apos;&quot;</span> }
+</span></code></pre>
+<p>Om en annan tj&#xE4;nst med samma tj&#xE4;nstetyp redan &#xE4;r aktiv.
+Exempel: Bredband 100/100 &#xE4;r aktivt vid best&#xE4;llning av Bredband 10/10.:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">400</span> Bad Request
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{ <span class="hljs-attr">&quot;cause&quot;</span>: <span class="hljs-string">&quot;Another Service of ServiceType &apos;Broadband&apos; is already active.&quot;</span> }
+</span></code></pre>
+<p>Om tj&#xE4;nsten redan har en aktiv order:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
+    <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
+    <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
+    <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;RECEIVED&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+}
+</span></code></pre>
+<p>Om tj&#xE4;nsten redan &#xE4;r aktiv vid <code>ACTIVATE</code>, eller inaktiv vid <code>DEACTIVATE</code>:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
+    <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
+    <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
+    <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;DONE_SUCCESS&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+}
+</span></code></pre>
+<p>Om tj&#xE4;nsten (tj&#xE4;nstetypen) inte g&#xE5;r att best&#xE4;lla f&#xF6;r att den &#xE4;r tagen av en annan Service Provider:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">400</span> Bad Request
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{ <span class="hljs-attr">&quot;cause&quot;</span>: <span class="hljs-string">&quot;ServiceType is already claimed by other Service Provider.&quot;</span> }
+</span></code></pre>
+<h2 id="h&#xE4;mtning-av-order-status---exempel">H&#xE4;mtning av Order Status - Exempel</h2>
+<p>Request:</p>
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061</span> HTTP/1.1
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
+    <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
+    <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
+    <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;RECEIVED&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+}
+</span></code></pre>
+<h2 id="h&#xE4;mtning-av-order-status---f&#xE4;ltbeskrivningar">H&#xE4;mtning av Order Status - F&#xE4;ltbeskrivningar</h2>
+<table>
+    <tbody>
+        <tr>
+            <td><strong>F&#xE4;lt</strong></td>
+            <td><strong>F&#xF6;rklaring</strong></td>
+        </tr>
+        <tr>
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+               Path till order. Anges alltid fr&#xE5;n /. <em>text, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>state</code>
+            </td>
+            <td>
+               Anger orderns status. Statusen &#xE4;r &quot;RECEIVED&quot; tills tj&#xE4;nsten &#xE4;r aktiverad eller har misslyckats. N&#xE4;r ordern lyckas skall state bli &quot;DONE_SUCCESS&quot;. N&#xE4;r ordern misslyckas skall state uppdateras till &quot;DONE_FAILED&quot;. Ordern f&#xE5;r sedan aldrig &#xE4;ndra state.<br>
+               Giltiga v&#xE4;rden: &quot;RECEIVED&quot;, &quot;DONE_SUCCESS&quot;, &quot;DONE_FAILED&quot;. <em>text, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>message</code>
+            </td>
+            <td>
+               Om en order misslyckas (state == &quot;DONE_FAILED&quot;), kan message anv&#xE4;ndas f&#xF6;r att beskriva varf&#xF6;r. F&#xE4;ltet anv&#xE4;nds inte annars. F&#xE4;ltet skall alltid finnas men f&#xE5;r vara tomt. <em>text, obligatoriskt*</em>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="availability.html" class="navigation navigation-prev " aria-label="Previous page: Availability API">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="order_events.html" class="navigation navigation-next " aria-label="Next page: Order Events API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Service Activation API","level":"1.5","depth":1,"next":{"title":"Order Events API","level":"1.6","depth":1,"path":"order_events.md","ref":"order_events.md","articles":[]},"previous":{"title":"Availability API","level":"1.4","depth":1,"path":"availability.md","ref":"availability.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"service_activation.md","mtime":"2018-03-23T11:21:06.195Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T11:32:17.683Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
