@@ -1,0 +1,479 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Web Portal API · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fm_linkstatus.html" />
+    
+    
+    <link rel="prev" href="option82_lookup.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="changelog.html">
+            
+                <a href="changelog.html">
+            
+                    
+                    Ändringar mot tidigare versioner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="feasibility.html">
+            
+                <a href="feasibility.html">
+            
+                    
+                    Feasibility API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="availability.html">
+            
+                <a href="availability.html">
+            
+                    
+                    Availability API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="service_activation.html">
+            
+                <a href="service_activation.html">
+            
+                    
+                    Service Activation API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="order_events.html">
+            
+                <a href="order_events.html">
+            
+                    
+                    Order Events API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="option82_lookup.html">
+            
+                <a href="option82_lookup.html">
+            
+                    
+                    Option82 Lookup API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="web_portal.html">
+            
+                <a href="web_portal.html">
+            
+                    
+                    Web Portal API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="fm_linkstatus.html">
+            
+                <a href="fm_linkstatus.html">
+            
+                    
+                    FM Link Status API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="co_active_services.html">
+            
+                <a href="co_active_services.html">
+            
+                    
+                    KO: Alla aktiva tjänster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="access_customer_info.html">
+            
+                <a href="access_customer_info.html">
+            
+                    
+                    TL Kundinformations API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="query_sp.html">
+            
+                <a href="query_sp.html">
+            
+                    
+                    TL: Sökning av beställda tjänster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="option82.html">
+            
+                <a href="option82.html">
+            
+                    
+                    Option82
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="misc.html">
+            
+                <a href="misc.html">
+            
+                    
+                    Övergripande
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Web Portal API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="web-portal-api">Web Portal API</h1>
+<p>Syftet med Web Portal API &#xE4;r att p&#xE5; ett s&#xE4;kert s&#xE4;tt kunna g&#xF6;ra en &#xF6;verl&#xE4;mning av en kund fr&#xE5;n en kommunikationsoperat&#xF6;rs web-portal till en tj&#xE4;nsteleverant&#xF6;rs. I samband med en s&#xE5;dan &#xF6;verl&#xE4;mning s&#xE5; vill man skicka med data s&#xE5; som kundens access-id till tj&#xE4;nsteleverant&#xF6;ren. Tanken &#xE4;r allts&#xE5; att KO detekterar port (access) och sedan ger kunden en l&#xE4;nk eller g&#xF6;r en HTTP redirect till TL-portal.</p>
+<p>Detta API specificerar inte vad tj&#xE4;nsteleverant&#xF6;rens portalsida skall anv&#xE4;ndas till. T&#xE4;nkbara anv&#xE4;ndingsomr&#xE5;den &#xE4;r aktivering, kontroll, eller k&#xF6;p av tj&#xE4;nster.</p>
+<p>Detta API specificerar inte i vilket skede en KO g&#xF6;r &#xF6;verl&#xE4;mningen till tj&#xE4;nsteleverant&#xF6;rens portal. Man kan t&#xE4;nka sig scenarion d&#xE4;r KO g&#xF6;r en automatisk HTTP redirect till TL baserad p&#xE5; t.ex. vendor-id (option 60) i DHCP eller att kunden m&#xE5;ste klicka p&#xE5; en l&#xE4;nk i KO:s portal.</p>
+<h2 id="url-format">URL-format</h2>
+<p>En web portal URL skall ha f&#xF6;ljande format:</p>
+<pre><code>https://sp.example.com/some-path?ko=example_net&amp;accessId=ABCD1234&amp;mac=01:23:45:67:89:AB&amp;tid=2017-08-15T06:58:26.628Z&amp;hash=16eec7df7085f2de0a8d351ac4c75a0c02fb775c5eb823f96e6fb19bedaf65ed
+</code></pre><p><code>sp.example.com</code> &#xE4;r en server som driftas av TL. Hostnamn, och path best&#xE4;ms gemensamt av KO och TL och specificeras inte av detta API.</p>
+<table>
+    <tr>
+        <th>Query parameter</th>
+        <th>Beskrivning</th>
+    </tr>
+    <tr>
+        <td>
+            <code>ko</code>
+        </td>
+        <td>
+            Identifierare av KO.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code>accessId</code>
+        </td>
+        <td>
+            KO:s detekterade access-id.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code>mac</code>
+        </td>
+        <td>
+            MAC-adress f&#xF6;r kundens utrustning. Detta kan vara anv&#xE4;ndbart f&#xF6;r TL f&#xF6;r fels&#xF6;kning och aktivering av tj&#xE4;nster (t.ex. ATA-box i hemma-router levererad av TL).<br>
+            MAC-adressen representeras genom 6 par av hexadecimala siffror konkatenerade med kolon &apos;:&apos;. Den skall uteslutande vara i uppercase.<br>
+            MAC-adressen &#xE4;r alltid exakt 17 tecken l&#xE5;ng.<br>
+            Exempel: &quot;01:23:45:67:89:AB&quot;.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code>tid</code>
+        </td>
+        <td>
+            Tidsst&#xE4;mpel d&#xE5; URL:en skapades. TL kan avg&#xF6;ra hur l&#xE4;nge en URL skall vara godk&#xE4;nd att anv&#xE4;ndas beroende p&#xE5; hur k&#xE4;nslig data som exponeras av portalen. Detta f&#xF6;r att f&#xF6;rhindra replay-attacker.<br>
+            Skall vara formaterad enligt ISO-8601 i tidszon Z (UTC).
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code>hash</code>
+        </td>
+        <td>
+            Kryptografisk hash (Message Authentication Code) av &#xF6;vriga query parametrar (se nedan) i hex-format.
+        </td>
+    </tr>
+</table>
+
+<h2 id="kryptografisk-hash-message-authentication-code">Kryptografisk hash (Message Authentication Code)</h2>
+<p>F&#xF6;r att f&#xF6;rhindra att spoofing-attacker d&#xE4;r en attackerare anger ett annat access-id eller MAC &#xE4;n det hen faktiskt sitter p&#xE5; s&#xE5; beh&#xF6;ver datat signeras. Detta g&#xF6;rs med f&#xF6;rdel med en standardiserad algoritm som HMAC-SHA256.</p>
+<p>KO och TL kommer beh&#xF6;va komma &#xF6;verens om algoritm och en (gemensam) hemlig nyckel som skall anv&#xE4;ndas vid signeringen.</p>
+<p>Hashen skapas genom att initiera algoritmen med det hemliga l&#xF6;senordet och sedan i tur och ordning skriva v&#xE4;rdet av <code>ko</code>, <code>accessId</code>, <code>mac</code>, <code>tid</code> encodade i UTF-8.</p>
+<p>Exempelimplementation i Java:</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] authenticationHash(String ko, String accessId, String mac, String tid) <span class="hljs-keyword">throws</span> NoSuchAlgorithmException, InvalidKeyException  {
+        Mac macAlgo = Mac.getInstance(<span class="hljs-string">&quot;HmacSHA256&quot;</span>);
+        SecretKeySpec keySpec = <span class="hljs-keyword">new</span> SecretKeySpec(<span class="hljs-string">&quot;secret-password&quot;</span>.getBytes(UTF_8), <span class="hljs-string">&quot;HmacSHA256&quot;</span>);
+        macAlgo.init(keySpec);
+        macAlgo.update(ko.getBytes(UTF_8));
+        macAlgo.update(accessId.getBytes(UTF_8));
+        macAlgo.update(mac.getBytes(UTF_8));
+        macAlgo.update(tid.getBytes(UTF_8));
+        <span class="hljs-keyword">return</span> macAlgo.doFinal();
+    }
+</code></pre>
+<p>Ev. URL-encoding av query-paramterar skall <em>inte</em> p&#xE5;verka <code>hash</code>; v&#xE4;rdet skall alltid genereras fr&#xE5;n de avkodade v&#xE4;rderna. D.v.s. samma v&#xE4;rde p&#xE5; hashen skall genereas oavsett om <code>mac</code> skickas som <code>mac=01:23:45:67:89:AB</code> eller som <code>mac=01%3A23%3A45%3A67%3A89%3AAB</code> i URL:en.</p>
+<p>Notera att hostnamn och path inte &#xE4;r del av hashen, detta f&#xF6;r att underl&#xE4;tta att TL-portalen kan finnas p&#xE5; flera n&#xE4;t och bakom diverse HTTP proxies etc.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="option82_lookup.html" class="navigation navigation-prev " aria-label="Previous page: Option82 Lookup API">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fm_linkstatus.html" class="navigation navigation-next " aria-label="Next page: FM Link Status API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Web Portal API","level":"1.8","depth":1,"next":{"title":"FM Link Status API","level":"1.9","depth":1,"path":"fm_linkstatus.md","ref":"fm_linkstatus.md","articles":[]},"previous":{"title":"Option82 Lookup API","level":"1.7","depth":1,"path":"option82_lookup.md","ref":"option82_lookup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"web_portal.md","mtime":"2018-03-23T11:19:33.660Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T11:21:28.259Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
