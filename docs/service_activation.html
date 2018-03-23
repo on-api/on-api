@@ -319,7 +319,7 @@
                                 <h1 id="service-activation-api">Service Activation API</h1>
 <h2 id="orderl&#xE4;ggning-exempel-aktivering">Orderl&#xE4;ggning, Exempel: Aktivering</h2>
 <p>Request:</p>
-<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/api/2.3/orders/</span> HTTP/1.1
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/api/2.3.1/orders/</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/json
 
 <span class="json">{
@@ -339,11 +339,11 @@
 <p>Response:</p>
 <pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> CREATED
 <span class="hljs-attribute">Last-Modified</span>: Fri, 31 Aug 2012 12:03:28 GMT
-<span class="hljs-attribute">Location</span>: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+<span class="hljs-attribute">Location</span>: /api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 <span class="hljs-attribute">Content-Type</span>: application/json
 
 <span class="json">{
-    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
     <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
     <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
     <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
@@ -353,7 +353,7 @@
 </span></code></pre>
 <h2 id="orderl&#xE4;ggning-exempel-avaktivering">Orderl&#xE4;ggning, Exempel: Avaktivering</h2>
 <p>Request:</p>
-<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/api/2.3/orders/</span> HTTP/1.1
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/api/2.3.1/orders/</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/json
 
 <span class="json">{
@@ -365,11 +365,11 @@
 <p>Response:</p>
 <pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> CREATED
 <span class="hljs-attribute">Last-Modified</span>: Fri, 31 Aug 2012 12:03:28 GMT
-<span class="hljs-attribute">Location</span>: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+<span class="hljs-attribute">Location</span>: /api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 <span class="hljs-attribute">Content-Type</span>: application/json
 
 <span class="json">{
-    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
     <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
     <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
     <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;DEACTIVATE&quot;</span>,
@@ -472,10 +472,10 @@
 <p>Vid order med korrekt format och korrekt inneh&#xE5;ll skall svaret se ut p&#xE5; f&#xF6;ljande s&#xE4;tt:</p>
 <pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> CREATED
 <span class="hljs-attribute">Content-Type</span>: application/json
-<span class="hljs-attribute">Location</span>: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+<span class="hljs-attribute">Location</span>: /api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 
 <span class="json">{
-    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
     <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
     <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
     <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
@@ -509,7 +509,7 @@ Exempel: Bredband 100/100 &#xE4;r aktivt vid best&#xE4;llning av Bredband 10/10.
 <span class="hljs-attribute">Content-Type</span>: application/json
 
 <span class="json">{
-    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
     <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
     <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
     <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
@@ -537,14 +537,14 @@ Exempel: Bredband 100/100 &#xE4;r aktivt vid best&#xE4;llning av Bredband 10/10.
 </span></code></pre>
 <h2 id="h&#xE4;mtning-av-order-status---exempel">H&#xE4;mtning av Order Status - Exempel</h2>
 <p>Request:</p>
-<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061</span> HTTP/1.1
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061</span> HTTP/1.1
 </code></pre>
 <p>Response:</p>
 <pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
 <span class="hljs-attribute">Content-Type</span>: application/json
 
 <span class="json">{
-    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
     <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
     <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
     <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
@@ -629,7 +629,7 @@ Exempel: Bredband 100/100 &#xE4;r aktivt vid best&#xE4;llning av Bredband 10/10.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Service Activation API","level":"1.5","depth":1,"next":{"title":"Order Events API","level":"1.6","depth":1,"path":"order_events.md","ref":"order_events.md","articles":[]},"previous":{"title":"Availability API","level":"1.4","depth":1,"path":"availability.md","ref":"availability.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"service_activation.md","mtime":"2018-03-23T11:21:06.195Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T11:32:17.683Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Service Activation API","level":"1.5","depth":1,"next":{"title":"Order Events API","level":"1.6","depth":1,"path":"order_events.md","ref":"order_events.md","articles":[]},"previous":{"title":"Availability API","level":"1.4","depth":1,"path":"availability.md","ref":"availability.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"service_activation.md","mtime":"2018-03-23T15:35:23.901Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T15:41:49.203Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

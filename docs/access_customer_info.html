@@ -318,11 +318,34 @@
                                 
                                 <h1 id="tl-api-kundinformation-f&#xF6;r-access">TL API: Kundinformation f&#xF6;r Access</h1>
 <p>Syftet med API &#xE4;r att l&#xE5;ta KO h&#xE4;mta kundinformation om en access fr&#xE5;n Tj&#xE4;nsteleverant&#xF6;r.</p>
+<p>Anv&#xE4;nd <code>access_sp</code> - endpointen f&#xF6;r att h&#xE4;mta kundinformation med tj&#xE4;nsteleverant&#xF6;rens kundnummer.</p>
+<p>M&#xF6;jlighet att skicka med ett ticket-id eller anledning till varf&#xF6;r kunduppgifterna efterfr&#xE5;gas.</p>
 <p><em>OBS! Till skillnad mot andra APIer &#xE4;r KO klient och TL server i detta API.</em></p>
 <h2 id="exempel">Exempel</h2>
 <p>Request:</p>
-<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3/access/STTA0001</span> HTTP/1.1
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3.1/access/STTA0001</span> HTTP/1.1
 </code></pre>
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3.1/access_sp/1337</span> HTTP/1.1
+</code></pre>
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/api/2.3.1/access/STTA0001</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;koTicketReference&quot;</span>: <span class="hljs-string">&quot;123123&quot;</span>,
+    <span class="hljs-attr">&quot;spTicketReference&quot;</span>: <span class="hljs-string">&quot;123123&quot;</span>,
+    <span class="hljs-attr">&quot;reason&quot;</span>: <span class="hljs-string">&quot;Techinician need to know...&quot;</span>
+
+}
+</span></code></pre>
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/api/2.3.1/access_sp/1337</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{
+    <span class="hljs-attr">&quot;koTicketReference&quot;</span>: <span class="hljs-string">&quot;123123&quot;</span>,
+    <span class="hljs-attr">&quot;spTicketReference&quot;</span>: <span class="hljs-string">&quot;123123&quot;</span>,
+    <span class="hljs-attr">&quot;reason&quot;</span>: <span class="hljs-string">&quot;Techinician need to know...&quot;</span>
+}
+</span></code></pre>
 <p>Response:</p>
 <pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
 <span class="hljs-attribute">Content-Type</span>: application/json
@@ -335,7 +358,8 @@
             <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
             <span class="hljs-string">&quot;mobilePhone&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
         },
-        <span class="hljs-string">&quot;spReference: &quot;&quot;</span>
+        <span class="hljs-string">&quot;spReference: &quot;</span><span class="hljs-number">1337</span><span class="hljs-string">&quot;,</span>
+        <span class="hljs-string">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span> 
     }
 }
 </span></code></pre>
@@ -390,10 +414,19 @@
                 <em>Str&#xE4;ng, max 255 tecken</em>
             </td>
         </tr>
+        <tr>
+            <td>
+                <code>accessId</code>
+            </td>
+            <td>
+                `accessId` blir redundant men skickas med f&#xF6;r att g&#xF6;ra endpoints enhetliga beroende p&#xE5; vilket kundnummer man efterfr&#xE5;gar med
+            </td>
+        </tr>
     </tbody>
 </table>
 
 <p>Gemensamt f&#xF6;r alla f&#xE4;lt &#xE4;r att de m&#xE5;ste finnas i JSON-strukturen och inte vara null.</p>
+<p>POST-parametrarna <code>koTicketReference</code> <code>spTicketReference</code> <code>reason</code> &#xE4;r frivilliga att anv&#xE4;ndas om man vill eller om enskild SP + KO kommer &#xF6;verens om implementation.</p>
 
                                 
                                 </section>
@@ -437,7 +470,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TL Kundinformations API","level":"1.11","depth":1,"next":{"title":"TL: Sökning av beställda tjänster","level":"1.12","depth":1,"path":"query_sp.md","ref":"query_sp.md","articles":[]},"previous":{"title":"KO: Alla aktiva tjänster","level":"1.10","depth":1,"path":"co_active_services.md","ref":"co_active_services.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"access_customer_info.md","mtime":"2018-03-23T11:19:33.655Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T11:32:17.683Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TL Kundinformations API","level":"1.11","depth":1,"next":{"title":"TL: Sökning av beställda tjänster","level":"1.12","depth":1,"path":"query_sp.md","ref":"query_sp.md","articles":[]},"previous":{"title":"KO: Alla aktiva tjänster","level":"1.10","depth":1,"path":"co_active_services.md","ref":"co_active_services.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"access_customer_info.md","mtime":"2018-03-23T15:34:30.766Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T15:41:49.203Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

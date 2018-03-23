@@ -323,7 +323,7 @@
 <p>F&#xE4;lten beskrivs i <a href="service_activation.html">Service Activation API</a>.</p>
 <h2 id="exempel-h&#xE4;mtning-av-nya-events">Exempel: H&#xE4;mtning av nya events</h2>
 <p>Request:</p>
-<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3/orderevents/?since=cc537e54-e59c-11e3-a593-3c970e806452</span> HTTP/1.1
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3.1/orderevents/?since=cc537e54-e59c-11e3-a593-3c970e806452</span> HTTP/1.1
 </code></pre>
 <p>Response:</p>
 <pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
@@ -333,7 +333,7 @@
     {
         <span class="hljs-attr">&quot;event&quot;</span>: <span class="hljs-string">&quot;2a6d6432-e59d-11e3-9a52-3c970e806452&quot;</span>,
         <span class="hljs-attr">&quot;order&quot;</span>: {
-            <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
+            <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061&quot;</span>,
             <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0001&quot;</span>,
             <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
             <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;DEACTIVATE&quot;</span>,
@@ -344,7 +344,7 @@
     {
         <span class="hljs-attr">&quot;event&quot;</span>: <span class="hljs-string">&quot;251825a8-e59d-11e3-bf71-3c970e806452&quot;</span>,
         <span class="hljs-attr">&quot;order&quot;</span>: {
-            <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/3393123a-e59f-11e3-9371-3c970e806452&quot;</span>,
+            <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3.1/orders/3393123a-e59f-11e3-9371-3c970e806452&quot;</span>,
             <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0002&quot;</span>,
             <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
             <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
@@ -364,7 +364,7 @@ Det m&#xE5;ste inte vara ett UUID, utan KO kan best&#xE4;mma inneh&#xE5;llet s&#
 <p>Enbart order-event av typen order.event <code>DONE_SUCCESS</code> eller <code>DONE_FAILED</code> f&#xE5;r f&#xF6;rekomma.</p>
 <h2 id="exempel-h&#xE4;mtning-av-alla-events">Exempel: H&#xE4;mtning av alla events</h2>
 <p>Request:</p>
-<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3/orderevents/</span> HTTP/1.1
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3.1/orderevents/</span> HTTP/1.1
 </code></pre>
 <p>Response:</p>
 <pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
@@ -374,7 +374,7 @@ Det m&#xE5;ste inte vara ett UUID, utan KO kan best&#xE4;mma inneh&#xE5;llet s&#
     {
         <span class="hljs-attr">&quot;event&quot;</span>: <span class="hljs-string">&quot;251825a8-e59d-11e3-bf71-3c970e806452&quot;</span>,
         <span class="hljs-attr">&quot;order&quot;</span>: {
-            <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3/orders/3393123a-e59f-11e3-9371-3c970e806452&quot;</span>,
+            <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/api/2.3.1/orders/3393123a-e59f-11e3-9371-3c970e806452&quot;</span>,
             <span class="hljs-attr">&quot;accessId&quot;</span>: <span class="hljs-string">&quot;STTA0002&quot;</span>,
             <span class="hljs-attr">&quot;service&quot;</span>: <span class="hljs-string">&quot;BB-100-10&quot;</span>,
             <span class="hljs-attr">&quot;operation&quot;</span>: <span class="hljs-string">&quot;ACTIVATE&quot;</span>,
@@ -429,7 +429,7 @@ Det m&#xE5;ste inte vara ett UUID, utan KO kan best&#xE4;mma inneh&#xE5;llet s&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Order Events API","level":"1.6","depth":1,"next":{"title":"Option82 Lookup API","level":"1.7","depth":1,"path":"option82_lookup.md","ref":"option82_lookup.md","articles":[]},"previous":{"title":"Service Activation API","level":"1.5","depth":1,"path":"service_activation.md","ref":"service_activation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"order_events.md","mtime":"2018-03-23T11:19:33.660Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T11:32:17.683Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Order Events API","level":"1.6","depth":1,"next":{"title":"Option82 Lookup API","level":"1.7","depth":1,"path":"option82_lookup.md","ref":"option82_lookup.md","articles":[]},"previous":{"title":"Service Activation API","level":"1.5","depth":1,"path":"service_activation.md","ref":"service_activation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"order_events.md","mtime":"2018-03-23T15:35:20.925Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T15:41:49.203Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
