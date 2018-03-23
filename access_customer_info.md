@@ -2,6 +2,8 @@
 
 Syftet med API är att låta KO hämta kundinformation om en access från Tjänsteleverantör.
 
+Använd `access_sp` - endpointen för att hämta kundinformation med tjänsteleverantörens kundnummer.
+
 *OBS! Till skillnad mot andra APIer är KO klient och TL server i detta API.*
 
 ## Exempel
@@ -9,6 +11,10 @@ Syftet med API är att låta KO hämta kundinformation om en access från Tjäns
 Request:
 ```http
 GET /api/2.3/access/STTA0001 HTTP/1.1
+```
+
+```http
+GET /api/2.3/access_sp/STTA0001 HTTP/1.1
 ```
 
 Response:
@@ -24,7 +30,8 @@ Content-Type: application/json
             "phone": "",
             "mobilePhone": ""
         },
-        "spReference: ""
+        "spReference: "1337",
+        "accessId": "STTA0001" 
     }
 }
 ```
@@ -79,6 +86,14 @@ Content-Type: application/json
             <td>
                 `spReference` anger TLs referens på tjänsten. Används av TL för korrelering.<br>
                 <em>Sträng, max 255 tecken</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>accessId</code>
+            </td>
+            <td>
+                `accessId` blir redundant men skickas med för att göra endpoints enhetliga beroende på vilket kundnummer man efterfrågar med</em>
             </td>
         </tr>
     </tbody>
