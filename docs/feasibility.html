@@ -1,0 +1,661 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Feasibility API · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="availability.html" />
+    
+    
+    <link rel="prev" href="changelog.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="changelog.html">
+            
+                <a href="changelog.html">
+            
+                    
+                    Ändringar mot tidigare versioner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="feasibility.html">
+            
+                <a href="feasibility.html">
+            
+                    
+                    Feasibility API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="availability.html">
+            
+                <a href="availability.html">
+            
+                    
+                    Availability API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="service_activation.html">
+            
+                <a href="service_activation.html">
+            
+                    
+                    Service Activation API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="order_events.html">
+            
+                <a href="order_events.html">
+            
+                    
+                    Order Events API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="option82_lookup.html">
+            
+                <a href="option82_lookup.html">
+            
+                    
+                    Option82 Lookup API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="web_portal.html">
+            
+                <a href="web_portal.html">
+            
+                    
+                    Web Portal API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="fm_linkstatus.html">
+            
+                <a href="fm_linkstatus.html">
+            
+                    
+                    FM Link Status API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="co_active_services.html">
+            
+                <a href="co_active_services.html">
+            
+                    
+                    KO: Alla aktiva tjänster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="access_customer_info.html">
+            
+                <a href="access_customer_info.html">
+            
+                    
+                    TL Kundinformations API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="query_sp.html">
+            
+                <a href="query_sp.html">
+            
+                    
+                    TL: Sökning av beställda tjänster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="option82.html">
+            
+                <a href="option82.html">
+            
+                    
+                    Option82
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="misc.html">
+            
+                <a href="misc.html">
+            
+                    
+                    Övergripande
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Feasibility API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="feasibility-api">Feasibility API</h1>
+<p>Feasibility API anv&#xE4;nds av Tj&#xE4;nsteleverant&#xF6;r f&#xF6;r att kunna hitta avl&#xE4;mningspunkter och svara p&#xE5; om en fastighet/l&#xE4;genhet &#xE4;r inkopplad i ett n&#xE4;t. Tj&#xE4;nsteleverant&#xF6;r ser &#xE4;ven vilken teknisk kapacitet varje access har genom de tekniska tj&#xE4;nster som &#xE4;r definierade p&#xE5; accessen.</p>
+<h2 id="exempel">Exempel</h2>
+<p>Request:</p>
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3.1/accesses/</span> HTTP/1.1
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-http">HTTP/1.1 200 OK
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Content-Type: application/json
+[
+    {
+        &quot;accessId&quot;: &quot;STTA0001&quot;,
+        &quot;streetName&quot;: &quot;Testv&#xE4;gen&quot;,
+        &quot;streetNumber&quot;: &quot;100&quot;,
+        &quot;streetLittera&quot;: &quot;&quot;,
+        &quot;postalCode&quot;: &quot;10000&quot;,
+        &quot;city&quot;: &quot;Ankeborg&quot;,
+        &quot;countryCode&quot;: &quot;SE&quot;,
+        &quot;premisesType&quot;: &quot;MDU_APARTMENT&quot;,
+        &quot;mduApartmentNumber&quot;: &quot;1001&quot;,
+        &quot;mduDistinguisher&quot;: &quot;12121212&quot;,
+        &quot;outlet&quot;: &quot;A-11-14&quot;,
+        &quot;population&quot;: &quot;Hems&#xF6;hem&quot;,
+        &quot;services&quot;: [
+            {
+                &quot;service&quot;: &quot;BB-100-100&quot;,
+                &quot;connection&quot;: &quot;2014-03-01&quot;
+            }, {
+                &quot;service&quot;: &quot;BB-100-10&quot;,
+                &quot;connection&quot;: &quot;2013-10-12&quot;
+            }, {
+                &quot;service&quot;: &quot;BB-10-10&quot;,
+                &quot;connection&quot;: &quot;2013-10-12&quot;
+            }, {
+                &quot;service&quot;: &quot;IPTV&quot;,
+                &quot;connection&quot;: &quot;2013-10-12&quot;
+            }, {
+                &quot;service&quot;: &quot;VOIP&quot;,
+                &quot;connection&quot;: &quot;2013-08-13&quot;
+            }
+        ],
+        &quot;coFiberConverter&quot;: &quot;LASER_3001X_MK2&quot;,
+        &quot;coCpeSwitch&quot;: &quot;&quot;,
+        &quot;coCpeRouter&quot;: &quot;NETGEAR WNDR4000&quot;
+    }
+]
+</code></pre>
+<h2 id="f&#xE4;ltbeskrivningar">F&#xE4;ltbeskrivningar</h2>
+<ul>
+<li><code>null</code> &#xE4;r inte ett giltigt v&#xE4;rde f&#xF6;r n&#xE5;got f&#xE4;lt.</li>
+<li>F&#xE4;lt markerade med <em>obligatoriskt</em> f&#xE5;r inte vara tomma str&#xE4;ngen (<code>&quot;&quot;</code>)</li>
+</ul>
+<table>
+    <tbody>
+        <tr>
+            <td><strong>F&#xE4;lt</strong></td>
+            <td><strong>F&#xF6;rklaring</strong></td>
+        </tr>
+        <tr>
+            <td>
+                <code>accessId</code>
+            </td>
+            <td>
+                Ett, per kommunikationsoperat&#xF6;r, unikt ID p&#xE5; en access.<br>F&#xE5;r enbart best&#xE5; av tecknen a-z, A-Z, 0-9, &apos;-&apos; och &apos;.&apos;. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9-.]+</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>streetName</code>
+            </td>
+            <td>
+                Gatunamn.<br> I fallet &quot;Kungsgatan 10G&quot; &#xE4;r StreetName &quot;Kungsgatan&quot;. <em>text, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>streetNumber</code>
+            </td>
+            <td>
+                Gatunummer.<br> I fallet &quot;Kungsgatan 10G&quot; &#xE4;r StreetNumber &quot;10&quot;. I fallet &quot;Lantv&#xE4;gen 550-70&quot; &#xE4;r StreetNumber &quot;550&quot;. Enbart siffror. <em>text</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>streetLittera</code>
+            </td>
+            <td>
+                Gatubokstav/Uppg&#xE5;ng.<br> I fallet &quot;Kungsgatan 10G&quot; &#xE4;r StreetLittera &quot;G&quot;. I fallet &quot;Lantv&#xE4;gen 550-70&quot; &#xE4;r StreetLittera &quot;70&quot;. <em>text</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>postalCode</code>
+            </td>
+            <td>
+                Postnummer. Exempelvis &quot;41369&quot;. Min 10000, max 99999. Alltid fem siffror. <em>text, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>city</code>
+            </td>
+            <td>
+                Postort. Exempelvis &quot;G&#xF6;teborg&quot;. <em>text, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>countryCode</code>
+            </td>
+            <td>
+                Landskod. F&#xF6;ljer ISO 3166-1 f&#xF6;r landskoder. Exempel: &quot;SE&quot; f&#xF6;r Sverige. <em>text, ISO 3166-1, obligatoriskt</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>premisesType</code>
+            </td>
+            <td>
+                PremisesType beskriver avl&#xE4;mningspunktens lokal. Vid MDU_APARTMENT och MDU_COMMON m&#xE5;ste MduDistinguisher eller MduApartmentNumber vara populerade.<em>obligatoriskt</em>
+<dl>
+<dt>MDU_APARTMENT</dt><dd>L&#xE4;genhet i flerbostadshus. Delad fastighetsbeteckning.</dd>
+<dt>MDU_COMMON</dt><dd>Gemensamt utrymme i flerbostadshus. Delad fastighetsbeteckning.</dd>
+<dt>RESIDENTIAL_HOUSE</dt><dd>Bostad som har egen fastighetsbeteckning.</dd>
+<dt>COMMERCIAL</dt><dd>Lokal, men utan tilltr&#xE4;de fr&#xE5;n allm&#xE4;nheten. Till exempel ett kontor.</dd>
+<dt>PUBLIC</dt><dd>Inr&#xE4;ttning dit allm&#xE4;nheten har tilltr&#xE4;de. Till exempel en restaurang eller ett gym.</dd>
+<dt>UNKNOWN</dt><dd>Ok&#xE4;nd.</dd>
+</dl>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>mduApartmentNumber</code>
+            </td>
+            <td>
+                                L&#xE4;genhetsnummer enligt Lantm&#xE4;teriet. Anv&#xE4;nds f&#xF6;r att tillsammans med en adress identifiera en unik access. I fallet n&#xE4;r kund vill best&#xE4;lla tj&#xE4;nster kan de inte aktiveras hos KO utan att TL har fastst&#xE4;llt vilket AccessID kunden har. Genom att unikt identifiera l&#xE4;genheten med mduApartmentNumber eller mduDistinguisher kan TL fastst&#xE4;lla exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
+                                <br>
+                                Exempel: 1101, 0901, 1201, 1213.<br>
+                                <br>
+                [1] En av <code>mduApartmentNumber</code>, <code>mduDistinguisher</code> m&#xE5;ste finnas om <code>premisesType</code> &#xE4;r <code>&quot;MDU_APARTMENT&quot;</code>.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>mduDistinguisher</code>
+            </td>
+            <td>
+                Alternativ lokalbeteckning som identifierar l&#xE4;genheten unikt per adress. Beh&#xF6;ver inte f&#xF6;lja Lantm&#xE4;teriets format. <em>text, obligatoriskt<sup>2</sup></em><br>
+                                <br>
+                                Exempel: 28, 65113, 1234-1919.<br>
+                                <br>
+                  [2] En av <code>mduApartmentNumber</code>, <code>mduDistinguisher</code> m&#xE5;ste finnas om <code>premisesType</code> &#xE4;r <code>&quot;MDU_APARTMENT&quot;</code>.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>outlet</code>
+            </td>
+            <td>
+                Uttagsnummer som identifierar porten i l&#xE4;genhet/villa. Typiskt &#xE4;r porten hos slutkund m&#xE4;rkt med uttagsnummer. Outlet beh&#xF6;ver vara unikt per adress. <em>text</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>population</code>
+            </td>
+            <td>
+                Anger delbest&#xE5;nd i hela best&#xE5;ndet. Hela best&#xE5;ndet h&#xE4;mtas alltid in, men det kan filtreras och g&#xF6;ras s&#xE4;ljbart i olika etapper. <em>text</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>services</code>
+            </td>
+            <td>
+                Anger accessens tekniska tj&#xE4;nster och feasibility per teknisk tj&#xE4;nst. F&#xF6;r beskrivning, se f&#xF6;ljande tv&#xE5; rader i listan &#xF6;ver f&#xE4;ltbeskrivningar. <br>
+                Oavsett vilken Service Provider som h&#xE4;mtar feasibility-data skall services inneh&#xE5;lla samma information.<br>
+                <em>obligatorisk</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>services / service</code>
+            </td>
+            <td>
+                Id/namn p&#xE5; tekniskt tj&#xE4;nst som avses. Den tekniska tj&#xE4;nsten kan best&#xE4;llas via Service Activation API. <em>obligatorisk</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>services / connection</code>
+            </td>
+            <td>
+                Anger n&#xE4;r accessen kopplas in och den tekniska tj&#xE4;nsten blir aktiverbar f&#xF6;rsta g&#xE5;ngen. P&#xE5; det angivna datumet, eller om connection &#xE4;r &quot;YES&quot;, skall det g&#xE5; att aktivera tj&#xE4;nster p&#xE5; accessen. <br>
+                Om tj&#xE4;nsten &#xE4;r aktiverbar men datumet &#xE4;r ok&#xE4;nt kan &quot;YES&quot; anv&#xE4;ndas f&#xF6;r att indikera det. Datumet f&#xE5;r tidigast vara 1970-01-01.<br>
+                <br>
+                <em>&quot;YES&quot;, &quot;NO&quot; eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br>
+                Exempel: YES, NO, 2012-07-01
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>coFiberConverter</code>
+            </td>
+            <td>
+                Typ (tillverkare, modell) av Fiber Konverter Switch som &quot;accessen&quot; &#xE4;r kopplad till. Skall enbart anv&#xE4;ndas f&#xF6;r utrustning som KO tillhandah&#xE5;ller. <em>text</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>coCpeSwitch</code>
+            </td>
+            <td>
+                Om CPEn &#xE4;r en Switch, &#xE4;r detta typen (tillverkare, modell) som &#xE4;r inkopplad. Enbart en av CpeSwitch och CpeRouter f&#xE5;r finnas. Skall enbart anv&#xE4;ndas f&#xF6;r utrustning som KO tillhandah&#xE5;ller. <em>text</em>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>coCpeRouter</code>
+            </td>
+            <td>
+                Om CPEn &#xE4;r en Router, &#xE4;r detta typen (tillverkare, modell) som &#xE4;r inkopplad. Enbart en av CpeSwitch och CpeRouter f&#xE5;r finnas. Skall enbart anv&#xE4;ndas f&#xF6;r utrustning som KO tillhandah&#xE5;ller. <em>text</em>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="begr&#xE4;nsningsmekanism">Begr&#xE4;nsningsmekanism</h2>
+<p>If-Modified-Since anv&#xE4;nds f&#xF6;r att be om inkrementella uppdateringar av accesser. P&#xE5; det viset kan anropet ske ofta men fortfarande vara billigt.</p>
+<p>Vid f&#xF6;rsta anropet sker ingen begr&#xE4;nsning. D&#xE5; ber TL om fullst&#xE4;ndiga best&#xE5;ndet. Vid p&#xE5;f&#xF6;ljande anrop anv&#xE4;nds If-Modified-Since. V&#xE4;rdet f&#xF6;r headern &#xE4;r f&#xF6;reg&#xE5;ende svars v&#xE4;rde p&#xE5; Last-Modified.</p>
+<p>Av den anledningen &#xE4;r &quot;Last-Modified&quot; obligatoriskt vid HTTP Status 200.</p>
+<p>Se <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html" title="HTTP/1.1 RFC-2616 Section 14, Header Field Definitions" target="_blank">RFC-2616</a>. Exemplen anv&#xE4;nder ingen autentisering.</p>
+<pre><code>If-Modified-Since = &quot;If-Modified-Since&quot; &quot;:&quot; HTTP-date
+</code></pre><p>N&#xE4;r en access f&#xF6;rekommer i ett svar skall den alltid skickas i sin helhet: med accessens samtliga f&#xE4;lt och tj&#xE4;nster.</p>
+<h2 id="begr&#xE4;nsningsmekanism---exempel">Begr&#xE4;nsningsmekanism - Exempel</h2>
+<p>Exempel p&#xE5; anropssekvens:</p>
+<p>Request:</p>
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/2.3.1/accesses/</span> HTTP/1.1
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-http">HTTP/1.1 200 OK
+Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
+Content-Type: application/json
+...
+</code></pre>
+<p>Vid p&#xE5;f&#xF6;ljande anrop skickas &quot;If-Modified-Since&quot;-header f&#xF6;r att bara be om uppdaterade poster.</p>
+<p>Request:</p>
+<pre><code class="lang-http">GET /api/2.3.1/accesses/ HTTP/1.1
+If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
+...
+</code></pre>
+<p>Om det finns uppdaterade poster kan svaret se ut s&#xE5;h&#xE4;r:</p>
+<p>Response:</p>
+<pre><code class="lang-http">HTTP/1.1 200 OK
+Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
+Content-Type: application/json
+...
+</code></pre>
+<p>Om det inte finns uppdaterade poster ser svaret ist&#xE4;llet ut s&#xE5;h&#xE4;r:</p>
+<p>Response:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">304</span> Not Modified
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="changelog.html" class="navigation navigation-prev " aria-label="Previous page: Ändringar mot tidigare versioner">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="availability.html" class="navigation navigation-next " aria-label="Next page: Availability API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Feasibility API","level":"1.3","depth":1,"next":{"title":"Availability API","level":"1.4","depth":1,"path":"availability.md","ref":"availability.md","articles":[]},"previous":{"title":"Ändringar mot tidigare versioner","level":"1.2","depth":1,"path":"changelog.md","ref":"changelog.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"feasibility.md","mtime":"2018-03-23T15:35:07.302Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-28T15:09:37.504Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
