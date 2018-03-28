@@ -1,8 +1,14 @@
 # Open Networks API 2.3.1
 
-Leverantörsoberoende öppet API för effektivt systemsamarbete mellan tjänsteleverantörer (TL eller SP), öppna nät (ÖN) och kommunikationsoperatörer (KO eller CO).
+##### Länk till dokumentation: [ON-API 2.3.1](https://on-api.github.io "ON-API docs")
+##### Länk till github repository: [on-api/on-api-prerelease](https://github.com/on-api/on-api-prerelease "ON-API repo")
+
+___
+
+Open Networks API (ON-API) är ett leverantörsoberoende öppet API för effektivt systemsamarbete mellan tjänsteleverantörer (TL eller SP), öppna nät (ÖN) och kommunikationsoperatörer (KO eller CO). Vidare är ON-API ett initiativ som tagits av tjänsteleverantörer, kommunikationsoperatörer och systemleverantörer, med syfte att komma överens om en enhetlig standard för kommunikation mellan parterna. Första versionen, ON-API 2.3.1, är en förhandsrelease som innehåller mindre utbyggnad av PI-API 2.3, med utökat stöd för GDPR.
 
 API exponerar de accesser som ställs till förfogande för tjänsteleverantörer att leverera sina tjänster på. På de accesser som exponeras kan sedan tekniska tjänster beställas, avbeställas och konsolideras.
+Innehåller operationer med följande syften:
 
 Innehåller operationer med följande syften:
 * Hämta säljdata/univers från KO.
@@ -11,21 +17,7 @@ Innehåller operationer med följande syften:
 * Stöd för autoaktivering.
 * Uppfyller GDPR.
 
-## Innehåll
-
-* [Ändringar mot tidigare versioner](changelog.md)
-* [Feasibility API](feasibility.md)
-* [Availability API](availability.md)
-* [Service Activation API](service_activation.md)
-* [Order Events API](order_events.md)
-* [Option82 Lookup API](option82_lookup.md)
-* [Web Portal API](web_portal.md)
-* [FM Link Status API](fm_linkstatus.md)
-* [KO: Alla aktiva tjänster](co_active_services.md)
-* [TL Kundinformations API](access_customer_info.md)
-* [TL: Sökning av beställda tjänster](query_sp.md)
-* [Option82](option82.md)
-* [Övergripande](misc.md)
+___
 
 ## Terminologi
 

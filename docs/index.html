@@ -315,8 +315,12 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="open-networks-api-231">Open Networks API 2.3.1</h1>
-<p>Leverant&#xF6;rsoberoende &#xF6;ppet API f&#xF6;r effektivt systemsamarbete mellan tj&#xE4;nsteleverant&#xF6;rer (TL eller SP), &#xF6;ppna n&#xE4;t (&#xD6;N) och kommunikationsoperat&#xF6;rer (KO eller CO).</p>
-<p>API exponerar de accesser som st&#xE4;lls till f&#xF6;rfogande f&#xF6;r tj&#xE4;nsteleverant&#xF6;rer att leverera sina tj&#xE4;nster p&#xE5;. P&#xE5; de accesser som exponeras kan sedan tekniska tj&#xE4;nster best&#xE4;llas, avbest&#xE4;llas och konsolideras.</p>
+<h5 id="l&#xE4;nk-till-dokumentation-on-api-231">L&#xE4;nk till dokumentation: <a href="https://on-api.github.io" title="ON-API docs" target="_blank">ON-API 2.3.1</a></h5>
+<h5 id="l&#xE4;nk-till-github-repository-on-apion-api-prerelease">L&#xE4;nk till github repository: <a href="https://github.com/on-api/on-api-prerelease" title="ON-API repo" target="_blank">on-api/on-api-prerelease</a></h5>
+<hr>
+<p>Open Networks API (ON-API) &#xE4;r ett leverant&#xF6;rsoberoende &#xF6;ppet API f&#xF6;r effektivt systemsamarbete mellan tj&#xE4;nsteleverant&#xF6;rer (TL eller SP), &#xF6;ppna n&#xE4;t (&#xD6;N) och kommunikationsoperat&#xF6;rer (KO eller CO). Vidare &#xE4;r ON-API ett initiativ som tagits av tj&#xE4;nsteleverant&#xF6;rer, kommunikationsoperat&#xF6;rer och systemleverant&#xF6;rer, med syfte att komma &#xF6;verens om en enhetlig standard f&#xF6;r kommunikation mellan parterna. F&#xF6;rsta versionen, ON-API 2.3.1, &#xE4;r en f&#xF6;rhandsrelease som inneh&#xE5;ller mindre utbyggnad av PI-API 2.3, med ut&#xF6;kat st&#xF6;d f&#xF6;r GDPR.</p>
+<p>API exponerar de accesser som st&#xE4;lls till f&#xF6;rfogande f&#xF6;r tj&#xE4;nsteleverant&#xF6;rer att leverera sina tj&#xE4;nster p&#xE5;. P&#xE5; de accesser som exponeras kan sedan tekniska tj&#xE4;nster best&#xE4;llas, avbest&#xE4;llas och konsolideras.
+Inneh&#xE5;ller operationer med f&#xF6;ljande syften:</p>
 <p>Inneh&#xE5;ller operationer med f&#xF6;ljande syften:</p>
 <ul>
 <li>H&#xE4;mta s&#xE4;ljdata/univers fr&#xE5;n KO.</li>
@@ -325,22 +329,7 @@
 <li>St&#xF6;d f&#xF6;r autoaktivering.</li>
 <li>Uppfyller GDPR.</li>
 </ul>
-<h2 id="inneh&#xE5;ll">Inneh&#xE5;ll</h2>
-<ul>
-<li><a href="changelog.html">&#xC4;ndringar mot tidigare versioner</a></li>
-<li><a href="feasibility.html">Feasibility API</a></li>
-<li><a href="availability.html">Availability API</a></li>
-<li><a href="service_activation.html">Service Activation API</a></li>
-<li><a href="order_events.html">Order Events API</a></li>
-<li><a href="option82_lookup.html">Option82 Lookup API</a></li>
-<li><a href="web_portal.html">Web Portal API</a></li>
-<li><a href="fm_linkstatus.html">FM Link Status API</a></li>
-<li><a href="co_active_services.html">KO: Alla aktiva tj&#xE4;nster</a></li>
-<li><a href="access_customer_info.html">TL Kundinformations API</a></li>
-<li><a href="query_sp.html">TL: S&#xF6;kning av best&#xE4;llda tj&#xE4;nster</a></li>
-<li><a href="option82.html">Option82</a></li>
-<li><a href="misc.html">&#xD6;vergripande</a></li>
-</ul>
+<hr>
 <h2 id="terminologi">Terminologi</h2>
 <h3 id="access">Access</h3>
 <p>En <em>Access</em> definieras som en avl&#xE4;mningspunkt som m&#xE5;ste aktiveras f&#xF6;r att en slutkund skall f&#xE5; tj&#xE4;nst. Utg&#xF6;rs typiskt av en port i en access-switch, f&#xF6;rbindelsen till och uttaget i bostaden.</p>
@@ -390,7 +379,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Ändringar mot tidigare versioner","level":"1.2","depth":1,"path":"changelog.md","ref":"changelog.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-03-23T11:20:42.360Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-23T15:41:49.203Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Ändringar mot tidigare versioner","level":"1.2","depth":1,"path":"changelog.md","ref":"changelog.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-03-28T15:07:08.317Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-28T15:09:37.504Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
