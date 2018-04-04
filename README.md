@@ -1,7 +1,7 @@
 # Open Networks API 2.3.1
 
-##### Länk till dokumentation: [ON-API 2.3.1](https://on-api.github.io/on-api-prerelease/ "ON-API docs")
-##### Länk till github repository: [on-api/on-api-prerelease](https://github.com/on-api/on-api-prerelease "ON-API repo")
+##### Länk till dokumentation: [ON-API 2.3.1](https://on-api.github.io/on-api-release-2.3.1/ "ON-API docs")
+##### Länk till github repository: [on-api/on-api-release-2.3.1](https://github.com/on-api/on-api-release-2.3.1 "ON-API repo")
 
 ___
 
