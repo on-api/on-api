@@ -21,34 +21,48 @@ Content-Type: application/json
         "streetNumber": "100",
         "streetLittera": "",
         "postalCode": "10000",
-        "city": "Ankeborg",
+        "city": "Teststad",
         "countryCode": "SE",
         "premisesType": "MDU_APARTMENT",
         "mduApartmentNumber": "1001",
         "mduDistinguisher": "12121212",
         "outlet": "A-11-14",
-        "population": "Hemsöhem",
+        "population": "Testpopulation",
+        "networkAgreement": "NOT_REQUIRED",
         "services": [
             {
                 "service": "BB-100-100",
-                "connection": "2014-03-01"
+                "startDate": "2017-02-10",
+                "endDate": ""
             }, {
                 "service": "BB-100-10",
-                "connection": "2013-10-12"
+                "startDate": "2017-02-10",
+                "endDate": ""
             }, {
                 "service": "BB-10-10",
-                "connection": "2013-10-12"
+                "startDate": "2015-10-12",
+                "endDate": "2019-03-01"
             }, {
                 "service": "IPTV",
-                "connection": "2013-10-12"
+                "startDate": "2015-10-12",
+                "endDate": ""
             }, {
                 "service": "VOIP",
-                "connection": "2013-08-13"
+                "startDate": "2015-10-12",
+                "endDate": ""
             }
         ],
-        "coFiberConverter": "LASER_3001X_MK2",
-        "coCpeSwitch": "",
-        "coCpeRouter": "NETGEAR WNDR4000"
+        "cpe": {
+            "coCpe": "MODEL X",
+            "servicePort": "FREE_SEATING"
+        },
+        "accessStatus": {
+            "startDate": "2015-08-01",
+            "endDate": "",
+            "sellable": "YES",
+            "status": "CONNECTED",
+            "deliveryPoint": "APARTMENT"
+        }
     }
 ]
 ```

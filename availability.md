@@ -22,59 +22,122 @@ Content-Type: application/json
     "streetNumber": "100",
     "streetLittera": "",
     "postalCode": "10000",
-    "city": "Ankeborg",
+    "city": "Teststad",
     "countryCode": "SE",
     "premisesType": "MDU_APARTMENT",
     "mduApartmentNumber": "1001",
     "mduDistinguisher": "12121212",
     "outlet": "A-11-14",
-    "population": "Hemsöhem",
+    "population": "Testpopulation",
+    "networkAgreement": "NOT_REQUIRED",
     "services": [
         {
             "service": "BB-100-100",
-            "connection": "2014-03-01",
-            "available": "2014-01-01",
-            "forcedTakeoverPossible": false
+            "startDate": "2017-02-10",
+            "endDate": "",
+            "available": "NO",
+            "deliveryDate": "",
+            "deliveryDays": "0",
+            "forcedTakeoverPossible": false,
+            "reasons": [
+                {
+                    "Conflicts with other service on this access"
+                }
+            ]
         }, {
             "service": "BB-100-10",
-            "connection": "2013-10-12",
-            "available": "YES",
-            "forcedTakeoverPossible": false
+            "startDate": "2017-02-10",
+            "endDate": "",
+            "available": "NO",
+            "deliveryDate": "",
+            "deliveryDays": "0",
+            "forcedTakeoverPossible": false,
+            "reasons": [
+                {
+                    "Conflicts with other service on this access"
+                }
+            ]
         }, {
             "service": "BB-10-10",
-            "connection": "2013-10-12",
-            "available": "YES",
-            "forcedTakeoverPossible": false
+            "startDate": "2015-10-12",
+            "endDate": "2019-03-01",
+            "available": "NO",
+            "deliveryDate": "",
+            "deliveryDays": "0",
+            "forcedTakeoverPossible": false,
+            "reasons": [
+                {
+                    "Conflicts with other service on this access"
+                }
+            ]
         }, {
             "service": "IPTV",
-            "connection": "2013-10-12",
-            "available": "YES",
-            "forcedTakeoverPossible": false
+            "startDate": "2015-10-12",
+            "endDate": "",
+            "available": "NO",
+            "deliveryDate": "",
+            "deliveryDays": "0",
+            "forcedTakeoverPossible": false,
+            "reasons": [
+                {
+                    "Conflicts with other service on this access"
+                }
+            ]
         }, {
             "service": "VOIP",
-            "connection": "2013-08-13",
-            "available": "NO",
-            "forcedTakeoverPossible": true
+            "startDate": "2015-10-12",
+            "endDate": "",
+            "available": "YES",
+            "deliveryDate": "2018-08-25",
+            "deliveryDays": "3",
+            "forcedTakeoverPossible": false,
+            "reasons": []
         }
     ],
     "active": [
         {
             "service": "BB-100-10",
-            "option82": "5216010765746820302F31020B31302E31302E31302E3130",
+            "coSubscriptionId": "76541",
+            "dhcpOption": 
+                {
+                    "circuitId": "",
+                    "remoteId": "",
+                    "interfaceId": ""
+                },
             "equipment": [
                 { "vendorId" : "CH_BROADBAND" }
             ],
-            "spReference": ""
+            "spReference": {
+                "customer": "124679",
+                "subscription": "3564576"
+            }
         }, {
             "service": "IPTV",
-            "option82": "5216010765746820302F32020B31302E31302E31302E3130",
+            "coSubscriptionId": "83718",
+            "dhcpOption": 
+                {
+                    "circuitId": "",
+                    "remoteId": "",
+                    "interfaceId": ""
+                },
             "equipment": [],
-            "spReference": ""
+            "spReference": {
+                "customer": "124679",
+                "subscription": "3564855"
+            }
         }
     ],
-    "coFiberConverter": "LASER_3001X_MK2",
-    "coCpeSwitch": "",
-    "coCpeRouter": "NETGEAR WNDR4000"
+    "cpe": {
+        "coCpe": "MODEL X",
+        "servicePort": "FREE_SEATING"
+    },
+    "accessStatus": {
+        "startDate": "2015-08-01",
+        "endDate": "",
+        "sellable": "YES",
+        "status": "CONNECTED",
+        "deliveryPoint": "APARTMENT"
+    }
 }
 ```
 
