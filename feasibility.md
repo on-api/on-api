@@ -141,21 +141,22 @@ Content-Type: application/json
                 <dd>Unknown premises</dd>
         </dl>
     </td>
-    <td>Premises type describes the type of building/premises of the access.<br> If premises type is MDU_APARTMENT or MDU_COMMON, either MduDistinguisher or MduApartmentNumber must be provided to be able to distinguish between individual accesses.</td>
+    <td>Premises type describes the type of building/premises of the access.<br><br>
+    If premises type is <code>MDU_APARTMENT</code> or <code>MDU_COMMON</code>, either <code>MduDistinguisher</code> or <code>MduApartmentNumber</code> must be provided to be able to distinguish between individual accesses.</td>    
   </tr>
   <tr>
     <td>mduApartmentNumber</td>
     <td>YES*</td>
     <td>1101</td>
-    <td>Apartment number must be a 4 digits value according to the specification of Lantmäteriet. Used to distinguish between individual accesses in apartment blocks.<br>
-    (*) If premises type is `MDU_APARTMENT` or `MDU_COMMON`, either `MduDistinguisher` or `MduApartmentNumber` must be provided.</td>
+    <td>Apartment number must be a 4 digits value according to the specification of Lantmäteriet. Used to distinguish between individual accesses in apartment blocks.<br><br>
+    (*) If premises type is <code>MDU_APARTMENT</code> or <code>MDU_COMMON</code>, either <code>MduDistinguisher</code> or <code>MduApartmentNumber</code> must be provided.</td>
   </tr>
   <tr>
     <td>mduDistinguisher</td>
     <td>YES*</td>
     <td>28<br>65113<br>1234-1919</td>
-    <td>Alternative identification of the access used to distinguish between individual accesses in apartment blocks. This field does not need to follow the specification of Lantmäteriet.<br>
-    (*) If premises type is `MDU_APARTMENT` or `MDU_COMMON`, either `MduDistinguisher` or `MduApartmentNumber` must be provided.</td>
+    <td>Alternative identification of the access used to distinguish between individual accesses in apartment blocks. This field does not need to follow the specification of Lantmäteriet.<br><br>
+    (*) If premises type is <code>MDU_APARTMENT</code> or <code>MDU_COMMON</code>, either <code>MduDistinguisher</code> or <code>MduApartmentNumber</code> must be provided.</td>
   </tr>
   <tr>
     <td>outlet</td>
@@ -172,7 +173,16 @@ Content-Type: application/json
   <tr>
     <td>networkAgreement</td>
     <td>YES</td>
-    <td>NOT_REQUIRED<br>REQUIRED<br>EXISTS</td>
+    <td>
+        <dl>
+            <dt>NOT_REQUIRED</dt>
+                <dd>Network agreement is not required before activating services.</dd>
+            <dt>REQUIRED</dt>
+                <dd>Network agreement is required before activating services.</dd>
+            <dt>EXISTS</dt>
+                <dd>Network agreement exists.</dd>
+        </dl>
+    </td>
     <td>Indicates if a network agreement is required between the communication operator and the end customer. Used to determine the commercial circumstances of the access.</td>
   </tr>
   <tr>
@@ -248,13 +258,13 @@ Content-Type: application/json
     <td>
         <dl>
             <dt>PLANNED</dt>
-                <dd>This is a planned access. `startDate` may show the planned activation date.</dd>
+                <dd>This is a planned access. <code>startDate</code> may show the planned activation date.</dd>
             <dt>PASSED</dt>
                 <dd>Access is passed.</dd>
             <dt>CONNECTED</dt>
                 <dd>Access is connected.</dd>
             <dt>TO_BE_DISCONNECTED</dt>
-                <dd>Access is about to be disconnected. `endDate` may show the disconnection date.</dd>
+                <dd>Access is about to be disconnected. <code>endDate</code> may show the disconnection date.</dd>
             <dt>DISCONNECTED</dt>
                 <dd>Access is disconnected.</dd>
         </dl>
@@ -264,7 +274,16 @@ Content-Type: application/json
   <tr>
     <td>accessStatus / deliveryPoint</td>
     <td>YES</td>
-    <td>APARTMENT<br>BUILDING<br>NODE</td>
+    <td>
+        <dl>
+            <dt>APARTMENT</dt>
+                <dd>Services are delivered to the apartment.</dd>
+            <dt>BUILDING</dt>
+                <dd>Services are delivered to the building.</dd>
+            <dt>NODE</dt>
+                <dd>Services are delivered to the node.</dd>
+        </dl>
+    </td>
     <td>The type of delivery point for services to this access.</td>
   </tr>
   </tbody>
