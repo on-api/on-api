@@ -84,7 +84,7 @@ Content-Type: application/json
     <td>accessId</td>
     <td>YES</td>
     <td>123456<br>ADA1343-12</td>
-    <td>One, per communication operator, unique ID for an access.<br> May only consist of a-z, A-Z , 0-9, '-' and '.'. [a-zA-Z0-9-.]+. Max length 32 characters.</td>
+    <td>One, per communication operator, unique ID for an access.<br> May only consist of a-z, A-Z , 0-9, '-' and '.'. Max length 32 characters.</td>
   </tr>
   <tr>
     <td>streetName</td>
@@ -225,7 +225,14 @@ Content-Type: application/json
   <tr>
     <td>cpe / servicePort</td>
     <td>NO</td>
-    <td>PORT FORWARDING<br>FREE_SEATING</td>
+    <td>
+        <dl>
+            <dt>PORT_FORWARDING</dt>
+                <dd>Services are delivered port mapped.</dd>
+            <dt>FREE_SEATING</dt>
+                <dd>Services are delivered with free seating.</dd>
+        </dl>
+    </td>
     <td>Indicates if services are delivered port mapped or allows free seating.</td>
   </tr>
   <tr>
@@ -297,7 +304,7 @@ In the first request, no limitation is performed. The service provider requests 
 
 The "Last-Modified" header is Mandatory if HTTP Status 200 OK. HTTP Status 304 Not Modified is returned if nothing has changed since last request.
 
-Se [RFC-2616][rfc2616-sec14]. Exemplen använder ingen autentisering.
+Se [RFC-2616][rfc2616-sec14]. The examples do not use authentication.
 
 ```
 If-Modified-Since = "If-Modified-Since" ":" HTTP-date
@@ -308,6 +315,7 @@ When an access is included in the response, it must always be complete with all 
 ## Limiting mechanism - Example
 
 Example of sequence of requests and responses
+Example of a sequence of requests and responses
 
 Request:
 ```http
@@ -333,7 +341,6 @@ If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
 
 If there are updated accesses the response may look like this:
 
-Response:
 ```http
 HTTP/1.1 200 OK
 Last-Modified: Mon, 03 Sep 2012 09:54:55 GMT
@@ -343,7 +350,6 @@ Content-Type: application/json
 
 If there are no updated accesses the response will look like this:
 
-Response:
 ```http
 HTTP/1.1 304 Not Modified
 ```
