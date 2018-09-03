@@ -1,8 +1,8 @@
 # Feasibility API
 
-Feasibility API används av Tjänsteleverantör för att kunna hitta avlämningspunkter och svara på om en fastighet/lägenhet är inkopplad i ett nät. Tjänsteleverantör ser även vilken teknisk kapacitet varje access har genom de tekniska tjänster som är definierade på accessen.
+Feasibility is used to find accesses and to determine the connection status of houses and apartments. It also shows a list of services that can potentially be ordered on each access and its commercial circumstances.
 
-## Exempel
+## Example
 
 Request:
 ```http
@@ -67,193 +67,216 @@ Content-Type: application/json
 ]
 ```
 
-## Fältbeskrivningar
+## Data fields
 
-* `null` är inte ett giltigt värde för något fält.
-* Fält markerade med _obligatoriskt_ får inte vara tomma strängen (`""`)
+* `null` is not a valid value for any field
+* Mandatory fields cannot be empty string ("")
 
 <table>
-    <tbody>
-        <tr>
-            <td><strong>Fält</strong></td>
-            <td><strong>Förklaring</strong></td>
-        </tr>
-        <tr>
-            <td>
-                <code>accessId</code>
-            </td>
-            <td>
-                Ett, per kommunikationsoperatör, unikt ID på en access.<br>Får enbart bestå av tecknen a-z, A-Z, 0-9, '-' och '.'. <em>text, obligatoriskt, max 32 tecken, [a-zA-Z0-9-.]+</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>streetName</code>
-            </td>
-            <td>
-                Gatunamn.<br> I fallet "Kungsgatan 10G" är StreetName "Kungsgatan". <em>text, obligatoriskt</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>streetNumber</code>
-            </td>
-            <td>
-                Gatunummer.<br> I fallet "Kungsgatan 10G" är StreetNumber "10". I fallet "Lantvägen 550-70" är StreetNumber "550". Enbart siffror. <em>text</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>streetLittera</code>
-            </td>
-            <td>
-                Gatubokstav/Uppgång.<br> I fallet "Kungsgatan 10G" är StreetLittera "G". I fallet "Lantvägen 550-70" är StreetLittera "70". <em>text</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>postalCode</code>
-            </td>
-            <td>
-                Postnummer. Exempelvis "41369". Min 10000, max 99999. Alltid fem siffror. <em>text, obligatoriskt</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>city</code>
-            </td>
-            <td>
-                Postort. Exempelvis "Göteborg". <em>text, obligatoriskt</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>countryCode</code>
-            </td>
-            <td>
-                Landskod. Följer ISO 3166-1 för landskoder. Exempel: "SE" för Sverige. <em>text, ISO 3166-1, obligatoriskt</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>premisesType</code>
-            </td>
-            <td>
-                PremisesType beskriver avlämningspunktens lokal. Vid MDU_APARTMENT och MDU_COMMON måste MduDistinguisher eller MduApartmentNumber vara populerade.<em>obligatoriskt</em>
-<dl>
-<dt>MDU_APARTMENT</dt><dd>Lägenhet i flerbostadshus. Delad fastighetsbeteckning.</dd>
-<dt>MDU_COMMON</dt><dd>Gemensamt utrymme i flerbostadshus. Delad fastighetsbeteckning.</dd>
-<dt>RESIDENTIAL_HOUSE</dt><dd>Bostad som har egen fastighetsbeteckning.</dd>
-<dt>COMMERCIAL</dt><dd>Lokal, men utan tillträde från allmänheten. Till exempel ett kontor.</dd>
-<dt>PUBLIC</dt><dd>Inrättning dit allmänheten har tillträde. Till exempel en restaurang eller ett gym.</dd>
-<dt>UNKNOWN</dt><dd>Okänd.</dd>
-</dl>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>mduApartmentNumber</code>
-            </td>
-            <td>
-								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att TL har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber eller mduDistinguisher kan TL fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
-								<br>
-								Exempel: 1101, 0901, 1201, 1213.<br>
-								<br>
-                [1] En av <code>mduApartmentNumber</code>, <code>mduDistinguisher</code> måste finnas om <code>premisesType</code> är <code>"MDU_APARTMENT"</code>.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>mduDistinguisher</code>
-            </td>
-            <td>
-                Alternativ lokalbeteckning som identifierar lägenheten unikt per adress. Behöver inte följa Lantmäteriets format. <em>text, obligatoriskt<sup>2</sup></em><br>
-								<br>
-								Exempel: 28, 65113, 1234-1919.<br>
-								<br>
-	              [2] En av <code>mduApartmentNumber</code>, <code>mduDistinguisher</code> måste finnas om <code>premisesType</code> är <code>"MDU_APARTMENT"</code>.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>outlet</code>
-            </td>
-            <td>
-                Uttagsnummer som identifierar porten i lägenhet/villa. Typiskt är porten hos slutkund märkt med uttagsnummer. Outlet behöver vara unikt per adress. <em>text</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>population</code>
-            </td>
-            <td>
-                Anger delbestånd i hela beståndet. Hela beståndet hämtas alltid in, men det kan filtreras och göras säljbart i olika etapper. <em>text</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>services</code>
-            </td>
-            <td>
-                Anger accessens tekniska tjänster och feasibility per teknisk tjänst. För beskrivning, se följande två rader i listan över fältbeskrivningar. <br/>
-                Oavsett vilken Service Provider som hämtar feasibility-data skall services innehålla samma information.<br/>
-                <em>obligatorisk</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>services / service</code>
-            </td>
-            <td>
-                Id/namn på tekniskt tjänst som avses. Den tekniska tjänsten kan beställas via Service Activation API. <em>obligatorisk</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>services / connection</code>
-            </td>
-            <td>
-                Anger när accessen kopplas in och den tekniska tjänsten blir aktiverbar första gången. På det angivna datumet, eller om connection är "YES", skall det gå att aktivera tjänster på accessen. <br/>
-                Om tjänsten är aktiverbar men datumet är okänt kan "YES" användas för att indikera det. Datumet får tidigast vara 1970-01-01.<br/>
-                <br/>
-                <em>"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br/>
-                Exempel: YES, NO, 2012-07-01
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>coFiberConverter</code>
-            </td>
-            <td>
-                Typ (tillverkare, modell) av Fiber Konverter Switch som "accessen" är kopplad till. Skall enbart användas för utrustning som KO tillhandahåller. <em>text</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>coCpeSwitch</code>
-            </td>
-            <td>
-                Om CPEn är en Switch, är detta typen (tillverkare, modell) som är inkopplad. Enbart en av CpeSwitch och CpeRouter får finnas. Skall enbart användas för utrustning som KO tillhandahåller. <em>text</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>coCpeRouter</code>
-            </td>
-            <td>
-                Om CPEn är en Router, är detta typen (tillverkare, modell) som är inkopplad. Enbart en av CpeSwitch och CpeRouter får finnas. Skall enbart användas för utrustning som KO tillhandahåller. <em>text</em>
-            </td>
-        </tr>
-    </tbody>
+  <tbody>
+  <tr>
+    <td><strong>Field</stong></td>
+    <td><strong>Mandatory</stong></td>
+    <td><strong>Sample(s)</stong></td>
+    <td><strong>Explanation</stong></td>
+  </tr>
+  <tr>
+    <td>accessId</td>
+    <td>YES</td>
+    <td>123456<br>ADA1343-12</td>
+    <td>One, per communication operator, unique ID for an access.<br> May only consist of a-z, A-Z , 0-9, '-' and '.'. [a-zA-Z0-9-.]+. Max length 32 characters.</td>
+  </tr>
+  <tr>
+    <td>streetName</td>
+    <td>YES</td>
+    <td>Kungsgatan</td>
+    <td>Street name<br> Exclude street number or street littera. In the example of "Kungsgatan 10G", the street name is "Kungsgatan".</td>
+  </tr>
+  <tr>
+    <td>streetNumber</td>
+    <td>NO</td>
+    <td>10</td>
+    <td>Street number<br> May only consist of digits.<br> In the example of "Kungsgatan 10G", the street number is "10". In the example of "Lantvägen 550-70", the street number is "550".</td>
+  </tr>
+  <tr>
+    <td>streetLittera</td>
+    <td>NO</td>
+    <td>G</td>
+    <td>Street littera/Entrance<br> In the example of "Kungsgatan 10G", the street littera is "G". In the example of "Lantvägen 550-70", the street littera is "70".</td>
+  </tr>
+  <tr>
+    <td>postalCode</td>
+    <td>YES</td>
+    <td>41369</td>
+    <td>Postal code<br> Must be a 5 digits value between 10000 and 99999.</td>
+  </tr>
+  <tr>
+    <td>city</td>
+    <td>YES</td>
+    <td>Göteborg</td>
+    <td>Postal city</td>
+  </tr>
+  <tr>
+    <td>countryCode</td>
+    <td>YES</td>
+    <td>SE</td>
+    <td>Country code according to the ISO 3166-1 alpha-2 standard</td>
+  </tr>
+  <tr>
+    <td>premisesType</td>
+    <td>YES</td>
+    <td>
+        <dl>
+            <dt>MDU_APARTMENT</dt>
+                <dd>Apartment in apartment building (Multiple Dwelling Units). Same cadastral reference.</dd>
+            <dt>MDU_COMMON</dt>
+                <dd>Common space i apartment building. Same cadastral reference.</dd>
+            <dt>RESIDENTIAL_HOUSE</dt>
+                <dd>Free-standing residential building with its own cadastral reference.</dd>
+            <dt>COMMERCIAL</dt>
+                <dd>Commercial premises with no public access, e.g. an office.</dd>
+            <dt>PUBLIC</dt>
+                <dd>Public premises with public access, e.g. a restaurant or health center.</dd>
+            <dt>UNKNOWN</dt>
+                <dd>Unknown premises</dd>
+        </dl>
+    </td>
+    <td>Premises type describes the type of building/premises of the access.<br> If premises type is MDU_APARTMENT or MDU_COMMON, either MduDistinguisher or MduApartmentNumber must be provided to be able to distinguish between individual accesses.</td>
+  </tr>
+  <tr>
+    <td>mduApartmentNumber</td>
+    <td>YES*</td>
+    <td>1101</td>
+    <td>Apartment number must be a 4 digits value according to the specification of Lantmäteriet. Used to distinguish between individual accesses in apartment blocks.<br>
+    (*) If premises type is `MDU_APARTMENT` or `MDU_COMMON`, either `MduDistinguisher` or `MduApartmentNumber` must be provided.</td>
+  </tr>
+  <tr>
+    <td>mduDistinguisher</td>
+    <td>YES*</td>
+    <td>28<br>65113<br>1234-1919</td>
+    <td>Alternative identification of the access used to distinguish between individual accesses in apartment blocks. This field does not need to follow the specification of Lantmäteriet.<br>
+    (*) If premises type is `MDU_APARTMENT` or `MDU_COMMON`, either `MduDistinguisher` or `MduApartmentNumber` must be provided.</td>
+  </tr>
+  <tr>
+    <td>outlet</td>
+    <td>NO</td>
+    <td>A-11-14</td>
+    <td>Outlet number identifies the port in the apartment or house. The port is typically labeled with this number. If specified, it should be unique per address.</td>
+  </tr>
+  <tr>
+    <td>population</td>
+    <td>NO</td>
+    <td>Hemsöhem</td>
+    <td>Describes a subset of all accesses. Used for grouping accesses together for commercial purposes.</td>
+  </tr>
+  <tr>
+    <td>networkAgreement</td>
+    <td>YES</td>
+    <td>NOT_REQUIRED<br>REQUIRED<br>EXISTS</td>
+    <td>Indicates if a network agreement is required between the communication operator and the end customer. Used to determine the commercial circumstances of the access.</td>
+  </tr>
+  <tr>
+    <td>services</td>
+    <td>YES</td>
+    <td></td>
+    <td>Lists services that could potentially be delivered on the access and may also show the first and last date a service is available for ordering.<br>
+    To determine if a service can actually be activated on a specific access and date, the service provider performs an availability on the access.</td>
+  </tr>
+  <tr>
+    <td>services / service</td>
+    <td>YES</td>
+    <td>BB-100-100<br>IPTV<br>VOIP</td>
+    <td>Id or name of the service. Used to identify the service when ordering.</td>
+  </tr>
+  <tr>
+    <td>services / startDate</td>
+    <td>NO</td>
+    <td>2017-02-10</td>
+    <td>Indicates the date when a service can be activated for the first time when introducing new services. Dates must be specified according to ISO-8601 (YYYY-MM-DD). Empty value means that activation is possible at any time.</td>
+  </tr>
+  <tr>
+    <td>services / endDate</td>
+    <td>NO</td>
+    <td>2019-01-01</td>
+    <td>Indicates the date when a service can be activated for the last time when phasing out services. Dates must be specified according to ISO-8601 (YYYY-MM-DD). Empty value means that no end date is set for this service.</td>
+  </tr>
+  <tr>
+    <td>cpe</td>
+    <td>YES</td>
+    <td></td>
+    <td>Shows information about the CPE installed on an access. Only be used if CPE is provided by the communication operator.</td>
+  </tr>
+  <tr>
+    <td>cpe / coCpe</td>
+    <td>NO</td>
+    <td>NETGEAR WNDR4000</td>
+    <td>Type of CPE installed on access (vendor, model).</td>
+  </tr>
+  <tr>
+    <td>cpe / servicePort</td>
+    <td>NO</td>
+    <td>PORT FORWARDING<br>FREE_SEATING</td>
+    <td>Indicates if services are delivered port mapped or allows free seating.</td>
+  </tr>
+  <tr>
+    <td>accessStatus</td>
+    <td>YES</td>
+    <td></td>
+    <td>Shows information about the overall status of an access, e.g. if services can be sold and when the access is available for the first time.</td>
+  </tr>
+  <tr>
+    <td>accessStatus / startDate</td>
+    <td>NO</td>
+    <td>2017-01-01<br>2017-01-01-2017-03-01</td>
+    <td>Indicates the date, or between two dates, when an access will be activated for ordering for the first time when adding new accesses. Dates must be specified according to ISO-8601 (YYYY-MM-DD). Empty value means that access is active.</td>
+  </tr>
+  <tr>
+    <td>accessStatus / endDate</td>
+    <td>NO</td>
+    <td>2017-01-01<br>2017-01-01-2017-03-01</td>
+    <td>Indicates the date, or between two dates, when an access will be unavailable for ordering when removing accesses. Dates must be specified according to ISO-8601 (YYYY-MM-DD). Empty value means that no end date is set for this access.</td>
+  </tr>
+  <tr>
+    <td>accessStatus / sellable</td>
+    <td>YES</td>
+    <td>YES<br>NO</td>
+    <td>Indicates if services are allowed to be sold on the access.</td>
+  </tr>
+  <tr>
+    <td>accessStatus / status</td>
+    <td>YES</td>
+    <td>
+        <dl>
+            <dt>PLANNED</dt>
+                <dd>This is a planned access. `startDate` may show the planned activation date.</dd>
+            <dt>PASSED</dt>
+                <dd>Access is passed.</dd>
+            <dt>CONNECTED</dt>
+                <dd>Access is connected.</dd>
+            <dt>TO_BE_DISCONNECTED</dt>
+                <dd>Access is about to be disconnected. `endDate` may show the disconnection date.</dd>
+            <dt>DISCONNECTED</dt>
+                <dd>Access is disconnected.</dd>
+        </dl>
+    </td>
+    <td>The connection status of the access.</td>
+  </tr>
+  <tr>
+    <td>accessStatus / deliveryPoint</td>
+    <td>YES</td>
+    <td>APARTMENT<br>BUILDING<br>NODE</td>
+    <td>The type of delivery point for services to this access.</td>
+  </tr>
+  </tbody>
 </table>
 
-## Begränsningsmekanism
+## Limiting mechanism
 
-If-Modified-Since används för att be om inkrementella uppdateringar av accesser. På det viset kan anropet ske ofta men fortfarande vara billigt.
+If-Modified-Since is used to request incremental updates of accesses. Used to receive only changed accesses since last request, hence saving bandwidth and improving performance.
 
-Vid första anropet sker ingen begränsning. Då ber TL om fullständiga beståndet. Vid påföljande anrop används If-Modified-Since. Värdet för headern är föregående svars värde på Last-Modified.
+In the first request, no limitation is performed. The service provider requests all accesses. In subsequent requests the If-Modified-Since header is applied, and should be the Last-Modified value from last request.
 
-Av den anledningen är "Last-Modified" obligatoriskt vid HTTP Status 200.
+The "Last-Modified" header is Mandatory if HTTP Status 200 OK. HTTP Status 304 Not Modified is returned if nothing has changed since last request.
 
 Se [RFC-2616][rfc2616-sec14]. Exemplen använder ingen autentisering.
 
@@ -261,11 +284,11 @@ Se [RFC-2616][rfc2616-sec14]. Exemplen använder ingen autentisering.
 If-Modified-Since = "If-Modified-Since" ":" HTTP-date
 ```
 
-När en access förekommer i ett svar skall den alltid skickas i sin helhet: med accessens samtliga fält och tjänster.
+When an access is included in the response, it must always be complete with all fields provided. Partial access data are not allowed.
 
-## Begränsningsmekanism - Exempel
+## Limiting mechanism - Example
 
-Exempel på anropssekvens:
+Example of sequence of requests and responses
 
 Request:
 ```http
@@ -280,7 +303,7 @@ Content-Type: application/json
 ...
 ```
 
-Vid påföljande anrop skickas "If-Modified-Since"-header för att bara be om uppdaterade poster.
+In the subsequent request "If-Modified-Since"-header is applied to limit the response.
 
 Request:
 ```http
@@ -289,7 +312,7 @@ If-Modified-Since: Fri, 31 Aug 2012 12:03:28 GMT
 ...
 ```
 
-Om det finns uppdaterade poster kan svaret se ut såhär:
+If there are updated accesses the response may look like this:
 
 Response:
 ```http
@@ -299,7 +322,7 @@ Content-Type: application/json
 ...
 ```
 
-Om det inte finns uppdaterade poster ser svaret istället ut såhär:
+If there are no updated accesses the response will look like this:
 
 Response:
 ```http
