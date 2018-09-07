@@ -190,7 +190,7 @@ Content-Type: application/json
     <td>YES</td>
     <td></td>
     <td>Lists services that could potentially be delivered on the access and may also show the first and last date a service is available for ordering.<br>
-    To determine if a service can actually be activated on a specific access and date, the service provider performs an availability on the access.</td>
+    To determine if a service can actually be activated on the specific access and date, the service provider performs an availability on the access.</td>
   </tr>
   <tr>
     <td>services / service</td>
@@ -314,7 +314,6 @@ When an access is included in the response, it must always be complete with all 
 
 ## Limiting mechanism - Example
 
-Example of sequence of requests and responses
 Example of a sequence of requests and responses
 
 Request:

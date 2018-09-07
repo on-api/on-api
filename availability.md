@@ -1,10 +1,8 @@
 # Availability API
 
-Availability ger samma information som Feasibility-API, men enbart för en access.
-Dessutom svarar det med information som kan vara kostsammare att producera och av naturen behöver vara aktuell.
-Typiskt används frågan för att kunna svara kund om vilka tekniska tjänster som är lediga, med hänsyn taget till andra tjänsteleverantörer.
+Availability is used to query a single access. It returns the same information as the Feasibility, but also adds information about active services and evaluates if services can actually be delivered at current time. It is typically used prior to ordering to ensure a service can be activated.
 
-### Exempel
+### Example
 
 Request:
 ```http
@@ -141,121 +139,157 @@ Content-Type: application/json
 }
 ```
 
-## Fältbeskrivningar
+## Data fields
 
-Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibility.md">Feasibility</a>.
+This list shows additional fields and differences in the description of a field in the Availability, which are not already described in the <a href="feasibility.md">Feasibility</a>.
 
-* `null` är inte ett giltigt värde för något fält.
-* Fält markerade med _obligatoriskt_ får inte vara tomma stängen (`""`)
+* `null` is not a valid value for any field
+* Mandatory fields cannot be empty string ("")
 
 <table>
     <tbody>
         <tr>
-            <td><strong>Fält</strong></td>
-            <td><strong>Förklaring</strong></td>
+            <td><strong>Field</stong></td>
+            <td><strong>Mandatory</stong></td>
+            <td><strong>Sample(s)</stong></td>
+            <td><strong>Explanation</stong></td>
         </tr>
         <tr>
-            <td>
-                <code>services</code>
-            </td>
-            <td>
-                Anger accessens tjänster och feasibility per tjänst. Se fält per tjänst nedan. <br/>
-                Oavsett vilken Service Provider som hämtar feasibility-data skall services innehålla samma information.<br/>
-                <em>obligatorisk</em>
-            </td>
+            <td>services</td>
+            <td>YES</td>
+            <td></td>
+            <td>Lists services that could potentially be delivered on the access.<br>
+            In contrast to the Feasibility, this list includes if a service can actually be activated on the specific access and date.</td>
         </tr>
         <tr>
+            <td>services / available</td>
+            <td>YES</td>
+            <td>YES<br>NO</td>
             <td>
-                <code>services / service</code>
-            </td>
-            <td>
-                Id/namn på teknisk tjänst som avses. Den tekniska tjänsten kan beställas via Service Activation API. <em>obligatorisk</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>services / connection</code>
-            </td>
-            <td>
-                Anger när accessen kopplas in och den tekniska tjänsten blir aktiverbar första gången. På det angivna datumet, eller om connection är "YES", skall det gå att aktivera tjänster på accessen. <br/>
-                Om tjänsten är aktiverbar men datumet är okänt kan "YES" användas för att indikera det. Datumet får tidigast vara 1970-01-01.<br/>
-                <br/>
-                <em>"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br/>
-                Exempel: YES, NO, 2012-07-01
+                Indicate if the service is available for activation on the specified date. If NO, <code>deliveryDate</code> may indicate the earliest possible date when the delivery of the service can be fully completed.<br>
+                If the service can not be delivered on the specified date but on a future date, <code>available</code> should be NO and <code>deliveryDate</code> should show the future date.
             </td>
         </tr>
         <tr>
+            <td>services / deliveryDate</td>
+            <td>NO</td>
+            <td>2018-08-25</td>
             <td>
-                <code>services / available</code>
-            </td>
-            <td>
-                Anger om/när teknisk tjänst är/blir tillgänglig för beställning och leverans.<br/>
-                Om tjänsten inte är tillgänglig för beställning av anropande TL skall det indikeras med "NO" eller datum då tjänsten blir tillgänglig.
-                <br/> Datumet får tidigast vara 1970-01-01.<br/>
-                <br/>
-                Innan tjänsten är tillgänglig första gången sammanfaller Available och Connection.<br/>
-                <br/>
-                <em>"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br/>
-                Exempel: YES, NO, 2012-07-01<br>
-                Exempel: Anropande TL har BB 10/10 aktivt. BB 10/10, BB 100/100 kan beställas om BB 10/10 först avaktiveras. KO skall svara med available YES.<br>
-                Exempel: Annan TL har BB 10/10 aktivt. BB 10/10, 100/100 skall svara med NO eller datum.
+                The first possible date when the delivery of the service can be fully completed.<br>
+                If the service can not be delivered on the specified date but on a future date, <code>available</code> should be NO and <code>deliveryDate</code> should show the future date.
             </td>
         </tr>
         <tr>
+            <td>services / deliveryDays</td>
+            <td>NO</td>
+            <td>3</td>
             <td>
-                <code>services / forcedTakeoverPossible</code>
-            </td>
-            <td>
-                Anger om flaggan "force" i en beställning kommer att ha effekt.<br>
-                Alltså, är det möjligt att använda "force" (Forced Takeover) för att KO skall börja leverera anropande TLs tjänst istället för annan TLs tjänst. <br>
-                Om Forced Takeover inte stöds skall <b>false</b> returneras.<br>
-                <em>true eller false, obligatoriskt</em>
+                Number of days required to fully deliver this service. This is typically used if a service can not be instantly activated because other delivery activaties are needed.<br>
+                In the example of 3 deliveryDays, this effectively means that the earliest possible <code>deliveryDate</code> is three days in future assumed that order is received today.
             </td>
         </tr>
         <tr>
+            <td>services / forcedTakeoverPossible</td>
+            <td>YES</td>
+            <td>YES<br>NO</td>
             <td>
-                <code>active</code>
-            </td>
-            <td>
-                Lista över de tjänster som är aktiva på accessen för inloggad TL. <em>obligatorisk</em>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>active / service</code>
-            </td>
-            <td>
-                Service-namn på den aktiva tjänsten. Skall finnas i "services"-listan. <em>text, obligatoriskt</em><br>
-                <br>
-                Exempel: "BB-100-10"
+                Indicates if "force takeover" is supported on this service. If YES, the "forcedTakeover" flag can be set when ordering to inform the CO that a service from other Service Provider should be disconnected and replaced.<br>
+                If "forced takeover" is not supported this flag should be NO.
             </td>
         </tr>
         <tr>
+            <td>services / reasons</td>
+            <td>YES</td>
+            <td></td>
             <td>
-                <code>active / option82</code>
+                List of reasons for why a service is not available.
             </td>
+        </tr>
+        <tr>
+            <td>active</td>
+            <td>YES</td>
+            <td></td>
             <td>
-                Fältet används av tjänsteleverantör för att korrelera en DHCP förfrågan till en Access. Värdet utgör alltså en nyckel som DHCP, Radius och TR69-servrar använder för att slå upp access-specifik information. Option82 måste vara unikt inom en kommunikationsoperatörs bestånd. Se <em>text, obligatoriskt</em><br>
-                <a href="option82.md">Option82 format</a>
-                <br>
-                Exempel: "5216010765746820302F31020B31302E31302E31302E3130"<br/>
+                List of services that are already activated on the access for the current Service Provider.
             </td>
+        </tr>
+        <tr>
+            <td>active / service</td>
+            <td>YES</td>
+            <td>BB-100-100<br>IPTV<br>VOIP</td>            
+            <td>Id or name of the service. Used to identify the service when ordering.</td>
+        </tr>
+        <tr>
+            <td>active / coSubscriptionId</td>
+            <td>YES</td>
+            <td>83718<br>S-83718</td>
+            <td>
+                Unique ID in the CO-system for the service/subscription.<br> May only consist of a-z, A-Z , 0-9, '-' and '.'. Max length 32 characters.<br>
+                This ID is required when deactivating a service when there are multiple subscriptions of this service.
+            </td>
+        </tr>
+        <tr>
+            <td>dhcpOption</td>
+            <td>YES</td>
+            <td></td>
+            <td>
+                Provides DHCP option information, which may be required by the Service Provider to correlate a DHCP request with the access and service.<br>
+                Typically used by DHCP, Radius or TR69-servers to find access specific information.
+            </td>
+        </tr>
+        <tr>
+            <td>dhcpOption / circuitId</td>
+            <td>NO</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>dhcpOption / remoteId</td>
+            <td>NO</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>dhcpOption / interfaceId</td>
+            <td>NO</td>
+            <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>
                 <code>active / equipment</code>
             </td>
+            <td>YES</td>
+            <td></td>
             <td>
-                Lista av utrustning som tjänsteleverantör angett för tjänsten.<br>
-                Se <a href="service_activation.md">Service Activation</a> för mer information.
+                List of devices that the Service Provider has provided for the service<br>
+                See <a href="service_activation.md">Service Activation</a> for more information.
             </td>
         </tr>
         <tr>
+            <td>spReference</td>
+            <td>NO</td>
+            <td></td>            
             <td>
-                <code>spReference</code>
+                Provides references that identifies the unique end-customer or service in the Service Provider's system.<br>
+                This information can be used by the CO to lookup information about the customer or service on demand.
+                See <a href="service_activation.md">Service Activation</a> for more information.
             </td>
+        </tr>
+        <tr>
+            <td>spReference / customer</td>
+            <td>NO</td>
+            <td>124679<br>C-124679</td>            
             <td>
-                Se <a href="service_activation.md">Service Activation</a> för fullständig förklaring och specifikation.
+                Unique ID in the SP-system for the end-customer behind the service.<br> May only consist of a-z, A-Z , 0-9, '-' and '.'. Max length 32 characters.<br>
+            </td>
+        </tr>
+        <tr>
+            <td>spReference / subscription</td>
+            <td>NO</td>
+            <td>3564576<br>S-3564576</td>            
+            <td>
+                Unique ID in the SP-system for the service/subscription.<br> May only consist of a-z, A-Z , 0-9, '-' and '.'. Max length 32 characters.<br>
             </td>
         </tr>
     </tbody>
