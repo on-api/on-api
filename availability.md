@@ -256,14 +256,12 @@ This list shows additional fields and differences in the description of a field 
             <td></td>
         </tr>
         <tr>
-            <td>
-                <code>active / equipment</code>
-            </td>
+            <td>active / equipment</td>
             <td>YES</td>
             <td></td>
             <td>
                 List of devices that the Service Provider has provided for the service<br>
-                See <a href="service_activation.md">Service Activation</a> for more information.
+                See <a href="order.md">Service Activation</a> for more information.
             </td>
         </tr>
         <tr>
@@ -273,7 +271,7 @@ This list shows additional fields and differences in the description of a field 
             <td>
                 Provides references that identifies the unique end-customer or service in the Service Provider's system.<br>
                 This information can be used by the CO to lookup information about the customer or service on demand.
-                See <a href="service_activation.md">Service Activation</a> for more information.
+                See <a href="order.md">Service Activation</a> for more information.
             </td>
         </tr>
         <tr>
