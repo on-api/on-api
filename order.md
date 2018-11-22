@@ -1,54 +1,44 @@
 # Order API
 
-## Orderläggning, Exempel: Aktivering
+## Ordering, Exampel: Deactivation and activation of service
 
 Request:
 ```http
 POST /api/2.3/orders/ HTTP/1.1
 Content-Type: application/json
 
-{
-    "accessId": "STTA0001",
-    "service": "BB-100-10",
-    "operation": "ACTIVATE",
-    "forcedTakeover": false,
-    "equipment": [
-        { "vendorId": "CH_BROADBAND" }
-    ],
-    "spReference": ""
-}
-```
-
-Response:
-```http
-HTTP/1.1 201 CREATED
-Last-Modified: Fri, 31 Aug 2012 12:03:28 GMT
-Location: /api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061
-Content-Type: application/json
-
-{
-    "path": "/api/2.3/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
-    "accessId": "STTA0001",
-    "service": "BB-100-10",
-    "operation": "ACTIVATE",
-    "state": "RECEIVED",
-    "message": ""
-}
-```
-
-## Orderläggning, Exempel: Avaktivering
-
-Request:
-```http
-POST /api/2.3/orders/ HTTP/1.1
-Content-Type: application/json
 
 {
     "accessId": "STTA0001",
-    "service": "BB-100-10",
-    "operation": "DEACTIVATE"
+    "spReference": {
+        "customerID": "sss",
+        "orderID": "dddd",
+    },
+    "order":[
+        {
+            "service": {
+                "name":"BB-100-10",
+                "spSubscriptionID": ”abc123",
+                "operation": "DEACTIVATE"
+            }
+        },
+        {
+            "service": {
+                "name":"BB-500-100",
+                "campaign": "sss",
+                "SLA": "BAS/SN0/SN1/SN2",
+                "spSubscriptionID": " abc123 ",
+                "operation": "ACTIVATE"
+            },
+            "equipment": [{ "vendorId": "CH_BROADBAND" } ],
+        }
+   ],
+   "forcedTakeover": false,
+   "requestedDate": "2014-10-10"
 }
 ```
+
+
 
 Response:
 ```http
