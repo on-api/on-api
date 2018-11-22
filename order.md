@@ -18,7 +18,7 @@ Content-Type: application/json
         {
             "service": {
                 "name":"BB-100-10",
-                "spSubscriptionID": ”abc123",
+                "spSubscriptionID": "abc123",
                 "operation": "DEACTIVATE"
             }
         },
