@@ -11,7 +11,7 @@ POST <url>/offer HTTP/1.1
   spOfferReference: 10,
   products: ['iptv-ext-vod', 'Transmission 100/100'],
   population: [{
-     id: "Stena Fastigheter",
+     id: "Fastighets AB",
      startPrice: 100',
      monthlyFee: 100'
   }],
