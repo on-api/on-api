@@ -5,7 +5,7 @@
 
 <h3>Description</h3>
 
-CO = Comminicatoin Operator<br>
+CO = Communication Operator<br>
 SP = Service Provider<br>
 NO = Network Owner<br>
 
@@ -25,7 +25,7 @@ NO = Network Owner<br>
             <td>Unique identifyer for a Order, owned by CO</td>
         </tr>
         <tr>
-            <td>subscriptoinId</td>            
+            <td>subscriptionId</td>            
             <td>string 1-36</td>            
             <td>Unique identifyer for a Subscription, owned by CO</td>
         </tr>
@@ -99,7 +99,7 @@ StatusMessage<br>
             <td>Unique identifyer for a Order, owned by CO</td>
         </tr>
         <tr>
-            <td>subscriptoinId</td>      
+            <td>subscriptionId</td>      
             <td>string 1-36</td>     
             <td>Unique identifyer for a Subscription, owned by CO</td>
         </tr>
@@ -165,7 +165,7 @@ Content-Type: application/json
             }
         ],
         "orderId": "O10000004234345"
-        "subscriptoinId": "S100943053344"
+        "subscriptionId": "S100943053344"
         "accessId": "A100003453455"
         "dhcpOption"  
         {
@@ -189,7 +189,7 @@ Content-Type: application/json
             }
         ],
         "orderId": "O10000004234345"
-        "subscriptoinId": "S100943053344"
+        "subscriptionId": "S100943053344"
         "accessId": "A100003453455"
         "dhcpOption"  
         {
@@ -214,7 +214,7 @@ Content-Type: application/json
             }
         ],
         "orderId": "O10000004234345"
-        "subscriptoinId": "S100943053344"
+        "subscriptionId": "S100943053344"
         "accessId": "A100003453455"
         "macAddress": [ 
                 "fe:00:ae:35:44:ac",
@@ -237,7 +237,7 @@ Content-Type: application/json
         "statusMessageID": "100002342455554",
         "messageDate": "2018-06-19T23:01:20.105",
         "messageCode": "109",
-        "subscriptoinId": "S100943053344"
+        "subscriptionId": "S100943053344"
         "accessId": "A100003453455"
     }
 ]
