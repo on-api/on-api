@@ -57,7 +57,7 @@ Content-Type: application/json
 }
 ```
 
-## Orderläggning - Fältbeskrivningar
+## Orderläggning - Fältbeskrivningar (Från PI-API 2.3)
 
 <table>
     <tbody>
