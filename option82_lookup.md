@@ -8,7 +8,7 @@ The DHCPv4 option82 from the DHCP log should be encoded in hex as is, without an
 
 ## Specification
 Request:
-<pre>GET /2.4/option82/<b>&lt;hex-encoded option82&gt;</b>/1.1</pre>
+<pre>GET /2.4/option82/<b>&lt;hex-encoded option82&gt;</b></pre>
 
 Response:
 <pre>
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 Request:
 ```http
-GET /api/2.3.1/option82/5216010765746820302F31020B31302E31302E31302E3130 HTTP/1.1
+GET /api/2.3.1/option82/5216010765746820302F31020B31302E31302E31302E3130
 ```
 
 Response:
