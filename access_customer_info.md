@@ -132,11 +132,13 @@ For data format, see [dataformats](dataformats.md)
 
 Request
 <table>
-    <tbody>
+    <thead>
         <tr>
-            <td><strong>Field</strong></td>
-            <td><strong>Description</strong></td>
+            <th>Field</th>
+            <th>Description</th>
         </tr>
+    </thead>
+    <tbody>
         <tr>
             <td>
                 <code>access-id</code>
@@ -190,11 +192,13 @@ Request
 
 Resonse:
 <table>
-    <tbody>
+    <thead>
         <tr>
-            <td><strong>Field</strong></td>
-            <td><strong>Description</strong></td>
+            <th>Field</th>
+            <th>Description</th>
         </tr>
+    </thead>
+    <tbody>
         <tr>
             <td>
                 <code>service</code>
