@@ -115,7 +115,7 @@ Content-Type: application/json
             "phone": "",
             "mobilePhone": ""
         },
-        "spReference: "1337",
+        "spReference": "1337",
         "accessId": "STTA0001" 
     }
 }
