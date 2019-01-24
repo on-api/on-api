@@ -29,7 +29,7 @@ All use of the on-api is expecting formatting to be according to these rules.
   </tr>
   <tr>
     <td>option82</td>
-    <td>5216010765746820302F31020B31302E31302E31302E3130</td>
+    <td>520A01036162630203313233</td>
     <td>
     <p>DHCPv4 Option82 should be hex encoded.</p>
     <p>The complete option82 TLV (typ, length, value) should be encoded.</p> 
