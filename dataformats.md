@@ -4,12 +4,14 @@ All use of the on-api is expecting formatting to be according to these rules.
 
 ## Data fields
 <table>
-  <tbody>
+  <thead>
   <tr>
-    <td><strong>Field</stong></td>
-    <td><strong>Sample(s)</stong></td>
-    <td><strong>Explanation</stong></td>
+    <th>Field</th>
+    <th>Sample(s)</stong></th>
+    <th>Explanation</th>
   </tr>
+  </thead>
+  <tbody>
   <tr>
     <td>accessId</td>
     <td>123456<br>ADA1343-12</td>
