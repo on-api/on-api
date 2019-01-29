@@ -47,6 +47,33 @@ All use of the on-api is expecting formatting to be according to these rules.
     <p>Max length 32 characters</p></td>
     </td>
   </tr>
+  <tr>
+    <td>coID</td>
+    <td>testNet<br>exampleNet</td>
+    <td>
+    <p>Identification of the communication operator.</p>
+    <p>May only concist of the a-z, A-Z , 0-9, '-' and '.'. [a-zA-Z0-9-.]+.</p>
+    <p>Max length 32 characters</p></td>
+    </td>
+  </tr>
+  <tr>
+    <td>dateTime</td>
+    <td>2017-08-15T06:58:26.628Z<br>2019-01-28T14:21:43.236Z</td>
+    <td>
+    <p>Time and date.</p>
+    <p>Formated accordingly to ISO-8601. UTC Time zone should be used (time zone: Z).</p>
+    <p>Max length 32 characters</p></td>
+    </td>
+  </tr>
+  <tr>
+    <td>mac-address</td>
+    <td>01:02:03:04:05:06<br>AA:BB:CC:DD:EE</td>
+    <td>
+    <p>MAC address.</p>
+    <p>Formatted as 12 hexadecimal digits with a colon (":") as a separator every third character.</p>
+    <p>Digits A to F should use capital letters</p></td>
+    </td>
+  </tr>
 
   </tbody>
 </table>
