@@ -61,8 +61,7 @@ All use of the on-api is expecting formatting to be according to these rules.
     <td>2017-08-15T06:58:26.628Z<br>2019-01-28T14:21:43.236Z</td>
     <td>
     <p>Time and date.</p>
-    <p>Formated accordingly to ISO-8601. UTC Time zone should be used (time zone: Z).</p>
-    <p>Max length 32 characters</p></td>
+    <p>Formated accordingly to ISO-8601.<br> UTC Time zone should be used (time zone: Z).</p>
     </td>
   </tr>
   <tr>
