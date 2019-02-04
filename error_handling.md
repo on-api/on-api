@@ -2,7 +2,7 @@
 
 All error handling should be using error codes from HTTP, if possible with the free text field "cause" stating what went wrong.
 
-e.g.
+Example:
 ```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
@@ -10,7 +10,7 @@ Content-Type: application/json
 { "cause": "Unknown service: 'INTERRNET'" }
 ```
 
-## HTTP codes used (for full list, see RFC7231
+## HTTP codes used (for full list, see RFC7231)
 
 ### 400 Bad request
 Invalid data posted
