@@ -1,6 +1,7 @@
-# Querying the service provider for customer information
+# Querying the service provider for service information
 
-This API call is used to fetch the customer information and ordered services _from_ a service provider.
+This API call is used to fetch the customer information and ordered services _from_ a service provider. The response lists
+all ordered services and the related customer information given a specific spReference.
 
 *NB! This API is used in reverse of the other API calls, the SP is the server and the CO is the client.
 
