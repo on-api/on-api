@@ -9,7 +9,7 @@ all ordered services and the related customer information given a specific spRef
 
 Request:
 ```http
-GET /api/2.3.1/services/?spReference=WloKMvmArcCFiV679uhWpAAtNgyvHxma HTTP/1.1
+GET /api/2.4/services/?spReference=WloKMvmArcCFiV679uhWpAAtNgyvHxma HTTP/1.1
 ```
 
 Response:
@@ -17,8 +17,27 @@ Response:
 HTTP/1.1 200 OK
 Content-Type: application/x-ldjson
 
-{ "service": "BB-1000-100", "customer": { "name": "John Doe", "email": "john@johndoe.com", "phone": "", "mobilePhone": "" },  "accessId": "STTA0001", "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" }
-{ "service": "IPTV", "customer": { "name": "John Doe", "email": "john@johndoe.com", "phone": "", "mobilePhone": "" },  "accessId": "STTA0001", "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" }
+{ 
+  "service": "BB-1000-100", 
+  "customer": {
+    "name": "John Doe", 
+    "email": "john@johndoe.com", 
+    "phone": "", "mobilePhone": "" 
+  },  
+  "accessId": "STTA0001", 
+  "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" 
+}
+{ 
+  "service": "IPTV", 
+  "customer": { 
+    "name": "John Doe", 
+    "email": "john@johndoe.com", 
+    "phone": "", 
+    "mobilePhone": "" 
+  },  
+  "accessId": "STTA0001", 
+  "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma"
+}
 
 ```
 
