@@ -41,5 +41,98 @@ Content-Type: application/x-ldjson
 
 ```
 
+## Fields
+
+For data format, see [dataformats](dataformats.md)
+
+Request
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>spReference</code>
+            </td>
+            <td>
+                <p>The spReference value for the service that the end user is using.</p>
+                <p>See <a href=dataformats.md>dataformats</a> for specification</p>
+            </td>
+        </tr>
+    </tbody>
+</table
+
+Resonse:
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>service</code>
+            </td>
+            <td>
+                <p>The service that should be active on the access.</p>
+                <p><em>Mandatory field</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>customer</code>
+            </td>
+            <td>
+                <p>Object representing contact information to the end user or someone appointed by the end-user</p>
+                <p><em>Mandatory field</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>customer.phone</code>
+            </td>
+            <td>
+                <p>See <a href=dataformats.md>dataformats</a> for specification</p>
+                <p><em>Mandatory field</em>. However, the value might be empty</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>customer.mobilePhone</code>
+            </td>
+            <td>
+                <p>See <a href=dataformats.md>dataformats</a> for specification</p>
+                <p><em>Mandatory field</em>. However, the value might be empty</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>spReference</code>
+            </td>
+            <td>
+                <p>The spReference value for the service that the end user is using.</p>
+                <p>See <a href=dataformats.md>dataformats</a> for specification</p>
+                <p><em>Mandatory field</em>.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>accessId</code>
+            </td>
+            <td>
+                <p>The access-id of the access. </p>
+                <p>See <a href=dataformats.md>dataformats</a> for specification</p>
+                <p><em>Mandatory field</em>. </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 
 
