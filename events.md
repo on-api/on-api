@@ -111,6 +111,7 @@ Values:
  * accesses
  * order
  * services
+ * ticket
 
 ### objectId
 The ID of the object that triggered the event
