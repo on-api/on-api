@@ -220,17 +220,17 @@ Street name for the address where the access resides.
 
 ### streetNumber
 
-May only consist of digits.
 In the example of "Kungsgatan 10G", the street number is "10". In the example of "Lantvägen 550-70", the street number 
-is "550".
+is "550-7".
 
- * Data format: number
  * Optional
+ * Data format: json string
+ * Numeric or meter's address
+ * Matching regular expression ^(([0-9]+)|([0-9]{1,4}-[0-9]{1,4}))$
 
 ### streetLittera
 
-Street littera or entrance. In the example of "Kungsgatan 10G", the street littera is "G". In the example of 
-"Lantvägen 550-70", the street littera is "70".
+Street littera or entrance. In the example of "Kungsgatan 10G", the street littera is "G". 
 
  * Data format: text
  * Optional
