@@ -42,8 +42,8 @@ Content-Type: application/json
     ],
     "spReference": "a6cc5da980034948ba654ae6ceda03f4",
     "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-    "requestedDateTime": "2019-02-05 00:00:00",
-    "expectedCompletionDate": "2019-02-05 00:00:01",
+    "requestedDateTime": "2019-02-05T00:00:00Z",
+    "expectedCompletionDate": "2019-02-05T00:00:01Z",
     "characteristics": {
       "fixedIp": true,
       "ipaddress": [
@@ -87,8 +87,8 @@ Content-Type: application/json
     ],
     "spReference": "a6cc5da980034948ba654ae6ceda03f4",
     "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-    "requestedDateTime": "2019-02-05 00:00:00",
-    "expectedCompletionDate": "2019-02-05 00:00:01",
+    "requestedDateTime": "2019-02-05T00:00:00Z",
+    "expectedCompletionDate": "2019-02-05T00:00:01Z",
     "characteristics": {
       "fixedIp": true,
       "ipaddress": [
@@ -131,8 +131,8 @@ Content-Type: application/json
   ],
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-  "requestedDateTime": "2019-02-05 00:00:00",
-  "expectedCompletionDate": "2019-02-05 00:00:01",
+  "requestedDateTime": "2019-02-05T00:00:00Z",
+  "expectedCompletionDate": "2019-02-05T00:00:01Z",
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
@@ -169,7 +169,7 @@ Content-Type: application/json
   ],
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-  "requestedDateTime": "2019-02-05 00:00:00",
+  "requestedDateTime": "2019-02-05T00:00:00Z",
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
@@ -205,8 +205,8 @@ Content-Type: application/json
   ],
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-  "requestedDateTime": "2019-02-05 00:00:00",
-  "expectedCompletionDate": "2019-02-05 00:00:01",
+  "requestedDateTime": "2019-02-05T00:00:00Z",
+  "expectedCompletionDate": "2019-02-05T00:00:01Z",
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
@@ -312,8 +312,8 @@ Content-Type: application/json
   ],
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-  "requestedDateTime": "2019-02-05 00:00:00",
-  "expectedCompletionDate": "2019-02-05 00:00:01",
+  "requestedDateTime": "2019-02-05T00:00:00Z",
+  "expectedCompletionDate": "2019-02-05T00:00:01Z",
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
@@ -336,7 +336,7 @@ Content-Type: application/json
 
 ```JSON
 {
-  "requestedDateTime": "2019-02-06 00:00:00"
+  "requestedDateTime": "2019-02-06T00:00:00Z"
 }
 ```
 
