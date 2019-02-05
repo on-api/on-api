@@ -30,40 +30,40 @@ Last-Modified: Tue, 05 Feb 2019 13:03:15 GMT
   {
     "eventType": "CREATE",
     "objectType": "order",
-    "objectId": "b5314ed3-9557-4720-9884-3fe0ab358069",
-    "path": "/onapie/2.4/order/b5314ed3-9557-4720-9884-3fe0ab358069",
+    "objectId": "b5314ed39557472098843fe0ab358069",
+    "path": "/onapie/2.4/order/b5314ed39557472098843fe0ab358069",
     "eventTime": "2019-02-04T13:03:16.1252",
-    "object":  {
-        "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
-                    "accessId": "8732c2f065e2490babce820e94b1011a",
-                    "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
-                    "service": "BB-1000-100",
-                    "operation": "ACTIVATE",
-                    "state": "RECEIVED",
-                    "forcedTakeover": false,
-                    "equipment": [
-                      {
-                        "vendorId": "ACME-ROUTER",
-                        "macAddress": "AA:BB:CC:11:22:33"
-                      }
-                    ],
-                    "spReference": "a6cc5da980034948ba654ae6ceda03f4",
-                    "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-                    "requestedDateTime": "2019-02-05T00:00:00Z",
-                    "expectedCompletionDate": "2019-02-05T00:00:01Z",
-                    "characteristics": {
-                      "fixedIp": true,
-                      "ipaddress": [
-                        "1.2.3.4/32"
-                      ],
-                      "SLA": "SLA-3"
-                    }
-                }  
+    "object": {
+      "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+      "accessId": "8732c2f065e2490babce820e94b1011a",
+      "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+      "service": "BB-1000-100",
+      "operation": "ACTIVATE",
+      "state": "RECEIVED",
+      "forcedTakeover": false,
+      "equipment": [
+        {
+          "vendorId": "ACME-ROUTER",
+          "macAddress": "AA:BB:CC:11:22:33"
+        }
+      ],
+      "spReference": "a6cc5da980034948ba654ae6ceda03f4",
+      "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
+      "requestedDateTime": "2019-02-05T00:00:00Z",
+      "expectedCompletionDate": "2019-02-05T00:00:01Z",
+      "characteristics": {
+        "fixedIp": true,
+        "ipaddress": [
+          "1.2.3.4/32"
+        ],
+        "SLA": "SLA-3"
+      }
+    }
   },
   {
     "eventType": "DELETE",
     "objectType": "access",
-    "objectId": "849f9712-4c48-4062-9535-c7f204e8cf09",
+    "objectId": "849f97124c4840629535c7f204e8cf09",
     "eventTime": "2019-02-04T13:03:16.5230"
   }
 ]
