@@ -70,6 +70,36 @@ Examples
  
  * 520A01036162630203313233
 
+### dhcpIdentifier
+ * JSON object
+ * Fields with unknown or missing value is omitted
+ * Fields
+   * ipv4CircuitId
+     * DHCP option 82 suboption 1
+   * ipv4RemoteId
+     * DHCP option 82 suboption 2
+   * ipv6InterfaceId
+     * DHCPv6 option 18
+   * ipv6RemoteId
+     * DHCPv6 option 37
+
+Examples
+```JSON
+{
+  "ipv4CircuitId": "ABC",
+  "ipv4RemoteId": "EquipmentName",
+  "ipv6InterfaceId": "ABC",
+  "ipv6RemoteId": "ABC"
+}
+```
+
+```JSON
+{
+  "ipv4CircuitId": "CO-1234"
+}
+```
+
+
 ### postalCode
  * Must be 5 digits
  * Matching regular expression ^[1-9][0-9]{4}$
