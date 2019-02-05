@@ -12,12 +12,12 @@ Data communicated should only be related to its troubleshooting purpose or conte
 
 Example service types:
 
-| Name | Description |
-|--|--|
-|bb| Internet |
-|iptv| Tv |
-|voip| Voip |
-|unknown| Unknown service |
+| Name   | Description      |
+|--------|------------------|
+| bb     | Internet         |
+| iptv   | Tv               |
+| voip   | Voip             |
+| unknown| Unknown service  |
 
 
 # Specification
@@ -52,8 +52,8 @@ Content-Type: application/json
 ## Parameters
 
 | Parameter  | Data format |
-|--|--|
-|accessId|accessId|
+|------------|-------------|
+| accessId   | accessId    |
 
 ## Endpoints
 
@@ -86,12 +86,12 @@ Content-Type: application/json
   "up": false
 }
 ```
-| Parameter | Type | Description |
-|--|--|--|
-|up|bool|Status of network element, eg. pingable/management is reachable|
-|upSince|string (iso8601)|Timestamp when hardware was started|
-|vendor|string|Hardware vendor|
-|model|string|Hardware model|
+| Parameter | Type              | Description                                                       |
+|-----------|-------------------|-------------------------------------------------------------------|
+|up         | bool              | Status of network element, eg. pingable/management is reachable   |
+|upSince    | string (iso8601)  | Timestamp when hardware was started                               |
+|vendor     | string            | Hardware vendor                                                   |
+|model      | string            | Hardware model                                                    |
 
 <h3 id="get-access-downlink-macaddresstable">GET access/downlink/macaddresstable/{accessId}</h3>
 
@@ -120,10 +120,10 @@ Content-Type: application/json
 ]
 ```
 
-| Parameter | Type | Description |
-|--|--|--|
-|mac|string (17)|Mac address of device|
-|service|string|Which network service the mac originates from|
+| Parameter | Type        | Description                                     |
+|-----------|-------------|-------------------------------------------------|
+| mac       | string (17) | Mac address of device                           |
+| service   | string      | Which network service the mac originates from   |
 
 <h3 id="get-access-downlink-dhcpsnooping">GET access/downlink/dhcpsnooping/{accessId}</h3>
 
@@ -155,12 +155,12 @@ Content-Type: application/json
 ]
 ```
 
-| Parameter | Type | Description |
-|--|--|--|
-|ip|string (7-19)|IP lease|
-|mac|string (17)|Mac address of device|
-|service|string |Which network service the mac originates from|
-|timeout|integer (1-10)|DHCP Lease timeout|
+| Parameter | Type                              | Description                                     |
+|-----------|-----------------------------------|-------------------------------------------------|
+| ip        | string (7-19)|IP lease            |                                                 |
+| mac       | string (17)|Mac address of device |                                                 |
+| service   | string                            | Which network service the mac originates from   |
+| timeout   | integer (1-10)|DHCP Lease timeout |                                                 |
 
 
 <h3 id="get-access-downlink-igmpsnooping">GET access/downlink/igmpsnooping/{accessId}</h3>
@@ -189,11 +189,11 @@ Content-Type: application/json
   }
 ]
 ```
-| Parameter | Type | Description |
-|--|--|--|
-|multicast|string (7-19)|Multicast address|
-|join|string (iso8601)|Timestamp when latest join was sent|
-|counter|integer|Traffic counter|
+| Parameter  | Type             | Description                            |
+|------------|------------------|----------------------------------------|
+| multicast  | string (7-19)    | Multicast address                      |
+| join       | string (iso8601) | Timestamp when latest join was sent    |
+| counter    | integer          | Traffic counter                        |
 
 
 
@@ -277,46 +277,46 @@ Content-Type: application/json
   },
 }
 ```
-| Parameter | Type | Description |
-|--|--|--|
-|link|bool|Physical link status|
-|fullDuplex|bool|If interface is set to full duplex|
-|linkSince|string (iso8601)| Timestamp when port changed status|
-|speed|string|Configured speed|
-|linkSpeed|integer|Link speed|
-|configuredSpeed|list|List of configured traffic shaping/policies|
-|configuredSpeed.#.service|string|Service name|
-|configuredSpeed.#.queue|string|Queue index|
-|configuredSpeed.#.cir|string|Commited rate|
-|configuredSpeed.#.pir|string|Peak rate|
-|statistics.counterResetAt|string (iso8601)| Timestamp when statistics counter was started|
-|statistics.peakInputRate.rate|integer| Bytes per second|
-|statistics.peakInputRate.at|string (iso8601)| Timestamp of peak|
-|statistics.peakOutputRate.rate|string|Bytes per second|
-|statistics.peakOutputRate.at|string (iso8601)| Timestamp of peak|
-|statistics.lastFiveInput.packets|integer|Ingress count of packets last five minutes|
-|statistics.lastFiveInput.bytes|integer|Ingress count of bytes last five minutes|
-|statistics.lastFiveOutput.packets|integer|Egress count of packets last five minutes|
-|statistics.lastFiveOutput.bytes|integer|Egress count of byes last five minutes|
-|statistics.input.packets|integer|Ingress count of packets|
-|statistics.input.bytes|integer|Ingress count of bytes|
-|statistics.input.unicast|integer|Ingress count of unicast|
-|statistics.input.broadcast|integer|Ingress count of broadcast|
-|statistics.input.multicast|integer|Ingress count of multicast|
-|statistics.input.pauses|integer|Ingress count of pauses|
-|statistics.input.errors|integer|Ingress count of errors|
-|statistics.input.crcErrors|integer|Ingress count of crc errors|
-|statistics.output.packets|integer|Egress count of packets|
-|statistics.output.bytes|integer|Egress count of bytes|
-|statistics.output.unicast|integer|Egress count of unicast|
-|statistics.output.broadcast|integer|Egress count of broadcast|
-|statistics.output.multicast|integer|Egress count of multicast|
-|statistics.output.pauses|integer|Egress count of pauses|
-|statistics.output.errors|integer|Egress count of errors|
-|statistics.output.crcErrors|integer|Egress count of crc errors|
-|fiber.dbmRx|string|Fiber recieve dampening|
-|fiber.dbmTx|string|Fiber transcieve dampening| 
-|fiber.temp|string|SFP temperature|
+| Parameter                                     | Type              | Description                                      |
+|-----------------------------------------------|-------------------|--------------------------------------------------|
+| link                                          | bool              | Physical link status                             |
+| fullDuplex                                    | bool              | If interface is set to full duplex               |
+| linkSince                                     | string (iso8601)  | Timestamp when port changed status               |
+| speed                                         | string            | Configured speed                                 |
+| linkSpeed                                     | integer           | Link speed                                       |
+| configuredSpeed                               | list              | List of configured traffic shaping/policies      |
+| configuredSpeed.#.service                     | string            | Service name                                     |
+| configuredSpeed.#.queue                       | string            | Queue index                                      |
+| configuredSpeed.#.cir                         | string            | Commited rate                                    |
+| configuredSpeed.#.pir                         | string            | Peak rate                                        |
+| statistics.counterResetAt                     | string (iso8601)  | Timestamp when statistics counter was started    |
+| statistics.peakInputRate.rate                 | integer           | Bytes per second                                 |
+| statistics.peakInputRate.at                   | string (iso8601)  | Timestamp of peak                                |
+| statistics.peakOutputRate.rate                | string            | Bytes per second                                 |
+| statistics.peakOutputRate.at|string (iso8601) | Timestamp of peak |                                                  |
+| statistics.lastFiveInput.packets              | integer           | Ingress count of packets last five minutes       |
+| statistics.lastFiveInput.bytes                | integer           | Ingress count of bytes last five minutes         |
+| statistics.lastFiveOutput.packets             | integer           | Egress count of packets last five minutes        |
+| statistics.lastFiveOutput.bytes               | integer           | Egress count of byes last five minutes           |
+| statistics.input.packets                      | integer           | Ingress count of packets                         |
+| statistics.input.bytes                        | integer           | Ingress count of bytes                           |
+| statistics.input.unicast                      | integer           | Ingress count of unicast                         |
+| statistics.input.broadcast                    | integer           | Ingress count of broadcast                       |
+| statistics.input.multicast                    | integer           | Ingress count of multicast                       |
+| statistics.input.pauses                       | integer           | Ingress count of pauses                          |
+| statistics.input.errors                       | integer           | Ingress count of errors                          |
+| statistics.input.crcErrors                    | integer           | Ingress count of crc errors                      |
+| statistics.output.packets                     | integer           | Egress count of packets                          |
+| statistics.output.bytes                       | integer           | Egress count of bytes                            |
+| statistics.output.unicast                     | integer           | Egress count of unicast                          |
+| statistics.output.broadcast                   | integer           | Egress count of broadcast                        |
+| statistics.output.multicast                   | integer           | Egress count of multicast                        |
+| statistics.output.pauses                      | integer           | Egress count of pauses                           |
+| statistics.output.errors                      | integer           | Egress count of errors                           |
+| statistics.output.crcErrors                   | integer           | Egress count of crc errors                       |
+| fiber.dbmRx                                   | string            | Fiber recieve dampening                          |
+| fiber.dbmTx                                   | string            | Fiber transcieve dampening                       | 
+| fiber.temp                                    | string            | SFP temperature                                  |
 
 
 <h3 id="get-cpe-status">GET cpe/status/{accessId}</h3>
