@@ -1,5 +1,7 @@
 # Accesses API
 
+Path /2.4/accesses/
+
 The accesses API is used to get available access points. The accesses contains details about the address where the 
 access resides, available services, equipment and activated services. 
   
@@ -177,12 +179,16 @@ When a single access is requested the response contains a single JSON-object.
             "equipment": [
                 { "vendorId" : "CH_BROADBAND" }
             ],
-            "spReference": ""
+            "spReference": "",
+            "coSubscriptionId": "",
+            "spSubscriptionId": ""
         }, {
             "service": "IPTV",
             "option82": "5216010765746820302F32020B31302E31302E31302E3130",
             "equipment": [],
-            "spReference": ""
+            "spReference": "",
+            "coSubscriptionId": "",
+            "spSubscriptionId": ""
         }
     ],
     "coFiberConverter": "LASER_3001X_MK2",
@@ -345,11 +351,12 @@ List of services that are already activated on the access for the current Servic
  * Available with single access
 
 ### active/service
- * Data format: 
+The name of the service
+ * Data format: text
  * Mandatory
 
 ### active/option82
- * Data format: 
+ * Data format: option82
  * Mandatory
  * Available with single access
 
