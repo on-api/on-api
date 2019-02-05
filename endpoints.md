@@ -22,13 +22,17 @@ Content-Type: application/json
 
 ```JSON
 [
-    { 
-        "endpoint": "accesses",
+    {
+        "name": "accesses",
+        "documentation": "https://github.com/on-api/onapi-inprogress-2.4/blob/master/accesses.md",
+        "endpoint": "/opapi/2.4/accesses/",
         "note": "",
         "unsupportedFields": []
     },
     { 
-        "endpoint": "order",
+        "name": "order",
+        "endpoint": "/opapi/2.4/order/",
+        "documentation": "https://github.com/on-api/onapi-inprogress-2.4/blob/master/order.md",
         "note": "Only supports direct activation, no scheduled orders",
         "unsupportedFields": [
           "requestedDateTime"
@@ -37,16 +41,31 @@ Content-Type: application/json
 ]
 ```
 
-
 ## Fields
+
+### name
+The name of the API.
+
+ * Mandatory
+ * Data format: text
 
 ### endpoint
 
-The path and name of the endpoint
+Path to the API endpoint.
 
  * Mandatory 
- * Data format: text 
- 
+ * Data format: text
+
+Examples
+ * /onapi/2.4/accesses/
+
+### documentation
+
+URL to the documentation of the specific API endpoint.
+
+ * Data format: URL
+ * Mandatory
+
 ### note 
 
 Human readable notes about the API-endpoint.
