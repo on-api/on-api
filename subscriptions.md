@@ -1,4 +1,4 @@
-# Services API
+# Subscriptions API
 
 Used to fetch a list of all active services or subscriptions from a CO belonging to the current SP.
 
@@ -8,7 +8,7 @@ Used to fetch a list of all active services or subscriptions from a CO belonging
 
 Request:
 ```HTTP
-GET /api/2.4/services/
+GET /api/2.4/subscriptions/
 ```
 
 Response:
