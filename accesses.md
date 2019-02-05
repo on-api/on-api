@@ -228,6 +228,9 @@ is "550-7".
  * Numeric or meter's address
  * Matching regular expression ^(([0-9]+)|([0-9]{1,4}-[0-9]{1,4}))$
 
+See [lantmateriets guide (swedish)](https://www.lantmateriet.se/contentassets/45acf232634c44c1a47c5ebcb7598e07/handbok_adress.pdf) 
+for more information on meter's address 
+
 ### streetLittera
 
 Street littera or entrance. In the example of "Kungsgatan 10G", the street littera is "G". 
