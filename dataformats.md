@@ -198,7 +198,7 @@ Examples
  * JSON string
  * Formatted as 12 hexadecimal digits with a colon (":") as a separator every third character
  * Digits A to F should use capital letters
- * Matching regular expression ^([0-9A-F]{2}:){5}[0-9A-F]{2}$
+ * Matching regular expression ^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$
 
 Examples
  * 01:02:03:04:05:06
