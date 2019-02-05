@@ -50,7 +50,7 @@ code such as 46 for Sweden and 1 for US/Canada.
  * JSON string
  * Follow the E.164 conventions
  * Start with a + sign
- * Includes country code such as 45 for Sweden and 1 for US/Canada
+ * Includes country code such as 46 for Sweden and 1 for US/Canada
  * Matching regular expression ^\+[0-9]+$
  
 Examples
