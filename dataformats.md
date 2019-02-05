@@ -138,8 +138,8 @@ Date and time according to ISO-8601 RFC-3339 in UTC time zone with up to 4 decim
  * Up to 4 decimal places on seconds 
 
 Examples
- * 1985-04-12T23:20:50,52Z
- * 1985-04-12T23:20:50,0053Z
+ * 1985-04-12T23:20:50.52Z
+ * 1985-04-12T23:20:50.0053Z
  * 1990-12-31T23:59:60Z
 
 ### date
