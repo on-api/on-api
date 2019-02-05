@@ -6,9 +6,17 @@ Used to fetch a list of all active services or subscriptions from a CO belonging
 
 ### GET
 
+#### All subscriptions 
 Request:
 ```HTTP
 GET /api/2.4/subscriptions/
+```
+
+#### Subscriptions created or updated since a specific time
+Request:
+```HTTP
+GET /api/2.4/subscriptions/
+If-Modified-Since: Tue, 05 Feb 2019 14:03:15 GMT
 ```
 
 Response:
