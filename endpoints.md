@@ -3,7 +3,7 @@
 Path /2.4/
 
 This API endpoint is mandatory. It is used to inform the consumer of the API of the available API endpoints and their 
-limitations.
+limitations. Can list legacy API endpoints for backwards compability.
 
 ## Operations
 
@@ -24,20 +24,26 @@ Content-Type: application/json
 [
     {
         "name": "accesses",
-        "documentation": "https://github.com/on-api/onapi-inprogress-2.4/blob/master/accesses.md",
         "endpoint": "/opapi/2.4/accesses/",
-        "note": "",
-        "unsupportedFields": []
+        "version": "2.4",
+        "documentation": "https://github.com/on-api/onapi-inprogress-2.4/blob/master/accesses.md"
     },
     { 
         "name": "order",
         "endpoint": "/opapi/2.4/order/",
+        "version": "2.4",
         "documentation": "https://github.com/on-api/onapi-inprogress-2.4/blob/master/order.md",
         "note": "Only supports direct activation, no scheduled orders",
         "unsupportedFields": [
           "requestedDateTime"
         ]
-    }    
+    },
+    {
+        "name": "order",
+        "documentation": "https://github.com/on-api/on-api-release-2.3.1/blob/master/service_activation.md",
+        "endpoint": "https://example.com/onapi/2.4/opapi/2.3/order/",
+        "version": "2.3.1"
+    }
 ]
 ```
 
@@ -51,13 +57,23 @@ The name of the API.
 
 ### endpoint
 
-Path to the API endpoint.
+URL or Path to the API endpoint. If the endpoint is on another server the full URL is used.
 
  * Mandatory 
  * Data format: text
 
 Examples
  * /onapi/2.4/accesses/
+ * https://example.com/onapi/2.4/accesses
+
+### version
+Version number of the API
+ * Mandatory
+ * Data format: text
+
+Examples
+ * 2.4
+ * 2.3.1
 
 ### documentation
 
