@@ -46,7 +46,7 @@ Phone numbers should always follow the E.164 conventions and consist of a +-sign
 code such as 46 for Sweden and 1 for US/Canada.
 
  * JSON string
- * Follow the E.164 convensions
+ * Follow the E.164 conventions
  * Start with a + sign
  * Includes country code such as 45 for Sweden and 1 for US/Canada
  * Matching regular expression ^\+[0-9]+$

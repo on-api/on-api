@@ -1,6 +1,6 @@
 # Equipment based localization
 ## Description
-In some scenarios, it is difficult to determine what accessid to use when ordering a service for an end user.
+In some scenarios, it is difficult to determine what accessId to use when ordering a service for an end user.
 
 In these scenarios the possibility it is beneficial if the communication operator can inform the service provider where in the network the end users show up.
 Then the service provider can order the service to the access where the end user shows up.
@@ -46,7 +46,7 @@ The format is the same as in the request.
 
 ## Unregister Vendor IDs
 
-This API is used by the service provider to remove VendorIDs from the communication operator, so that they do not generate any notifiactions any more.
+This API is used by the service provider to remove VendorIDs from the communication operator, so that they do not generate any notifications any more.
 
 ***Request***
 
@@ -94,14 +94,15 @@ See the [fields](#fields) section for a description of the fields.
 * `201 Created`
 * `400 Bad Request`
 
-The response should contain a Json structure with the added mac adresses. If no mac address is added then `macs` should be an empty list.
+The response should contain a Json structure with the added mac addresses. If no mac address is added then `macs` should be an empty list.
 The format is the same as in the request.
 
 The response should set the values `delete_on_match` and `valid_until` to actual value.
 
 ## Unregister MAC addresses
 
-This API is used by the service provider to remove MAC addresses from the communication operator, so that they do not generate any notifiactions any more.
+This API is used by the service provider to remove MAC addresses from the communication operator, so that they do not 
+generate any notifications any more.
 
 ***Request***
 
@@ -151,7 +152,7 @@ See the [fields](#fields) section for a description of the fields.
 
 
 ## Fields
-**Registration & unregistration**
+**Registering & unregistering**
 <table>
     <thead>
         <tr>

@@ -121,14 +121,14 @@ Content-Type: application/json
 }
 ```
 Reference to a ticket at the Communication provider
-Reference to a ticket at the Servier provider
+Reference to a ticket at the Server provider
 Reason for request
 Uses access-id as input
 Uses the spReference value supplied by the service provider as input
 
 ## Fields
 
-For data format, see [dataformats](dataformats.md)
+For data format, see [data formats](dataformats.md)
 
 Request
 <table>
@@ -190,7 +190,7 @@ Request
     </tbody>
 </table
 
-Resonse:
+Response:
 <table>
     <thead>
         <tr>

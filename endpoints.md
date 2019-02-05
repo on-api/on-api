@@ -25,7 +25,7 @@ Content-Type: application/json
     { 
         "endpoint": "accesses",
         "note": "",
-        "unsuppportedFields": []
+        "unsupportedFields": []
     },
     { 
         "endpoint": "order",

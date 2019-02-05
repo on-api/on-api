@@ -4,7 +4,7 @@ Path orderevents/
 This API lists changes to orders. When an order state changes a event row is created that can be polled with this API. 
 The event list is immutable and shall not change after a event have been created.
 
-## Opertations 
+## Operations 
 
 ### GET
 

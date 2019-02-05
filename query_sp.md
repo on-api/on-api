@@ -43,7 +43,7 @@ Content-Type: application/x-ldjson
 
 ## Fields
 
-For data format, see [dataformats](dataformats.md)
+For data format, see [data formats](dataformats.md)
 
 Request
 <table>
@@ -66,7 +66,7 @@ Request
     </tbody>
 </table
 
-Resonse:
+Response:
 <table>
     <thead>
         <tr>

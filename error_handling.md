@@ -53,7 +53,7 @@ Location: /api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 }
 ```
 
-An incorrect order should immediatily lead to a "400 Bad Request".
+An incorrect order should immediately lead to a "400 Bad Request".
 
 This error should be presented for:
 * Incorrect JSON
@@ -69,7 +69,7 @@ Content-Type: application/json
 { "cause": "Unknown service: 'INTERRNET'" }
 ```
 
-If another service for the same servicetype is already active.
+If another service for the same service type is already active.
 E.g. Broadband 100/100 is active when ordering Broadband 10/10:
 
 ```http
@@ -110,7 +110,7 @@ Content-Type: application/json
 }
 ```
 
-If the service/servicetype is not possible to order since it's already taken by another service provider:
+If the service/service type is not possible to order since it's already taken by another service provider:
 
 ```http
 HTTP/1.1 400 Bad Request

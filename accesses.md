@@ -302,7 +302,7 @@ Lists of deliverable services.
 
 ### services/service
 
-Name of the service, used as referense in the [order API](order.md)
+Name of the service, used as reference in the [order API](order.md)
 
  * Data format: text
  * Mandatory
