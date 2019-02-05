@@ -8,6 +8,8 @@ Valid JSON values is expected.
 
 A JSON value can be an object, array, number, string, true, false, or null.
 
+All string values is encoded in UTF-8.
+
 ## Data types
 
 ### ID
