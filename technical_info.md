@@ -431,45 +431,46 @@ Content-Type: application/json
   ]
 }
 ```
-| Parameter | Type | Description |
-|--|--|--|
-|firmware|string|CPE firmware name|
-|vendor|string|CPE vendor name|
-|model|string|CPE model name|
-|mac|string|CPE mgmt interface mac address|
-|up|bool|Power status|
-|upSince|string|Uptime of CPE|
-|ports|list|List of port objects|
-|ports.#.index|integer|Interface number|
-|ports.#.ifDescription|string|Interface description|
-|ports.#.name|string|Friendly interface name|
-|ports.#.link|bool|duplex status|
-|ports.#.fullDuplex|bool|duplex status|
-|ports.#.changedAt|string (iso8601)| Timestamp when port changed state|
-|ports.#.loopDetectionStatus|string| Loop detection status| 
-|ports.#.freeSeating|bool| Free seating status| 
-|ports.#.configuredSpeed|string|Configured speed|
-|ports.#.linkSpeed|integer|Link speed|
-|ports.#.fiber.dbmRx|string|Fiber recieve dampening|
-|ports.#.fiber.dbmTx|string|Fiber transcieve dampening
-|ports.#.fiber.temp|string|SFP temperature|
-|ports.#.statistics.input.errors|integer|Ingress count of errors|
-|ports.#.statistics.input.crcErrors|integer|Ingress count of crc errors|
-|ports.#.statistics.input.bytes|integer|Ingress count of bytes|
-|ports.#.statistics.input.multicast|integer|Ingress count of multicast|
-|ports.#.statistics.input.unicast|integer|Ingress count of unicast|
-|ports.#.statistics.output.errors|integer|Egress count of errors|
-|ports.#.statistics.output.crcErrors|integer|Egress count of crc errors|
-|ports.#.statistics.output.bytes|integer|Egress count of bytes|
-|ports.#.statistics.output.multicast|integer|Egress count of multicast|
-|ports.#.statistics.output.unicast|integer|Egress count of unicast|
-|macAddressTable|list|List of mac address objects|
-|macAddressTable.#.mac|string|Mac address of device|
-|macAddressTable.#.service|string|Which network service the mac originates from|
-|macAddressTable.#.port|string|Which CPE port index the mac originates from|
-|dhcpSnooping|list|List of dhcp snooping objects|
-|dhcpSnooping.#.ip|string|IP lease|
-|dhcpSnooping.#.mac|string|Mac address of device|
-|dhcpSnooping.#.service|string|Which network service the lease originates from|
-|dhcpSnooping.#.timeout|string (iso8601)|DHCP Lease timeout|
+
+| Parameter                                     | Type              | Description                                      |
+|-----------------------------------------------|-------------------|--------------------------------------------------|
+|firmware                                       | string            | CPE firmware name                                |
+| vendor                                        | string            | CPE vendor name                                  |
+| model                                         | string            | CPE model name                                   |
+| mac                                           | string            | CPE mgmt interface mac address                   |
+| up                                            | bool              | Power status                                     |
+| upSince                                       | string            | Uptime of CPE                                    |
+| ports                                         | list              | List of port objects                             |
+| ports.#.index                                 | integer           | Interface number                                 |
+| ports.#.ifDescription                         | string            | Interface description                            |
+| ports.#.name                                  | string            | Friendly interface name                          |
+| ports.#.link                                  | bool              | duplex status                                    |
+| ports.#.fullDuplex                            | bool              | duplex status                                    |
+| ports.#.changedAt                             | string (iso8601)  | Timestamp when port changed state                |
+| ports.#.loopDetectionStatus                   | string            | Loop detection status                            | 
+| ports.#.freeSeating                           | bool              | Free seating status                              | 
+| ports.#.configuredSpeed                       | string            | Configured speed                                 |
+| ports.#.linkSpeed                             | integer           | Link speed                                       |
+| ports.#.fiber.dbmRx                           | string            | Fiber recieve dampening                          |
+| ports.#.fiber.dbmTx                           | string            | Fiber transcieve dampening                       |
+| ports.#.fiber.temp                            | string            | SFP temperature                                  |
+| ports.#.statistics.input.errors               | integer           | Ingress count of errors                          |
+| ports.#.statistics.input.crcErrors            | integer           | Ingress count of crc errors                      |
+| ports.#.statistics.input.bytes                | integer           | Ingress count of bytes                           |
+| ports.#.statistics.input.multicast            | integer           | Ingress count of multicast                       |
+| ports.#.statistics.input.unicast              | integer           | Ingress count of unicast                         |
+| ports.#.statistics.output.errors              | integer           | Egress count of errors                           |
+| ports.#.statistics.output.crcErrors           | integer           | Egress count of crc errors                       |
+| ports.#.statistics.output.bytes               |integer            | Egress count of bytes                            |
+| ports.#.statistics.output.multicast           |integer            | Egress count of multicast                        |
+| ports.#.statistics.output.unicast             |integer            | Egress count of unicast                          |
+| macAddressTable                               |list               | List of mac address objects                      |
+| macAddressTable.#.mac                         |string             | Mac address of device                            |
+| macAddressTable.#.service                     |string             | Which network service the mac originates from    |
+| macAddressTable.#.port                        |string             | Which CPE port index the mac originates from     |
+| dhcpSnooping                                  |list               | List of dhcp snooping objects                    |
+| dhcpSnooping.#.ip                             |string             | IP lease                                         |
+| dhcpSnooping.#.mac                            |string             | Mac address of device                            |
+| dhcpSnooping.#.service                        |string             | Which network service the lease originates from  |
+| dhcpSnooping.#.timeout                        |string (iso8601)   | DHCP Lease timeout                               |
   
