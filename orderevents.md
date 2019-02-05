@@ -50,7 +50,7 @@ Content-Type: application/json
     {
         "event": "6b4f026bccf247efb39f22ec4b01c1be",
         "order": {
-            "path": "/api/2.3.1/orders/3393123ae59f11e393713c970e806452",
+            "path": "/api/2.4/orders/3393123ae59f11e393713c970e806452",
             "accessId": "STTA0002",
             "service": "BB-100-10",
             "operation": "ACTIVATE",
