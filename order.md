@@ -47,7 +47,7 @@ Content-Type: application/json
     "characteristics": {
       "fixedIp": true,
       "ipaddress": [
-        "1.2.3.4/32"
+        "1.2.3.4"
       ],
       "SLA": "SLA-3"
     }
@@ -92,7 +92,7 @@ Content-Type: application/json
     "characteristics": {
       "fixedIp": true,
       "ipaddress": [
-        "1.2.3.4/32"
+        "1.2.3.4"
       ],
       "SLA": "SLA-3"
     }
@@ -136,7 +136,7 @@ Content-Type: application/json
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
-      "1.2.3.4/32"
+      "1.2.3.4"
     ],
     "SLA": "SLA-3"
   }
@@ -173,7 +173,7 @@ Content-Type: application/json
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
-      "1.2.3.4/32"
+      "1.2.3.4"
     ],
     "SLA": "SLA-3"
   }
@@ -210,7 +210,7 @@ Content-Type: application/json
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
-      "1.2.3.4/32"
+      "1.2.3.4"
     ],
     "SLA": "SLA-3"
   }
@@ -244,7 +244,7 @@ Content-Type: application/json
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
-      "1.2.3.4/32"
+      "1.2.3.4"
     ],
     "SLA": "SLA-3"
   }
@@ -279,7 +279,7 @@ Content-Type: application/json
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
-      "1.2.3.4/32"
+      "1.2.3.4"
     ],
     "SLA": "SLA-3"
   }
@@ -317,7 +317,7 @@ Content-Type: application/json
   "characteristics": {
     "fixedIp": true,
     "ipaddress": [
-      "1.2.3.4/32"
+      "1.2.3.4"
     ],
     "SLA": "SLA-3"
   }
@@ -453,7 +453,7 @@ Fälttyp: array of IP-addresses to be used.
     "characteristics": {
         "fixedIp": true,
         "ipAddresses": [
-            "1.2.3.4/32",
+            "1.2.3.4",
             "AB::01/64",
             "1.3.0.1/24"
         ]
