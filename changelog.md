@@ -23,5 +23,6 @@
    * RESUME
    * MODIFY
    * CHANGE
-
  * New value for premisesType in accesses MDU_TECHNICAL 
+ * orderevents is replaced by a more generic events
+ * dhcpoptionlookup.md replaces option82_lookup.md
