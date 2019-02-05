@@ -5,7 +5,7 @@ Path /2.4/
 This API endpoint is mandatory. It is used to inform the consumer of the API of the available API endpoints and their 
 limitations.
 
-##Operations
+## Operations
 
 ### GET
 
