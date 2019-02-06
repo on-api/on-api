@@ -2,19 +2,20 @@
 ## Description
 In some scenarios, it is difficult to determine what accessId to use when ordering a service for an end user.
 
-In these scenarios the possibility it is beneficial if the communication operator can inform the service provider where in the network the end users show up.
+In these scenarios it is beneficial if the communication operator can inform the service provider where in the network the end users show up.
 Then the service provider can order the service to the access where the end user shows up.
 
 There are two parts of the API. In the first the service provider registers Vendors ID's (DHCPv4 option60) or MAC addresses.
-Secondly, whenever a client that matches either the MAC address or the VendorID, the communication provider notifies the service provider.
-The service provider can then use the order API to order a service to the accessID where the client showed up. 
+Secondly, whenever a client that matches either the MAC address or the VendorID, the communication provider notifies the service provider. The service provider can then use the order API to order a service to the accessID where the client showed up. 
 
 ## APIs
 * Registration
   * [Register Vendor IDs](#register-vendor-ids)
   * [Unregister Vendor IDs](#unregister-vendor-ids)
+  * [List registered VendorId:s](#list-vendor-ids)
   * [Register MAC addresses](#register-mac-addresses)
   * [Unregister MAC addresses](#unregister-mac-addresses)
+  * [List registered MAC addresses](#list-mac-addresses)
 * [Notification](#notification)
 
 
@@ -29,8 +30,13 @@ When equipment with a matching vendorID is found by the communication operator, 
 ```html
 POST /ebl/vendorids
 {
-    vendorids: [{"vendorid":"sp_specific",
-                 "match_type: "partial_match"}]
+    vendorids: [
+		{ 
+		"vendorid":"sp_specific",
+                "match_type: "partial_match",
+		"serviceType": "Internet"
+		}
+		]
 }
 ```
 The vendorID **MUST** be specific to the service provider. A generic vendor ID may not be used. 
@@ -39,8 +45,9 @@ See the [fields](#fields) section for the description of the fields.
 ***Response***
 * `201 Created`
 * `400 Bad Request`
+* `409 Conflict`
 
-The response should contain a Json structure with the added vendorids. If no vendorID was added then `vendorids` should be an empty list.
+The response should contain a Json structure with the added vendorids. If no vendorID was added then `vendorids` should be an empty list. If the request contains a already registered vendorId the response is 409 Conflict. 
 The format is the same as in the request.
 
 
@@ -68,6 +75,26 @@ See the [fields](#fields) section for a description of the fields.
 The response should contain a Json structure with the removed vendorIDs. If no VendorID was removed, the `vendorids` list should be an empty list.
 The format for the JSON is the same as in the request.
 
+## List registered Vendor IDs
+
+The service provider can use this api to list all registered Vendor IDs.
+
+***Request***
+
+```html
+GET /ebl/vendorids
+{
+    vendorids: [{"vendorid":"sp_specific"}]
+}
+```
+See the [fields](#fields) section for a description of the fields.
+
+***Response***
+* `200 OK`
+* `400 Bad Request`
+
+
+If there are no registered vendor IDs the `vendorids` list should be an empty list.
 
 ## Register MAC addresses
 
@@ -81,9 +108,12 @@ When equipment with a matching MAC address is found by the communication operato
 POST /ebl/mac-addresses
 {
     macs: [
-            {"mac":"11:22:33:44:55:66",
-             "delete_on_match": "true",
-             "valid_until": "2019-04-15T00:00:00.000Z"}
+		{
+		"mac":"11:22:33:44:55:66",
+		"delete_on_match": "true",
+		"valid_until": "2019-04-15T00:00:00.000Z",
+		"serviceType": "Internet"
+		}
           ]
 }
 ```
@@ -122,6 +152,25 @@ DELETE /ebl/mac-addresses
 The response should contain a Json structure with the removed MAC addresses. If no MAC address was removed, the `macs` list should be an empty list.
 The format for the JSON is the same as in the request.
 
+## List registered MAC addresses
+
+The service provider can use this api to list all registered MAC addresses.
+
+***Request***
+
+```html
+GET /ebl/mac-addresses
+{
+    macs: [{"mac":"11:22:33:44:55:66"}]
+}
+```
+See the [fields](#fields) section for a description of the fields.
+
+***Response***
+* `200 OK`
+* `400 Bad Request`
+
+If there are no registered MAC addresses the `macs` list should be an empty list.
 
 ## Notification
 As soon as the Communication provider in some way discover any client matching either a vendorID or a MAC address, the communication operator should notify the service provider using this API.
