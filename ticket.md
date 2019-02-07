@@ -192,7 +192,7 @@ Content-Type: application/json
 <h3 id="patch-ticket">PATCH ticket/{coTicketReference}</h3>
 
 Update ticket status and add comments to the ticket.
-You have to close a ticket through this method.
+This method is also used when closing a ticket.
 
 ```http
 PATCH /api/2.4/ticket/{coTicketReference}
