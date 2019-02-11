@@ -33,7 +33,8 @@ Some of the properties of this API includes:
  11. [Querying the service provider for customer information](access_customer_info.md)
  12. [Services - list active services ](services.md)
  13. [Web portal - Forward customers to SP service portals](web_portal.md)
- 
+ 14. [Ticket](ticket.md)
+ 15. [Technical information](technical_info.md)
  
 ## General guidelines
 
