@@ -1,8 +1,5 @@
 
 
-
-
-
 ----------
 
 # Ticket API
@@ -36,10 +33,17 @@ eg: `domain.local/api/2.4/ticket/423323449`
 
 Fetch one or many tickets, able to filter by created timestamp or ticket status.
 
-Request specific ticket:
+Request all tickets:
+```http
+GET /api/2.4/ticket
+```
+
+Request ticket:
 ```http
 GET /api/2.4/ticket/{coTicketReference} 
 ```
+
+
 
 Request tickets modified after timestamp:
 ```http
@@ -60,7 +64,23 @@ GET /api/2.4/ticket?status=IN_PROGRESS_CO
 |created|string (iso8601)|Filter by all tickets created after date|
 |status|[CREATED, IN_PROGRESS_CO, IN_PROGRESS_SP, CLOSED]|Filter by status of ticket|
 
-Response:
+List response:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "coTicketReference": "TT00000123456",
+    "spTicketReference": "CASE#000123456",
+    "status": "CREATED",
+    "responsible": "CO"
+  },
+  ...
+]
+```
+
+Ticket response:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -79,18 +99,17 @@ Content-Type: application/json
     {
       "createdBy": "Kalle Andersson",
       "message": "Configuration has been changed, please try again",
-      "party": "CO",
       "createdAt": "2018-08-21T12:01:52Z"
     },
     {
       "createdBy": "Anna Andersson",
       "message": "No change in customers connection.",
-      "party": "SP",
-      "createdAt": "2018-08-25T08:34:11Z",
+      "createdAt": "2018-08-25T08:34:11Z"
     }
   ],
   "status": "IN_PROGRESS_CO",
-  "coSubscriptionId": "O00000123456",
+  "responsible": "CO",
+  "coSubscription": "O00000123456",
   "problemType": "NO_LINK",
   "additionalInfo": {
     "ip": "169.254.1.1",
@@ -103,30 +122,31 @@ Content-Type: application/json
 
 | Parameter | Type | Description |
 |--|--|--|
-|coTicketReference|string (1-32)|CO Ticket Reference|
-|spReference|string (1-32)|SP Reference|
-|spTicketReference|string (1-32)|SP Ticket Reference|
-|accessId|string (1-32)|Unique identifyer for a Access, owned by CO|
+|coTicketReference|string|CO Ticket Reference|
+|spReference|string|SP Reference|
+|spTicketReference|string|SP Ticket Reference|
+|accessId|string|Unique identifyer for a Access, owned by CO|
 |createdBy|string|Created By User|
-|createdAt|string (iso8601)|Created Time|
-|updatedAt|string (iso8601)|Last Modified time|
+|createdAt|string|Created Time|
+|updatedAt|string|Last Modified time|
 |heading|string|Heading|
 |description|string|Description|
 |comments|Comments|List of Comments|
-|comments#.createdBy|string|Created By User|
-|comments#.message|string|Message|
-|comments#.party|[SP,CO]|Party|
-|comments#.createdTime|string (iso8601)|Created Time|
+|comments.createdBy|string|Created By User|
+|comments.message|string|Message|
+|comments.createdAt|string|Created Time|
 |status|[CREATED, IN_PROGRESS_CO, IN_PROGRESS_SP, CLOSED]|Status|
+|responsible|[SP,CO]|Responsible party, used for SLA calculation|
+|coSubscription|string (optional)|Unique identifyer for a Subscription, owned by CO|
 |problemType|[NO_LINK,NO_ACCESS,QUALITY,OTHER]|Problem Type|
-|additionalInfo|additionalInfo|Additional info|
-|additionalInfo.ip|string (7-19)|Customer IP|
-|additionalInfo.mac|string (17)|Device MAC-address|
+|additionalInfo|object|Additional info|
+|additionalInfo.ip|string|Customer IP|
+|additionalInfo.mac|string|Device MAC-address|
 |additionalInfo.link|boolean|Customer Link Status|
-|callbackURL|string|ISP Callback URL (OPTIONAL)|
+|callbackURL|string|ISP Callback URL (optional)|
 
 
-<h3 id="post-ticket">POST ticket/{spTicketReference}</h3>
+<h3 id="post-ticket">POST ticket</h3>
 
 Create at ticket.
 
@@ -143,7 +163,7 @@ Content-Type: application/json
   "createdBy": "Anna Andersson",
   "heading": "Heading for ticket",
   "description": "This customer is experiencing issues.",
-  "coSubscriptionId": "O00000123456",
+  "coSubscription": "O00000123456",
   "problemType": "NO_LINK",
   "additionalInfo": {
     "ip": "169.254.1.1",
@@ -156,18 +176,18 @@ Content-Type: application/json
 
 | Parameter | Type | Description |
 |--|--|--|
-|spReference|string (1-32)|SP Reference|
-|spTicketReference|string (1-32)|SP Ticket Reference|
-|accessId|string (1-32)|Unique identifyer for a Access, owned by CO|
+|spReference|string (optional)|SP Reference|
+|spTicketReference|string (optional)|SP Ticket Reference|
+|accessId|string |Unique identifyer for a Access, owned by CO|
 |createdBy|string|Created By User|
 |heading|string|Heading|
 |description|string|Description|
-|coSubscriptionId|string|Unique identifyer for a Subscription, owned by CO|
+|coSubscription|string (optional)|Unique identifyer for a Subscription, owned by CO|
 |problemtType|[NO_LINK,NO_ACCESS,QUALITY,OTHER]|Problem Type|
-|additionalInfo|additionalInfo|Additional Info|
-|additionalInfo#.ip|string (7-19)|Customer IP|
-|additionalInfo#.mac|string (17)|Device MAC-address|
-|additionalInfo#.link|boolean|Customer Link Status|
+|additionalInfo|object|Additional Info|
+|additionalInfo.ip|string|Customer IP|
+|additionalInfo.mac|string|Device MAC-address|
+|additionalInfo.link|boolean|Customer Link Status|
 |callbackURL|string|ISP Callback URL (Optional)|
 
 
@@ -177,16 +197,14 @@ HTTP/1.1 201 CREATED
 Content-Type: application/json
 
 {
-  "coTicketReference": "TT00000123456",
-  "status": "CREATED"
+  "coTicketReference": "TT00000123456"
 }
 ```
 
 
 | Parameter | Type | Description |
 |--|--|--|
-|coTicketReference|string (1-32)|CO Ticket Reference|
-|status|[CREATED]|Status|
+|coTicketReference|string|CO Ticket Reference|
 
 
 <h3 id="patch-ticket">PATCH ticket/{coTicketReference}</h3>
@@ -199,20 +217,23 @@ PATCH /api/2.4/ticket/{coTicketReference}
 Content-Type: application/json
 
 {
-  "comment": "A comment.",
-  "createdBy": "Anna Andersson",
-  "status": "IN_PROGRESS_SP"
+  "comment": {
+    "message": "A comment.",
+    "createdBy": "Anna Andersson"
+  },
+  "status": "IN_PROGRESS_SP",
+  "responsible": "CO"
 }
 ```
 | Parameter | Type | Description |
 |--|--|--|
-|message|string|Message|
-|createdBy|string|Created By|
-|status|[CREATED, IN_PROGRESS_CO, IN_PROGRESS_SP, CLOSED]|Change ticket status
-
+|comment|object|Comment|
+|comment.message|string|Message|
+|comment.createdBy|string|Created by|
+|status|[CREATED, IN_PROGRESS_CO, IN_PROGRESS_SP, CLOSED] (optional)|Change ticket status
+|responsible|[SP,CO] (optional)|Responsible party, used for SLA calculation. Mandatory when closing a ticket. |
 
 Response:
 ```http
 HTTP/1.1 204 No Content
 ```
-
