@@ -289,7 +289,7 @@ Content-Type: application/json
 | speed                                         | string            | Configured speed                                 |
 | linkSpeed                                     | integer           | Link speed                                       |
 | configuredSpeed                               | list              | List of configured traffic shaping/policies      |
-| configuredSpeed.#.serviceType                     | string            | Service ty+e                                     |
+| configuredSpeed.#.serviceType                     | string            | Service type                                     |
 | configuredSpeed.#.queue                       | string            | Queue index                                      |
 | configuredSpeed.#.cir                         | string            | Commited rate                                    |
 | configuredSpeed.#.pir                         | string            | Peak rate                                        |
@@ -493,11 +493,19 @@ Content-Type: application/json
 
 [
   {
-    "ip": "10.0.0.1",
+    "lease": "10.0.0.1",
     "mac": "00:00:00:00:00:00",
     "serviceType": "iptv",
-    "timeout": "2004-08-14T14:09:23Z",
+    "start": "2004-08-14T14:09:23Z",
+    "end": "2004-08-14T14:09:23Z"
   },...
 ]
 ```
 
+|Parameter|Type|Description|
+|--|--|--|
+|lease|ip|ip address|
+|mac|mac|mac address|
+|serviceType|serviceType|Sevice type for lease|
+|start|timestamp|Starting timestamp of lease|
+|end|timestamp|End timestamp of lease|
