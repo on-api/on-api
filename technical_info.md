@@ -24,10 +24,10 @@ Example service types:
 ## Reference index
 ### access
 * GET [access/hardware](#get-access-hardware)
-* GET [access/downlink/macaddresstable](#get-access-downlink-macaddresstable)
-* GET [access/downlink/dhcpsnooping](#get-access-downlink-dhcpsnooping)
-* GET [access/downlink/igmpsnooping](#get-access-downlink-igmpsnooping)
-* GET [access/downlink/status](#get-access-downlink-status)
+* GET [access/link/macaddresstable](#get-access-link-macaddresstable)
+* GET [access/link/dhcpsnooping](#get-access-link-dhcpsnooping)
+* GET [access/link/igmpsnooping](#get-access-link-igmpsnooping)
+* GET [access/link/status](#get-access-link-status)
 
 ### cpe
 * GET [cpe/status](#get-cpe-status)
@@ -96,13 +96,13 @@ Content-Type: application/json
 |vendor     | string            | Hardware vendor                                                   |
 |model      | string            | Hardware model                                                    |
 
-<h3 id="get-access-downlink-macaddresstable">GET access/downlink/macaddresstable/{accessId}</h3>
+<h3 id="get-access-link-macaddresstable">GET access/link/macaddresstable/{accessId}</h3>
 
-Fetch mac address table data from only the downlink interface.
+Fetch mac address table data from only the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/downlink/macaddresstable/{accessId}
+GET /api/2.4/tech/access/link/macaddresstable/{accessId}
 ```
 
 
@@ -128,13 +128,13 @@ Content-Type: application/json
 | mac       | string (17) | Mac address of device                           |
 | service   | string      | Which network service the mac originates from   |
 
-<h3 id="get-access-downlink-dhcpsnooping">GET access/downlink/dhcpsnooping/{accessId}</h3>
+<h3 id="get-access-link-dhcpsnooping">GET access/link/dhcpsnooping/{accessId}</h3>
 
-Fetch dhcp snooping data from only the downlink interface.
+Fetch dhcp snooping data from only the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/downlink/dhcpsnooping/{accessId}
+GET /api/2.4/tech/access/link/dhcpsnooping/{accessId}
 ```
 
 Response:
@@ -166,13 +166,13 @@ Content-Type: application/json
 | timeout   | integer (1-10)|DHCP Lease timeout |                                                 |
 
 
-<h3 id="get-access-downlink-igmpsnooping">GET access/downlink/igmpsnooping/{accessId}</h3>
+<h3 id="get-access-link-igmpsnooping">GET access/link/igmpsnooping/{accessId}</h3>
 
-Fetch igmp snooping data from only the downlink interface.
+Fetch igmp snooping data from only the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/downlink/igmpsnooping/{accessId}
+GET /api/2.4/tech/access/link/igmpsnooping/{accessId}
 ```
 Response:
 ```http
@@ -200,13 +200,13 @@ Content-Type: application/json
 
 
 
-<h3 id="get-access-downlink-status">GET access/downlink/status/{accessId}</h3>
+<h3 id="get-access-link-status">GET access/link/status/{accessId}</h3>
 
-Fetch access equipment downlink interface status.
+Fetch access equipment access interface status.
 
 Request:
 ```http
-GET /api/2.4/tech/access/downlink/status/{accessId}
+GET /api/2.4/tech/access/link/status/{accessId}
 ```
 Response:
 ```http
