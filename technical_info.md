@@ -114,11 +114,11 @@ Content-Type: application/json
 [
   {
     "mac": "00:11:22:aa:bb:cc",
-    "service": "bb"
+    "serviceType": "bb"
   },
   {
     "mac": "00:11:22:aa:bb:cc",
-    "service": "iptv"
+    "serviceType": "iptv"
   }
 ]
 ```
@@ -126,7 +126,7 @@ Content-Type: application/json
 | Parameter | Type        | Description                                     |
 |-----------|-------------|-------------------------------------------------|
 | mac       | string (17) | Mac address of device                           |
-| service   | string      | Which network service the mac originates from   |
+| serviceType   | string      | Which network service the mac originates from   |
 
 <h3 id="get-access-link-dhcpsnooping">GET access/link/dhcpsnooping/{accessId}</h3>
 
@@ -146,13 +146,13 @@ Content-Type: application/json
   {
     "ip:": "10.0.0.1",
     "mac": "00:11:22:aa:bb:cc",
-    "service": "bb",
+    "serviceType": "bb",
     "timeout": 600
   },
   {
     "ip:": "10.0.0.1",
     "mac": "00:11:22:aa:bb:cc",
-    "service": "iptv",
+    "serviceType": "iptv",
     "timeout": 600
   },
 ]
@@ -162,7 +162,7 @@ Content-Type: application/json
 |-----------|-----------------------------------|-------------------------------------------------|
 | ip        | string (7-19)|IP lease            |                                                 |
 | mac       | string (17)|Mac address of device |                                                 |
-| service   | string                            | Which network service the mac originates from   |
+| serviceType   | string                            | Which network service the mac originates from   |
 | timeout   | integer (1-10)|DHCP Lease timeout |                                                 |
 
 
@@ -221,13 +221,13 @@ Content-Type: application/json
   "linkSpeed": 1000,
   "configuredSpeed": [
     {
-      "service": "bb",
+      "serviceType": "bb",
       "queue": 1,
       "cir": 3000,
       "pir": 3000
     },
     {
-      "service": "iptv",
+      "serviceType": "iptv",
       "queue": 0,
       "cir": 12000,
       "pir": 12000
@@ -236,12 +236,14 @@ Content-Type: application/json
   "statistics": {
     "counterResetAt": "2014-08-14T14:09:23Z",
     "peakInputRate": {
-      "rate": 30000,
-      "at": "2014-08-14T14:09:23Z"
+      "counter32": 30000,
+      "counter64": 30000,
+      "timestamp": "2014-08-14T14:09:23Z"
     },
     "peakOutputRate": {
-      "rate": 30000,
-      "at": "2014-08-14T14:09:23Z"
+      "counter32": 30000,
+      "counter64": 30000,
+      "timestamp": "2014-08-14T14:09:23Z"
     },
     "lastFiveInput": { 
       "packets": 100,
@@ -260,7 +262,6 @@ Content-Type: application/json
       "pauses": 0,
       "errors": 1337,
       "crcErrors": 0
-
     },
     "output": {
       "packets": 100,
@@ -288,7 +289,7 @@ Content-Type: application/json
 | speed                                         | string            | Configured speed                                 |
 | linkSpeed                                     | integer           | Link speed                                       |
 | configuredSpeed                               | list              | List of configured traffic shaping/policies      |
-| configuredSpeed.#.service                     | string            | Service name                                     |
+| configuredSpeed.#.serviceType                     | string            | Service ty+e                                     |
 | configuredSpeed.#.queue                       | string            | Queue index                                      |
 | configuredSpeed.#.cir                         | string            | Commited rate                                    |
 | configuredSpeed.#.pir                         | string            | Peak rate                                        |
@@ -409,12 +410,12 @@ Content-Type: application/json
   "macAddressTable": [
     {
       "mac": "xx:xx:xx:xx:xx:xx",
-      "service": "bb",
+      "serviceType": "bb",
       "port": 1
     },
     {
       "mac": "xx:xx:xx:xx:xx:xx",
-      "service": "iptv",
+      "serviceType": "iptv",
       "port": 2
     }
   ],
@@ -422,13 +423,13 @@ Content-Type: application/json
     {
       "ip:": "10.0.0.1",
       "mac": "00:11:22:aa:bb:cc",
-      "service": "iptv",
+      "serviceType": "iptv",
       "timeout": "2004-08-14T14:09:23Z",
     },
     {
       "ip:": "10.0.0.1",
       "mac": "00:11:22:aa:bb:cc",
-      "service": "iptv",
+      "serviceType": "iptv",
       "timeout": "2004-08-14T14:09:23Z",
     },
   ]
@@ -469,12 +470,12 @@ Content-Type: application/json
 | ports.#.statistics.output.unicast             |integer            | Egress count of unicast                          |
 | macAddressTable                               |list               | List of mac address objects                      |
 | macAddressTable.#.mac                         |string             | Mac address of device                            |
-| macAddressTable.#.service                     |string             | Which network service the mac originates from    |
+| macAddressTable.#.serviceType                     |string             | Which network service the mac originates from    |
 | macAddressTable.#.port                        |string             | Which CPE port index the mac originates from     |
 | dhcpSnooping                                  |list               | List of dhcp snooping objects                    |
 | dhcpSnooping.#.ip                             |string             | IP lease                                         |
 | dhcpSnooping.#.mac                            |string             | Mac address of device                            |
-| dhcpSnooping.#.service                        |string             | Which network service the lease originates from  |
+| dhcpSnooping.#.serviceType                        |string             | Which network service the lease originates from  |
 | dhcpSnooping.#.timeout                        |string (iso8601)   | DHCP Lease timeout                               |
 
 <h3 id="get-leaseinfo">GET leaseinfo/{accessId}</h3>
@@ -494,7 +495,7 @@ Content-Type: application/json
   {
     "ip": "10.0.0.1",
     "mac": "00:00:00:00:00:00",
-    "service": "iptv",
+    "serviceType": "iptv",
     "timeout": "2004-08-14T14:09:23Z",
   },...
 ]
