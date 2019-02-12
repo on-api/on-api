@@ -24,13 +24,16 @@ Example service types:
 ## Reference index
 ### access
 * GET [access/hardware](#get-access-hardware)
-* GET [access/downlink/macaddresstable](#get-access-downlink-macaddresstable)
-* GET [access/downlink/dhcpsnooping](#get-access-downlink-dhcpsnooping)
-* GET [access/downlink/igmpsnooping](#get-access-downlink-igmpsnooping)
-* GET [access/downlink/status](#get-access-downlink-status)
+* GET [access/link/macaddresstable](#get-access-link-macaddresstable)
+* GET [access/link/dhcpsnooping](#get-access-link-dhcpsnooping)
+* GET [access/link/igmpsnooping](#get-access-link-igmpsnooping)
+* GET [access/link/status](#get-access-link-status)
 
 ### cpe
 * GET [cpe/status](#get-cpe-status)
+
+### lease info
+* GET [leaseinfo](#get-leaseinfo)
 
 ## Requirements
 
@@ -93,13 +96,13 @@ Content-Type: application/json
 |vendor     | string            | Hardware vendor                                                   |
 |model      | string            | Hardware model                                                    |
 
-<h3 id="get-access-downlink-macaddresstable">GET access/downlink/macaddresstable/{accessId}</h3>
+<h3 id="get-access-link-macaddresstable">GET access/link/macaddresstable/{accessId}</h3>
 
-Fetch mac address table data from only the downlink interface.
+Fetch mac address table data from only the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/downlink/macaddresstable/{accessId}
+GET /api/2.4/tech/access/link/macaddresstable/{accessId}
 ```
 
 
@@ -111,11 +114,11 @@ Content-Type: application/json
 [
   {
     "mac": "00:11:22:aa:bb:cc",
-    "service": "bb"
+    "serviceType": "bb"
   },
   {
     "mac": "00:11:22:aa:bb:cc",
-    "service": "iptv"
+    "serviceType": "iptv"
   }
 ]
 ```
@@ -123,15 +126,15 @@ Content-Type: application/json
 | Parameter | Type        | Description                                     |
 |-----------|-------------|-------------------------------------------------|
 | mac       | string (17) | Mac address of device                           |
-| service   | string      | Which network service the mac originates from   |
+| serviceType   | string      | Which network service the mac originates from   |
 
-<h3 id="get-access-downlink-dhcpsnooping">GET access/downlink/dhcpsnooping/{accessId}</h3>
+<h3 id="get-access-link-dhcpsnooping">GET access/link/dhcpsnooping/{accessId}</h3>
 
-Fetch dhcp snooping data from only the downlink interface.
+Fetch dhcp snooping data from only the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/downlink/dhcpsnooping/{accessId}
+GET /api/2.4/tech/access/link/dhcpsnooping/{accessId}
 ```
 
 Response:
@@ -143,13 +146,13 @@ Content-Type: application/json
   {
     "ip:": "10.0.0.1",
     "mac": "00:11:22:aa:bb:cc",
-    "service": "bb",
+    "serviceType": "bb",
     "timeout": 600
   },
   {
     "ip:": "10.0.0.1",
     "mac": "00:11:22:aa:bb:cc",
-    "service": "iptv",
+    "serviceType": "iptv",
     "timeout": 600
   },
 ]
@@ -159,17 +162,17 @@ Content-Type: application/json
 |-----------|-----------------------------------|-------------------------------------------------|
 | ip        | string (7-19)|IP lease            |                                                 |
 | mac       | string (17)|Mac address of device |                                                 |
-| service   | string                            | Which network service the mac originates from   |
+| serviceType   | string                            | Which network service the mac originates from   |
 | timeout   | integer (1-10)|DHCP Lease timeout |                                                 |
 
 
-<h3 id="get-access-downlink-igmpsnooping">GET access/downlink/igmpsnooping/{accessId}</h3>
+<h3 id="get-access-link-igmpsnooping">GET access/link/igmpsnooping/{accessId}</h3>
 
-Fetch igmp snooping data from only the downlink interface.
+Fetch igmp snooping data from only the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/downlink/igmpsnooping/{accessId}
+GET /api/2.4/tech/access/link/igmpsnooping/{accessId}
 ```
 Response:
 ```http
@@ -197,13 +200,13 @@ Content-Type: application/json
 
 
 
-<h3 id="get-access-downlink-status">GET access/downlink/status/{accessId}</h3>
+<h3 id="get-access-link-status">GET access/link/status/{accessId}</h3>
 
-Fetch access equipment downlink interface status.
+Fetch access equipment access interface status.
 
 Request:
 ```http
-GET /api/2.4/tech/access/downlink/status/{accessId}
+GET /api/2.4/tech/access/link/status/{accessId}
 ```
 Response:
 ```http
@@ -218,13 +221,13 @@ Content-Type: application/json
   "linkSpeed": 1000,
   "configuredSpeed": [
     {
-      "service": "bb",
+      "serviceType": "bb",
       "queue": 1,
       "cir": 3000,
       "pir": 3000
     },
     {
-      "service": "iptv",
+      "serviceType": "iptv",
       "queue": 0,
       "cir": 12000,
       "pir": 12000
@@ -233,12 +236,14 @@ Content-Type: application/json
   "statistics": {
     "counterResetAt": "2014-08-14T14:09:23Z",
     "peakInputRate": {
-      "rate": 30000,
-      "at": "2014-08-14T14:09:23Z"
+      "counter32": 30000,
+      "counter64": 30000,
+      "timestamp": "2014-08-14T14:09:23Z"
     },
     "peakOutputRate": {
-      "rate": 30000,
-      "at": "2014-08-14T14:09:23Z"
+      "counter32": 30000,
+      "counter64": 30000,
+      "timestamp": "2014-08-14T14:09:23Z"
     },
     "lastFiveInput": { 
       "packets": 100,
@@ -257,7 +262,6 @@ Content-Type: application/json
       "pauses": 0,
       "errors": 1337,
       "crcErrors": 0
-
     },
     "output": {
       "packets": 100,
@@ -285,7 +289,7 @@ Content-Type: application/json
 | speed                                         | string            | Configured speed                                 |
 | linkSpeed                                     | integer           | Link speed                                       |
 | configuredSpeed                               | list              | List of configured traffic shaping/policies      |
-| configuredSpeed.#.service                     | string            | Service name                                     |
+| configuredSpeed.#.serviceType                     | string            | Service type                                     |
 | configuredSpeed.#.queue                       | string            | Queue index                                      |
 | configuredSpeed.#.cir                         | string            | Commited rate                                    |
 | configuredSpeed.#.pir                         | string            | Peak rate                                        |
@@ -406,12 +410,12 @@ Content-Type: application/json
   "macAddressTable": [
     {
       "mac": "xx:xx:xx:xx:xx:xx",
-      "service": "bb",
+      "serviceType": "bb",
       "port": 1
     },
     {
       "mac": "xx:xx:xx:xx:xx:xx",
-      "service": "iptv",
+      "serviceType": "iptv",
       "port": 2
     }
   ],
@@ -419,13 +423,13 @@ Content-Type: application/json
     {
       "ip:": "10.0.0.1",
       "mac": "00:11:22:aa:bb:cc",
-      "service": "iptv",
+      "serviceType": "iptv",
       "timeout": "2004-08-14T14:09:23Z",
     },
     {
       "ip:": "10.0.0.1",
       "mac": "00:11:22:aa:bb:cc",
-      "service": "iptv",
+      "serviceType": "iptv",
       "timeout": "2004-08-14T14:09:23Z",
     },
   ]
@@ -466,11 +470,42 @@ Content-Type: application/json
 | ports.#.statistics.output.unicast             |integer            | Egress count of unicast                          |
 | macAddressTable                               |list               | List of mac address objects                      |
 | macAddressTable.#.mac                         |string             | Mac address of device                            |
-| macAddressTable.#.service                     |string             | Which network service the mac originates from    |
+| macAddressTable.#.serviceType                     |string             | Which network service the mac originates from    |
 | macAddressTable.#.port                        |string             | Which CPE port index the mac originates from     |
 | dhcpSnooping                                  |list               | List of dhcp snooping objects                    |
 | dhcpSnooping.#.ip                             |string             | IP lease                                         |
 | dhcpSnooping.#.mac                            |string             | Mac address of device                            |
-| dhcpSnooping.#.service                        |string             | Which network service the lease originates from  |
+| dhcpSnooping.#.serviceType                        |string             | Which network service the lease originates from  |
 | dhcpSnooping.#.timeout                        |string (iso8601)   | DHCP Lease timeout                               |
-  
+
+<h3 id="get-leaseinfo">GET leaseinfo/{accessId}</h3>
+Returns customer lease information, sourced from eg db, dhcp, arp.
+
+Request:
+```http
+GET /api/2.4/leaseinfo/{accessId}
+```
+
+Response:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "lease": "10.0.0.1",
+    "mac": "00:00:00:00:00:00",
+    "serviceType": "iptv",
+    "start": "2004-08-14T14:09:23Z",
+    "end": "2004-08-14T14:09:23Z"
+  },...
+]
+```
+
+|Parameter|Type|Description|
+|--|--|--|
+|lease|ip|ip address|
+|mac|mac|mac address|
+|serviceType|serviceType|Sevice type for lease|
+|start|timestamp|Starting timestamp of lease|
+|end|timestamp|End timestamp of lease|
