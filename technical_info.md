@@ -32,6 +32,9 @@ Example service types:
 ### cpe
 * GET [cpe/status](#get-cpe-status)
 
+### lease info
+* GET [leaseinfo](#get-leaseinfo)
+
 ## Requirements
 
 
@@ -473,4 +476,27 @@ Content-Type: application/json
 | dhcpSnooping.#.mac                            |string             | Mac address of device                            |
 | dhcpSnooping.#.service                        |string             | Which network service the lease originates from  |
 | dhcpSnooping.#.timeout                        |string (iso8601)   | DHCP Lease timeout                               |
-  
+
+<h3 id="get-leaseinfo">GET leaseinfo/{accessId}</h3>
+Returns customer lease information, sourced from eg db, dhcp, arp.
+
+Request:
+```http
+GET /api/2.4/leaseinfo/{accessId}
+```
+
+Response:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "ip": "10.0.0.1",
+    "mac": "00:00:00:00:00:00",
+    "service": "iptv",
+    "timeout": "2004-08-14T14:09:23Z",
+  },...
+]
+```
+
