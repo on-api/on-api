@@ -25,15 +25,12 @@ Example service types:
 ### access
 * GET [access/hardware](#get-access-hardware)
 * GET [access/link/macaddresstable](#get-access-link-macaddresstable)
-* GET [access/link/dhcpsnooping](#get-access-link-dhcpsnooping)
+* GET [access/link/leaseinfo](#get-access-link-leaseinfo)
 * GET [access/link/igmpsnooping](#get-access-link-igmpsnooping)
 * GET [access/link/status](#get-access-link-status)
 
 ### cpe
 * GET [cpe/status](#get-cpe-status)
-
-### lease info
-* GET [leaseinfo](#get-leaseinfo)
 
 ## Requirements
 
@@ -41,7 +38,7 @@ Example service types:
 **API Prefix:** `/tech` 
 eg: `domain.local/api/2.4/tech/access/equipment/423323449`
 
-Endpoints like dhcpsnooping should when empty return an empty array:
+Endpoints like leaseinfo should when empty return an empty array:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -128,13 +125,13 @@ Content-Type: application/json
 | mac       | string (17) | Mac address of device                           |
 | serviceType   | string      | Which network service the mac originates from   |
 
-<h3 id="get-access-link-dhcpsnooping">GET access/link/dhcpsnooping/{accessId}</h3>
+<h3 id="get-access-link-leaseinfo">GET access/link/leaseinfo/{accessId}</h3>
 
-Fetch dhcp snooping data from only the access interface.
+Fetch lease data from the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/link/dhcpsnooping/{accessId}
+GET /api/2.4/tech/access/link/leaseinfo/{accessId}
 ```
 
 Response:
@@ -144,26 +141,29 @@ Content-Type: application/json
 
 [
   {
-    "ip:": "10.0.0.1",
-    "mac": "00:11:22:aa:bb:cc",
-    "serviceType": "bb",
-    "timeout": 600
+    "lease": "10.0.0.1",
+    "mac": "00:00:00:00:00:00",
+    "serviceType": "iptv",
+    "start": "2004-08-14T14:09:23Z",
+    "end": "2004-08-14T14:09:23Z"
   },
   {
-    "ip:": "10.0.0.1",
-    "mac": "00:11:22:aa:bb:cc",
+    "lease": "10.0.0.1",
+    "mac": "00:00:00:00:00:00",
     "serviceType": "iptv",
-    "timeout": 600
-  },
+    "start": "2004-08-14T14:09:23Z",
+    "end": "2004-08-14T14:09:23Z"
+  }
 ]
 ```
 
-| Parameter | Type                              | Description                                     |
-|-----------|-----------------------------------|-------------------------------------------------|
-| ip        | string (7-19)|IP lease            |                                                 |
-| mac       | string (17)|Mac address of device |                                                 |
-| serviceType   | string                            | Which network service the mac originates from   |
-| timeout   | integer (1-10)|DHCP Lease timeout |                                                 |
+|Parameter|Type|Description|
+|--|--|--|
+|lease|ip|ip address|
+|mac|mac|mac address|
+|serviceType|serviceType|Sevice type for lease|
+|start|timestamp|Starting timestamp of lease|
+|end|timestamp|End timestamp of lease|
 
 
 <h3 id="get-access-link-igmpsnooping">GET access/link/igmpsnooping/{accessId}</h3>
