@@ -1,3 +1,4 @@
+
 # Contact information to end user
 ## Description
 The API enables communication providers to query the service provider for contact details to the end users.
@@ -7,65 +8,67 @@ The API enables communication providers to query the service provider for contac
 ## Specification
 
 There are two end points:
-* /2.4/access/<b><access-id></b>
+* /2.4/access/access-id
   - Uses access-id as input
-* /2.4/access_sp/<b><sp_reference></b>
+* /2.4/access_sp_ref/{spReference}
   - Uses the spReference value supplied by the service provider as input
+* /2.4/access_sp_sub_id/{spSubscriptionId}
+* /2.4/access_sp_ticket_ref/{spTicketReference}
 
+ 
 It is possible to `POST` a Json structure containing reference to ticket id's.
 The rationale is to be able to track requests of contact information.
  
 
 Request:
-<pre>
-GET /2.4/access/<b>&lt;access-id&gt;</b> HTTP/1.1
-</pre>
+```http
+GET /2.4/access/{ accessId }
 
-<pre>
-GET /2.4/access_sp/<b>&lt;spReference&gt;</b> HTTP/1.1
-</pre>
+GET /2.4/access_sp_ref/{ spReference }
 
-<pre>
-POST /2.4/access/<b>&lt;access-id&gt;</b> HTTP/1.1
+GET /2.4/access_sp_sub_id/{ spSubscriptionId }
+
+GET /2.4/access_sp_ticket_ref/{ spTicketReference }
+
+POST /2.4/access/{ accessId }
 Content-Type: application/json
 
 {
-    "koTicketReference": <b>"&lt;Reference to a ticket at the Communication provider&gt;"</b>,
-    "spTicketReference": <b>"&lt;Reference to a ticket at the Servier provider&gt;"</b>,
-    "reason": <b>"&lt;Reason for request&gt;"</b>
-
+    "koTicketReference": "Reference to a ticket at the Communication provider",
+    "spTicketReference": "Reference to a ticket at the Servier provider",
+    "reason": "Reason for request"
 }
-</pre>
-<pre>
-POST /2.4/access_sp/<b>&lt;spReference&gt;</b> HTTP/1.1
+```
+
+```http
+POST /2.4/access_sp_ref/spReference
 Content-Type: application/json
 
 {
-    "koTicketReference": <b>"&lt;Reference to a ticket at the Communication provider&gt;"</b>,
-    "spTicketReference": <b>"&lt;Reference to a ticket at the Servier provider&gt;"</b>,
-    "reason": <b>"&lt;Reason for request&gt;"</b>
+    "koTicketReference": "Reference to a ticket at the Communication provider",
+    "spTicketReference": "Reference to a ticket at the Servier provider",
+    "reason": "Reason for request"
 }
-</pre>
+```
 
 Response:
-<pre>
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-    <b>"&lt;service&gt;"</b>: {
+    "service": {
         "customer": {
-            "name": <b>"&lt;Name of contact person&gt;"</b>,
-            "email": <b>"&lt;e-mail to contact person&gt;"</b>,
-            "phone": <b>"&lt;phone to contact person&gt;"</b>,
-            "mobilePhone": <b>"&lt;cell-phone to contact person&gt;"</b>
+            "name": "Name of contact person",
+            "email": "e-mail to contact person",
+            "phone": "phone to contact person",
+            "mobilePhone": "phone to contact person"
         },
-        "spReference: <b>"&lt;spReference&gt;"</b>,
-        "accessId": <b>"&lt;access-id&gt;"</b> 
+        "spReference": "spReference",
+        "accessId": "access-id" 
     }
 }
-</pre>
-
+```
 
 If no contact person can be found, the response should be `HTTP 404 Not Found`
 
@@ -73,15 +76,15 @@ If no contact person can be found, the response should be `HTTP 404 Not Found`
 ## Example
 Request:
 ```http
-GET /2.4/access/STTA0001 HTTP/1.1
+GET /2.4/access/STTA0001
 ```
 
 ```http
-GET /2.4/access_sp/1337 HTTP/1.1
+GET /2.4/access_sp_ref/1337
 ```
 
 ```http
-POST /2.4/access/STTA0001 HTTP/1.1
+POST /2.4/access/STTA0001
 Content-Type: application/json
 
 {
@@ -92,7 +95,7 @@ Content-Type: application/json
 }
 ```
 ```http
-POST /2.4/access_sp/1337 HTTP/1.1
+POST /2.4/access_sp_ref/1337 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -131,6 +134,7 @@ Uses the spReference value supplied by the service provider as input
 For data format, see [data formats](dataformats.md)
 
 Request
+
 <table>
     <thead>
         <tr>

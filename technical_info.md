@@ -25,15 +25,12 @@ Example service types:
 ### access
 * GET [access/hardware](#get-access-hardware)
 * GET [access/link/macaddresstable](#get-access-link-macaddresstable)
-* GET [access/link/dhcpsnooping](#get-access-link-dhcpsnooping)
+* GET [access/link/leaseinfo](#get-access-link-leaseinfo)
 * GET [access/link/igmpsnooping](#get-access-link-igmpsnooping)
 * GET [access/link/status](#get-access-link-status)
 
 ### cpe
 * GET [cpe/status](#get-cpe-status)
-
-### lease info
-* GET [leaseinfo](#get-leaseinfo)
 
 ## Requirements
 
@@ -41,7 +38,7 @@ Example service types:
 **API Prefix:** `/tech` 
 eg: `domain.local/api/2.4/tech/access/equipment/423323449`
 
-Endpoints like dhcpsnooping should when empty return an empty array:
+Endpoints like leaseinfo should when empty return an empty array:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -128,13 +125,13 @@ Content-Type: application/json
 | mac       | string (17) | Mac address of device                           |
 | serviceType   | string      | Which network service the mac originates from   |
 
-<h3 id="get-access-link-dhcpsnooping">GET access/link/dhcpsnooping/{accessId}</h3>
+<h3 id="get-access-link-leaseinfo">GET access/link/leaseinfo/{accessId}</h3>
 
-Fetch dhcp snooping data from only the access interface.
+Fetch lease data from the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/link/dhcpsnooping/{accessId}
+GET /api/2.4/tech/access/link/leaseinfo/{accessId}
 ```
 
 Response:
@@ -144,26 +141,29 @@ Content-Type: application/json
 
 [
   {
-    "ip:": "10.0.0.1",
-    "mac": "00:11:22:aa:bb:cc",
-    "serviceType": "bb",
-    "timeout": 600
+    "lease": "10.0.0.1",
+    "mac": "00:00:00:00:00:00",
+    "serviceType": "iptv",
+    "start": "2004-08-14T14:09:23Z",
+    "end": "2004-08-14T14:09:23Z"
   },
   {
-    "ip:": "10.0.0.1",
-    "mac": "00:11:22:aa:bb:cc",
+    "lease": "10.0.0.1",
+    "mac": "00:00:00:00:00:00",
     "serviceType": "iptv",
-    "timeout": 600
-  },
+    "start": "2004-08-14T14:09:23Z",
+    "end": "2004-08-14T14:09:23Z"
+  }
 ]
 ```
 
-| Parameter | Type                              | Description                                     |
-|-----------|-----------------------------------|-------------------------------------------------|
-| ip        | string (7-19)|IP lease            |                                                 |
-| mac       | string (17)|Mac address of device |                                                 |
-| serviceType   | string                            | Which network service the mac originates from   |
-| timeout   | integer (1-10)|DHCP Lease timeout |                                                 |
+|Parameter|Type|Description|
+|--|--|--|
+|lease|ip|ip address|
+|mac|mac|mac address|
+|serviceType|serviceType|Sevice type for lease|
+|start|timestamp|Starting timestamp of lease|
+|end|timestamp|End timestamp of lease|
 
 
 <h3 id="get-access-link-igmpsnooping">GET access/link/igmpsnooping/{accessId}</h3>
@@ -236,13 +236,11 @@ Content-Type: application/json
   "statistics": {
     "counterResetAt": "2014-08-14T14:09:23Z",
     "peakInputRate": {
-      "counter32": 30000,
-      "counter64": 30000,
+      "counter": 30000,
       "timestamp": "2014-08-14T14:09:23Z"
     },
     "peakOutputRate": {
-      "counter32": 30000,
-      "counter64": 30000,
+      "counter": 30000,
       "timestamp": "2014-08-14T14:09:23Z"
     },
     "lastFiveInput": { 
@@ -294,10 +292,10 @@ Content-Type: application/json
 | configuredSpeed.#.cir                         | string            | Commited rate                                    |
 | configuredSpeed.#.pir                         | string            | Peak rate                                        |
 | statistics.counterResetAt                     | string (iso8601)  | Timestamp when statistics counter was started    |
-| statistics.peakInputRate.rate                 | integer           | Bytes per second                                 |
-| statistics.peakInputRate.at                   | string (iso8601)  | Timestamp of peak                                |
-| statistics.peakOutputRate.rate                | string            | Bytes per second                                 |
-| statistics.peakOutputRate.at|string (iso8601) | Timestamp of peak |                                                  |
+| statistics.peakInputRate.counter                 | integer           | Bytes per second                                 |
+| statistics.peakInputRate.timestamp                   | string (iso8601)  | Timestamp of peak                                |
+| statistics.peakOutputRate.counter                | string            | Bytes per second                                 |
+| statistics.peakOutputRate.timestamp|string (iso8601) | Timestamp of peak |                                                  |
 | statistics.lastFiveInput.packets              | integer           | Ingress count of packets last five minutes       |
 | statistics.lastFiveInput.bytes                | integer           | Ingress count of bytes last five minutes         |
 | statistics.lastFiveOutput.packets             | integer           | Egress count of packets last five minutes        |
@@ -477,35 +475,3 @@ Content-Type: application/json
 | dhcpSnooping.#.mac                            |string             | Mac address of device                            |
 | dhcpSnooping.#.serviceType                        |string             | Which network service the lease originates from  |
 | dhcpSnooping.#.timeout                        |string (iso8601)   | DHCP Lease timeout                               |
-
-<h3 id="get-leaseinfo">GET leaseinfo/{accessId}</h3>
-Returns customer lease information, sourced from eg db, dhcp, arp.
-
-Request:
-```http
-GET /api/2.4/leaseinfo/{accessId}
-```
-
-Response:
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-[
-  {
-    "lease": "10.0.0.1",
-    "mac": "00:00:00:00:00:00",
-    "serviceType": "iptv",
-    "start": "2004-08-14T14:09:23Z",
-    "end": "2004-08-14T14:09:23Z"
-  },...
-]
-```
-
-|Parameter|Type|Description|
-|--|--|--|
-|lease|ip|ip address|
-|mac|mac|mac address|
-|serviceType|serviceType|Sevice type for lease|
-|start|timestamp|Starting timestamp of lease|
-|end|timestamp|End timestamp of lease|

@@ -10,6 +10,8 @@ This specification provides functionality for trouble tickets to be handled betw
 
 Data communicated should only be related to its troubleshooting purpose or context.
 
+See events specification for sending notifications for when a ticket has been updated.
+
 CO = Comminicatoin Operator
 SP = Service Provider
 
@@ -115,8 +117,7 @@ Content-Type: application/json
     "ip": "169.254.1.1",
     "mac": "AB:CD:EF:12:34:56",
     "link": "false"
-  },
-  "callbackURL": "https://www.ispwebsite.se/api/ticketing/update/CASE#000123456"
+  }
 }
 ```
 
@@ -143,7 +144,6 @@ Content-Type: application/json
 |additionalInfo.ip|string|Customer IP|
 |additionalInfo.mac|string|Device MAC-address|
 |additionalInfo.link|boolean|Customer Link Status|
-|callbackURL|string|ISP Callback URL (optional)|
 
 
 <h3 id="post-ticket">POST ticket</h3>
@@ -169,8 +169,7 @@ Content-Type: application/json
     "ip": "169.254.1.1",
     "mac": "AB:CD:EF:12:34:56",
     "link": "false",
-  },
-  "callbackURL": "https://www.ispwebsite.se/api/ticketing/update/CASE#000123456",  
+  }
 }
 ```
 
@@ -188,7 +187,6 @@ Content-Type: application/json
 |additionalInfo.ip|string|Customer IP|
 |additionalInfo.mac|string|Device MAC-address|
 |additionalInfo.link|boolean|Customer Link Status|
-|callbackURL|string|ISP Callback URL (Optional)|
 
 
 Response:
