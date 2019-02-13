@@ -10,6 +10,8 @@ This specification provides functionality for trouble tickets to be handled betw
 
 Data communicated should only be related to its troubleshooting purpose or context.
 
+See events specification for sending notifications for when a ticket has been updated.
+
 CO = Comminicatoin Operator
 SP = Service Provider
 
