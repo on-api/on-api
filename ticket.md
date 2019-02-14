@@ -75,8 +75,8 @@ Content-Type: application/json
   {
     "coTicketReference": "TT00000123456",
     "spTicketReference": "CASE#000123456",
-    "status": "CREATED",
-    "responsible": "CO"
+    "status": "IN_PROGRESS_CO",
+    "responsible": ""
   },
   ...
 ]

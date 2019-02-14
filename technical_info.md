@@ -23,14 +23,14 @@ Example service types:
 # Specification
 ## Reference index
 ### access
-* GET [access/hardware](#get-access-hardware)
-* GET [access/link/macaddresstable](#get-access-link-macaddresstable)
-* GET [access/link/leaseinfo](#get-access-link-leaseinfo)
-* GET [access/link/igmpsnooping](#get-access-link-igmpsnooping)
-* GET [access/link/status](#get-access-link-status)
+* GET [access/{accessId}/hardware](#get-access-hardware)
+* GET [access/{accessId}/link/macaddresstable](#get-access-link-macaddresstable)
+* GET [access/{accessId}/link/leaseinfo](#get-access-link-leaseinfo)
+* GET [access/{accessId}/link/igmpsnooping](#get-access-link-igmpsnooping)
+* GET [access/{accessId}/link/status](#get-access-link-status)
 
 ### cpe
-* GET [cpe/status](#get-cpe-status)
+* GET [cpe/{accessId}/status](#get-cpe-status)
 
 ## Requirements
 
@@ -57,12 +57,12 @@ Content-Type: application/json
 
 ## Endpoints
 
-<h3 id="get-access-hardware">GET access/hardware/{accessId}</h3>
+<h3 id="get-access-hardware">GET access/{accessId}/hardware</h3>
 Returns information about the customer-facing network element, eg. access switch.
 
 Request:
 ```http
-GET /api/2.4/tech/access/hardware/{accessId}
+GET /api/2.4/tech/{accessId}/access/hardware
 ```
 
 Response when the network element is working as intended:
@@ -93,13 +93,13 @@ Content-Type: application/json
 |vendor     | string            | Hardware vendor                                                   |
 |model      | string            | Hardware model                                                    |
 
-<h3 id="get-access-link-macaddresstable">GET access/link/macaddresstable/{accessId}</h3>
+<h3 id="get-access-link-macaddresstable">GET access/{accessId}/link/macaddresstable</h3>
 
 Fetch mac address table data from only the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/link/macaddresstable/{accessId}
+GET /api/2.4/tech/access/{accessId}/link/macaddresstable
 ```
 
 
@@ -125,13 +125,13 @@ Content-Type: application/json
 | mac       | string (17) | Mac address of device                           |
 | serviceType   | string      | Which network service the mac originates from   |
 
-<h3 id="get-access-link-leaseinfo">GET access/link/leaseinfo/{accessId}</h3>
+<h3 id="get-access-link-leaseinfo">GET access/{accessId}/link/leaseinfo</h3>
 
 Fetch lease data from the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/link/leaseinfo/{accessId}
+GET /api/2.4/tech/access/{accessId}/link/leaseinfo
 ```
 
 Response:
@@ -166,13 +166,13 @@ Content-Type: application/json
 |end|timestamp|End timestamp of lease|
 
 
-<h3 id="get-access-link-igmpsnooping">GET access/link/igmpsnooping/{accessId}</h3>
+<h3 id="get-access-link-igmpsnooping">GET access/{accessId}/link/igmpsnooping</h3>
 
 Fetch igmp snooping data from only the access interface.
 
 Request:
 ```http
-GET /api/2.4/tech/access/link/igmpsnooping/{accessId}
+GET /api/2.4/tech/access/{accessId}/link/igmpsnooping/
 ```
 Response:
 ```http
@@ -200,13 +200,13 @@ Content-Type: application/json
 
 
 
-<h3 id="get-access-link-status">GET access/link/status/{accessId}</h3>
+<h3 id="get-access-link-status">GET access/{accessId}/link/status</h3>
 
 Fetch access equipment access interface status.
 
 Request:
 ```http
-GET /api/2.4/tech/access/link/status/{accessId}
+GET /api/2.4/tech/access/{accessId}/link/status
 ```
 Response:
 ```http
@@ -321,13 +321,13 @@ Content-Type: application/json
 | fiber.temp                                    | string            | SFP temperature                                  |
 
 
-<h3 id="get-cpe-status">GET cpe/status/{accessId}</h3>
+<h3 id="get-cpe-status">GET cpe/{accessId}/status</h3>
 
 Fetch full cpe state.
 
 Request:
 ```http
-GET /api/2.4/tech/cpe/status/{accessId}
+GET /api/2.4/tech/cpe/{accessId}/status
 ```
 Response:
 ```http
