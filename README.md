@@ -30,10 +30,10 @@ Some of the properties of this API includes:
   8. [Order](orders.md)
   9. [Order events](orderevents.md)
  10. [Querying the service provider for service information](query_sp.md)
- 11. [Querying the service provider for customer information](access_customer_info.md)
- 12. [Services - list active services ](services.md)
+ 11. [Querying the service provider for customer information](contact_information.md)
+ 12. [Subscriptions - list active services](subscriptions.md)
  13. [Web portal - Forward customers to SP service portals](web_portal.md)
- 14. [Ticket](ticket.md)
+ 14. [Ticket](tickets.md)
  15. [Technical information](technical_info.md)
  
 ## General guidelines
