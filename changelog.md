@@ -32,3 +32,4 @@
  * [DHCP-lookup](dhcplookup.md) replaces [Option82 Lookup](https://github.com/on-api/on-api-release-2.3.1/blob/master/option82_lookup.md)
  * New API - [Equipment based localization](equipment_based_localization.md)
  * [Accesses](accesses.md) - active is renamed to subscriptions
+ * New API - [Invoice specification](invoice_specification.md)
