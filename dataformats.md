@@ -1,6 +1,12 @@
-# Conventions and formatting
+# Data formats
+Within this document the conventions and formatting rules for all ON-API's are found. There are also descriptions of 
+various data formats that are common for several API-endpoints. 
 
-All use of the on-api is expecting formatting to be according to these rules.
+## Conventions and formatting
+
+All use of the ON-API is expecting formatting to be according to these rules.
+
+Personal data should not be entered as any value unless the data format is specifically intended for this. 
 
 Valid JSON values is expected.
  
@@ -10,12 +16,16 @@ A JSON value can be an object, array, number, string, true, false, or null.
 
 All string values is encoded in UTF-8.
 
-## Data types
+## Generic data formats
+
+Basic guidelines for all other data formats. All specific data formats should refer to one of the following generic data
+formats or a JSON value.
 
 ### ID
 Used to identify a single object.
 
  * JSON string
+ * Can not contain a personal identity number
  * Must be unique for the object type in the source system
  * Valid characters a-z, A-Z, 0-9, '-' and '.'
  * Maximum length 32 characters
@@ -33,17 +43,50 @@ Human readable text string.
  * JSON string
  * Human readable characters
  * Max length 255
- 
-### number
-Decimal number 
- * Matching regular expression ^[0-9]+$
 
 Examples
  * Internet access is blocked due to non payment.
  * A agreement with the network operator is required.
  * Data in the field service is invalid!
+    
+### boolean
+Value that describes if a statement is true or false, this is not to be enclosed in double quotes in JSON representation.
+
+ * JSON values true or false
+ 
+Examples
+ * true
+ * false
+  
+### enumeration
+A predefined list of values that is valid for this field is provided where it is defined. No other values can be used.
+
+ * JSON type string
+ 
+### object
+A field with a value containing zero or more fields and values. Documentation should specify the structure of that 
+object.
+
+ * JSON type object
+
+Examples 
+
+ * { "field": "Some value", "otherField": "Another value" }
+
+ 
+### array
+A list of values or objects. Documentation should specify the type of values in the list.
+
+  * JSON type array
+
+Examples
+ * [ "First", "Second", "Third" ]
+  
+
+## Specific data formats
 
 ### phoneNo
+
 Phone numbers should always follow the E.164 conventions and consist of a +-sign followed by digits only. Incl country 
 code such as 46 for Sweden and 1 for US/Canada.
 
@@ -61,27 +104,45 @@ References
  * [Wikipedia E.164](https://en.wikipedia.org/wiki/E.164)
 
 ### option82
+
 DHCPv4 Option82 should be hex encoded. The complete option82 TLV (typ, length, value) should be encoded. The data 
 should always start with 52 which is hex for 82.
+This format is deprecated in favor dhcpIdentifier.
 
- * Data format hexBinary
- 
+ * Data format json string 
+ * [RFC 3046](https://www.ietf.org/rfc/rfc3046.txt)
+
 Examples
  
  * 520A01036162630203313233
 
 ### dhcpIdentifier
+To better accommodate all scenarios the separate suboptions of DHCP option 82 have been split up and
+also options for DHCPv6 have been added. The values is expected to have a readable text representation.
+ 
+This replaces the old hex encoded option82 dataformat.
+
  * JSON object
+ * Readable text representation of the value
+ * Replaces data format [option82](dataformats.md#option82)
  * Fields with unknown or missing value is omitted
  * Fields
    * ipv4CircuitId
+     * Data format json string
      * DHCP option 82 suboption 1
+     * [RFC 3046](https://www.ietf.org/rfc/rfc3046.txt)
    * ipv4RemoteId
+     * Data format json string
      * DHCP option 82 suboption 2
+     * [RFC 3046](https://www.ietf.org/rfc/rfc3046.txt)
    * ipv6InterfaceId
+     * Data format json string
      * DHCPv6 option 18
+     * [RFC 3315](https://tools.ietf.org/html/rfc3315)
    * ipv6RemoteId
+     * Data format json string
      * DHCPv6 option 37
+     * [RFC 4649](https://tools.ietf.org/html/rfc4649)
 
 Examples
 ```JSON
@@ -98,7 +159,6 @@ Examples
   "ipv4CircuitId": "CO-1234"
 }
 ```
-
 
 ### postalCode
  * Must be 5 digits
@@ -160,41 +220,8 @@ References
  
 Examples
  * 7465737420737472696E67
-    
-### boolean
-Value that describes if a statement is true or false, this is not to be enclosed in double quotes in JSON representation.
 
- * JSON values true or false
- 
-Examples
- * true
- * false
-  
-### enumeration
- * JSON type string
- 
- A predefined list of values that is possible for this field is provided where it is defined. No other values can be 
- used.
- 
-### object
- A field with a value containing zero or more fields and values. Documentation should specify the structure of that 
- object.
-
- * JSON type object
-
-Examples 
- * { "Field": "Some value", "Other field": "Another value" }
-
- 
-### array
-A list of values or objects. Documentation should specify the type of values in the list.
-
-  * JSON type array
-
-Examples
- * [ "First", "Second", "Third" ]
-  
-### mac-address
+### macAddress
  * JSON string
  * Formatted as 12 hexadecimal digits with a colon (":") as a separator every third character
  * Digits A to F should use capital letters
@@ -203,3 +230,125 @@ Examples
 Examples
  * 01:02:03:04:05:06
  * AA:BB:CC:DD:EE:FF
+
+### accessId
+
+Identifies a single access. Used as key when fetching a single accesss or when ordering services.
+
+ * Data format: [ID](dataformats.md#id)
+ * References: [accesses/accessId](accesses.md#accessid)
+
+
+### subscriptionId
+ The CO's ID for a single subscription. 
+
+ * Data format: [ID](dataformats.md#id)
+ * References: [subscriptions/subscriptionId](subscriptions.md#subscriptionid)
+
+ 
+### spRefereence
+
+Reference that identifies the unique end-customer or service in the Service Provider's system.
+This information can be used by the CO to lookup information about the customer or service with the 
+[contact information API](contact_information.md)
+
+ * Data format: [ID](dataformats.md#id)
+
+### spSubscriptionId
+
+The service providers ID for a single subscription.
+
+ * Data format: [ID](dataformats.md#id)
+ 
+### operationalState 
+
+The operational state of a subscription
+
+ * Data format: [enumeration](dataformats.md#enumeration)
+
+**Values**
+  * ACTIVATED
+    * Subscription is activated and service delivery is enabled
+  * SUSPENDED
+    * Subscription is suspended and service delivery is blocked
+
+### service
+A name of a specific service offered by the CO listed in the [accesses API](accesses.md)
+
+ * Data format: [text](dataformats.md#text)
+
+
+### equipment
+
+List of equipment which is used to deliver a service. This can be used to tie the service to specific 
+equipment, such as VOIP or IPTV-equipment. 
+
+ * Data format: JSON array of JSON objects
+
+**Keys**
+ * vendorId
+   * Dataformat: text
+   * Specifies the DHCP Option 60 Vendor class identifier 
+   * See [RFC 2132](https://www.ietf.org/rfc/rfc2132.txt)
+
+ * macAddress
+   * Dataformat: [macAddress](dataformats.md#macaddress)
+   * Specifies the equipments MAC-address
+
+Examples
+
+```JSON
+[
+    {
+      "vendorId": "ACME-IPTV",
+      "macAddress": "AA:BB:CC:11:22:33"
+    },
+    {
+      "vendorId": "ACME-IPTV",
+      "macAddress": "AA:BB:CC:44:55:66"
+    }
+]
+```
+
+
+### characteristics
+Settings for a subscription.
+
+ * Data format: JSON object
+
+#### characteristics/fixedIp
+Indicates if a fixedIp is to be used. 
+
+Data format: [boolean](dataformats.md#boolean)
+
+#### characteristics/ipAddresses
+If the ipAddresses characteristic is provided in an [order](order.md) the specified IP-addresses will be 
+used. If ipAddresses is omitted from the [order](order.md) the CO reserves an IP-address from a predefined pool, the ipaddresses 
+is later displayed under characteristics in the [subscriptions API](subscriptions.md).
+
+Data format: JSON-array of [IP-addresses](dataformats.md#ipaddress) to be used.
+
+```JSON
+{
+    "characteristics": {
+        "fixedIp": true,
+        "ipAddresses": [
+            "1.2.3.4",
+            "AB::01/64",
+            "1.3.0.1/24"
+        ]
+    }
+}
+```
+
+#### characteristics/SLA
+SLA type to be used for the service. 
+
+Data format: [text](dataformats.md#text)
+
+```JSON
+{
+    "characteristics": {
+        "SLA": "SLA-3"
+    }
+}
