@@ -39,5 +39,4 @@ Content-Type: application/json
 ### Fields
 
  #### accessId
- * Data format: ID
- * References: [accesses/accessId](accesses.md)
+ * Data format: [accessId](dataformats.md#accessid)
