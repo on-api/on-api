@@ -66,7 +66,7 @@ When all accesses or updates are requested the response contains a JSON-array wi
 ```JSON
 [
   {
-    "accessId": "STTA0001",
+    "accessId": "8732c2f065e2490babce820e94b1011a",
     "streetName": "Testvägen",
     "streetNumber": "100",
     "streetLittera": "",
@@ -129,71 +129,100 @@ When a single access is requested the response contains a single JSON-object.
 
 ```JSON
 {
-    "accessId": "STTA0001",
-    "streetName": "Testvägen",
-    "streetNumber": "100",
-    "streetLittera": "",
-    "postalCode": "10000",
-    "city": "Ankeborg",
-    "countryCode": "SE",
-    "premisesType": "MDU_APARTMENT",
-    "mduApartmentNumber": "1001",
-    "mduDistinguisher": "12121212",
-    "outlet": "A-11-14",
-    "population": "Hemsöhem",
-    "services": [
+  "accessId": "8732c2f065e2490babce820e94b1011a",
+  "streetName": "Testvägen",
+  "streetNumber": "100",
+  "streetLittera": "",
+  "postalCode": "10000",
+  "city": "Ankeborg",
+  "countryCode": "SE",
+  "premisesType": "MDU_APARTMENT",
+  "mduApartmentNumber": "1001",
+  "mduDistinguisher": "12121212",
+  "outlet": "A-11-14",
+  "population": "Hemsöhem",
+  "services": [
+    {
+      "service": "BB-1000-1000",
+      "connection": "2014-03-01",
+      "available": "2014-01-01",
+      "forcedTakeoverPossible": false,
+      "comments": [
+        "This service is limited to 100 Mbps for up to two weeks after ordering"
+      ]
+    },
+    {
+      "service": "BB-100-100",
+      "connection": "2013-10-12",
+      "available": "YES",
+      "forcedTakeoverPossible": false
+    },
+    {
+      "service": "BB-10-10",
+      "connection": "2013-10-12",
+      "available": "YES",
+      "forcedTakeoverPossible": false
+    },
+    {
+      "service": "IPTV",
+      "connection": "2013-10-12",
+      "available": "YES",
+      "forcedTakeoverPossible": false
+    },
+    {
+      "service": "VOIP",
+      "connection": "2013-08-13",
+      "available": "NO",
+      "forcedTakeoverPossible": true
+    }
+  ],
+  "subscriptions": [
+    {
+      "subscriptionId": "8b2ad40b4ffd45e5b48425f57821a7eb",
+      "accessId": "8732c2f065e2490babce820e94b1011a",
+      "service": "BB-1000-1000",
+      "operationalState": "ACTIVATED",
+      "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma",
+      "spSubscriptionId": "b49797aaed934642bc8ae136b87ed12b",
+      "option82": "52270123434F2D38373332633266303635653234393062616263653832306539346231303131610200",
+      "dhcpIdentifier": {
+        "ipv4CircuitId": "CO-8732c2f065e2490babce820e94b1011a"
+      },
+      "note": "Connection will be upgraded to 1000 Mbps at 2019-02-20",
+      "characteristics": {
+        "fixedIp": true,
+        "ipAddress": [
+          "1.2.3.4"
+        ],
+        "SLA": "SLA-3"
+      }
+    },
+    {
+      "subscriptionId": "af5143edb9624223810689c4100525f0",
+      "accessId": "8732c2f065e2490babce820e94b1011a",
+      "service": "IPTV",
+      "operationalState": "ACTIVATED",
+      "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma",
+      "spSubscriptionId": "55498978c4c446d0bbc2ae347a61e78d",
+      "option82": "52270123434F2D38373332633266303635653234393062616263653832306539346231303131610200",
+      "dhcpIdentifier": {
+        "ipv4CircuitId": "CO-8732c2f065e2490babce820e94b1011a"
+      },
+      "equipment": [
         {
-            "service": "BB-100-100",
-            "connection": "2014-03-01",
-            "available": "2014-01-01",
-            "forcedTakeoverPossible": false,
-            "comments": [
-                "Conflicts with other service on this access"
-            ]
-        }, {
-            "service": "BB-100-10",
-            "connection": "2013-10-12",
-            "available": "YES",
-            "forcedTakeoverPossible": false
-        }, {
-            "service": "BB-10-10",
-            "connection": "2013-10-12",
-            "available": "YES",
-            "forcedTakeoverPossible": false
-        }, {
-            "service": "IPTV",
-            "connection": "2013-10-12",
-            "available": "YES",
-            "forcedTakeoverPossible": false
-        }, {
-            "service": "VOIP",
-            "connection": "2013-08-13",
-            "available": "NO",
-            "forcedTakeoverPossible": true
-        }
-    ],
-    "active": [
+          "vendorId": "ACME-IPTV",
+          "macAddress": "AA:BB:CC:11:22:33"
+        },
         {
-            "service": "BB-100-10",
-            "option82": "5216010765746820302F31020B31302E31302E31302E3130",
-            "equipment": [
-                { "vendorId" : "CH_BROADBAND" }
-            ],
-            "spReference": "",
-            "coSubscriptionId": "",
-            "spSubscriptionId": ""
-        }, {
-            "service": "IPTV",
-            "option82": "5216010765746820302F32020B31302E31302E31302E3130",
-            "equipment": [],
-            "spReference": "",
-            "coSubscriptionId": "",
-            "spSubscriptionId": ""
+          "vendorId": "ACME-IPTV",
+          "macAddress": "AA:BB:CC:44:55:66"
         }
-    ],
-    "coFiberConverter": "LASER_3001X_MK2",
-    "coCpeSwitch": "",
-    "coCpeRouter": "NETGEAR WNDR4000"
+      ]
+    }
+  ],
+  "coFiberConverter": "LASER_3001X_MK2",
+  "coCpeSwitch": "",
+  "coCpeRouter": "NETGEAR WNDR4000"
 }
 ```
 
@@ -208,14 +237,14 @@ Some fields are only available when fetching a single access. These fields are m
 
 Identifies a single access. Used as key when fetching a single accesss and ordering services.
 
- * Data format: ID
+ * Data format: [acccessId](dataformats.md#accessid)
  * Mandatory
  
 ### streetName
 
 Street name for the address where the access resides.
 
- * Data format: text
+ * Data format: [text](dataformats.md#text)
  * Mandatory
 
 ### streetNumber
@@ -241,28 +270,28 @@ Street littera or entrance. In the example of "Kungsgatan 10G", the street litte
 ### postalCode
 
  * Mandatory
- * Data format: postalCode
+ * Data format: [postalCode](dataformats.md#postalcode)
   
 ### city
 
  Postal city
 
- * Data format: text 
+ * Data format: [text](dataformats.md#text) 
  * Mandatory
  
 ### countryCode
 
- * Data format: countryCode
+ * Data format: [countryCode](dataformats.md#countrycode)
  * Mandatory
 
 ### premisesType
 
 Premises type describes the type of building/premises of the access.
 
- * Data format: enumeration
+ * Data format: [enumeration](dataformats.md#enumeration)
  * Mandatory
  
-**Possible values**
+**Valid values**
  * COMMERCIAL Offices, stores, municipalty buildings
  * MDU_APARTMENT Apartment in a apartment building (multi dwelling unit)
  * MDU_COMMON  Common area in a apartment building (multi dwelling unit)
@@ -275,7 +304,7 @@ Premises type describes the type of building/premises of the access.
 
 Used to distinguish between individual apartments in apartment buildings sharing a single postal address.
 
- * Data format: number
+ * Data format: JSON number
  * Four digits
  * Matching regexp ^[0-9]{4}$
  * See [Lantmäteriet Apartmentnumber](https://www.lantmateriet.se/en/real-property/Fastighetsinformation/Lagenhetsregistret/apartment-register-content/)
@@ -286,7 +315,7 @@ Used to distinguish between individual apartments in apartment buildings sharing
 Alternative to mduApartmentnumber used to distinguish between individual apartments in an apartment building sharing a
 single postal address. 
 
- * Data format: text
+ * Data format: [text](dataformats.md#text)
  * Mandatory if premisesType is set to MDU_APARTMENT and mduApartmentNumber is omitted
 
 ### outlet
@@ -294,26 +323,26 @@ single postal address.
 Used to identify the port in the apartment or house. The port is typically labeled with this value. If specified, 
 it should be unique per address.
 
- * Data format: text
+ * Data format: [text](dataformats.md#text)
  * Optional
 
 ### population
 
 Describes a subset of all accesses. Used for grouping accesses together for commercial or technical purposes.
 
- * Data format: text
+ * Data format: [text](dataformats.md#text)
  * Optional
 
 ### services 
 Lists of deliverable services.
 
- * Data format: array of objects
+ * Data format: JSON array of JSON objects
 
 ### services/service
 
 Name of the service, used as reference in the [order API](order.md)
 
- * Data format: text
+ * Data format: [text](dataformats.md#text)
  * Mandatory
 
 ### services/connection 
@@ -321,14 +350,14 @@ Name of the service, used as reference in the [order API](order.md)
 Indicates when the service is technically deliverable for the first time. If the date is unknown "YES" or "NO" can 
 optionally be used as value.
 
- * Data format: date (Valid values are also "YES" and "NO")
+ * Data format: [date](dataformats.md#date) (Valid values are also "YES" and "NO")
  * Mandatory
 
 ### services/available
 
 Specifies when a service is available for order. If the date is unknown "YES" or "NO" can optionally be used as value. 
  
- * Data format: date (Valid values are also "YES" and "NO")
+ * Data format: [date](dataformats.md#date) (Valid values are also "YES" and "NO")
  * Mandatory
  * Available with single access
 
@@ -336,75 +365,54 @@ Specifies when a service is available for order. If the date is unknown "YES" or
 
 Specifies if a service provider can replace another service providers activated service. 
 
- * Data format: boolean
+ * Data format: [boolean](dataformats.md#boolean)
  * Mandatory
 
 ### services/comments
 
-A list of messages intended for the end customer. 
+A list of messages from the CO intended for the end customer. 
 
- * Data format: array of text
+ * Data format: JSON array of [text](dataformats.md#text)
  * Optional 
-
-### active
-List of services that are already activated on the access for the current Service Provider. 
-
- * Data format: array of objects containing active services
- * Mandatory
- * Available with single access
-
-### active/service
-The name of the service
- * Data format: text
- * Mandatory
-
-### active/option82
- * Data format: option82
- * Mandatory
- * Available with single access
-
-### active/equipment
- * Data format: 
- * Mandatory
- * Available with single access
-
-### active/spReference 
- * Data format: ID
- * Mandatory
- * Available with single access
-
-Provides references that identifies the unique end-customer or service in the Service Provider's system.
-This information can be used by the CO to lookup information about the customer or service on demand. 
-See Service Activation for more information.
-
-### active/spSubscriptionId 
- * Data format: ID
- * Optional
- * Available with single access
-
- Unique ID in the SP-system for the service/subscription.
-
-### active/coSubscriptionId
- * Data format: ID
- * Mandatory
- * Available with single access
-
- For the current communications operator unique ID for the active service.
-
-### active/characteristics
- Characteristics for the service such as SLA or fixed IP addresses.
  
- * Data format: object
- * Optional
+Examples: 
+ * An agreement with Acme Networks is required to use this service
+ * This service is limited to 100 Mbps for up to two weeks after ordering
+ * Additional equipment needed for this service can be picked up at Acme Networks office
+
+### subscriptions
+List of subscriptions on this accesss. Same format as the result of the [subscriptions API](subscriptions.md) except
+for the accessId that can be omitted here. If there are no subscription for this access an empty JSON array is returned.
+
+ * Data format: [see subscriptions](subscriptions.md)
+ * Mandatory
+ * Available with single access
 
 ### coFiberConverter
- * Data format: text
+
+Make and model of equipment placed at the customer and provided by the CO.
+
+ * Data format: [text](dataformats.md#text)
  * Optional
+ * If the equipment is a fiber converter
 
 ### coCpeSwitch
- * Data format: text
+
+Make and model of equipment placed at the customer and provided by the CO.
+
+ * Data format: [text](dataformats.md#text)
  * Optional
+ * If the equipment is a network-switch
+ * Empty if coCpeRouter not empty
 
 ### coCpeRouter
- * Data format: text
+
+Make and model of equipment placed at the customer and provided by the CO.
+
+Make and model of the by the CO customer placed equipment of router type if it exists.
+
+ * Data format: [text](dataformats.md#text)
  * Optional
+ * If the equipment type is a network-router
+ * Empty if coCpeSwitch not empty
+
