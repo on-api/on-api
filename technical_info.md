@@ -182,12 +182,12 @@ Content-Type: application/json
 [
   {
     "multicast": "233.10.10.100",
-    "join": "2004-08-14T14:09:23Z",
+    "timestamp": "2004-08-14T14:09:23Z",
     "counter": 231231
   },
   {
     "multicast": "233.10.10.100",
-    "join": "2004-08-14T14:09:23Z",
+    "timestamp": "2004-08-14T14:09:23Z",
     "counter": 231231
   }
 ]
@@ -195,7 +195,7 @@ Content-Type: application/json
 | Parameter  | Type             | Description                            |
 |------------|------------------|----------------------------------------|
 | multicast  | string (7-19)    | Multicast address                      |
-| join       | string (iso8601) | Timestamp when latest join was sent    |
+| timestamp| string (iso8601) | Timestamp when latest join was sent|
 | counter    | integer          | Traffic counter                        |
 
 

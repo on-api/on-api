@@ -2,7 +2,7 @@
 
 ----------
 
-# Ticket API
+# Tickets API
 
 
 ### Description
@@ -19,42 +19,42 @@ SP = Service Provider
 
 ## Reference index
 ### ticket
-* GET [ticket](#get-ticket)
-* POST [ticket](#post-ticket)
-* PATCH [ticket](#patch-ticket)
+* GET [tickets](#get-tickets)
+* POST [tickets](#post-tickets)
+* PATCH [tickets](#patch-tickets)
 
 ## Requirements
 
 **API Prefix:** `/ticket` 
-eg: `domain.local/api/2.4/ticket/423323449`
+eg: `domain.local/api/2.4/tickets/423323449`
 
 ## Endpoints
 
 
-<h3 id="get-ticket">GET ticket</h3>
+<h3 id="get-tickets">GET tickets</h3>
 
 Fetch one or many tickets, able to filter by created timestamp or ticket status.
 
 Request all tickets:
 ```http
-GET /api/2.4/ticket
+GET /api/2.4/tickets
 ```
 
 Request ticket:
 ```http
-GET /api/2.4/ticket/{coTicketReference} 
+GET /api/2.4/tickets/{coTicketReference} 
 ```
 
 
 
 Request tickets modified after timestamp:
 ```http
-GET /api/2.4/ticket 
+GET /api/2.4/tickets 
 If-Modified-Since: Tue, 05 Feb 2019 14:03:15 GMT
 ```
 Request tickets with status IN_PROGRESS_CO:
 ```http
-GET /api/2.4/ticket?status=IN_PROGRESS_CO 
+GET /api/2.4/tickets?status=IN_PROGRESS_CO 
 ```
 
 | Header | Description |
@@ -146,14 +146,14 @@ Content-Type: application/json
 |additionalInfo.link|boolean|Customer Link Status|
 
 
-<h3 id="post-ticket">POST ticket</h3>
+<h3 id="post-tickets">POST tickets</h3>
 
 Create at ticket.
 
 Request:
 
 ```http
-POST /api/2.4/ticket
+POST /api/2.4/tickets
 Content-Type: application/json
 
 {
@@ -205,13 +205,13 @@ Content-Type: application/json
 |coTicketReference|string|CO Ticket Reference|
 
 
-<h3 id="patch-ticket">PATCH ticket/{coTicketReference}</h3>
+<h3 id="patch-tickets">PATCH tickets/{coTicketReference}</h3>
 
 Update ticket status and add comments to the ticket.
 This method is also used when closing a ticket.
 
 ```http
-PATCH /api/2.4/ticket/{coTicketReference}
+PATCH /api/2.4/tickets/{coTicketReference}
 Content-Type: application/json
 
 {
