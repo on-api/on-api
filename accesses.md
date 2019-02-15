@@ -149,7 +149,27 @@ When a single access is requested the response contains a single JSON-object.
       "forcedTakeoverPossible": false,
       "comments": [
         "This service is limited to 100 Mbps for up to two weeks after ordering"
-      ]
+      ],
+      "characteristics": {
+        "fixedIp": {
+          "required": false,
+          "values": [
+            true,
+            false
+          ]
+        },
+        "ipaddress": {
+          "required": false
+        },
+        "SLA": {
+          "required": false,
+          "values": [
+            "SLA-1",
+            "SLA-2",
+            "SLA-3"
+          ]
+        }
+      }
     },
     {
       "service": "BB-100-100",
@@ -379,6 +399,25 @@ Examples:
  * An agreement with Acme Networks is required to use this service
  * This service is limited to 100 Mbps for up to two weeks after ordering
  * Additional equipment needed for this service can be picked up at Acme Networks office
+
+### services/characteristics
+
+Characteristics available when ordering this service.
+
+ * JSON object
+ * Available with single access
+
+### services/characteristics/[type]/required
+
+ Specifies if the characteristic of [type] is required for activation
+
+ * Data format [boolean](dataformats.md#boolean)
+
+### services/characteristics/[type]/validValues
+
+Array with valid values if applicable 
+
+ * JSON array
 
 ### subscriptions
 List of subscriptions on this accesss. Same format as the result of the [subscriptions API](subscriptions.md) except
