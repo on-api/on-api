@@ -1,4 +1,4 @@
-# Order 
+# Orders 
  * Endpoint orders/
 
 This API allows the service provider to activate, deactivate, suspend, resume, update and change services. Once an order
@@ -20,7 +20,6 @@ GET /onapi/2.4/orders/ HTTP/1.1
 Response
 ```HTTP
 HTTP/1.1 200 OK
-Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
 Content-Type: application/json
 ```
 
@@ -28,8 +27,9 @@ Content-Type: application/json
 [
   {
     "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -46,7 +46,7 @@ Content-Type: application/json
     "expectedCompletionDate": "2019-02-05T00:00:01Z",
     "characteristics": {
       "fixedIp": true,
-      "ipaddress": [
+      "ipAddress": [
         "1.2.3.4"
       ],
       "SLA": "SLA-3"
@@ -65,7 +65,6 @@ GET /onapi/2.4/orders/?accessId=8732c2f065e2490babce820e94b1011a HTTP/1.1
 Response
 ```HTTP
 HTTP/1.1 200 OK
-Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
 Content-Type: application/json
 ```
 
@@ -73,8 +72,9 @@ Content-Type: application/json
 [
   {
     "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -91,7 +91,7 @@ Content-Type: application/json
     "expectedCompletionDate": "2019-02-05T00:00:01Z",
     "characteristics": {
       "fixedIp": true,
-      "ipaddress": [
+      "ipAddress": [
         "1.2.3.4"
       ],
       "SLA": "SLA-3"
@@ -110,15 +110,15 @@ GET /onapi/2.4/orders/8732c2f065e2490babce820e94b1011a HTTP/1.1
 Response
 ```HTTP
 HTTP/1.1 200 OK
-Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
 Content-Type: application/json
 ```
 
 ```JSON
 {
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "state": "RECEIVED",
@@ -135,7 +135,7 @@ Content-Type: application/json
   "expectedCompletionDate": "2019-02-05T00:00:01Z",
   "characteristics": {
     "fixedIp": true,
-    "ipaddress": [
+    "ipAddress": [
       "1.2.3.4"
     ],
     "SLA": "SLA-3"
@@ -172,7 +172,7 @@ Content-Type: application/json
   "requestedDateTime": "2019-02-05T00:00:00Z",
   "characteristics": {
     "fixedIp": true,
-    "ipaddress": [
+    "ipAddress": [
       "1.2.3.4"
     ],
     "SLA": "SLA-3"
@@ -191,8 +191,9 @@ Content-Type: application/json
 ```JSON
 {
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "state": "RECEIVED",
@@ -209,7 +210,7 @@ Content-Type: application/json
   "expectedCompletionDate": "2019-02-05T00:00:01Z",
   "characteristics": {
     "fixedIp": true,
-    "ipaddress": [
+    "ipAddress": [
       "1.2.3.4"
     ],
     "SLA": "SLA-3"
@@ -228,10 +229,10 @@ Content-Type: application/json
 
 ```JSON
 {
-  "accessId": "STTA0001",
+  "accessId": "8732c2f065e2490babce820e94b1011a",
   "service": "BB-1000-100",
   "operation": "SUSPEND",
-  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "forcedTakeover": false,
   "equipment": [
     {
@@ -243,7 +244,7 @@ Content-Type: application/json
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "characteristics": {
     "fixedIp": true,
-    "ipaddress": [
+    "ipAddress": [
       "1.2.3.4"
     ],
     "SLA": "SLA-3"
@@ -262,8 +263,9 @@ Content-Type: application/json
 ```JSON
 {
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "SUSPEND",
   "state": "DONE_SUCCESS",
@@ -278,7 +280,7 @@ Content-Type: application/json
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "characteristics": {
     "fixedIp": true,
-    "ipaddress": [
+    "ipAddress": [
       "1.2.3.4"
     ],
     "SLA": "SLA-3"
@@ -300,27 +302,27 @@ Content-Type: application/json
 ```JSON
 {
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
-  "forcedTakeover": false,
-  "equipment": [
-    {
-      "vendorId": "ACME-ROUTER",
-      "macAddress": "AA:BB:CC:11:22:33"
-    }
-  ],
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "requestedDateTime": "2019-02-05T00:00:00Z",
   "expectedCompletionDate": "2019-02-05T00:00:01Z",
   "characteristics": {
     "fixedIp": true,
-    "ipaddress": [
+    "ipAddress": [
       "1.2.3.4"
     ],
     "SLA": "SLA-3"
-  }
+  },
+  "forcedTakeover": false,
+  "equipment": [
+    {
+      "vendorId": "ACME-ROUTER",
+      "macAddress": "AA:BB:CC:11:22:33"
+    }
+  ]
 }
 ```
 
@@ -358,7 +360,16 @@ Response
 HTTP/1.1 204 No Content
 ```
 
-## Fields 
+## Fields
+
+### orderId
+ * Data format: ID
+ * Mandatory in response
+ * Key for order
+
+### path
+ * API path for the specific order
+ * Mandatory in response
 
 ### accessId
  * Data format: ID
@@ -367,16 +378,18 @@ HTTP/1.1 204 No Content
  This field is a reference to accessId in the [accesses](accesses.md) API
 
 ### service
- * Data format: text
+
+The technical service offered by the CO. Listed in the [accesses](accesses.md) API
+
+ * Data format: [service](dataformats.md#service)
  * Mandatory
  
-The technical service offered by the CO. Listed in the [accesses](accesses.md) API
 
 ### operation 
 
 The type of operation this order is intended to perform.
 
-* Data format: enumeration
+* Data format: [enumeration](dataformats.md#enumeration)
 
 **Values**
   * ACTIVATE
@@ -386,116 +399,72 @@ The type of operation this order is intended to perform.
     * Deactivate the service
     * Remove the subscription
   * SUSPEND
-    * Requires COSubscriptionId
+    * Requires subscriptionId
     * Temporary suspend the service
+    * Change subscription state to "SUSPENDED"
   * RESUME
-    * Requires COSubscriptionId
+    * Requires subscriptionId
     * Resume a temporary suspended service
+    * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
   * MODIFY
-    * Requires COSubscriptionId
+    * Requires subscriptionId
     * Update a service with new parameters
   * CHANGE
-    * Requires COSubscriptionId
+    * Requires subscriptionId
     * Change the current service type to a new service type
 
 ### requestedDateTime
 
 Earliest date and time for the order to be executed. If omitted the order is executed immediately. 
 
- * Data format: dateTime
+ * Data format: [dateTime](dataformats.md#datetime)
 
 ### expectedCompletionDate
 
 The date and time when the order is expected to be delivered. This is an estimated time.
 
- * Data format: dateTime
+ * Data format: [dateTime](dataformats.md#datetime)
  * Response only
  
 ### spReference
 
- * Data format: ID
+ * Data format: [spReference](dataformats.md#sprefereence)
  * Mandatory
  
 ### spSubscriptionId
 
- * Data format: ID
+ * Data format: [spSubscriptionId](dataformats.md#spsubscriptionid)
  * Optional
  
-### coSubscriptionId
+### subscriptionId
 
- * Data format: ID
+ * Data format: [subscriptionId](dataformats.md#subscriptionid)
  * Required for the operations SUSPEND, RESUME, MODIFY and CHANGE
  * Mandatory in response
 
 ### note
 Note that is formatted in such a way that it can be displayed to the end customer. Is used to inform the end customer
-of things like abuse blocks, requirements about agreements with the CO or delayed deliveries or service.
+of things like abuse blocks.
 
- * Data format: text
+ * Data format: [text](dataformats.md#text)
+ 
+Examples: 
+ * Your service have been blocked due to outstanding payment
 
 ### characteristics
-Additional settings for the service.
 
- * Data format: object
-
-### characteristics/fixedIp
-Indicates if a fixedIp is to be used. If the ipAddresses characteristic is provided the specified IP-addresses will be 
-used. If ipAddresses is omitted the CO reserves an IP-address from a predefined pool.
-
-Data format: boolean
-
-### characteristics/ipAddresses
-
-Fälttyp: array of IP-addresses to be used.
-
-```JSON
-{
-    "characteristics": {
-        "fixedIp": true,
-        "ipAddresses": [
-            "1.2.3.4",
-            "AB::01/64",
-            "1.3.0.1/24"
-        ]
-    }
-}
-```
-
-### characteristics/SLA
-SLA type to be used for the service. 
-
-Data format: text
-
-```JSON
-{
-    "characteristics": {
-        "SLA": "premium"
-    }
-}
-
-```
+ * Data format: [characteristics](dataformats.md#characteristics)
 
 ### forcedtakeover
 If the SP wishes to replace the service from another SP this value is set to true. This is only possible if the 
-acccesses API responds with forcedTakeoverPossible: true for the service to be activated. If forcedTakeoverPossible is 
+acccesses API responds with [forcedTakeoverPossible](): true for the service to be activated. If forcedTakeoverPossible is 
 false this field must be omitted or be set to false.
 
  * Data format: boolean
  * Optional for operation "ACTIVATE"
+ * Must be omitted or false if [forcedTakeoverPossible](accesses.md#servicesforcedtakeoverpossible) is false
  
 ### equipment
 
-List of equipment which is used to deliver the specified service. This can be used to tie the service to specific 
-equipment, such as VOIP or IPTV-equipment. 
-
- * Data format: array of key value pairs
-
-**Keys**
- * vendorId
-   * Dataformat: text
-   * Specifies the DHCP Option 60 Vendor class identifier 
-   * See [RFC 2132](https://www.ietf.org/rfc/rfc2132.txt)
-
- * macAddress
-   * Dataformat: MAC
-   * Specifies the equipments MAC-address
+ * Dataformat: [equipment](dataformats.md#equipment)
+ * Optional
