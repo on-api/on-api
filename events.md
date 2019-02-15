@@ -8,7 +8,6 @@ Lists object changes.
 
 ### GET
 
-
 #### All available events
 Get all events stored in the system up to the previous second. Events should be stored for a minimum of 24 hours.
 Events for the current second is omitted to ensure that events are not sent twice. This is to get around a limitation 
@@ -36,7 +35,7 @@ Last-Modified: Tue, 05 Feb 2019 13:03:15 GMT
     "object": {
       "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
       "accessId": "8732c2f065e2490babce820e94b1011a",
-      "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+      "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
       "service": "BB-1000-100",
       "operation": "ACTIVATE",
       "state": "RECEIVED",
@@ -96,6 +95,7 @@ Content-Type: application/json
 ## Fields
 
 ### eventType
+
  * Data format: enumeration
 
 Values: 
@@ -105,28 +105,35 @@ Values:
 
 
 ### objectType
+
  * Data format: enumeration
 
 Values: 
  * accesses
- * order
- * services
- * ticket
+ * orders
+ * subscriptions
+ * tickets
 
 ### objectId
+
 The ID of the object that triggered the event
+
  * Data format: ID
 
 ### path
+
 URL path to the object the event is for
+
  * Data format: text 
  * Mandatory for eventTypes CREATE and UPDATE
  * Omitted for eventType DELETE
  
 ### eventTime
+
  * Data format: dateTime
 
 ### object
+
 Object data after the event with eventType CREATE and UPDATE. Object data before the event when eventType is DELETE. 
 The object may include only updated fields. 
 
