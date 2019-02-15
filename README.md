@@ -27,7 +27,7 @@ Some of the properties of this API includes:
   5. [Equipment based localization](equipment_based_localization.md)
   6. [Error handling](error_handling.md)
   7. [Option82 lookup](option82_lookup.md)
-  8. [Order](order.md)
+  8. [Order](orders.md)
   9. [Order events](orderevents.md)
  10. [Querying the service provider for service information](query_sp.md)
  11. [Querying the service provider for customer information](access_customer_info.md)

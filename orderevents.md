@@ -72,7 +72,7 @@ ID of the event, used as a parameter to fetch following events
 ### order 
 Object containing select fields from the order
  * Mandatory
- * See [order](order.md)
+ * See [order](orders.md)
 
 **fields from order**
  * path

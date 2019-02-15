@@ -32,7 +32,7 @@ Content-Type: application/json
         "name": "order",
         "endpoint": "/opapi/2.4/order/",
         "version": "2.4",
-        "documentation": "https://github.com/on-api/onapi-inprogress-2.4/blob/master/order.md",
+        "documentation": "https://github.com/on-api/onapi-inprogress-2.4/blob/master/orders.md",
         "note": "Only supports direct activation, no scheduled orders",
         "unsupportedFields": [
           "requestedDateTime"

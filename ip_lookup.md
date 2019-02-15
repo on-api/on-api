@@ -32,4 +32,4 @@ Content-Type: application/json
 
  #### orderID
  * Data format: ID
- * References: [orders/orderid](order.md)
+ * References: [orders/orderid](orders.md)

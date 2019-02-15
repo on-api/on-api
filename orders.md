@@ -1,5 +1,5 @@
 # Orders 
- * Endpoint orders/
+ * Endpoint /2.4/orders/
 
 This API allows the service provider to activate, deactivate, suspend, resume, update and change services. Once an order
 is no longer in the "RECEIVED" no changes can be made to that order.

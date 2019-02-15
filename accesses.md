@@ -360,7 +360,7 @@ Lists of deliverable services.
 
 ### services/service
 
-Name of the service, used as reference in the [order API](order.md)
+Name of the service, used as reference in the [order API](orders.md)
 
  * Data format: [text](dataformats.md#text)
  * Mandatory

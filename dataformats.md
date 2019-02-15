@@ -322,8 +322,8 @@ Indicates if a fixedIp is to be used.
 Data format: [boolean](dataformats.md#boolean)
 
 #### characteristics/ipAddresses
-If the ipAddresses characteristic is provided in an [order](order.md) the specified IP-addresses will be 
-used. If ipAddresses is omitted from the [order](order.md) the CO reserves an IP-address from a predefined pool, the ipaddresses 
+If the ipAddresses characteristic is provided in an [order](orders.md) the specified IP-addresses will be 
+used. If ipAddresses is omitted from the [order](orders.md) the CO reserves an IP-address from a predefined pool, the ipaddresses 
 is later displayed under characteristics in the [subscriptions API](subscriptions.md).
 
 Data format: JSON-array of [IP-addresses](dataformats.md#ipaddress) to be used.
