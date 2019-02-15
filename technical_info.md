@@ -161,7 +161,7 @@ Content-Type: application/json
 |--|--|--|
 |lease|ip|ip address|
 |mac|mac|mac address|
-|serviceType|serviceType|Sevice type for lease|
+|serviceType|serviceType|Service type for lease|
 |start|timestamp|Starting timestamp of lease|
 |end|timestamp|End timestamp of lease|
 
@@ -289,7 +289,7 @@ Content-Type: application/json
 | configuredSpeed                               | list              | List of configured traffic shaping/policies      |
 | configuredSpeed.#.serviceType                     | string            | Service type                                     |
 | configuredSpeed.#.queue                       | string            | Queue index                                      |
-| configuredSpeed.#.cir                         | string            | Commited rate                                    |
+| configuredSpeed.#.cir                         | string            | Committed rate                                    |
 | configuredSpeed.#.pir                         | string            | Peak rate                                        |
 | statistics.counterResetAt                     | string (iso8601)  | Timestamp when statistics counter was started    |
 | statistics.peakInputRate.counter                 | integer           | Bytes per second                                 |
@@ -316,8 +316,8 @@ Content-Type: application/json
 | statistics.output.pauses                      | integer           | Egress count of pauses                           |
 | statistics.output.errors                      | integer           | Egress count of errors                           |
 | statistics.output.crcErrors                   | integer           | Egress count of crc errors                       |
-| fiber.dbmRx                                   | string            | Fiber recieve dampening                          |
-| fiber.dbmTx                                   | string            | Fiber transcieve dampening                       | 
+| fiber.dbmRx                                   | string            | Fiber receiver dampening                          |
+| fiber.dbmTx                                   | string            | Fiber transceiver dampening                       | 
 | fiber.temp                                    | string            | SFP temperature                                  |
 
 
@@ -453,8 +453,8 @@ Content-Type: application/json
 | ports.#.freeSeating                           | bool              | Free seating status                              | 
 | ports.#.configuredSpeed                       | string            | Configured speed                                 |
 | ports.#.linkSpeed                             | integer           | Link speed                                       |
-| ports.#.fiber.dbmRx                           | string            | Fiber recieve dampening                          |
-| ports.#.fiber.dbmTx                           | string            | Fiber transcieve dampening                       |
+| ports.#.fiber.dbmRx                           | string            | Fiber receive dampening                          |
+| ports.#.fiber.dbmTx                           | string            | Fiber transceiver dampening                       |
 | ports.#.fiber.temp                            | string            | SFP temperature                                  |
 | ports.#.statistics.input.errors               | integer           | Ingress count of errors                          |
 | ports.#.statistics.input.crcErrors            | integer           | Ingress count of crc errors                      |

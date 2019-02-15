@@ -30,7 +30,7 @@ Last-Modified: Tue, 05 Feb 2019 13:03:15 GMT
     "eventType": "CREATE",
     "objectType": "order",
     "objectId": "b5314ed39557472098843fe0ab358069",
-    "path": "/onapie/2.4/order/b5314ed39557472098843fe0ab358069",
+    "path": "/onapi/2.4/order/b5314ed39557472098843fe0ab358069",
     "eventTime": "2019-02-04T13:03:16.1252",
     "object": {
       "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
@@ -52,7 +52,7 @@ Last-Modified: Tue, 05 Feb 2019 13:03:15 GMT
       "expectedCompletionDate": "2019-02-05T00:00:01Z",
       "characteristics": {
         "fixedIp": true,
-        "ipaddress": [
+        "ipAddress": [
           "1.2.3.4/32"
         ],
         "SLA": "SLA-3"

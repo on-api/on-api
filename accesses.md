@@ -158,7 +158,7 @@ When a single access is requested the response contains a single JSON-object.
             false
           ]
         },
-        "ipaddress": {
+        "ipAddress": {
           "required": false
         },
         "SLA": {
@@ -255,9 +255,9 @@ Some fields are only available when fetching a single access. These fields are m
 
 ### accessId
 
-Identifies a single access. Used as key when fetching a single accesss and ordering services.
+Identifies a single access. Used as key when fetching a single access and ordering services.
 
- * Data format: [acccessId](dataformats.md#accessid)
+ * Data format: [accessId](dataformats.md#accessid)
  * Mandatory
  
 ### streetName
@@ -312,7 +312,7 @@ Premises type describes the type of building/premises of the access.
  * Mandatory
  
 **Valid values**
- * COMMERCIAL Offices, stores, municipalty buildings
+ * COMMERCIAL Offices, stores, municipality buildings
  * MDU_APARTMENT Apartment in a apartment building (multi dwelling unit)
  * MDU_COMMON  Common area in a apartment building (multi dwelling unit)
  * MDU_TECHNICAL Machine room or space intended for technical equipment
@@ -332,7 +332,7 @@ Used to distinguish between individual apartments in apartment buildings sharing
 
 ### mduDistinguisher
 
-Alternative to mduApartmentnumber used to distinguish between individual apartments in an apartment building sharing a
+Alternative to mduApartmentNumber used to distinguish between individual apartments in an apartment building sharing a
 single postal address. 
 
  * Data format: [text](dataformats.md#text)
@@ -420,7 +420,7 @@ Array with valid values if applicable
  * JSON array
 
 ### subscriptions
-List of subscriptions on this accesss. Same format as the result of the [subscriptions API](subscriptions.md) except
+List of subscriptions on this access. Same format as the result of the [subscriptions API](subscriptions.md) except
 for the accessId that can be omitted here. If there are no subscription for this access an empty JSON array is returned.
 
  * Data format: [see subscriptions](subscriptions.md)

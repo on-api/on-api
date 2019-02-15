@@ -95,7 +95,7 @@ Content-Type: application/json
   
 ### spReference
 
- * Data format: [ID](dataformats.md#sprefereence)
+ * Data format: [ID](dataformats.md#spreference)
  * Mandatory
 
 ### spSubscriptionId

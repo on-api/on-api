@@ -12,7 +12,7 @@ Data communicated should only be related to its troubleshooting purpose or conte
 
 See events specification for sending notifications for when a ticket has been updated.
 
-CO = Comminicatoin Operator
+CO = Communication Operator
 SP = Service Provider
 
 # Specification
@@ -126,7 +126,7 @@ Content-Type: application/json
 |coTicketReference|string|CO Ticket Reference|
 |spReference|string|SP Reference|
 |spTicketReference|string|SP Ticket Reference|
-|accessId|string|Unique identifyer for a Access, owned by CO|
+|accessId|string|Unique identifier for a Access, owned by CO|
 |createdBy|string|Created By User|
 |createdAt|string|Created Time|
 |updatedAt|string|Last Modified time|
@@ -138,7 +138,7 @@ Content-Type: application/json
 |comments.createdAt|string|Created Time|
 |status|[CREATED, IN_PROGRESS_CO, IN_PROGRESS_SP, CLOSED]|Status|
 |responsible|[SP,CO]|Responsible party, used for SLA calculation|
-|coSubscription|string (optional)|Unique identifyer for a Subscription, owned by CO|
+|coSubscription|string (optional)|Unique identifier for a Subscription, owned by CO|
 |problemType|[NO_LINK,NO_ACCESS,QUALITY,OTHER]|Problem Type|
 |additionalInfo|object|Additional info|
 |additionalInfo.ip|string|Customer IP|
@@ -177,12 +177,12 @@ Content-Type: application/json
 |--|--|--|
 |spReference|string (optional)|SP Reference|
 |spTicketReference|string (optional)|SP Ticket Reference|
-|accessId|string |Unique identifyer for a Access, owned by CO|
+|accessId|string |Unique identifier for a Access, owned by CO|
 |createdBy|string|Created By User|
 |heading|string|Heading|
 |description|string|Description|
-|coSubscription|string (optional)|Unique identifyer for a Subscription, owned by CO|
-|problemtType|[NO_LINK,NO_ACCESS,QUALITY,OTHER]|Problem Type|
+|coSubscription|string (optional)|Unique identifier for a Subscription, owned by CO|
+|problemType|[NO_LINK,NO_ACCESS,QUALITY,OTHER]|Problem Type|
 |additionalInfo|object|Additional Info|
 |additionalInfo.ip|string|Customer IP|
 |additionalInfo.mac|string|Device MAC-address|

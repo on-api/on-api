@@ -1,5 +1,5 @@
 # IP lookup
-path /onapi/2.4/ip_lookup/
+path /2.4/ip_lookup/
 
 ## Operations
 

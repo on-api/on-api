@@ -428,7 +428,7 @@ The date and time when the order is expected to be delivered. This is an estimat
  
 ### spReference
 
- * Data format: [spReference](dataformats.md#sprefereence)
+ * Data format: [spReference](dataformats.md#spreference)
  * Mandatory
  
 ### spSubscriptionId
@@ -455,9 +455,9 @@ Examples:
 
  * Data format: [characteristics](dataformats.md#characteristics)
 
-### forcedtakeover
+### forcedTakeover
 If the SP wishes to replace the service from another SP this value is set to true. This is only possible if the 
-acccesses API responds with [forcedTakeoverPossible](): true for the service to be activated. If forcedTakeoverPossible is 
+accesses API responds with [forcedTakeoverPossible](accesses.md#servicesforcedtakeoverpossible): true for the service to be activated. If forcedTakeoverPossible is 
 false this field must be omitted or be set to false.
 
  * Data format: boolean
@@ -466,5 +466,5 @@ false this field must be omitted or be set to false.
  
 ### equipment
 
- * Dataformat: [equipment](dataformats.md#equipment)
+ * Data format: [equipment](dataformats.md#equipment)
  * Optional

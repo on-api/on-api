@@ -12,10 +12,10 @@ Secondly, whenever a client that matches either the MAC address or the VendorID,
 * Registration
   * [Register Vendor IDs](#register-vendor-ids)
   * [Unregister Vendor IDs](#unregister-vendor-ids)
-  * [List registered VendorId:s](#list-vendor-ids)
+  * [List registered VendorId:s](#list-registered-vendor-ids)
   * [Register MAC addresses](#register-mac-addresses)
   * [Unregister MAC addresses](#unregister-mac-addresses)
-  * [List registered MAC addresses](#list-mac-addresses)
+  * [List registered MAC addresses](#list-registered-mac-addresses)
 * [Notification](#notification)
 
 

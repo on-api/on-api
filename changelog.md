@@ -7,7 +7,7 @@
  * [Accesses](accesses.md) replaces 
     * [Feasibility](https://github.com/on-api/on-api-release-2.3.1/blob/master/feasibility.md)
     * [Availability](https://github.com/on-api/on-api-release-2.3.1/blob/master/availability.md)
- * [Dataformats](dataformats.md) replaces [Option82-format](https://github.com/on-api/on-api-release-2.3.1/blob/master/option82.md)
+ * [Data formats](dataformats.md) replaces [Option82-format](https://github.com/on-api/on-api-release-2.3.1/blob/master/option82.md)
  * [Error handling](error_handling.md) is added
  * New API - [Endpoints](endpoints.md)
  * co_active_services.md is renamed to services.md
@@ -28,7 +28,7 @@
    * MODIFY
    * CHANGE
  * New value for premisesType in accesses MDU_TECHNICAL 
- * orderevents is replaced by a more generic [events](events.md)
+ * [order events](https://github.com/on-api/on-api-release-2.3.1/blob/master/order_events.md) is replaced by a more generic [events](events.md)
  * [DHCP-lookup](dhcplookup.md) replaces [Option82 Lookup](https://github.com/on-api/on-api-release-2.3.1/blob/master/option82_lookup.md)
  * New API - [Equipment based localization](equipment_based_localization.md)
  * [Accesses](accesses.md) - active is renamed to subscriptions

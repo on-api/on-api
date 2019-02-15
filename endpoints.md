@@ -3,7 +3,7 @@
 Path /2.4/
 
 This API endpoint is mandatory. It is used to inform the consumer of the API of the available API endpoints and their 
-limitations. Can list legacy API endpoints for backwards compability.
+limitations. Can list legacy API endpoints for backwards compatibility.
 
 ## Operations
 
@@ -24,13 +24,13 @@ Content-Type: application/json
 [
     {
         "name": "accesses",
-        "endpoint": "/opapi/2.4/accesses/",
+        "endpoint": "/onapi/2.4/accesses/",
         "version": "2.4",
         "documentation": "https://github.com/on-api/onapi-inprogress-2.4/blob/master/accesses.md"
     },
     { 
         "name": "order",
-        "endpoint": "/opapi/2.4/order/",
+        "endpoint": "/onapi/2.4/order/",
         "version": "2.4",
         "documentation": "https://github.com/on-api/onapi-inprogress-2.4/blob/master/orders.md",
         "note": "Only supports direct activation, no scheduled orders",

@@ -1,5 +1,5 @@
 # DHCP lookup
-path /onapi/2.4/dhcplookup/
+path /2.4/dhcplookup/
 
 ## Operations
 
@@ -10,9 +10,9 @@ Look up an access with values from DHCP logs, returns a single accessId if a uni
 ### Parameters 
 
    * ipv4CircuitId
-     * DHCP option 82 suboption 1
+     * DHCP option 82 sub-option 1
    * ipv4RemoteId
-     * DHCP option 82 suboption 2
+     * DHCP option 82 sub-option 2
    * ipv6InterfaceId
      * DHCPv6 option 18
    * ipv6RemoteId

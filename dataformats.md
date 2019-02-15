@@ -117,10 +117,10 @@ Examples
  * 520A01036162630203313233
 
 ### dhcpIdentifier
-To better accommodate all scenarios the separate suboptions of DHCP option 82 have been split up and
+To better accommodate all scenarios the separate sub-options of DHCP option 82 have been split up and
 also options for DHCPv6 have been added. The values is expected to have a readable text representation.
  
-This replaces the old hex encoded option82 dataformat.
+This replaces the old hex encoded option82 data format.
 
  * JSON object
  * Readable text representation of the value
@@ -129,11 +129,11 @@ This replaces the old hex encoded option82 dataformat.
  * Fields
    * ipv4CircuitId
      * Data format json string
-     * DHCP option 82 suboption 1
+     * DHCP option 82 sub-option 1
      * [RFC 3046](https://www.ietf.org/rfc/rfc3046.txt)
    * ipv4RemoteId
      * Data format json string
-     * DHCP option 82 suboption 2
+     * DHCP option 82 sub-option 2
      * [RFC 3046](https://www.ietf.org/rfc/rfc3046.txt)
    * ipv6InterfaceId
      * Data format json string
@@ -233,7 +233,7 @@ Examples
 
 ### accessId
 
-Identifies a single access. Used as key when fetching a single accesss or when ordering services.
+Identifies a single access. Used as key when fetching a single access or when ordering services.
 
  * Data format: [ID](dataformats.md#id)
  * References: [accesses/accessId](accesses.md#accessid)
@@ -246,7 +246,7 @@ Identifies a single access. Used as key when fetching a single accesss or when o
  * References: [subscriptions/subscriptionId](subscriptions.md#subscriptionid)
 
  
-### spRefereence
+### spReference
 
 Reference that identifies the unique end-customer or service in the Service Provider's system.
 This information can be used by the CO to lookup information about the customer or service with the 
@@ -287,12 +287,12 @@ equipment, such as VOIP or IPTV-equipment.
 
 **Keys**
  * vendorId
-   * Dataformat: text
+   * Data format: text
    * Specifies the DHCP Option 60 Vendor class identifier 
    * See [RFC 2132](https://www.ietf.org/rfc/rfc2132.txt)
 
  * macAddress
-   * Dataformat: [macAddress](dataformats.md#macaddress)
+   * Data format: [macAddress](dataformats.md#macaddress)
    * Specifies the equipments MAC-address
 
 Examples
@@ -323,8 +323,8 @@ Data format: [boolean](dataformats.md#boolean)
 
 #### characteristics/ipAddresses
 If the ipAddresses characteristic is provided in an [order](orders.md) the specified IP-addresses will be 
-used. If ipAddresses is omitted from the [order](orders.md) the CO reserves an IP-address from a predefined pool, the ipaddresses 
-is later displayed under characteristics in the [subscriptions API](subscriptions.md).
+used. If ipAddresses is omitted from the [order](orders.md) the CO reserves an IP-address from a predefined pool, the 
+IP-addresses is later displayed under characteristics in the [subscriptions API](subscriptions.md).
 
 Data format: JSON-array of [IP-addresses](dataformats.md#ipaddress) to be used.
 
