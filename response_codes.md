@@ -1,6 +1,6 @@
-# Error handling
+#  Response codes
 
-All error handling should be using error codes from HTTP, if possible with the free text field "cause" stating what went wrong.
+All error handling should be using error codes from HTTP, if possible with the free text field "cause" stating what went wrong. If the server has an ID of the error (such as a fault number or, even better, a ticket ID it should be included in the cause field.
 
 Example:
 ```http
@@ -9,7 +9,13 @@ Content-Type: application/json
 
 { "cause": "Unknown service: 'INTERRNET'" }
 ```
+Example 2:
+```http
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/json
 
+{ "cause": "An Unknown error has occured. Error number 12345" }
+```
 ## HTTP codes used (for full list, see RFC7231)
 
 ### 400 Bad request
@@ -23,6 +29,12 @@ Not allowed with current credentials
 
 ### 404 Not found
 Object not found (on valid API endpoint)
+
+### 409 Conflict
+Object is conflicting with other object (on valid API endpoint). 
+
+### 429 Too Many Requests
+The client is sending too many requests to the server in too short time. If Retry-After is used in the response the client should honor that time before sending any more requests. 
 
 ### 500 Internal Server Error
 Unrecoverable error
@@ -71,7 +83,13 @@ Content-Type: application/json
 
 If another service for the same service type is already active.
 E.g. Broadband 100/100 is active when ordering Broadband 10/10:
+```http
+HTTP/1.1 409 Conflict
+Content-Type: application/json
 
+{ "cause": "Another Service of ServiceType 'Broadband' is already active." }
+```
+For compatibility with older API-versions this could also be correct:
 ```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
@@ -112,6 +130,13 @@ Content-Type: application/json
 
 If the service/service type is not possible to order since it's already taken by another service provider:
 
+```http
+HTTP/1.1 409 Conflict
+Content-Type: application/json
+
+{ "cause": "ServiceType is already claimed by other Service Provider." }
+```
+For compatibility with older API-versions this could also be correct:
 ```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
