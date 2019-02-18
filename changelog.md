@@ -2,13 +2,13 @@
 
 ## Changes since 2.3.1
 
- * All documentation is translated to english
+ * All documentation is translated to English
  * [Technical Info](technical_info.md) replaces [Fault Management: Link Status API](https://github.com/on-api/on-api-release-2.3.1/blob/master/fm_linkstatus.md)
  * [Accesses](accesses.md) replaces 
     * [Feasibility](https://github.com/on-api/on-api-release-2.3.1/blob/master/feasibility.md)
     * [Availability](https://github.com/on-api/on-api-release-2.3.1/blob/master/availability.md)
  * [Data formats](dataformats.md) replaces [Option82-format](https://github.com/on-api/on-api-release-2.3.1/blob/master/option82.md)
- * [Error handling](error_handling.md) is added
+ * A separate description of [response codes](https://github.com/on-api/onapi-inprogress-2.4/blob/master/response_codes.md)  is added
  * New API - [Endpoints](endpoints.md)
  * co_active_services.md is renamed to services.md
  * [README.md](README.md) replaces 
