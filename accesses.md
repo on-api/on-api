@@ -67,6 +67,7 @@ When all accesses or updates are requested the response contains a JSON-array wi
 [
   {
     "accessId": "8732c2f065e2490babce820e94b1011a",
+    "legacyAccessId": "KGXF49861",
     "streetName": "Testvägen",
     "streetNumber": "100",
     "streetLittera": "",
@@ -78,26 +79,33 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "mduDistinguisher": "12121212",
     "outlet": "A-11-14",
     "population": "Hemsöhem",
+    "accessState": "CONNECTED",
+    "coNetworkAgreement": "NOTREQUIRED",
     "services": [
       {
         "service": "BB-100-100",
-        "connection": "2014-03-01"
+        "connection": "2014-03-01",
+        "disconnection": ""
       },
       {
         "service": "BB-100-10",
-        "connection": "2013-10-12"
+        "connection": "2013-10-12",
+        "disconnection": ""
       },
       {
         "service": "BB-10-10",
-        "connection": "2013-10-12"
+        "connection": "2013-10-12",
+        "disconnection": "2018-12-31"
       },
       {
         "service": "IPTV",
-        "connection": "2013-10-12"
+        "connection": "2013-10-12",
+        "disconnection": ""
       },
       {
         "service": "VOIP",
-        "connection": "2013-08-13"
+        "connection": "NO",
+        "disconnection": ""
       }
     ],
     "coFiberConverter": "LASER_3001X_MK2",
@@ -130,6 +138,7 @@ When a single access is requested the response contains a single JSON-object.
 ```JSON
 {
   "accessId": "8732c2f065e2490babce820e94b1011a",
+  "legacyAccessId": "KGXF49861",
   "streetName": "Testvägen",
   "streetNumber": "100",
   "streetLittera": "",
@@ -141,11 +150,13 @@ When a single access is requested the response contains a single JSON-object.
   "mduDistinguisher": "12121212",
   "outlet": "A-11-14",
   "population": "Hemsöhem",
+  "accessState": "CONNECTED",
+  "coNetworkAgreement": "NOTREQUIRED",
   "services": [
     {
       "service": "BB-1000-1000",
       "connection": "2014-03-01",
-      "available": "2014-01-01",
+      "disconnection": "",
       "forcedTakeoverPossible": false,
       "comments": [
         "This service is limited to 100 Mbps for up to two weeks after ordering"
@@ -174,31 +185,31 @@ When a single access is requested the response contains a single JSON-object.
     {
       "service": "BB-100-100",
       "connection": "2013-10-12",
-      "available": "YES",
+      "disconnection": "",
       "forcedTakeoverPossible": false
     },
     {
       "service": "BB-10-10",
       "connection": "2013-10-12",
-      "available": "YES",
+      "disconnection": "2018-12-31",
       "forcedTakeoverPossible": false
     },
     {
       "service": "IPTV",
       "connection": "2013-10-12",
-      "available": "YES",
+      "disconnection": "",
       "forcedTakeoverPossible": false
     },
     {
       "service": "VOIP",
-      "connection": "2013-08-13",
-      "available": "NO",
+      "connection": "NO",
+      "disconnection": "",
       "forcedTakeoverPossible": true
     }
   ],
   "subscriptions": [
     {
-      "subscriptionId": "8b2ad40b4ffd45e5b48425f57821a7eb",
+      "coSubscriptionId": "8b2ad40b4ffd45e5b48425f57821a7eb",
       "accessId": "8732c2f065e2490babce820e94b1011a",
       "service": "BB-1000-1000",
       "operationalState": "ACTIVATED",
@@ -218,7 +229,7 @@ When a single access is requested the response contains a single JSON-object.
       }
     },
     {
-      "subscriptionId": "af5143edb9624223810689c4100525f0",
+      "coSubscriptionId": "af5143edb9624223810689c4100525f0",
       "accessId": "8732c2f065e2490babce820e94b1011a",
       "service": "IPTV",
       "operationalState": "ACTIVATED",
@@ -260,6 +271,13 @@ Identifies a single access. Used as key when fetching a single access and orderi
  * Data format: [accessId](dataformats.md#accessid)
  * Mandatory
  
+### legacyAccessId
+
+For accesses that have been migrated from another CO the new CO might have available what access id the previous CO used for this access. If that information is available it would potentially we quite valuable provided to the SP.
+
+ * Data format: [accessId](dataformats.md#accessid)
+ * Optional
+
 ### streetName
 
 Street name for the address where the access resides.
@@ -353,6 +371,20 @@ Describes a subset of all accesses. Used for grouping accesses together for comm
  * Data format: [text](dataformats.md#text)
  * Optional
 
+### accessState
+
+Describes the current state of wether the access is connected and can be used.
+
+ * Data format: One of PLANNED, DEPLOYING, HOMESPASSED, CONNECTED, DISCONNECTED
+ * Mandatory 
+
+### coNetworkAgreement
+
+Specifies wether the end customer is required to have a separate contract with the CO for services to be allowed on the access. The attribute is mandatory but can be empty which should be intepreted as NOT_REQUIRED.
+
+ * Data format: One of REQUIRED_NOT_VALID, REQUIRED_VALID, NOT_REQUIRED or empty string ""
+ * Mandatory 
+
 ### services 
 Lists of deliverable services.
 
@@ -373,13 +405,12 @@ optionally be used as value.
  * Data format: [date](dataformats.md#date) (Valid values are also "YES" and "NO")
  * Mandatory
 
-### services/available
+### services/disconnection
 
-Specifies when a service is available for order. If the date is unknown "YES" or "NO" can optionally be used as value. 
+Specifies when a service is no longer available. This can indicate that a certain service will no longer be available after the given date or that the access itself will be unavailable and in that case all the services will have a disconnection date. 
  
- * Data format: [date](dataformats.md#date) (Valid values are also "YES" and "NO")
- * Mandatory
- * Available with single access
+ * Data format: [date](dataformats.md#date) (Valid values are also empty string "")
+ * Mandatory but can be empty
 
 ### services/forcedTakeoverPossible
 
