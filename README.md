@@ -1,4 +1,4 @@
-# Open Network API 2.4
+# Open Networks API 2.4.0
 
 This API aims to provide the necessary functionality to enable automation and communication between service providers (SP) 
 and open access network communication operators (CO). Enabling service providers to deliver services to the end customer in a secure 
@@ -20,21 +20,20 @@ Some of the properties of this API includes:
 
 ## Table of contents
 
-  1. [Changelog](changelog.md)
-  2. [Accesses](accesses.md)
-  3. [Data formats](dataformats.md)
-  4. [Endpoints](endpoints.md)
-  5. [Equipment based localization](equipment_based_localization.md)
-  6. [Error handling](error_handling.md)
-  7. [Option82 lookup](option82_lookup.md)
-  8. [Order](orders.md)
-  9. [Order events](orderevents.md)
- 10. [Querying the service provider for service information](query_sp.md)
- 11. [Querying the service provider for customer information](contact_information.md)
- 12. [Subscriptions - list active services](subscriptions.md)
- 13. [Web portal - Forward customers to SP service portals](web_portal.md)
- 14. [Ticket](tickets.md)
- 15. [Technical information](technical_info.md)
+* [Changelog](changelog.md)
+* [Accesses](accesses.md)
+* [Data formats](dataformats.md)
+* [Endpoints](endpoints.md)
+* [Equipment based localization](equipment_based_localization.md)
+* [Error handling](error_handling.md)
+* [Option82 lookup](option82_lookup.md)
+* [Order](orders.md)
+* [Order events](orderevents.md)
+* [SP contacts](contacts.md)
+* [Subscriptions - list active services](subscriptions.md)
+* [Web portal - Forward customers to SP service portals](web_portal.md)
+* [Tickets](tickets.md)
+* [Technical information](technical_info.md)
  
 ## General guidelines
 

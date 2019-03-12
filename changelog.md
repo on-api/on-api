@@ -33,3 +33,5 @@
  * New API - [Equipment based localization](equipment_based_localization.md)
  * [Accesses](accesses.md) - active is renamed to subscriptions
  * New API - [Invoice specification](invoice_specification.md)
+ * New API - [Ticket API](tickets.md)
+ * New API - [Contacts API](contacts.md)
