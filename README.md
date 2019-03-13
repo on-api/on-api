@@ -25,7 +25,7 @@ Some of the properties of this API includes:
 * [Data formats](dataformats.md)
 * [Endpoints](endpoints.md)
 * [Equipment based localization](equipment_based_localization.md)
-* [Error handling](error_handling.md)
+* [Response codes](response_codes.md)
 * [Option82 lookup](option82_lookup.md)
 * [Order](orders.md)
 * [Order events](orderevents.md)
