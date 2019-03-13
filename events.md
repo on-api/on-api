@@ -32,32 +32,6 @@ Last-Modified: Tue, 05 Feb 2019 13:03:15 GMT
     "objectId": "b5314ed39557472098843fe0ab358069",
     "path": "/onapi/2.4/order/b5314ed39557472098843fe0ab358069",
     "eventTime": "2019-02-04T13:03:16.1252",
-    "object": {
-      "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
-      "accessId": "8732c2f065e2490babce820e94b1011a",
-      "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
-      "service": "BB-1000-100",
-      "operation": "ACTIVATE",
-      "state": "RECEIVED",
-      "forcedTakeover": false,
-      "equipment": [
-        {
-          "vendorId": "ACME-ROUTER",
-          "macAddress": "AA:BB:CC:11:22:33"
-        }
-      ],
-      "spReference": "a6cc5da980034948ba654ae6ceda03f4",
-      "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-      "requestedDateTime": "2019-02-05T00:00:00Z",
-      "expectedCompletionDate": "2019-02-05T00:00:01Z",
-      "characteristics": {
-        "fixedIp": true,
-        "ipAddress": [
-          "1.2.3.4/32"
-        ],
-        "SLA": "SLA-3"
-      }
-    }
   },
   {
     "eventType": "DELETE",
@@ -131,12 +105,3 @@ URL path to the object the event is for
 ### eventTime
 
  * Data format: dateTime
-
-### object
-
-Object data after the event with eventType CREATE and UPDATE. Object data before the event when eventType is DELETE. 
-The object may include only updated fields. 
-
- * Optional
- * Data type: JSON object
-
