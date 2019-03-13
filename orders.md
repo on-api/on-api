@@ -30,9 +30,9 @@ Content-Type: application/json
 [
   {
     "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
-    "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "orderId": "f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -75,9 +75,9 @@ Content-Type: application/json
 [
   {
     "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
-    "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "orderId": "f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -120,9 +120,9 @@ Content-Type: application/json
 [
   {
     "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
-    "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "orderId": "f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -153,7 +153,7 @@ Content-Type: application/json
 
 Request
 ```HTTP
-GET /onapi/2.4/orders/8732c2f065e2490babce820e94b1011a HTTP/1.1
+GET /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
 ```
 
 Response
@@ -165,9 +165,9 @@ Content-Type: application/json
 ```JSON
 {
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
-  "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "orderId": "f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "state": "RECEIVED",
@@ -242,7 +242,7 @@ Content-Type: application/json
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "state": "RECEIVED",
@@ -281,10 +281,9 @@ Content-Type: application/json
   "accessId": "8732c2f065e2490babce820e94b1011a",
   "service": "BB-1000-100",
   "operation": "SUSPEND",
-  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-  "note": "This is the reason I suspend you",
-  }
+  "note": "This is the reason I suspend you"
 }
 ```
 
@@ -301,7 +300,7 @@ Content-Type: application/json
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "SUSPEND",
   "state": "DONE_SUCCESS",
@@ -338,7 +337,7 @@ Content-Type: application/json
 ```JSON
 {
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
@@ -434,18 +433,18 @@ The type of operation this order is intended to perform.
     * Deactivate the service
     * Remove the subscription
   * SUSPEND
-    * Requires coSubscriptionId
+    * Requires subscriptionId
     * Temporary suspend the service
     * Change subscription state to "SUSPENDED"
   * RESUME
-    * Requires coSubscriptionId
+    * Requires subscriptionId
     * Resume a temporary suspended service
     * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
   * MODIFY
-    * Requires coSubscriptionId
+    * Requires subscriptionId
     * Update a service with new parameters
   * CHANGE
-    * Requires coSubscriptionId
+    * Requires subscriptionId
     * Change the current service type to a new service type
 
 ### requestedDateTime
@@ -471,9 +470,9 @@ The date and time when the order is expected to be delivered. This is an estimat
  * Data format: [spSubscriptionId](dataformats.md#spsubscriptionid)
  * Optional
  
-### coSubscriptionId
+### subscriptionId
 
- * Data format: [coSubscriptionId](dataformats.md#cosubscriptionid)
+ * Data format: [subscriptionId](dataformats.md#subscriptionid)
  * Required for the operations SUSPEND, RESUME, MODIFY and CHANGE
  * Mandatory in response
 
