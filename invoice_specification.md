@@ -26,13 +26,25 @@ Content-Type: application/json
 
 ```JSON
 [
-  "201811",
-  "201812",
-  "201901"
+  {
+    "id":  "201811",
+    "fromDate": "2018-11-01",
+    "toDate": "2018-11-30"
+  },
+  {
+    "id":  "201812",
+    "fromDate": "2018-12-01",
+    "toDate": "2018-12-31"
+  },
+    {
+    "id":  "201901",
+    "fromDate": "2019-01-01",
+    "toDate": "2019-01-31"
+  }
 ]
 ```
 
-A GET operation with a period as key fetches the invoice specification for that period.
+A GET operation with a id from the previous list operation as key fetches the specification that invoice.
 
 ```HTTP
 GET /onapi/2.4/invoicespecification/201901 HTTP/1.1
