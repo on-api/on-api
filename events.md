@@ -27,17 +27,17 @@ Last-Modified: Tue, 05 Feb 2019 13:03:15 GMT
 ```JSON
 [
   {
-    "eventType": "CREATE",
+    "type": "CREATE",
     "objectType": "order",
     "objectId": "b5314ed39557472098843fe0ab358069",
     "path": "/onapi/2.4/order/b5314ed39557472098843fe0ab358069",
-    "eventTime": "2019-02-04T13:03:16.1252",
+    "time": "2019-02-04T13:03:16.1252"
   },
   {
-    "eventType": "DELETE",
+    "type": "DELETE",
     "objectType": "access",
     "objectId": "849f97124c4840629535c7f204e8cf09",
-    "eventTime": "2019-02-04T13:03:16.5230"
+    "time": "2019-02-04T13:03:16.5230"
   }
 ]
 ```
@@ -68,7 +68,7 @@ Content-Type: application/json
 
 ## Fields
 
-### eventType
+### type
 
  * Data format: enumeration
 
@@ -102,6 +102,6 @@ URL path to the object the event is for
  * Mandatory for eventTypes CREATE and UPDATE
  * Omitted for eventType DELETE
  
-### eventTime
+### time
 
  * Data format: dateTime
