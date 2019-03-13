@@ -4,6 +4,9 @@
 This API allows the service provider to activate, deactivate, suspend, resume, update and change services. Once an order
 is no longer in the "RECEIVED" no changes can be made to that order.
 
+## States
+In the simplest implementation an order goes directly to DONE_SUCCESS or DONE_FAILED depending on if it is accepted or not. If an order goes to a queue it ends up in RECEIVED. If there changes can be made to it until it changes state. An order that is RECEIVED can also have the status checked and during processing the status can be IN_PROGRESS before reaching DONE_SUCCESS or DONE_FAILED.
+
 ## Operations 
 
 ### GET
@@ -29,7 +32,7 @@ Content-Type: application/json
     "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
     "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -55,7 +58,7 @@ Content-Type: application/json
 ]
 ```
 
-#### Get all unfinished orders pertaining a specific acccessId
+#### Get all orders pertaining a specific acccessId
 
 Request
 ```HTTP
@@ -74,7 +77,7 @@ Content-Type: application/json
     "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
     "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -99,6 +102,52 @@ Content-Type: application/json
   }
 ]
 ```
+
+#### Get all orders with a certain state
+
+Request
+```HTTP
+GET /onapi/2.4/orders/?state="RECEIVED" HTTP/1.1
+```
+
+Response
+```HTTP
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```JSON
+[
+  {
+    "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "accessId": "8732c2f065e2490babce820e94b1011a",
+    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "service": "BB-1000-100",
+    "operation": "ACTIVATE",
+    "state": "RECEIVED",
+    "forcedTakeover": false,
+    "equipment": [
+      {
+        "vendorId": "ACME-ROUTER",
+        "macAddress": "AA:BB:CC:11:22:33"
+      }
+    ],
+    "spReference": "a6cc5da980034948ba654ae6ceda03f4",
+    "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
+    "requestedDateTime": "2019-02-05T00:00:00Z",
+    "expectedCompletionDate": "2019-02-05T00:00:01Z",
+    "characteristics": {
+      "fixedIp": true,
+      "ipAddress": [
+        "1.2.3.4"
+      ],
+      "SLA": "SLA-3"
+    }
+  }
+]
+```
+
 
 #### Get a single order
 
@@ -118,7 +167,7 @@ Content-Type: application/json
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "state": "RECEIVED",
@@ -193,7 +242,7 @@ Content-Type: application/json
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "state": "RECEIVED",
@@ -219,7 +268,7 @@ Content-Type: application/json
 ```
 
 #### Suspend a service 
-
+This operation is for a service that is suspended, for instance for abuse. It's to be used temporarily and billing is supposed to keep going. A special field "note" is added here, for information the CO may publish to the customer if possible.
 
 Request
 ```HTTP
@@ -232,22 +281,9 @@ Content-Type: application/json
   "accessId": "8732c2f065e2490babce820e94b1011a",
   "service": "BB-1000-100",
   "operation": "SUSPEND",
-  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
-  "forcedTakeover": false,
-  "equipment": [
-    {
-      "vendorId": "ACME-ROUTER",
-      "macAddress": "AA:BB:CC:11:22:33"
-    }
-  ],
-  "spReference": "a6cc5da980034948ba654ae6ceda03f4",
+  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-  "characteristics": {
-    "fixedIp": true,
-    "ipAddress": [
-      "1.2.3.4"
-    ],
-    "SLA": "SLA-3"
+  "note": "This is the reason I suspend you",
   }
 }
 ```
@@ -265,7 +301,7 @@ Content-Type: application/json
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "SUSPEND",
   "state": "DONE_SUCCESS",
@@ -302,7 +338,7 @@ Content-Type: application/json
 ```JSON
 {
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
@@ -399,18 +435,18 @@ The type of operation this order is intended to perform.
     * Deactivate the service
     * Remove the subscription
   * SUSPEND
-    * Requires subscriptionId
+    * Requires coSubscriptionId
     * Temporary suspend the service
     * Change subscription state to "SUSPENDED"
   * RESUME
-    * Requires subscriptionId
+    * Requires coSubscriptionId
     * Resume a temporary suspended service
     * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
   * MODIFY
-    * Requires subscriptionId
+    * Requires coSubscriptionId
     * Update a service with new parameters
   * CHANGE
-    * Requires subscriptionId
+    * Requires coSubscriptionId
     * Change the current service type to a new service type
 
 ### requestedDateTime
@@ -436,9 +472,9 @@ The date and time when the order is expected to be delivered. This is an estimat
  * Data format: [spSubscriptionId](dataformats.md#spsubscriptionid)
  * Optional
  
-### subscriptionId
+### coSubscriptionId
 
- * Data format: [subscriptionId](dataformats.md#subscriptionid)
+ * Data format: [coSubscriptionId](dataformats.md#cosubscriptionid)
  * Required for the operations SUSPEND, RESUME, MODIFY and CHANGE
  * Mandatory in response
 
