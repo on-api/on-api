@@ -502,3 +502,30 @@ false this field must be omitted or be set to false.
 
  * Data format: [equipment](dataformats.md#equipment)
  * Optional
+
+### status 
+
+The status of the order. This is returned from the communication operator.
+
+* Data format: [enumeration](dataformats.md#enumeration)
+
+**Values**
+  * RECEIVED
+    * The order is received but not yet in progress
+    * Changes can still be made
+  * IN_PROGRESS
+    * The order is in progress
+    * No changes are allowed
+  * DONE_SUCCESS
+    * The order has been processed and has turned into a subscription
+  * DONE_FAILED
+    * The order has been processed and failed
+    * Should be accompanied with a message with the cause of the failure
+ 
+ ### message
+ 
+ Can be used in the response to describe why the status is DONE_FAILED
+
+ * Data format: [text](dataformats.md#text)
+ * Mandatory (but may be empty)
+ 
