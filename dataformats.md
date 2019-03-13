@@ -250,7 +250,7 @@ Identifies a single access. Used as key when fetching a single access or when or
 
 Reference that identifies the unique end-customer or service in the Service Provider's system.
 This information can be used by the CO to lookup information about the customer or service with the 
-[contact information API](contact_information.md)
+[contacts API](contacts.md)
 
  * Data format: [ID](dataformats.md#id)
 
