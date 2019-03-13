@@ -327,7 +327,7 @@ Content-Type: application/json
 
 
 ### PUT
-Used to update an order for which the requestedDateTime have not yet passed. 
+With patch it is possible to update an order for which the state is "RECEIVED".
 
 Request
 ```HTTP
@@ -363,8 +363,7 @@ Content-Type: application/json
 ```
 
 ### PATCH
-With patch it is possible to update an order for which the requestedDateTime have not yet passed with only partial order
-data. 
+With patch it is possible to update an order for which the state is "RECEIVED".
 
 Request
 ```HTTP
@@ -384,7 +383,7 @@ HTTP/1.1 204 No Content
 ```
 
 ### DELETE
-Used to cancel and order for which the requestedDateTime have not yet passed.
+Used to cancel and order for which the state is "RECEIVED".
 
 Request
 ```HTTP
