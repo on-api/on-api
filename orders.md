@@ -2,7 +2,7 @@
  * Endpoint /2.4/orders/
 
 This API allows the service provider to activate, deactivate, suspend, resume, update and change services. Once an order
-is no longer in the "RECEIVED" no changes can be made to that order.
+is no longer in the state "RECEIVED" no changes can be made to that order.
 
 ## States
 In the simplest implementation an order goes directly to DONE_SUCCESS or DONE_FAILED depending on if it is accepted or not. If an order goes to a queue it ends up in RECEIVED. If there changes can be made to it until it changes state. An order that is RECEIVED can also have the status checked and during processing the status can be IN_PROGRESS before reaching DONE_SUCCESS or DONE_FAILED.
@@ -268,7 +268,7 @@ Content-Type: application/json
 ```
 
 #### Suspend a service 
-This operation is for a service that is suspended, for instance for abuse. It's to be used temporarily and billing is supposed to keep going. A special field "note" is added here, for information the CO may publish to the customer if possible.
+This operation is for a service that is suspended, for instance for abuse. It's to be used temporarily and billing is supposed to keep going. A special field "externalNote" is added here, for information the CO may publish to the customer if possible.
 
 Request
 ```HTTP
@@ -283,7 +283,7 @@ Content-Type: application/json
   "operation": "SUSPEND",
   "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-  "note": "This is the reason I suspend you"
+  "externalNote": "This is the reason I suspend you"
 }
 ```
 
@@ -382,7 +382,7 @@ HTTP/1.1 204 No Content
 ```
 
 ### DELETE
-Used to cancel and order for which the state is "RECEIVED".
+Used to cancel an order for which the state is "RECEIVED".
 
 Request
 ```HTTP
@@ -476,7 +476,7 @@ The date and time when the order is expected to be delivered. This is an estimat
  * Required for the operations SUSPEND, RESUME, MODIFY and CHANGE
  * Mandatory in response
 
-### note
+### externalNote
 Note that is formatted in such a way that it can be displayed to the end customer. Is used to inform the end customer
 of things like abuse blocks.
 
