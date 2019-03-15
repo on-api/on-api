@@ -268,21 +268,21 @@ Some fields are only available when fetching a single access. These fields are m
 
 Identifies a single access. Used as key when fetching a single access and ordering services.
 
- * Data format: [accessId](dataformats.md#accessid)
+ * Data format: [accessId](../common/dataformats.md#accessid)
  * Mandatory
  
 ### legacyAccessId
 
 For accesses that have been migrated from another CO the new CO might have available what access id the previous CO used for this access. If that information is available it would potentially we quite valuable provided to the SP.
 
- * Data format: [accessId](dataformats.md#accessid)
+ * Data format: [accessId](../common/dataformats.md#accessid)
  * Optional
 
 ### streetName
 
 Street name for the address where the access resides.
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  * Mandatory
 
 ### streetNumber
@@ -308,25 +308,25 @@ Street littera or entrance. In the example of "Kungsgatan 10G", the street litte
 ### postalCode
 
  * Mandatory
- * Data format: [postalCode](dataformats.md#postalcode)
+ * Data format: [postalCode](../common/dataformats.md#postalcode)
   
 ### city
 
  Postal city
 
- * Data format: [text](dataformats.md#text) 
+ * Data format: [text](../common/dataformats.md#text) 
  * Mandatory
  
 ### countryCode
 
- * Data format: [countryCode](dataformats.md#countrycode)
+ * Data format: [countryCode](../common/dataformats.md#countrycode)
  * Mandatory
 
 ### premisesType
 
 Premises type describes the type of building/premises of the access.
 
- * Data format: [enumeration](dataformats.md#enumeration)
+ * Data format: [enumeration](../common/dataformats.md#enumeration)
  * Mandatory
  
 **Valid values**
@@ -353,7 +353,7 @@ Used to distinguish between individual apartments in apartment buildings sharing
 Alternative to mduApartmentNumber used to distinguish between individual apartments in an apartment building sharing a
 single postal address. 
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  * Mandatory if premisesType is set to MDU_APARTMENT and mduApartmentNumber is omitted
 
 ### outlet
@@ -361,14 +361,14 @@ single postal address.
 Used to identify the port in the apartment or house. The port is typically labeled with this value. If specified, 
 it should be unique per address.
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  * Optional
 
 ### population
 
 Describes a subset of all accesses. Used for grouping accesses together for commercial or technical purposes.
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  * Optional
 
 ### accessState
@@ -394,7 +394,7 @@ Lists of deliverable services.
 
 Name of the service, used as reference in the [order API](orders.md)
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  * Mandatory
 
 ### services/connection 
@@ -402,28 +402,28 @@ Name of the service, used as reference in the [order API](orders.md)
 Indicates when the service is technically deliverable for the first time. If the date is unknown "YES" or "NO" can 
 optionally be used as value.
 
- * Data format: [date](dataformats.md#date) (Valid values are also "YES" and "NO")
+ * Data format: [date](../common/dataformats.md#date) (Valid values are also "YES" and "NO")
  * Mandatory
 
 ### services/disconnection
 
 Specifies when a service is no longer available. This can indicate that a certain service will no longer be available after the given date or that the access itself will be unavailable and in that case all the services will have a disconnection date. 
  
- * Data format: [date](dataformats.md#date) (Valid values are also empty string "")
+ * Data format: [date](../common/dataformats.md#date) (Valid values are also empty string "")
  * Mandatory but can be empty
 
 ### services/forcedTakeoverPossible
 
 Specifies if a service provider can replace another service providers activated service. 
 
- * Data format: [boolean](dataformats.md#boolean)
+ * Data format: [boolean](../common/dataformats.md#boolean)
  * Mandatory
 
 ### services/comments
 
 A list of messages from the CO intended for the end customer. 
 
- * Data format: JSON array of [text](dataformats.md#text)
+ * Data format: JSON array of [text](../common/dataformats.md#text)
  * Optional 
  
 Examples: 
@@ -442,7 +442,7 @@ Characteristics available when ordering this service.
 
  Specifies if the characteristic of [type] is required for activation
 
- * Data format [boolean](dataformats.md#boolean)
+ * Data format [boolean](../common/dataformats.md#boolean)
 
 ### services/characteristics/[type]/validValues
 
@@ -462,7 +462,7 @@ for the accessId that can be omitted here. If there are no subscription for this
 
 Make and model of equipment placed at the customer and provided by the CO.
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  * Optional
  * If the equipment is a fiber converter
 
@@ -470,7 +470,7 @@ Make and model of equipment placed at the customer and provided by the CO.
 
 Make and model of equipment placed at the customer and provided by the CO.
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  * Optional
  * If the equipment is a network-switch
  * Empty if coCpeRouter not empty
@@ -481,7 +481,7 @@ Make and model of equipment placed at the customer and provided by the CO.
 
 Make and model of the by the CO customer placed equipment of router type if it exists.
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  * Optional
  * If the equipment type is a network-router
  * Empty if coCpeSwitch not empty

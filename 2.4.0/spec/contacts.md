@@ -55,4 +55,4 @@ Content-Type: application/json
 |mobilePhone||
 
 
-For data format, see [data formats](dataformats.md)
+For data format, see [data formats](../common/dataformats.md)

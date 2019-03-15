@@ -75,47 +75,47 @@ Content-Type: application/json
 
 ### subscriptionId
 
- * Data format: [ID](dataformats.md#subscriptionid)
+ * Data format: [ID](../common/dataformats.md#subscriptionid)
  * Mandatory
 
 ### accessId
 
- * Data format: [accessId](dataformats.md#accessid)
+ * Data format: [accessId](../common/dataformats.md#accessid)
  * Mandatory
 
 ### service
 
- * Data format: [text](dataformats.md#service)
+ * Data format: [text](../common/dataformats.md#service)
  * Mandatory
 
 ### operationalState 
 
- * Data format: [operationalState](dataformats.md#operationalstate)
+ * Data format: [operationalState](../common/dataformats.md#operationalstate)
  * Mandatory
   
 ### spReference
 
- * Data format: [ID](dataformats.md#spreference)
+ * Data format: [ID](../common/dataformats.md#spreference)
  * Mandatory
 
 ### spSubscriptionId
 
- * Data format: [spSubscriptionId](dataformats.md#spsubscriptionid)
+ * Data format: [spSubscriptionId](../common/dataformats.md#spsubscriptionid)
  * Mandatory
 
 ### option82
 
- * Data format: [option82](dataformats.md#option82)
+ * Data format: [option82](../common/dataformats.md#option82)
  * Deprecated
 
 ### dhcpIdentifier
 
- * Data format: [dhcpIdentifier](dataformats.md#dhcpidentifier)
+ * Data format: [dhcpIdentifier](../common/dataformats.md#dhcpidentifier)
  
 ### characteristics
 
- * Data format: [characteristics](dataformats.md#characteristics)
+ * Data format: [characteristics](../common/dataformats.md#characteristics)
 
 ### equipment
 
- * Data format: [equipment](dataformats.md#equipment)
+ * Data format: [equipment](../common/dataformats.md#equipment)

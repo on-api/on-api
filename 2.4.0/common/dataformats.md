@@ -236,21 +236,21 @@ Examples
 Identifies a single access. Used as key when fetching a single access or when ordering services.
 
  * Data format: [ID](dataformats.md#id)
- * References: [accesses/accessId](accesses.md#accessid)
+ * References: [accesses/accessId](../spec/accesses.md#accessid)
 
 
 ### subscriptionId
  The CO's ID for a single subscription. 
 
  * Data format: [ID](dataformats.md#id)
- * References: [subscriptions/subscriptionId](subscriptions.md#subscriptionid)
+ * References: [subscriptions/subscriptionId](../spec/subscriptions.md#subscriptionid)
 
  
 ### spReference
 
 Reference that identifies the unique end-customer or service in the Service Provider's system.
 This information can be used by the CO to lookup information about the customer or service with the 
-[contacts API](contacts.md)
+[contacts API](../spec/contacts.md)
 
  * Data format: [ID](dataformats.md#id)
 
@@ -273,7 +273,7 @@ The operational state of a subscription
     * Subscription is suspended and service delivery is blocked
 
 ### service
-A name of a specific service offered by the CO listed in the [accesses API](accesses.md)
+A name of a specific service offered by the CO listed in the [accesses API](../spec/accesses.md)
 
  * Data format: [text](dataformats.md#text)
 
@@ -322,9 +322,9 @@ Indicates if a fixedIp is to be used.
 Data format: [boolean](dataformats.md#boolean)
 
 #### characteristics/ipAddresses
-If the ipAddresses characteristic is provided in an [order](orders.md) the specified IP-addresses will be 
-used. If ipAddresses is omitted from the [order](orders.md) the CO reserves an IP-address from a predefined pool, the 
-IP-addresses is later displayed under characteristics in the [subscriptions API](subscriptions.md).
+If the ipAddresses characteristic is provided in an [order](../spec/orders.md) the specified IP-addresses will be 
+used. If ipAddresses is omitted from the [order](../spec/orders.md) the CO reserves an IP-address from a predefined pool, the 
+IP-addresses is later displayed under characteristics in the [subscriptions API](../spec/subscriptions.md).
 
 Data format: JSON-array of [IP-addresses](dataformats.md#ipaddress) to be used.
 

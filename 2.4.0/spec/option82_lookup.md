@@ -41,5 +41,5 @@ Content-Type: application/json
 If no access-id can be found, the response should be `HTTP 404 Not Found`
 
 ## Fields
-See [data formats](dataformats.md) for specification of option82 and access-id.
+See [data formats](../common/dataformats.md) for specification of option82 and access-id.
 

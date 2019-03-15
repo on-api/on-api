@@ -415,7 +415,7 @@ HTTP/1.1 204 No Content
 
 The technical service offered by the CO. Listed in the [accesses](accesses.md) API
 
- * Data format: [service](dataformats.md#service)
+ * Data format: [service](../common/dataformats.md#service)
  * Mandatory
  
 
@@ -423,7 +423,7 @@ The technical service offered by the CO. Listed in the [accesses](accesses.md) A
 
 The type of operation this order is intended to perform.
 
-* Data format: [enumeration](dataformats.md#enumeration)
+* Data format: [enumeration](../common/dataformats.md#enumeration)
 
 **Values**
   * ACTIVATE
@@ -451,28 +451,28 @@ The type of operation this order is intended to perform.
 
 Earliest date and time for the order to be executed. If omitted the order is executed immediately. 
 
- * Data format: [dateTime](dataformats.md#datetime)
+ * Data format: [dateTime](../common/dataformats.md#datetime)
 
 ### expectedCompletionDate
 
 The date and time when the order is expected to be delivered. This is an estimated time.
 
- * Data format: [dateTime](dataformats.md#datetime)
+ * Data format: [dateTime](../common/dataformats.md#datetime)
  * Response only
  
 ### spReference
 
- * Data format: [spReference](dataformats.md#spreference)
+ * Data format: [spReference](../common/dataformats.md#spreference)
  * Mandatory
  
 ### spSubscriptionId
 
- * Data format: [spSubscriptionId](dataformats.md#spsubscriptionid)
+ * Data format: [spSubscriptionId](../common/dataformats.md#spsubscriptionid)
  * Optional
  
 ### subscriptionId
 
- * Data format: [subscriptionId](dataformats.md#subscriptionid)
+ * Data format: [subscriptionId](../common/dataformats.md#subscriptionid)
  * Required for the operations SUSPEND, RESUME, MODIFY and CHANGE
  * Mandatory in response
 
@@ -480,14 +480,14 @@ The date and time when the order is expected to be delivered. This is an estimat
 Note that is formatted in such a way that it can be displayed to the end customer. Is used to inform the end customer
 of things like abuse blocks.
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  
 Examples: 
  * Your service have been blocked due to outstanding payment
 
 ### characteristics
 
- * Data format: [characteristics](dataformats.md#characteristics)
+ * Data format: [characteristics](../common/dataformats.md#characteristics)
 
 ### forcedTakeover
 If the SP wishes to replace the service from another SP this value is set to true. This is only possible if the 
@@ -500,14 +500,14 @@ false this field must be omitted or be set to false.
  
 ### equipment
 
- * Data format: [equipment](dataformats.md#equipment)
+ * Data format: [equipment](../common/dataformats.md#equipment)
  * Optional
 
 ### status 
 
 The status of the order. This is returned from the communication operator.
 
-* Data format: [enumeration](dataformats.md#enumeration)
+* Data format: [enumeration](../common/dataformats.md#enumeration)
 
 **Values**
   * RECEIVED
@@ -526,6 +526,6 @@ The status of the order. This is returned from the communication operator.
  
  Can be used in the response to describe why the status is DONE_FAILED
 
- * Data format: [text](dataformats.md#text)
+ * Data format: [text](../common/dataformats.md#text)
  * Mandatory (but may be empty)
  

@@ -150,7 +150,7 @@ Content-Type: application/json
 | subscription/serviceDescription | Service: Service Description  |                                                                    |
 | subscription/connectionDate     | Service: Connection Date      |                                                                    |
 | subscription/disconnectionDate  | Service: Disconnection Date   |                                                                    |
-| subscription/spReference        | Service Provider: referenceID | [spReference](dataformats.md#spreference)                         |
+| subscription/spReference        | Service Provider: referenceID | [spReference](../common/dataformats.md#spreference)                         |
 | subscription/spSubscriptionId   | SP: SubscriptionID            | [subscription/spSubscriptionId](subscriptions.md#spsubscriptionid) |
 | subscription/coSubscriptionId   |                               | [subscription/subscriptionId](subscriptions.md#subscriptionid)     |
 | invoice/listPrice               | Invoice: List price           |                                                                    |

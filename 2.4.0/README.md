@@ -21,19 +21,18 @@ Some of the properties of this API includes:
 ## Table of contents
 
 * [Changelog](changelog.md)
-* [Accesses](accesses.md)
-* [Data formats](dataformats.md)
-* [Endpoints](endpoints.md)
-* [Equipment based localization](equipment_based_localization.md)
-* [Response codes](response_codes.md)
-* [Option82 lookup](option82_lookup.md)
-* [Order](orders.md)
-* [Order events](orderevents.md)
-* [SP contacts](contacts.md)
-* [Subscriptions - list active services](subscriptions.md)
-* [Web portal - Forward customers to SP service portals](web_portal.md)
-* [Tickets](tickets.md)
-* [Technical information](technical_info.md)
+* [Accesses](spec/accesses.md)
+* [Data formats](common/dataformats.md)
+* [Endpoints](spec/endpoints.md)
+* [Responses](common/responses.md)
+* [Option82 lookup](spec/option82_lookup.md)
+* [Order](spec/orders.md)
+* [Order events](spec/orderevents.md)
+* [SP contacts](spec/contacts.md)
+* [Subscriptions - list active services](spec/subscriptions.md)
+* [Web portal - Forward customers to SP service portals](spec/web_portal.md)
+* [Tickets](spec/tickets.md)
+* [Technical information](spec/technical_info.md)
  
 ## General guidelines
 

@@ -3,13 +3,13 @@
 ## Changes since 2.3.1
 
  * All documentation is translated to English
- * [Technical Info](technical_info.md) replaces [Fault Management: Link Status API](https://github.com/on-api/on-api-release-2.3.1/blob/master/fm_linkstatus.md)
- * [Accesses](accesses.md) replaces 
+ * [Technical Info](spec/technical_info.md) replaces [Fault Management: Link Status API](https://github.com/on-api/on-api-release-2.3.1/blob/master/fm_linkstatus.md)
+ * [Accesses](spec/accesses.md) replaces 
     * [Feasibility](https://github.com/on-api/on-api-release-2.3.1/blob/master/feasibility.md)
     * [Availability](https://github.com/on-api/on-api-release-2.3.1/blob/master/availability.md)
- * [Data formats](dataformats.md) replaces [Option82-format](https://github.com/on-api/on-api-release-2.3.1/blob/master/option82.md)
+ * [Data formats](common/dataformats.md) replaces [Option82-format](https://github.com/on-api/on-api-release-2.3.1/blob/master/option82.md)
  * A separate description of [response codes](https://github.com/on-api/onapi-inprogress-2.4/blob/master/response_codes.md)  is added
- * New API - [Endpoints](endpoints.md)
+ * New API - [Endpoints](spec/endpoints.md)
  * co_active_services.md is renamed to services.md
  * [README.md](README.md) replaces 
     * index.md 
@@ -28,10 +28,9 @@
    * MODIFY
    * CHANGE
  * New value for premisesType in accesses MDU_TECHNICAL 
- * [order events](https://github.com/on-api/on-api-release-2.3.1/blob/master/order_events.md) is replaced by a more generic [events](events.md)
- * [DHCP-lookup](dhcplookup.md) replaces [Option82 Lookup](https://github.com/on-api/on-api-release-2.3.1/blob/master/option82_lookup.md)
- * New API - [Equipment based localization](equipment_based_localization.md)
- * [Accesses](accesses.md) - active is renamed to subscriptions
- * New API - [Invoice specification](invoice_specification.md)
- * New API - [Ticket API](tickets.md)
- * New API - [Contacts API](contacts.md)
+ * [order events](https://github.com/on-api/on-api-release-2.3.1/blob/master/order_events.md) is replaced by a more generic [events](spec/events.md)
+ * [DHCP-lookup](spec/dhcplookup.md) replaces [Option82 Lookup](https://github.com/on-api/on-api-release-2.3.1/blob/master/option82_lookup.md)
+ * [Accesses](spec/accesses.md) - active is renamed to subscriptions
+ * New API - [Invoice specification](spec/invoice_specification.md)
+ * New API - [Ticket API](spec/tickets.md)
+ * New API - [Contacts API](spec/contacts.md)

@@ -39,4 +39,4 @@ Content-Type: application/json
 ### Fields
 
  #### accessId
- * Data format: [accessId](dataformats.md#accessid)
+ * Data format: [accessId](../common/dataformats.md#accessid)
