@@ -1,6 +1,6 @@
 #  Responses
 
-All error handling should be using status codes from HTTP, if possible with the free text field "cause" stating what went wrong. If the server has an ID of the error (such as a fault number or, even better, a ticket ID it should be included in the cause field.
+All error handling should be using status codes from HTTP, if possible with the free text field "cause" stating what went wrong. If the server has an ID of the error (such as a fault number or, even better, a ticket ID) it should be included in the cause field.
 
 Example:
 ```http
