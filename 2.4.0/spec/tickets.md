@@ -126,7 +126,7 @@ Content-Type: application/json
 |coTicketReference|string|CO Ticket Reference|
 |spReference|string|SP Reference|
 |spTicketReference|string|SP Ticket Reference|
-|accessId|string|Unique identifier for a Access, owned by CO|
+|accessId|string|Unique identifier for an Access, owned by CO|
 |createdBy|string|Created By User|
 |createdAt|string|Created Time|
 |updatedAt|string|Last Modified time|
@@ -177,7 +177,7 @@ Content-Type: application/json
 |--|--|--|
 |spReference|string (optional)|SP Reference|
 |spTicketReference|string (optional)|SP Ticket Reference|
-|accessId|string |Unique identifier for a Access, owned by CO|
+|accessId|string |Unique identifier for an Access, owned by CO|
 |createdBy|string|Created By User|
 |heading|string|Heading|
 |description|string|Description|
