@@ -5,7 +5,7 @@ This API allows the service provider to activate, deactivate, suspend, resume, u
 is no longer in the state "RECEIVED" no changes can be made to that order.
 
 ## States
-In the simplest implementation an order goes directly to DONE_SUCCESS or DONE_FAILED depending on if it is accepted or not. If an order goes to a queue it ends up in RECEIVED. If there changes can be made to it until it changes state. An order that is RECEIVED can also have the status checked and during processing the status can be IN_PROGRESS before reaching DONE_SUCCESS or DONE_FAILED.
+In the simplest implementation an order goes directly to DONE_SUCCESS or DONE_FAILED depending on if it is accepted or not. If an order goes to a queue it ends up in RECEIVED. If an order is RECEIVED changes can be made to it until it changes state. An order that is RECEIVED can also have the status checked and during processing the status can be IN_PROGRESS before reaching DONE_SUCCESS or DONE_FAILED.
 
 ## Operations 
 
