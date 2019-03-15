@@ -2,7 +2,7 @@
 
 Path /2.4/accesses/
 
-The accesses API is used to get available access points. The accesses contains details about the address where the 
+The accesses API is used to get available access points. The accesses contain details about the address where the 
 access resides, available services, equipment and activated services. 
   
 ## Operations
@@ -273,7 +273,7 @@ Identifies a single access. Used as key when fetching a single access and orderi
  
 ### legacyAccessId
 
-For accesses that have been migrated from another CO the new CO might have available what access id the previous CO used for this access. If that information is available it would potentially we quite valuable provided to the SP.
+For accesses that have been migrated from another CO the new CO might have information on what access id was used for this access by the previous CO. If that information is available it could potentially be quite valuable provided to the SP.
 
  * Data format: [accessId](../common/dataformats.md#accessid)
  * Optional
@@ -373,14 +373,14 @@ Describes a subset of all accesses. Used for grouping accesses together for comm
 
 ### accessState
 
-Describes the current state of wether the access is connected and can be used.
+Describes the current state of whether the access is connected and can be used.
 
  * Data format: One of PLANNED, DEPLOYING, HOMESPASSED, CONNECTED, DISCONNECTED
  * Mandatory 
 
 ### coNetworkAgreement
 
-Specifies wether the end customer is required to have a separate contract with the CO for services to be allowed on the access. The attribute is mandatory but can be empty which should be intepreted as NOT_REQUIRED.
+Specifies whether the end customer is required to have a separate contract with the CO for services to be allowed on the access. The attribute is mandatory but can be empty which should be intepreted as NOT_REQUIRED.
 
  * Data format: One of REQUIRED_NOT_VALID, REQUIRED_VALID, NOT_REQUIRED or empty string ""
  * Mandatory 
@@ -478,8 +478,6 @@ Make and model of equipment placed at the customer and provided by the CO.
 ### coCpeRouter
 
 Make and model of equipment placed at the customer and provided by the CO.
-
-Make and model of the by the CO customer placed equipment of router type if it exists.
 
  * Data format: [text](../common/dataformats.md#text)
  * Optional
