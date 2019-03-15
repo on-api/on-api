@@ -273,7 +273,7 @@ Identifies a single access. Used as key when fetching a single access and orderi
  
 ### legacyAccessId
 
-For accesses that have been migrated from another CO the new CO might have information on what access id was used for this access by the previous CO. If that information is available it could potentially be quite valuable provided to the SP.
+For accesses that have been migrated from another CO the new CO might have information on what access-id was used for this access by the previous CO. If that information is available it could potentially be quite valuable provided to the SP.
 
  * Data format: [accessId](../common/dataformats.md#accessid)
  * Optional
