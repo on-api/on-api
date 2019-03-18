@@ -326,7 +326,7 @@ Content-Type: application/json
 
 
 ### PUT
-With patch it is possible to update an order for which the state is "RECEIVED".
+With put it is possible to update an order for which the state is "RECEIVED", using the complete object.
 
 Request
 ```HTTP
@@ -362,7 +362,7 @@ Content-Type: application/json
 ```
 
 ### PATCH
-With patch it is possible to update an order for which the state is "RECEIVED".
+With patch it is possible to update an order for which the state is "RECEIVED", using only the changed part.
 
 Request
 ```HTTP
