@@ -456,16 +456,29 @@ Content-Type: application/json
 | ports.#.fiber.dbmRx                           | string            | Fiber receive dampening                          |
 | ports.#.fiber.dbmTx                           | string            | Fiber transceiver dampening                       |
 | ports.#.fiber.temp                            | string            | SFP temperature                                  |
-| ports.#.statistics.input.errors               | integer           | Ingress count of errors                          |
+| ports.#.fiber.biasTx                          | string            | SFP TX bias current                              |
+| ports.#.fiber.supplyVoltage                   | string            | SFP Supply voltage                               |
+| ports.#.fiber.vendor                          | string            | SFP Vendor                                       |
+| ports.#.fiber.partNumber                      | string            | SFP Part Number                                  |
+| ports.#.fiber.serialNumber                    | string            | SFP Serial Number                                |
+| ports.#.statistics.input.errors               | integer           | Ingress count of total errors                    |
 | ports.#.statistics.input.crcErrors            | integer           | Ingress count of crc errors                      |
-| ports.#.statistics.input.bytes                | integer           | Ingress count of bytes                           |
-| ports.#.statistics.input.multicast            | integer           | Ingress count of multicast                       |
-| ports.#.statistics.input.unicast              | integer           | Ingress count of unicast                         |
-| ports.#.statistics.output.errors              | integer           | Egress count of errors                           |
+| ports.#.statistics.input.pause                | integer           | Ingress count of pause frames                    |
+| ports.#.statistics.input.bytes                | integer           | Ingress count of total bytes                     |
+| ports.#.statistics.input.multicast            | integer           | Ingress count of multicast bytes                 |
+| ports.#.statistics.input.unicast              | integer           | Ingress count of unicast bytes                   |
+| ports.#.statistics.input.packets              | integer           | Ingress count of total packets                   |
+| ports.#.statistics.input.multicastPackets     | integer           | Ingress count of multicast packets               |
+| ports.#.statistics.input.unicastPackets       | integer           | Ingress count of unicast packets                 |
+| ports.#.statistics.output.errors              | integer           | Egress count of total errors                     |
 | ports.#.statistics.output.crcErrors           | integer           | Egress count of crc errors                       |
-| ports.#.statistics.output.bytes               |integer            | Egress count of bytes                            |
-| ports.#.statistics.output.multicast           |integer            | Egress count of multicast                        |
-| ports.#.statistics.output.unicast             |integer            | Egress count of unicast                          |
+| ports.#.statistics.output.pause               | integer           | Egress count of pause frames                     |
+| ports.#.statistics.output.bytes               | integer           | Egress count of total bytes                      |
+| ports.#.statistics.output.multicast           | integer           | Egress count of multicast bytes                  |
+| ports.#.statistics.output.unicast             | integer           | Egress count of unicast bytes                    |
+| ports.#.statistics.output.packets             | integer           | Egress count of total packets                    |
+| ports.#.statistics.output.multicastPackets    | integer           | Egress count of multicast packets                |
+| ports.#.statistics.output.unicastPackets      | integer           | Egress count of unicast packets                  |
 | macAddressTable                               |list               | List of mac address objects                      |
 | macAddressTable.#.mac                         |string             | Mac address of device                            |
 | macAddressTable.#.serviceType                     |string             | Which network service the mac originates from    |
