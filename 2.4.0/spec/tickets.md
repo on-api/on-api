@@ -111,7 +111,7 @@ Content-Type: application/json
   ],
   "status": "IN_PROGRESS_CO",
   "responsible": "CO",
-  "coSubscription": "O00000123456",
+  "subscriptionId": "O00000123456",
   "problemType": "NO_LINK",
   "additionalInfo": {
     "ip": "169.254.1.1",
@@ -138,7 +138,7 @@ Content-Type: application/json
 |comments.createdAt|string|Created Time|
 |status|[CREATED, IN_PROGRESS_CO, IN_PROGRESS_SP, CLOSED]|Status|
 |responsible|[SP,CO]|Responsible party, used for SLA calculation|
-|coSubscription|string (optional)|Unique identifier for a Subscription, owned by CO|
+|subscriptionId|string (optional)|Unique identifier for a Subscription, owned by CO|
 |problemType|[NO_LINK,NO_ACCESS,QUALITY,OTHER]|Problem Type|
 |additionalInfo|object|Additional info|
 |additionalInfo.ip|string|Customer IP|
@@ -163,7 +163,7 @@ Content-Type: application/json
   "createdBy": "Anna Andersson",
   "heading": "Heading for ticket",
   "description": "This customer is experiencing issues.",
-  "coSubscription": "O00000123456",
+  "subscriptionId": "O00000123456",
   "problemType": "NO_LINK",
   "additionalInfo": {
     "ip": "169.254.1.1",
@@ -181,7 +181,7 @@ Content-Type: application/json
 |createdBy|string|Created By User|
 |heading|string|Heading|
 |description|string|Description|
-|coSubscription|string (optional)|Unique identifier for a Subscription, owned by CO|
+|subscriptionId|string (optional)|Unique identifier for a Subscription, owned by CO|
 |problemType|[NO_LINK,NO_ACCESS,QUALITY,OTHER]|Problem Type|
 |additionalInfo|object|Additional Info|
 |additionalInfo.ip|string|Customer IP|
