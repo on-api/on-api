@@ -209,7 +209,7 @@ When a single access is requested the response contains a single JSON-object.
   ],
   "subscriptions": [
     {
-      "coSubscriptionId": "8b2ad40b4ffd45e5b48425f57821a7eb",
+      "subscriptionId": "8b2ad40b4ffd45e5b48425f57821a7eb",
       "accessId": "8732c2f065e2490babce820e94b1011a",
       "service": "BB-1000-1000",
       "operationalState": "ACTIVATED",
@@ -229,7 +229,7 @@ When a single access is requested the response contains a single JSON-object.
       }
     },
     {
-      "coSubscriptionId": "af5143edb9624223810689c4100525f0",
+      "subscriptionId": "af5143edb9624223810689c4100525f0",
       "accessId": "8732c2f065e2490babce820e94b1011a",
       "service": "IPTV",
       "operationalState": "ACTIVATED",
