@@ -85,26 +85,31 @@ When all accesses or updates are requested the response contains a JSON-array wi
       {
         "service": "BB-100-100",
         "connection": "2014-03-01",
+        "available": "YES",
         "disconnection": ""
       },
       {
         "service": "BB-100-10",
         "connection": "2013-10-12",
+        "available": "YES",
         "disconnection": ""
       },
       {
         "service": "BB-10-10",
         "connection": "2013-10-12",
+        "available": "NO",
         "disconnection": "2018-12-31"
       },
       {
         "service": "IPTV",
         "connection": "2013-10-12",
+        "available": "2019-01-01",
         "disconnection": ""
       },
       {
         "service": "VOIP",
         "connection": "NO",
+        "available": "YES",
         "disconnection": ""
       }
     ],
@@ -156,6 +161,7 @@ When a single access is requested the response contains a single JSON-object.
     {
       "service": "BB-1000-1000",
       "connection": "2014-03-01",
+      "available": "YES",
       "disconnection": "",
       "forcedTakeoverPossible": false,
       "comments": [
@@ -185,24 +191,28 @@ When a single access is requested the response contains a single JSON-object.
     {
       "service": "BB-100-100",
       "connection": "2013-10-12",
+      "available": "YES",
       "disconnection": "",
       "forcedTakeoverPossible": false
     },
     {
       "service": "BB-10-10",
       "connection": "2013-10-12",
+      "available": "YES",
       "disconnection": "2018-12-31",
       "forcedTakeoverPossible": false
     },
     {
       "service": "IPTV",
       "connection": "2013-10-12",
+      "available": "NO",
       "disconnection": "",
       "forcedTakeoverPossible": false
     },
     {
       "service": "VOIP",
       "connection": "NO",
+      "available": "2019-01-01",
       "disconnection": "",
       "forcedTakeoverPossible": true
     }
@@ -404,6 +414,15 @@ optionally be used as value.
 
  * Data format: [date](../common/dataformats.md#date) (Valid values are also "YES" and "NO")
  * Mandatory
+
+### services/available 
+
+Indicates when the service is technically deliverable. If the date is unknown "YES" or "NO" can 
+optionally be used as value. If a service will be available to a future date due to ongoing cancellation by another service provider, then the future available date can be provided for calling service provider.
+
+ * Data format: [date](../common/dataformats.md#date) (Valid values are also "YES" and "NO")
+ * Mandatory
+
 
 ### services/disconnection
 

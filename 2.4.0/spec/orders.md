@@ -449,7 +449,7 @@ The type of operation this order is intended to perform.
 
 ### requestedDateTime
 
-Earliest date and time for the order to be executed. If omitted the order is executed immediately. 
+Earliest date and time for the order to be executed. If date is omitted the order is executed immediately. If a date in the past is provided (current date is 2019-04-01 and provided date is 2019-03-28) order will be executed immediately.
 
  * Data format: [dateTime](../common/dataformats.md#datetime)
 
