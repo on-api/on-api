@@ -28,14 +28,15 @@ Used to identify a single object.
  * Can not contain a personal identity number
  * Must be unique for the object type in the source system
  * Valid characters a-z, A-Z, 0-9, '-' and '.'
- * Maximum length 32 characters
+ * Maximum length 36 characters
  * Minimum length 1 characters
- * Matching regular expression ^[-0-9a-zA-Z]{1,32}$
+ * Matching regular expression ^[-0-9a-zA-Z\.]{1,36}$
 
 Examples
  * 12345
  * ADA134312
  * 79bd7c5132cd40ea8470f91e18484962
+ * 58128a38-8df0-11e9-b683-526af7764f64
 
 ### text
 Human readable text string.
@@ -260,6 +261,21 @@ The service providers ID for a single subscription.
 
  * Data format: [ID](dataformats.md#id)
  
+### orderState
+
+**Values**
+  * RECEIVED
+    * The order is received but not yet in progress
+    * Changes can still be made
+  * IN_PROGRESS
+    * The order is in progress
+    * No changes are allowed
+  * DONE_SUCCESS
+    * The order has been processed and has turned into a subscription
+  * DONE_FAILED
+    * The order has been processed and failed
+    * Should be accompanied with a message with the cause of the failure
+
 ### operationalState 
 
 The operational state of a subscription
