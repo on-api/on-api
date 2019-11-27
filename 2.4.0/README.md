@@ -1,23 +1,3 @@
-# Open Networks API 2.4.0
-
-This API aims to provide the necessary functionality to enable automation and communication between service providers (SP) 
-and open access network communication operators (CO). Enabling service providers to deliver services to the end customer in a secure 
-and efficient way without transmitting unnecessary personal information. 
-
-The API exposes the available network accesses and enables the SP to manage the last mile delivery in open networks.
-
-Some of the properties of this API includes: 
-
- * Provide the SP with available accesses from the CO, accesses include
-   * Address
-   * Network outlet
-   * Deliverable services
-   * Customer placed equipment
- * Manageability of deliverable services
- * Secure communications
- * GDPR safe operations
- * Support for automated processes
-
 ## Table of contents
 
 * [Changelog](changelog.md)
@@ -46,5 +26,5 @@ The API URL must contain the API version number. The API subset must use the doc
 
 Examples: 
    * https://server.com/onapi/2.4/accesses/
-   * https://server.com/2.4/accesses/
+   * https://server.com/2.4/accesses/ 
    * https://server.com/some/longer/path/2.4/accesses/
