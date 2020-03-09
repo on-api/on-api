@@ -54,7 +54,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Junet| | | | | | | |
 |Ownit| | | | | | | |
 |Serverado| | | | | | | |
-|Telenor| | | | | | | |
+|Telenor|No|No|No|No|No|No|No|
 |Th1ng| | | | | | | |
 |Viasat| | | | | | | |
 
