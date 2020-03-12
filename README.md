@@ -70,7 +70,6 @@ To update your company's status, or if your company is not on the list, send a p
 |Open Universe| | | | | | |
 |Skellefteå Kraft| | | | | | |
 |Zitius| | | | | | |
-| | | | | | | |
 
 ---
 
@@ -86,4 +85,3 @@ To update your company's status, or if your company is not on the list, send a p
 |Telenor| | |Yes| | |
 |Th1ng| | | | | | |
 |Viasat| | | | | | |
-| | | | | | | | 
