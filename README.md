@@ -37,7 +37,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Bjäre Kraft| | | | | | | |
 |Borlänge Energi| | | | | | | |
 |IP-Only| | | | | | | |
-|Itux| | | | | | | |
+|Itux|Q3 2020|Q3 2020| | | | | |
 |Open Infra| | | | | | | |
 |Open Universe| | | | | | | |
 |Skellefteå Kraft| | | | | | | |
