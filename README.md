@@ -52,7 +52,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Bredband2| | | | | | | |
 |Comhem| | | | | | | |
 |Junet| | | | | | | |
-|Ownit| | | | | | | |
+|Ownit|Yes|Yes|No|No|No|No|No|
 |Serverado| | | | | | | |
 |Telenor|No|No|No|No|No|No|No|
 |Th1ng| | | | | | | |
@@ -80,7 +80,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Bredband2| | | | | | |
 |Comhem| | | | | | |
 |Junet| | | | | | |
-|Ownit| | | | | | |
+|Ownit|Yes|Yes|Yes| | | |
 |Serverado| | | | | | |
 |Telenor| |Yes|Yes| | |
 |Th1ng| | | | | | |
