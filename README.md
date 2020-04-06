@@ -19,6 +19,7 @@ An example is the manual order process, where the Service Provider must first ac
 ### Versions
 
 - [ON-API 2.4.0](2.4.0)
+- [ON-API 2.3.1](2.3.1)
 
 
 ## Implementation status
@@ -32,12 +33,13 @@ To update your company's status, or if your company is not on the list, send a p
 
 ### ON-API 2.4
 
-| CO | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md)
-|-|-|-|-|-|-|-|-|
-|Bjäre Kraft| | | | | | | |
-|Borlänge Energi| | | | | | | |
+| CO                | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md) |
+|-------------------|------------------------------------|-------------------------------|----------------------------------|-------------------------------------------------------|------------------------------------|----------------------------------------------|--------------------------------------------------------------|
+|Bjäre Kraft        | | | | | | | |
+|Borlänge Energi    | | | | | | | |
 |IP-Only| | | | | | | |
 |Itux|Q3 2020|Q3 2020| | | | | |
+|Lunet| | | | | | | |
 |Open Infra| | | | | | | |
 |Open Universe| | | | | | | |
 |Skellefteå Kraft| | | | | | | |
@@ -45,9 +47,9 @@ To update your company's status, or if your company is not on the list, send a p
 
 ---
 
-| SP | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md)
-|-|-|-|-|-|-|-|-|
-|A3| | | | | | | |
+| SP                | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md) |
+|-------------------|------------------------------------|-------------------------------|----------------------------------|-------------------------------------------------------|------------------------------------|----------------------------------------------|--------------------------------------------------------------|
+|A3 | | | | | | | |
 |Bahnhof| | | | | | | |
 |Bredband2| | | | | | | |
 |Comhem| | | | | | | |
@@ -60,8 +62,8 @@ To update your company's status, or if your company is not on the list, send a p
 
 ### ON-API 2.3.1
 
-| CO | [Availability](https://github.com/on-api/on-api-release-2.3.1/blob/master/availability.md) | [Feasibility](https://github.com/on-api/on-api-release-2.3.1/blob/master/feasibility.md) | [Service Activation](https://github.com/on-api/on-api-release-2.3.1/blob/master/service_activation.md) | [Link status](https://github.com/on-api/on-api-release-2.3.1/blob/master/fm_linkstatus.md) | [Access customer info](https://github.com/on-api/on-api-release-2.3.1/blob/master/access_customer_info.md) | [CO Active services](https://github.com/on-api/on-api-release-2.3.1/blob/master/co_active_services.md)
-|-|-|-|-|-|-|-|
+| CO                | [Availability](2.3.1/availability.md) | [Feasibility](2.3.1/feasibility.md) | [Service Activation](2.3.1/service_activation.md) | [Link status](2.3.1/fm_linkstatus.md) | [Access customer info](2.3.1/access_customer_info.md) | [CO Active services](2.3.1/co_active_services.md) |
+|-------------------|---------------------------------------|-------------------------------------|---------------------------------------------------|---------------------------------------|-------------------------------------------------------|---------------------------------------------------|
 |Bjäre Kraft| | | | | | |
 |Borlänge Energi| | | | | | |
 |IP-Only| | | | | | |
@@ -73,8 +75,8 @@ To update your company's status, or if your company is not on the list, send a p
 
 ---
 
-| SP | [Availability](https://github.com/on-api/on-api-release-2.3.1/blob/master/availability.md) | [Feasibility](https://github.com/on-api/on-api-release-2.3.1/blob/master/feasibility.md) | [Service Activation](https://github.com/on-api/on-api-release-2.3.1/blob/master/service_activation.md) | [Link status](https://github.com/on-api/on-api-release-2.3.1/blob/master/fm_linkstatus.md) | [Access customer info](https://github.com/on-api/on-api-release-2.3.1/blob/master/access_customer_info.md) | [CO Active services](https://github.com/on-api/on-api-release-2.3.1/blob/master/co_active_services.md)
-|-|-|-|-|-|-|-|
+| SP                | [Availability](2.3.1/availability.md) | [Feasibility](2.3.1/feasibility.md) | [Service Activation](2.3.1/service_activation.md) | [Link status](2.3.1/fm_linkstatus.md) | [Access customer info](2.3.1/access_customer_info.md) | [CO Active services](2.3.1/co_active_services.md) |
+|-------------------|---------------------------------------|-------------------------------------|---------------------------------------------------|---------------------------------------|-------------------------------------------------------|---------------------------------------------------|
 |A3| | | | | | |
 |Bahnhof| | | | | | |
 |Bredband2| | | | | | |
