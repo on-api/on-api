@@ -2,7 +2,7 @@
 
 Below is a set of tables describing ON-API implementation status per company.
 
-To update your company's status, or if your company is not on the list, send a pull request, create an issue or write on Slack.
+To update your company's status, or if your company is not on the list, send a pull request or comment in the [issue on Github](https://github.com/on-api/on-api/issues/6)
 
 **Format:** `Yes`, `No` or ETA. eg `Q3 2020`
 
