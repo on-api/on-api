@@ -32,7 +32,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Junet| | | | | | | | |
 |Ownit|Yes|Yes|No|No|No|No|No| |
 |Serverado| | | | | | | | |
-|Telenor|No|No|No|No|No|No|No| |
+|Telenor|No|No|No|No|No|No|No|No|
 |Th1ng| | | | | | | | |
 |Viasat| | | | | | | | |
 
