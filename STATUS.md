@@ -60,6 +60,6 @@ To update your company's status, or if your company is not on the list, send a p
 |Junet| | | | | | | |
 |Ownit|Yes|Yes|Yes| | | | |
 |Serverado| | | | | | | |
-|Telenor|No|Yes|Yes|No|No|no|
+|Telenor|No|Yes|Yes|No|No|No|No
 |Th1ng| | | | | | | |
 |Viasat| | | | | | | |
