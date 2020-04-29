@@ -9,32 +9,32 @@ To update your company's status, or if your company is not on the list, send a p
 
 ### ON-API 2.4
 
-| CO                | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md) | [Web portal](2.4.0/spec/web_portal.md) |
-|-------------------|------------------------------------|-------------------------------|----------------------------------|-------------------------------------------------------|------------------------------------|----------------------------------------------|--------------------------------------------------------------|---------------------------------|
-|Bjäre Kraft        | YES                                | YES                           | NO                               | NO                                                    | NO                                 |  NO                                          | NO                                                           | YES                             |
-|Borlänge Energi    | | | | | | | | |
-|IP-Only| | | | | | | | |
-|Itux|Q3 2020|Q3 2020| | | | | | |
-|Lunet| | | | | | | | |
-|Open Infra| | | | | | | | |
-|Open Universe| | | | | | | | |
-|Skellefteå Kraft| | | | | | | | |
-|Zitius| | | | | | | | |
+| CO                |[Endpoints](2.4.0/spec/endpoints.md) | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md) | [Web portal](2.4.0/spec/web_portal.md) |
+|-------------------|-------------------------------------|------------------------------------|-------------------------------|----------------------------------|-------------------------------------------------------|------------------------------------|----------------------------------------------|--------------------------------------------------------------|---------------------------------|
+|Bjäre Kraft        | | YES                                | YES                           | NO                               | NO                                                    | NO                                 |  NO                                          | NO                                                           | YES                             |
+|Borlänge Energi    | | | | | | | | | |
+|IP-Only| | | | | | | | | |
+|Itux| |Q3 2020|Q3 2020| | | | | | |
+|Lunet| | | | | | | | | |
+|Open Infra| | | | | | | | | |
+|Open Universe| | | | | | | | | |
+|Skellefteå Kraft| | | | | | | | | |
+|Zitius| | | | | | | | | |
 
 ---
 
-| SP                | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md) | [Web portal](2.4.0/spec/web_portal.md) |
-|-------------------|------------------------------------|-------------------------------|----------------------------------|-------------------------------------------------------|------------------------------------|----------------------------------------------|--------------------------------------------------------------|---------------------------------|
-|A3 | | | | | | | | |
-|Bahnhof| | | | | | | | |
-|Bredband2| | | | | | | | |
-|Comhem| | | | | | | | |
-|Junet| | | | | | | | |
-|Ownit|Yes|Yes|No|No|No|No|No| |
-|Serverado| | | | | | | | |
-|Telenor|No|No|No|No|No|No|No|No|
-|Th1ng| | | | | | | | |
-|Viasat| | | | | | | | |
+| SP                | [Endpoints](2.4.0/spec/endpoints.md) | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md) | [Web portal](2.4.0/spec/web_portal.md) |
+|-------------------|--------------------------------------|------------------------------------|-------------------------------|----------------------------------|-------------------------------------------------------|------------------------------------|----------------------------------------------|--------------------------------------------------------------|----------------------------------------|
+|A3 | | | | | | | | | |
+|Bahnhof| | | | | | | | | |
+|Bredband2| | | | | | | | | |
+|Comhem| | | | | | | | | |
+|Junet| | | | | | | | | |
+|Ownit| |Yes|Yes|No|No|No|No|No| |
+|Serverado| Yes |Yes|Yes|No|No|Yes|No|No|No|
+|Telenor| |No|No|No|No|No|No|No|No|
+|Th1ng| | | | | | | | | |
+|Viasat| | | | | | | | | |
 
 ### ON-API 2.3.1
 
@@ -59,7 +59,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Comhem| | | | | | | |
 |Junet| | | | | | | |
 |Ownit|Yes|Yes|Yes| | | | |
-|Serverado| | | | | | | |
+|Serverado|Yes|Yes|Yes|No|No|No|No|
 |Telenor|No|Yes|Yes|No|No|No|No
 |Th1ng| | | | | | | |
 |Viasat| | | | | | | |
