@@ -11,7 +11,7 @@ To update your company's status, or if your company is not on the list, send a p
 
 | CO                |[Endpoints](2.4.0/spec/endpoints.md) | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md) | [Web portal](2.4.0/spec/web_portal.md) |
 |-------------------|-------------------------------------|------------------------------------|-------------------------------|----------------------------------|-------------------------------------------------------|------------------------------------|----------------------------------------------|--------------------------------------------------------------|---------------------------------|
-|Bjäre Kraft        | | YES                                | YES                           | NO                               | NO                                                    | NO                                 |  NO                                          | NO                                                           | YES                             |
+|Bjäre Kraft        | | YES                                | YES                           | NO                               | Q4 2020                                              | NO                                 |  Q3 2020                                     | Q3 2020                                                      | YES                             |
 |Borlänge Energi    | | | | | | | | | |
 |IP-Only| | | | | | | | | |
 |Itux| |Q3 2020|Q3 2020| | | | | | |
