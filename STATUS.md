@@ -20,7 +20,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Open Infra| | | | | | | | | |
 |Open Universe| | | | | | | | | |
 |Skellefteå Kraft| | | | | | | | | |
-|Zitius| | | | | | | | | |
+|Zitius| Yes | Yes | Yes | No | No | No | Yes | No | No |
 
 ---
 
