@@ -14,6 +14,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Bjäre Kraft        | | Yes                                | Yes                           | No                               | Q4 2020                                              | No                                 |  Q3 2020                                     | Q3 2020                                                      | Yes                             |
 |Borlänge Energi    | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 |
 |Falu Energi & Vatten| Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 |
+|Fibra| Yes | Yes | Yes | No | Yes | No | No | No | No |
 |IP-Only| | | | | | | | | |
 |Itux| |Q3 2020|Q3 2020| | | | | | |
 |Lunet| | | | | | | | | |
