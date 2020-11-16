@@ -16,7 +16,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Falu Energi & Vatten| Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 |
 |Fibra| Yes | Yes | Yes | No | Yes | No | No | No | No |
 |IP-Only| | | | | | | | | |
-|Itux| |Q3 2020|Q3 2020| | | | | | |
+|Itux| |Q2 2021|Q2 2021| | | | | | |
 |Lunet| | | | | | | | | |
 |Open Infra| | | | | | | | | |
 |Open Universe| | | | | | | | | |
