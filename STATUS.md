@@ -30,10 +30,10 @@ To update your company's status, or if your company is not on the list, send a p
 |A3 | | | | | | | | | |
 |Bahnhof| | | | | | | | | |
 |Bredband2| | | | | | | | | |
-|Comhem| | | | | | | | | |
 |Junet| | | | | | | | | |
 |Ownit| |Yes|Yes|No|No|No|No|No| |
 |Serverado| Yes |Yes|Yes|No|No|Yes|No|No|No|
+|Tele2| | Q1 2021 | Q1 2021 | | | | | | |
 |Telenor| |No|No|No|No|No|No|No|No|
 |Th1ng| | | | | | | | | |
 |Viasat| | | | | | | | | |
@@ -59,10 +59,10 @@ To update your company's status, or if your company is not on the list, send a p
 |A3| | | | | | | |
 |Bahnhof| | | | | | | |
 |Bredband2| | | | | | | |
-|Comhem| | | | | | | |
 |Junet| | | | | | | |
 |Ownit|Yes|Yes|Yes| | | | |
 |Serverado|Yes|Yes|Yes|No|No|No|No|
+|Tele2|Yes|Yes|Yes|No|No|No|No
 |Telenor|No|Yes|Yes|No|No|No|No
 |Th1ng| | | | | | | |
 |Viasat| | | | | | | |
