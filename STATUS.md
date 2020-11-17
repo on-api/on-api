@@ -51,7 +51,6 @@ Follows the SSNF specifikation, can contain duplicates from the above table if t
 |Mark Kraftvärme | Yes | [Yes](https://www.stadsnatsportalen.se/plain/onapi/MKV) |
 |Munkfors Stadsnät | Yes | [Yes](https://www.stadsnatsportalen.se/plain/onapi/MKF) |
 |Njudung Bredband | Yes | [Yes](https://www.stadsnatsportalen.se/plain/onapi/VET) |
-|Open Infra (tidigare Öppna Stadsnät) | Yes | [Yes](https://www.stadsnatsportalen.se/plain/onapi/OST) |
 |Openbit | Yes | [Yes](https://www.stadsnatsportalen.se/plain/onapi/OPB) |
 |Openbit Byalag | Yes | [Yes](https://www.stadsnatsportalen.se/plain/onapi/OPBBYA) |
 |Pajala Stadsnät | Yes | [Yes](https://www.stadsnatsportalen.se/plain/onapi/PAJ) |
