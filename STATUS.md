@@ -93,7 +93,7 @@ Follows the SSNF specifikation, can contain duplicates from the above table if t
 |Falu Energi & Vatten| YES                                   | YES                                 | YES                                               | YES                                   | NO                                                    | YES                                               | YES                               |
 |IP-Only| | | | | | | | |
 |Itux| | | | | | | |
-|Open Infra| Ye Yes s  | Yes  | Yes  | | | | |
+|Open Infra| Yes | Yes  | Yes  | | | | |
 |Open Universe| | | | | | | |
 |Skellefteå Kraft| | | | | | | |
 |Zitius| | | | | | | |
