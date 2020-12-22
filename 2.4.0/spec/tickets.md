@@ -25,7 +25,7 @@ SP = Service Provider
 
 ## Requirements
 
-**API Prefix:** `/ticket` 
+**API Prefix:** `/tickets` 
 eg: `domain.local/api/2.4/tickets/423323449`
 
 ## Endpoints
