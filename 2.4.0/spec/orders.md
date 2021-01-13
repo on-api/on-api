@@ -306,7 +306,7 @@ Content-Type: application/json
   "state": "RECEIVED",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "requestedDateTime": "2019-02-05T00:00:00Z",
-  "expectedCompletionDate": "2019-02-05T00:00:01Z",
+  "expectedCompletionDate": "2019-02-05T00:00:01Z"
 }
 ```
 
