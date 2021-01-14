@@ -267,6 +267,50 @@ Content-Type: application/json
 }
 ```
 
+
+#### Deactivate a service
+
+Request
+```HTTP
+POST /onapi/2.4/orders/ HTTP/1.1
+Content-Type: application/json
+```
+
+```JSON
+{
+  "accessId": "8732c2f065e2490babce820e94b1011a",
+  "service": "BB-1000-100",
+  "operation": "DEACTIVATE",
+  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
+  "requestedDateTime": "2019-02-05T00:00:00Z"
+}
+```
+
+Response
+
+```HTTP
+HTTP/1.1 201 CREATED
+Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
+Content-Type: application/json
+```
+
+```JSON
+{
+  "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "orderId": "f3f26446f6e8407aae876ea8e52d7417",
+  "accessId": "8732c2f065e2490babce820e94b1011a",
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "service": "BB-1000-100",
+  "operation": "DEACTIVATE",
+  "state": "RECEIVED",
+  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
+  "requestedDateTime": "2019-02-05T00:00:00Z",
+  "expectedCompletionDate": "2019-02-05T00:00:01Z"
+}
+```
+
+
 #### Suspend a service 
 This operation is for a service that is suspended, for instance for abuse. It's to be used temporarily and billing is supposed to keep going. A special field "externalNote" is added here, for information the CO may publish to the customer if possible.
 
