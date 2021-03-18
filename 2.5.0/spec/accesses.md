@@ -416,9 +416,9 @@ Indicates when the service is technically deliverable for the first time. If you
 
 ### services/available 
 
-Indicates when the service is technically deliverable. If you don't have a date when it was connected, you can specify the date as "1990-01-01T00:00:01Z". If you don't know when it will be connected, you can specify the date as "3030-12-12T00:00:01Z" for example. If a service will be available to a future date due to ongoing cancellation by another service provider, then the future available date can be provided for calling service provider.
+Indicates when the service can be ordered. If you don't know when it will be available, you can specify the date as empty string "". If a service will be available to a future date due to ongoing cancellation by another service provider, then the future available date can be provided for calling service provider.
 
- * Data format: [ISO 8601](../common/dataformats.md#date)
+ * Data format: [ISO 8601](../common/dataformats.md#date) (Valid values are also empty string "")
  * Mandatory
 
 
