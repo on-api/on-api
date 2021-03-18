@@ -106,7 +106,7 @@ References
 
 ### option82
 
-DHCPv4 Option82 should be hex encoded. The complete option82 TLV (typ, length, value) should be encoded. The data 
+DHCPv4 Option82 should be hex or ASCII encoded. The complete option82 TLV (typ, length, value) should be encoded. The data 
 should always start with 52 which is hex for 82.
 This format is deprecated in favor dhcpIdentifier.
 
