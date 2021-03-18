@@ -84,32 +84,32 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "services": [
       {
         "service": "BB-100-100",
-        "connection": "2014-03-01",
+        "connection": "2014-03-01T14:09:23Z",
         "available": "YES",
         "disconnection": ""
       },
       {
         "service": "BB-100-10",
-        "connection": "2013-10-12",
-        "available": "YES",
+        "connection": "2013-10-12T14:09:23Z",
+        "available": "2013-10-12T14:09:23Z",
         "disconnection": ""
       },
       {
         "service": "BB-10-10",
-        "connection": "2013-10-12",
-        "available": "NO",
-        "disconnection": "2018-12-31"
+        "connection": "2013-10-12T14:09:23Z",
+        "available": "2021-05-31T14:09:24Z",
+        "disconnection": "2021-05-31T14:09:23Z"
       },
       {
         "service": "IPTV",
-        "connection": "2013-10-12",
-        "available": "2019-01-01",
+        "connection": "2013-10-12T14:09:23Z",
+        "available": "2013-10-12T14:09:23Z",
         "disconnection": ""
       },
       {
         "service": "VOIP",
-        "connection": "NO",
-        "available": "YES",
+        "connection": "2013-10-12T14:09:23Z",
+        "available": "2013-10-13T14:09:23Z",
         "disconnection": ""
       }
     ],
@@ -160,8 +160,8 @@ When a single access is requested the response contains a single JSON-object.
   "services": [
     {
       "service": "BB-1000-1000",
-      "connection": "2014-03-01",
-      "available": "YES",
+      "connection": "2014-03-01T14:09:23Z",
+      "available": "2014-03-01T14:09:23Z",
       "disconnection": "",
       "forcedTakeoverPossible": false,
       "comments": [
@@ -190,29 +190,29 @@ When a single access is requested the response contains a single JSON-object.
     },
     {
       "service": "BB-100-100",
-      "connection": "2013-10-12",
-      "available": "YES",
+      "connection": "2013-10-12T14:09:23Z",
+      "available": "2013-10-12T14:09:23Z",
       "disconnection": "",
       "forcedTakeoverPossible": false
     },
     {
       "service": "BB-10-10",
-      "connection": "2013-10-12",
-      "available": "YES",
-      "disconnection": "2018-12-31",
+      "connection": "2013-10-12T14:09:23Z",
+      "available": "2013-10-12T14:09:23Z",
+      "disconnection": "2018-12-31T14:09:23Z",
       "forcedTakeoverPossible": false
     },
     {
       "service": "IPTV",
-      "connection": "2013-10-12",
-      "available": "NO",
+      "connection": "2013-10-12T14:09:23Z",
+      "available": "3030-12-12T14:09:23Z",
       "disconnection": "",
       "forcedTakeoverPossible": false
     },
     {
       "service": "VOIP",
-      "connection": "NO",
-      "available": "2019-01-01",
+      "connection": "3030-12-12T14:09:23Z",
+      "available": "3030-12-12T14:09:23Z",
       "disconnection": "",
       "forcedTakeoverPossible": true
     }
@@ -409,18 +409,16 @@ Name of the service, used as reference in the [order API](orders.md)
 
 ### services/connection 
 
-Indicates when the service is technically deliverable for the first time. If the date is unknown "YES" or "NO" can 
-optionally be used as value.
+Indicates when the service is technically deliverable for the first time. If you don't have a date when it was connected, you can specify the date as "1990-01-01T00:00:01Z". If you don't know when it will be connected, you can specify the date as "3030-12-12T00:00:01Z" for example.
 
- * Data format: [date](../common/dataformats.md#date) (Valid values are also "YES" and "NO")
+ * Data format: [ISO 8601](../common/dataformats.md#date)
  * Mandatory
 
 ### services/available 
 
-Indicates when the service is technically deliverable. If the date is unknown "YES" or "NO" can 
-optionally be used as value. If a service will be available to a future date due to ongoing cancellation by another service provider, then the future available date can be provided for calling service provider.
+Indicates when the service is technically deliverable. If you don't have a date when it was connected, you can specify the date as "1990-01-01T00:00:01Z". If you don't know when it will be connected, you can specify the date as "3030-12-12T00:00:01Z" for example. If a service will be available to a future date due to ongoing cancellation by another service provider, then the future available date can be provided for calling service provider.
 
- * Data format: [date](../common/dataformats.md#date) (Valid values are also "YES" and "NO")
+ * Data format: [ISO 8601](../common/dataformats.md#date)
  * Mandatory
 
 
@@ -428,7 +426,7 @@ optionally be used as value. If a service will be available to a future date due
 
 Specifies when a service is no longer available. This can indicate that a certain service will no longer be available after the given date or that the access itself will be unavailable and in that case all the services will have a disconnection date. 
  
- * Data format: [date](../common/dataformats.md#date) (Valid values are also empty string "")
+ * Data format: [ISO 8601](../common/dataformats.md#date) (Valid values are also empty string "")
  * Mandatory but can be empty
 
 ### services/forcedTakeoverPossible
