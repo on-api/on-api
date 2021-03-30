@@ -8,7 +8,7 @@ The DHCPv4 option82 from the DHCP log should be encoded in hex as is, without an
 
 ## Specification
 Request:
-<pre>GET /2.4/option82/<b>&lt;hex-encoded option82&gt;</b></pre>
+<pre>GET /2.4/option82/<b>&lt;hex or ASCII-encoded option82&gt;</b></pre>
 
 Response:
 <pre>
