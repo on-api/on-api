@@ -84,8 +84,8 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "services": [
       {
         "service": "BB-100-100",
-        "connection": "2014-03-01T14:09:23Z",
-        "available": "YES",
+        "connection": "1970-01-01T00:00:00Z",
+        "available": "1970-01-01T00:00:00Z",
         "disconnection": ""
       },
       {
@@ -102,8 +102,8 @@ When all accesses or updates are requested the response contains a JSON-array wi
       },
       {
         "service": "IPTV",
-        "connection": "2013-10-12T14:09:23Z",
-        "available": "2013-10-12T14:09:23Z",
+        "connection": "",
+        "available": "",
         "disconnection": ""
       },
       {
