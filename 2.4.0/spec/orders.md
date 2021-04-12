@@ -368,6 +368,34 @@ Content-Type: application/json
 ```
 
 
+#### Modify a service
+Request
+```HTTP
+POST /onapi/2.4/orders/ HTTP/1.1
+Content-Type: application/json
+```
+```JSON
+{
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "operation": "MODIFY",
+  "spReference": "a6cc5da980034948ba654ae6ceda03f4",
+  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac"
+}
+```
+Response
+```HTTP
+HTTP/1.1 201 CREATED
+Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
+Content-Type: application/json
+```
+```JSON
+{
+  "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "orderId": "f3f26446f6e8407aae876ea8e52d7417",
+  "state": "DONE_SUCCESS"
+}
+```
+
 
 ### PUT
 With put it is possible to update an order for which the state is "RECEIVED", using the complete object.
@@ -486,7 +514,7 @@ The type of operation this order is intended to perform.
     * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
   * MODIFY
     * Requires subscriptionId
-    * Update a service with new parameters
+    * Update a service with "spReference" and/or "spSubscriptionReference"
   * CHANGE
     * Requires subscriptionId
     * Change the current service type to a new service type
