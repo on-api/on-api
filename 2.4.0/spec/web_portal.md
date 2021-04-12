@@ -31,7 +31,7 @@ Host name and path are set by the service provider and are used by the communica
 		</td>
 		<td>
 			<p>Identification of the communication operator.</p>
-			<p>See coID in <a href="../common/dataformats.md">dataformats</a></p>
+			<p>See coID in <a href="="../common/dataformats.md#coid">dataformats</a></p>
 		</td>
 	</tr>
 	<tr>
