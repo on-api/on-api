@@ -25,8 +25,17 @@ SP = Service Provider
 
 ## Requirements
 
-**API Prefix:** `/ticket` 
+**API Prefix:** `/tickets` 
 eg: `domain.local/api/2.4/tickets/423323449`
+
+## Description on status
+
+| Status                   | Description                          |
+| ------------------- | ------------------------------ |
+| CREATED              | Ticket is created                   |
+| IN_PROGRESS_CO| CO is working on the ticket |
+| IN_PROGRESS_SP | SP is working on the ticket |
+| CLOSED                | Ticket is closed                    |
 
 ## Endpoints
 

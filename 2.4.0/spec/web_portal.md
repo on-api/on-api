@@ -40,7 +40,7 @@ Host name and path are set by the service provider and are used by the communica
 		</td>
 		<td>
 			<p>The accessID identified by the communication operator.</p>
-			<p>See accessID in <a href="dataformats.md">dataformats</a></p>
+			<p>See accessID in <a href="../common/dataformats.md#accessid">dataformats</a></p>
 		</td>
 	</tr>
 	<tr>
@@ -50,7 +50,7 @@ Host name and path are set by the service provider and are used by the communica
 		<td>
 			<p>The MAC-address of the end users equippment.</p>
 			<p>To be used in fault localization and activation.</p>
-			<p>See mac-address in <a href="dataformats.md">dataformats</a> for data format</p>
+			<p>See mac-address in <a href="../common/dataformats.md#macaddress">dataformats</a> for data format</p>
 		</td>
 	</tr>
 	<tr>
@@ -60,7 +60,7 @@ Host name and path are set by the service provider and are used by the communica
 		<td>
   			<p>Time stamp when the URL was created.</p> 
             <p>Depending on the use case and the sensitivty of the data, the service provider can choose to only trust the information in a certain time intervall.</p>
-			<p>See dateTime in <a href="dataformats.md">dataformats</a> for data format</p>
+			<p>See dateTime in <a href="../common/dataformats.md#datetime">dataformats</a> for data format</p>
 		</td>
 	</tr>
 	<tr>

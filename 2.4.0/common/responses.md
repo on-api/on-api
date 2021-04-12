@@ -7,7 +7,7 @@ Example:
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
 
-{ "cause": "Unknown service: 'INTERRNET'" }
+{ "cause": "Unknown service: 'INTERNET'" }
 ```
 Example 2:
 ```http
