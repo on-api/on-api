@@ -31,6 +31,18 @@ Response:
       "pricePeriod": "P1M",
       "periodOfNotice": "P1M",
       "agreementLength": "P1M",
+      "documents": [
+        {
+          "name": "Allmänna vilkor",
+          "url": "http://example.com/vilkor.pdf",
+          "updated": "2007-04-05T14:30Z"
+        },
+        {
+          "name": "Integritetspolicy",
+          "url": "http://example.com/integritetspolicy.pdf",
+          "updated": "2007-04-05T14:30Z"
+        }
+      ],
       "campaigns": [
         {
           "campaignId": "821cfc90-762a-4272-aacf-ba7ffed8614c",
@@ -83,7 +95,6 @@ The length of time from first delivery of service to pass before the agreement c
 ISO8601 duration
 
 # startPrice
-
 
 # price
 
