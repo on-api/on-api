@@ -72,37 +72,39 @@ Response:
 
 ## serviceId
 
-The unique ID of the service, used when ordering a service
+The unique ID of the service, used when ordering a service.
 
 ## name
 
-Name of the service, presentable to end customer
+Name of the service, presentable to end customer.
 
 ## description
 
-Description of the service, presentable to end customer
+Description of the service, presentable to end customer.
 
 ## periodOfNotice
 
 The length of time needed for the end customer to cancel a subscription.
 
-ISO8601 duration
+ISO8601 duration.
 
 ## agreementLength
 
 The length of time from first delivery of service to pass before the agreement can be canceled.
 
-ISO8601 duration
+ISO8601 duration.
 
 # startPrice
 
 # price
 
-The service price in SEK
+The service price in SEK.
 
 # pricePeriod
 
-The duration for a reoccurring payment, empty string for non reoccurring services
+The duration for a reoccurring payment, empty string for non reoccurring services.
+
+ISO8601 duration.
 
 # campaigns
 
@@ -126,7 +128,7 @@ Can be omitted if unchanged from the service value. Replaces the service price.
 
 # pricePeriod
 
-Can be omitted if unchanged from the service value. Replaces the service price period
+Can be omitted if unchanged from the service value. Replaces the service price period.
 
 ## periodOfNotice
 
