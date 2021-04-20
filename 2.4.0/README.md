@@ -1,9 +1,10 @@
-## Table of contents
+## Table of content
 
 * [Accesses](spec/accesses.md)
 * [Changelog](changelog.md)
 * [Data formats](common/dataformats.md)
 * [Endpoints](spec/endpoints.md)
+* [Events](spec/events.md)
 * [Invoice specification](spec/invoice_specification.md)
 * [Option82 lookup](spec/option82_lookup.md)
 * [Order](spec/orders.md)
