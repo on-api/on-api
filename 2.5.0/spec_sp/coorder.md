@@ -17,6 +17,7 @@ This API is intended to be used by CO that connects the transmission service whe
     }
   ],
   "customerDetails": {
+    "identifiedCustomer": true,
     "personalIdentityNumber": "string",
     "customerFirstname": "string",
     "customerLastName": "string",
