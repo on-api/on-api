@@ -1,4 +1,6 @@
-# Sales leads API
+# Order API
+
+This API is used to order a product that the SP connects.
 
 Path /2.5/sp_spec/sales_leads/
 
@@ -17,27 +19,35 @@ Request:
 ```http
 POST /2.5/sp_spec/sales_leads/
 Content-Type: application/json
-
+```
+```json
 {
-	"deliveryDate": "string",
-	"ssn":"string",
-	"customerFirstname": "string",
-	"customerLastName": "string",
-	"customerPhone": "string",
-	"customerMobilePhone": "string",
-	"customerEmail": "string",
-	"accessId": "string",
-	"billingStreetName": "string",
-	"billingStreetNumber": "string",
-	"billingStreetLittera": "string",
-	"billingEntrance": "string",
-	"billingApartmentNumber": "string",
-	"billingCity": "string",
-	"billingZipcode": "string",
-	"serviceId": "string",
-	"campaignId": "string"
+  "accessId": "8732c2f065e2490babce820e94b1011a",
+  "requestedDateTime": "2019-02-05T00:00:00Z",
+  "products": [
+    {
+      "productOfferingId": "8732c2f065e2490babce820e94b1011a"
+    }
+  ],
+  "customerDetails": {
+    "personalIdentityNumber": "string",
+    "customerFirstname": "string",
+    "customerLastName": "string",
+    "customerPhone": "string",
+    "customerMobilePhone": "string",
+    "customerEmail": "string",
+    "invoiceDetails": {
+      "streetName": "string",
+      "streetNumber": "string",
+      "streetLittera": "string",
+      "apartmentNumber": "string",
+      "postalCode": "string",
+      "city": "string"
+    }
+  }
 }
 ```
+
 Response:
 
 ```
