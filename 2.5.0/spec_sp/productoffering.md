@@ -5,28 +5,24 @@ This API lists services that are available to the end customer.
 To list services and campaigns that are generally available through access points from the requesting CO population.
 
 ```http 
-GET /2.5/service/
+GET /2.5/productoffering/
 Content-Type: application/json
 ```
 
 Add the "accessId" from the CO accesses API to list the specific services and campaigns available on that particular
 access point.
 
+Request:
 ```http
-GET /2.5/service/[accessId]
+GET /2.5/productoffering/[accessId]
 Content-Type: application/json
 ```
 
-
-# 100/100 internet
-
-Bra snabbt Internet
-
-* Utan bindningstid  [Köp]
-* Halva priset 3 månader [Köp]
-    Första tre månaderna gratis, 12 månader bindningstid
-
 Response:
+```HTTP
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
 
 ```json
 {
