@@ -124,29 +124,82 @@ Content-Type: application/json
 
 ## serviceProvider
 
-Object describing the service provider
+Object describing the service provider. The intended purpose is to allow portals to present the service provider and show contact details.
 
 ## serviceProvider.phone
 
-Phone number to sales or customer service
+Phone number to sales or customer service. 
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory
 
 ## serviceProvider.openingHours
 
+Regualar opening hours when calls will be answered.
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Optional
+ * Times should be presented in the format HH:mm, e.g. "07:30", and the opening hours of a day include both a start and an end time separated by '-' as in "07:30-17:00"
+ * Optionally, opening hours can include the day of week, or indicate a span, e.g. "Monday 07:30-17:00" or "Monday-Friday 07:30-17:00".
+ * Opening hours on different days of the week should be separated by ','.
+ * Special opening hours on weekends should be surrounded by parentheses, unless the day of the week is stated specifically, e.g. "07:30-17:00 (10:00-15:00)"
+
+ Examples: "07:30-17:00 (10:00-15:00)", "Monday-Friday 07:00-17:00, Saturday 09:00-13:00", "Monday-Thursday 07:00-17:00, Friday 07:00-15:00"
+
 ## serviceProvider.email
+
+Email address to sales or customer service.
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Required
 
 ## serviceProvider.website
 
+The web address to the service provider pages.
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Required
+
 ## serviceProvider.presentation
+
+Short presentation of the service provider.
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Required
 
 ## serviceProvider.files
 
+Various files provided by the service provider that can be used by portals, e.g. images and documents.
+
+ * Data format: JSON array of [file](../common/dataformats.md#file)
+ * Mandatory
+
 ## serviceProvider.files.type
+
+The type of file
+
+    Data format: enumeration
+    Mandatory
+
+Valid values
+
+    TermsAndConditions, general terms and conditions that must be accepted by the customer
+    PrivacyPolicy, privacy policy that must be accepted by the customer
+    Logo, service provider logo image
 
 ## serviceProvider.files.url
 
+The full url to the file content
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Required
+
 ## serviceProvider.files.updated
 
-ISO8601 date time
+The datetime when the file was last updated (ISO-8601)
+
+  * Data format: [dateTime](../common/dataformats.md#text)
+  * Mandatory
 
 ## productOfferings.productOfferingId
 
