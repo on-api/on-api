@@ -13,25 +13,62 @@ The definition of product offerings include campaigns as well as standard offeri
 
 Given an array of CO transmission products, the service provider responds with a list of product offering objects, each associated to at least one of the CO products. The same CO transmission product can be used in multiple different product offerings, and the same product offering can have multiple variants of the offering showing different prices and conditions. 
 
-This is illustrated in the image below where "1000/1000" is offered in three different variants of the same base productId but with different offeringIds. Since offeringId can also be used in multiple combinations of productId and offeringId, the CO provide the combination of both when placing orders. 
+This is illustrated in the image below where "1000/1000" is offered in three different variants of the same base productId but with different offeringIds. Since offeringId can also be used in multiple combinations of productId and offeringId, the CO must provide the combination of both when placing orders. 
 
 ![image](../images/productoffering_structure.png)
 
+#### Get product offerings
+
 ```http 
-GET /2.5/productoffering/
+POST /2.5/productoffering/
 Content-Type: application/json
 ```
 
-Add the "accessId" from the CO accesses API to list the specific services and campaigns available on that particular
-access point.
+```
+{
+  "coProducts": 
+  [
+  	"10/10",
+  	"100/10",
+  	"100/100",
+  	"250/100",
+  	"250/250",
+  	"500/100",
+  	"500/500",
+  	"1000/100",
+  	"1000/1000"
+  ]
+}
+```
 
-Request:
+#### Get product offerings on a specific access
+
+Add the "accessId" from the CO accesses API to list the specific product offerings available on that specific access.
+
 ```http
-GET /2.5/productoffering/[accessId]
+POST /2.5/productoffering/[accessId]
 Content-Type: application/json
 ```
 
-Response:
+```
+{
+  "coProducts": 
+  [
+  	"10/10",
+  	"100/10",
+  	"100/100",
+  	"250/100",
+  	"250/250",
+  	"500/100",
+  	"500/500",
+  	"1000/100",
+  	"1000/1000"
+  ]
+}
+```
+
+#### Response
+
 ```HTTP
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -66,7 +103,7 @@ Content-Type: application/json
   "productOfferings": [
     {
       "coProducts": [
-        "1000/1000"
+        "100/100"
       ],
       "productId": "1f94f25b-3ae0-434f-a49e-bc4d3093e399",
       "marketingInformation": {
@@ -90,20 +127,19 @@ Content-Type: application/json
           "offeringId": "821cfc90-762a-4272-aacf-ba7ffed8614c",
           "marketingInformation": {
             "offeringName": "Utan bindningstid",
-            "description": "Bra snabbt Internet",
+            "description": "Bra snabbt Internet utan bindingstid",
             "deliveryInformation": "Vi kontaktar dig om installation av CPE krävs",
             "startPrice": "0",
             "price": "250",
             "pricePeriod": "P1M",
-            "periodOfNotice": "P1M",
-            "agreementLength": "P1M"
+            "periodOfNotice": "P1M"
           }
         },
         {
           "offeringId": "bf134676-0830-4d61-8af0-94f00a0270da",
           "marketingInformation": {
-            "name": "Halva priset 3 månader",
-            "description": "Första tre månaderna gratis, 12 månader bindningstid",
+            "offeringName": "Halva priset 3 månader",
+            "description": "Första tre månaderna gratis, 12 månaders bindningstid",
             "startPrice": "0",
             "price": "125",
             "pricePeriod": "P1M",
@@ -119,13 +155,12 @@ Content-Type: application/json
           "productOfferingId": "c9c47535-ffa9-4456-9706-9ef590e1ce48",
           "marketingInformation": {
             "name": "Inklusive wifi-router",
-            "description": "Få en exklusiv router med abonnemanget för endast 25 kr mer i månaden, 3 månader bindningstid.",
+            "description": "Få en exklusiv router med abonnemanget för endast 25 kr mer i månaden, 3 månaders bindningstid",
             "startPrice": "0",
             "price": "275",
             "pricePeriod": "P1M",
             "periodOfNotice": "P1M",
             "agreementLength": "P3M",
-            "campaignLength": null,
             "surplusValue": "950"
           }
         }
