@@ -178,14 +178,13 @@ Various files provided by the service provider that can be used by portals, e.g.
 
 The type of file
 
-    Data format: enumeration
-    Mandatory
+  * Data format: enumeration
+  * Mandatory
 
-Valid values
-
-    TermsAndConditions, general terms and conditions that must be accepted by the customer
-    PrivacyPolicy, privacy policy that must be accepted by the customer
-    Logo, service provider logo image
+**Valid values**
+  * TermsAndConditions - general terms and conditions that must be accepted by the customer
+  * PrivacyPolicy - privacy policy that must be accepted by the customer
+  * Logo - service provider logo image
 
 ## serviceProvider.files.url
 
