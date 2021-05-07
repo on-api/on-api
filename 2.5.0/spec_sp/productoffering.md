@@ -1,8 +1,21 @@
 # Product offerings API
 
-This API lists services that are available to the end customer.
+This API lists product offerings that are available to end customers and information about the service provider.
 
-To list services and campaigns that are generally available through access points from the requesting CO population.
+The definition of product offerings include campaigns as well as standard offerings.
+
+ * Allows the CO to periodically list all product offerings from SPs for publishing in portals
+ * Allows the CO to request product offerings on a specific access on-demand to ensure availability on that access
+
+![image](../images/productoffering.png)
+
+## Usage
+
+Given an array of CO transmission products, the service provider responds with a list of product offering objects, each associated to at least one of the CO products. The same CO transmission product can be used in multiple different product offerings, and the same product offering can have multiple variants of the offering showing different prices and conditions. 
+
+This is illustrated in the image below where "1000/1000" is offered in three different variants of the same base productId but with different offeringIds. Since offeringId can also be used in multiple combinations of productId and offeringId, the CO provide the combination of both when placing orders. 
+
+![image](../images/productoffering_structure.png)
 
 ```http 
 GET /2.5/productoffering/
@@ -87,7 +100,7 @@ Content-Type: application/json
           }
         },
         {
-          "offeringId": "821cfc90-762a-4272-aacf-ba7ffed8614c",
+          "offeringId": "bf134676-0830-4d61-8af0-94f00a0270da",
           "marketingInformation": {
             "name": "Halva priset 3 månader",
             "description": "Första tre månaderna gratis, 12 månader bindningstid",
