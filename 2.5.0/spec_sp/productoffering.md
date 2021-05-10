@@ -161,7 +161,7 @@ Content-Type: application/json
             "pricePeriod": "P1M",
             "periodOfNotice": "P1M",
             "agreementLength": "P3M",
-            "surplusValue": "950"
+            "valueAdded": "950"
           }
         }
       ]
@@ -174,55 +174,56 @@ Content-Type: application/json
 
 Object describing the service provider. The intended purpose is to allow portals to present the service provider and show contact details.
 
-## serviceProvider.phone
+### serviceProvider.phone
 
 Phone number to sales or customer service. 
 
  * Data format: [text](../common/dataformats.md#text)
  * Mandatory
 
-## serviceProvider.openingHours
+### serviceProvider.openingHours
 
 Regualar opening hours when calls will be answered.
 
  * Data format: [text](../common/dataformats.md#text)
  * Optional
+ * Rules
  * Times should be presented in the format HH:mm, e.g. "07:30", and the opening hours of a day include both a start and an end time separated by '-' as in "07:30-17:00"
  * Optionally, opening hours can include the day of week, or indicate a span, e.g. "Monday 07:30-17:00" or "Monday-Friday 07:30-17:00".
  * Opening hours on different days of the week should be separated by ','.
- * Special opening hours on weekends should be surrounded by parentheses, unless the day of the week is stated specifically, e.g. "07:30-17:00 (10:00-15:00)"
+ * Special opening hours on weekends can be specified surrounded by parentheses, unless the day of the week is stated specifically, e.g. "07:30-17:00 (10:00-15:00)"
 
  Examples: "07:30-17:00 (10:00-15:00)", "Monday-Friday 07:00-17:00, Saturday 09:00-13:00", "Monday-Thursday 07:00-17:00, Friday 07:00-15:00"
 
-## serviceProvider.email
+### serviceProvider.email
 
 Email address to sales or customer service.
 
  * Data format: [text](../common/dataformats.md#text)
- * Required
+ * Mandatory
 
-## serviceProvider.website
+### serviceProvider.website
 
 The web address to the service provider pages.
 
  * Data format: [text](../common/dataformats.md#text)
- * Required
+ * Mandatory
 
-## serviceProvider.presentation
+### serviceProvider.presentation
 
 Short presentation of the service provider.
 
  * Data format: [text](../common/dataformats.md#text)
- * Required
+ * Mandatory
 
-## serviceProvider.files
+### serviceProvider.files
 
 Various files provided by the service provider that can be used by portals, e.g. images and documents.
 
  * Data format: JSON array of [file](../common/dataformats.md#file)
  * Mandatory
 
-## serviceProvider.files.type
+#### serviceProvider.files.type
 
 The type of file
 
@@ -234,61 +235,195 @@ The type of file
   * PrivacyPolicy - privacy policy that must be accepted by the customer
   * Logo - service provider logo image
 
-## serviceProvider.files.url
+#### serviceProvider.files.url
 
 The full url to the file content
 
  * Data format: [text](../common/dataformats.md#text)
  * Required
 
-## serviceProvider.files.updated
+#### serviceProvider.files.updated
 
 The datetime when the file was last updated (ISO-8601)
 
-  * Data format: [dateTime](../common/dataformats.md#text)
+  * Data format: [dateTime](../common/dataformats.md#dateTime)
   * Mandatory
 
-## productOfferings.productOfferingId
+## productOfferings
 
-The unique ID of the product, used when ordering a product
+List of product offering relations between CO transmission products and SP end customer products
 
-## productOfferings.marketingInformation.name
+### productOfferings.coProducts
 
-Name of the service, presentable to end customer
+List of coProducts associated to the product offering relation. The model supports bundled offerings, but may not always be supported by the CO, in which case these offerings will be discarded.
 
-## productOfferings.marketingInformation.description
+ * Data format: JSON array of [text](../common/dataformats.md#text)
+ * Mandatory, must contain at least one item
 
-Description of the service, presentable to end customer
+### productOfferings.productId
 
-## productOfferings.marketingInformation.deliveryInformation
+The unique Id of the base product provided by the SP. This Id identifies a unique product offering together with productOfferings.offerings.offeringId.
 
-Information concerning delivery of the product.
+ * Data format: [id](../common/dataformats.md#id)
+ * Mandatory
 
-# startPrice
+### productOfferings.marketingInformation
 
-# price
+Contains common marketing information for all offerings in the relation. This information is intended to be presented to customers.
 
-The service price in SEK.
+ * Mandatory
 
-# pricePeriod
+#### productOfferings.marketingInformation.productName
 
-The duration for a reoccurring payment, empty string for non reoccurring services.
+Name of the product
 
-ISO8601 duration.
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory
 
-## productOfferings.marketingInformation.periodOfNotice
+#### productOfferings.marketingInformation.description
 
-The length of time needed for the end customer to cancel a subscription.
+Description of the product
 
-ISO8601 duration
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory
 
-## productOfferings.marketingInformation.agreementLength
+### productOfferings.files
 
-The length of time from first delivery of service to pass before the agreement can be canceled.
+Various files provided by the service provider that can be used by portals, e.g. images and documents.
 
-ISO8601 duration
+ * Data format: JSON array of [file](../common/dataformats.md#file)
+ * Mandatory
 
-## productOfferings.campaignOfferings
+#### productOfferings.files.type
 
-List of offerings with values that replaces the values from the parent product offer if the campaign is chosen. If a
-value is omitted, the value of the parent offering is used.
+The type of file
+
+  * Data format: enumeration
+  * Mandatory
+
+**Valid values**
+  * TermsAndConditions - general terms and conditions that must be accepted by the customer
+  * PrivacyPolicy - privacy policy that must be accepted by the customer
+  * Logo - service provider logo image
+
+#### productOfferings.files.url
+
+The full url to the file content
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory
+
+#### productOfferings.files.updated
+
+The datetime when the file was last updated (ISO-8601)
+
+  * Data format: [dateTime](../common/dataformats.md#dateTime)
+  * Mandatory
+
+### productOfferings.offerings
+
+List of product offering variants of the base product specified by productId
+
+#### productOfferings.offerings.offeringId
+
+The Id of the product offering provided by the SP. This Id identifies a unique product offering together with productOfferings.productId. Note that offeringId may not be unique by itself.
+
+ * Data format: [id](../common/dataformats.md#id)
+ * Mandatory
+
+#### productOfferings.offerings.marketingInformation
+
+Contains marketing information for the specific product offering.
+
+ * Mandatory
+
+##### productOfferings.offerings.marketingInformation.offeringName
+
+Name of the product offering. Used as subtitle to productOfferings.marketingInformation.productName.
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory
+
+##### productOfferings.offerings.marketingInformation.description
+
+Description of the product offering
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory
+
+##### productOfferings.offerings.marketingInformation.deliveryInformation
+
+Information concerning delivery of the product offering
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Optional
+
+##### productOfferings.offerings.marketingInformation.startPrice
+
+The one-time start price for the offering
+
+ * Data format: [price](../common/dataformats.md#price)
+ * Mandatory
+
+##### productOfferings.offerings.marketingInformation.price
+
+The recurring price for the offering
+
+ * Data format: [price](../common/dataformats.md#price)
+ * Mandatory
+
+##### productOfferings.offerings.marketingInformation.pricePeriod
+
+The duration of the recurring charge
+
+ * Data format: [duration](../common/dataformats.md#duration)
+ * Mandatory
+
+##### productOfferings.offerings.marketingInformation.periodOfNotice
+
+The notice period for cancellation
+
+ * Data format: [duration](../common/dataformats.md#duration)
+ * Mandatory
+
+##### productOfferings.offerings.marketingInformation.agreementLength
+
+The agreement length from the date of the delivery
+
+ * Data format: [duration](../common/dataformats.md#duration)
+ * Optional
+
+##### productOfferings.offerings.marketingInformation.campaignLength
+
+If productOfferings.offerings.marketingInformation.price indicates a time limited reduced price, this field shows the duration.
+
+ * Data format: [duration](../common/dataformats.md#duration)
+ * Optional
+
+##### productOfferings.offerings.marketingInformation.basePrice
+
+If productOfferings.offerings.marketingInformation.price indicates a time limited reduced price, this field shows the base price charged after campaignLength.
+
+ * Data format: [duration](../common/dataformats.md#duration)
+ * Optional
+
+##### productOfferings.offerings.marketingInformation.campaignCodes
+
+List of campaign codes required for ordering this product offering
+
+ * Data format: JSON array of [text](../common/dataformats.md#text)
+ * Optional
+
+##### productOfferings.offerings.marketingInformation.campaign
+
+Indicates if this product offering should be handled as a campaign which may affect the presentation in portals
+
+ * Data format: [boolean](../common/dataformats.md#boolean)
+ * Optional
+
+##### productOfferings.offerings.marketingInformation.valueAdded
+
+Shows the added value of the offering for any extra services or benefits, e.g. higher speed or premium router. This
+
+ * Data format: [price](../common/dataformats.md#price)
+ * Optional
