@@ -64,7 +64,7 @@ Content-Type: application/json
 {
   "state": "CONFIRMED",
   "externalMessage": "Thanks for ordering. You will receive an email with order confirmation and information about how to get started.",
-  "cause:" "",
+  "cause": "",
   "spReference": "f3ae2df8-40ae-4cb5-9b52-c9c1dd32020d",
   "products": [
     {
