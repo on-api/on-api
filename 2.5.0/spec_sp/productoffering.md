@@ -183,7 +183,7 @@ Phone number to sales or customer service.
 
 ### serviceProvider.openingHours
 
-Regualar opening hours when calls will be answered.
+Regular opening hours when calls will be answered.
 
  * Data format: [text](../common/dataformats.md#text)
  * Optional
