@@ -269,6 +269,7 @@ Content-Type: application/json
 
 
 #### Deactivate a service
+Used to deactivate a service. Please note that it is recommended to place the order the same day with "requestedDateTime" one month in the future if the notice period is one month. 
 
 Request
 ```HTTP
