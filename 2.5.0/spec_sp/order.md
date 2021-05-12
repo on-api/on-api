@@ -58,45 +58,65 @@ Content-Type: application/json
 
 ### coAccessId
 
+Identifies a single access point in the CO population in the accesses API.
+
+* Data format: [accessId](../common/dataformats.md#accessid)
+* Mandatory
+
 ### operation
+
+The type of operation this order is intended to perform.
+
+* Data format: [enumeration](../common/dataformats.md#enumeration)
+* Mandatory
+* Only ACTIVATE is currently supported
+
+**Values**
+
+* ACTIVATE
+    * Activation of transmission product
 
 ### orderDateTime
 
+Date and time when the order was first received.
+
+* Data format: [dateTime](../common/dataformats.md#datetime)
+* Mandatory
+
 ### requestedDateTime
+
+Requested date and time for the order to be executed.
+
+* Data format: [dateTime](../common/dataformats.md#datetime)
+* Mandatory
 
 ### products
 
+List of SP products and associated offerings. The model supports multiple activations for future extension, but
+currently only allows a single product offering.
+
 ### products.productId
+
+The unique ID of the base product provided by the SP. This ID identifies a unique product offering together with
+products.offeringId.
+
+* Data format: [id](../common/dataformats.md#id)
+* Mandatory
 
 ### products.offeringId
 
+The ID of the product offering provided by the SP. This ID identifies a unique product offering together with
+products.productId.
+
+* Data format: [id](../common/dataformats.md#id)
+* Mandatory
+
 ### customerDetails
 
-### customerDetails.identifiedCustomer
+Customer details provided by the CO. This information should be validated by the SP.
 
-### customerDetails.personalIdentityNumber
-
-### customerDetails.customerFirstname
-
-### customerDetails.customerLastName
-
-### customerDetails.customerPhone
-
-### customerDetails.customerMobilePhone
-
-### customerDetails.customerEmail
-
-### customerDetails.invoiceDetails
-
-### customerDetails.streetName
-
-### customerDetails.streetNumber
-
-### customerDetails.streetLittera
-
-### customerDetails.postalCode
-
-### customerDetails.city
+* Data format: [customerDetails](../common/dataformats.md#customerdetails)
+* Mandatory
 
 ## Response
 
@@ -106,26 +126,30 @@ HTTP/1.1 200 OK Content-Type: application/json
 
 ```json
 {
-  "status": "",
-  "message": ""
+  "status": "ACTIVATED",
+  "externalMessage": "Thanks for ordering. Your new service is now active. You will receive an email with order confirmation and information about how to get started."
 }
 ```
 
 ### status
+
 One of the following values
+
 * ACTIVATED
-  * Order is accepted and completed, the services are delivered
+    * Order is accepted and completed, the services are delivered
 * RECEIVED
-  * Order is accepted and services will be delivered
+    * Order is accepted and services will be delivered
 * REJECTED
-  * Order is not accepted
+    * Order is not accepted
 
-### message
-string
-A message presentable to the customer
+### externalMessage
 
-Error handling according to [common responses](../common/responses.md) except for data input errors that are handled by 
-a custom http code 400 error with the addition of a message field.
+Message that is intended for the customer
+
+## Errors 
+
+Error handling according to [common responses](../common/responses.md) except for data input errors that are handled by
+a custom http code 400 error with the addition of the externalMessage field.
 
 ```http
 HTTP/1.1 400 Bad Request Content-Type: application/json
@@ -139,8 +163,10 @@ HTTP/1.1 400 Bad Request Content-Type: application/json
 ```
 
 ### cause
-String 
-An internal message not to be presented to the customer 
 
-### message
-A human friendly message that can be presented to the customer
+String An internal message not to be presented to the customer
+
+### externalMessage
+
+Message that is intended for the customer
+
