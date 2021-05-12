@@ -104,13 +104,8 @@ Content-Type: application/json
 HTTP/1.1 200 OK Content-Type: application/json
 ```
 
-#####################################
-Ska orderId vara med?
-#####################################
-
 ```json
 {
-  "orderId": "", 
   "status": "",
   "message": ""
 }
