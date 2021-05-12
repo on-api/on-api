@@ -158,7 +158,7 @@ HTTP/1.1 400 Bad Request Content-Type: application/json
 ```json
 {
   "cause": "Bad customerDetails.personalIdentityNumber",
-  "message": "Social security number is missing or incorrect."
+  "externalMessage": "Social security number is missing or incorrect."
 }
 ```
 
