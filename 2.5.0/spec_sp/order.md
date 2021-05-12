@@ -2,7 +2,7 @@
 
 This API is used to order a product that the SP connects.
 
-Path /2.5/sp_spec/sales_leads/
+Path /2.5/sp_spec/order/
 
 Process option 1
 ![image](https://user-images.githubusercontent.com/48377287/114038491-3490b000-9882-11eb-8b65-7a90fb1970d0.png)
@@ -15,25 +15,24 @@ service they want to order, as well as provide personal and billing information,
 send the order to SP, and the SP will either accept or deny the sales lead followed by creating an order to provision
 the service at requested date and time. If the order is denied, CO is able to present to end customer what went wrong.
 
-#### POST a sales lead
-
-Request:
+## Request
 
 ```http
-POST /2.5/sp_spec/sales_leads/
+POST order/ HTTP/1.1
 Content-Type: application/json
 ```
 
 ```json
 {
-  "accessId": "8732c2f065e2490babce820e94b1011a",
   "coId": "Acme",
+  "coAccessId": "8732c2f065e2490babce820e94b1011a",
+  "operation": "ACTIVATE",
   "orderDateTime": "2021-05-03T20:31:15Z",
-  "requestedDateTime": "2019-02-05T00:00:00Z",
+  "requestedDateTime": "2021-05-06T00:01:00Z",
   "products": [
     {
       "productId": "8732c2f065e2490babce820e94b1011a",
-      "offeringId": "xxx"
+      "offeringId": "8732c2f065e2490babce820e94b1011a"
     }
   ],
   "customerDetails": {
@@ -55,103 +54,98 @@ Content-Type: application/json
 }
 ```
 
+### coId
+
+### coAccessId
+
+### operation
+
+### orderDateTime
+
+### requestedDateTime
+
+### products
+
+### products.productId
+
+### products.offeringId
+
+### customerDetails
+
+### customerDetails.identifiedCustomer
+
+### customerDetails.personalIdentityNumber
+
+### customerDetails.customerFirstname
+
+### customerDetails.customerLastName
+
+### customerDetails.customerPhone
+
+### customerDetails.customerMobilePhone
+
+### customerDetails.customerEmail
+
+### customerDetails.invoiceDetails
+
+### customerDetails.streetName
+
+### customerDetails.streetNumber
+
+### customerDetails.streetLittera
+
+### customerDetails.postalCode
+
+### customerDetails.city
+
+## Response
+
+```http
+HTTP/1.1 200 OK Content-Type: application/json
+```
+
+#####################################
+Ska orderId vara med?
+#####################################
+
 ```json
 {
+  "orderId": "", 
   "status": "",
   "message": ""
 }
 ```
 
-200
-
+### status
+One of the following values
 * ACTIVATED
+  * Order is accepted and completed, the services are delivered
 * RECEIVED
-* REJECT
+  * Order is accepted and services will be delivered
+* REJECTED
+  * Order is not accepted
 
-400
+### message
+string
+A message presentable to the customer
+
+Error handling according to [common responses](../common/responses.md) except for data input errors that are handled by 
+a custom http code 400 error with the addition of a message field.
+
+```http
+HTTP/1.1 400 Bad Request Content-Type: application/json
+```
 
 ```json
 {
-  "cause": "",
-  "message": ""
+  "cause": "Bad customerDetails.personalIdentityNumber",
+  "message": "Social security number is missing or incorrect."
 }
 ```
 
-* FAILED (kräver message)
+### cause
+String 
+An internal message not to be presented to the customer 
 
-# Responses
-
-All error handling should be using status codes from HTTP, if possible with the free text field "cause" stating what
-went wrong. If the server has an ID of the error (such as a fault number or, even better, a ticket ID) it should be
-included in the cause field.
-
-Example:
-
-```http
-HTTP/1.1 400 Bad Request
-Content-Type: application/json
-
-{ "cause": "Unknown service: 'INTERNET'" }
-```
-
-Example 2:
-
-```http
-HTTP/1.1 500 Internal Server Error
-Content-Type: application/json
-
-{ "cause": "An Unknown error has occured. Error number 12345" }
-```
-
-## HTTP satus codes used (for full list, see RFC7231)
-
-### 400 Bad request
-
-Invalid data posted
-
-### 401 Unauthorized
-
-Invalid credentials
-
-### 403 Forbidden
-
-Not allowed with current credentials
-
-### 404 Not found
-
-Object not found (on valid API endpoint)
-
-### 409 Conflict
-
-Object is conflicting with other object (on valid API endpoint).
-
-### 429 Too Many Requests
-
-The client is sending too many requests to the server in too short time. If Retry-After is used in the response the
-client should honor that time before sending any more requests.
-
-### 500 Internal Server Error
-
-Unrecoverable error
-
-### 501 Not implemented
-
-Response for unknown or unimplemented API endpoints
-
-Response:
-
-```
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-	"orderId": "string"
-}
-```
-
-Response if not OK
-
-```HTTP/1.1 400 Bad request
-Content-Type: application/json
-{ "cause": "Social security number is missing or incorrect." }
-```
+### message
+A human friendly message that can be presented to the customer
