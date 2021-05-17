@@ -66,6 +66,12 @@ Content-Type: application/json
   }
 }
 ```
+## coId
+
+The unique Id of the CO network that this order is made from.
+
+* Data format: [id](../common/dataformats.md#id)
+* Optional
 
 ## coOrderId
 
@@ -114,6 +120,13 @@ The status of the order
 * CONFIRMEDNOTREADY
     * The SP confirms the order, but instructs the CO that it is not ready for provisioning and that a PATCH or PUT
       operation can be expected later.
+
+## orderDateTime
+
+Requested date and time when the order was created in the CO system
+
+* Data format: [dateTime](../common/dataformats.md#datetime)
+* Mandatory
 
 ## requestedDateTime
 
@@ -166,7 +179,7 @@ Customer details provided by the CO. This information should be validated by the
 * Data format: [customerDetails](../common/dataformats.md#customerdetails)
 * Mandatory
 
-# Responses
+## Responses
 
 ```HTTP
 HTTP/1.1 200 OK
