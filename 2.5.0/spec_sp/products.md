@@ -7,43 +7,44 @@ The definition of product offerings include campaigns as well as standard offeri
 * Allows the CO to periodically list all product offerings from SPs for publishing in portals
 * Allows the CO to request product offerings on a specific access on-demand to ensure availability on that access
 
-
-
 ![image](../images/productoffering.png)
 
 ## Usage
 
-This is illustrated in the image below where "1000/1000" is offered in three different variants of the same base
-productId but with different offeringIds. Since offeringId can also be used in multiple combinations of productId and
+The SP responds with a list of products and associated offerings, each associated to at least one CO product. The same CO transmission product 
+can be used in multiple product offerings, and the same SP product can have multiple variants of offerings showing different prices and
+conditions.
+
+The product offerings structure is illustrated in the image below where "100/100" is offered in three different variants having the same base
+productId but different offeringIds. Since offeringId can be used in multiple combinations of productId and 
 offeringId, the CO must provide the combination of both when placing orders.
 
 ![image](../images/productoffering_structure.png)
 
 ## Request
 
+The request below is used to list all products and offerings made available by the SP in the CO network
+
 ```http
 GET products/
 Content-Type: application/json
 ```
 
-Add the "accessId" from the CO accesses API to list the specific services and campaigns available on that particular
-access point.
+Add the "accessId" from the CO accesses API to list offerings available on the specific access. 
+The list shall only contain the offerings that the SP wants to deliver to the specific accessId. 
 
 ```http
 GET products/[accessId]
 Content-Type: application/json
 ```
 
-Given an array of CO transmission products, the service provider responds with a list of product offering objects, each
-associated to at least one of the CO products. The same CO transmission product can be used in multiple different
-product offerings, and the same product offering can have multiple variants of the offering showing different prices and
-conditions.
+Alternatively, the post method below can be used to list offerings on the specific access. When this endpoint is used, 
+the CO has already performed a feasibility check and added the result in the request.
 
+Given an array of CO transmission products, the service provider responds with a list of offerings 
+available on the specific access. 
 
-When this endpoint is used, the CO have already performed a feasibility check.
-The list shall only contain the offerings that the SP wants to deliver to the specific accessId. 
-
-coProducts is the same field as services specified in the CO [accesses API](../spec/accesses.md)
+The "coProduct" is the same field as services/service specified in the CO endpoint [accesses API](../spec/accesses.md)
 
 ```http 
 POST products/[accessId]
@@ -273,6 +274,8 @@ List of product relations between CO transmission products and SP end customer p
 
 List of coProducts associated to the product offering relation. The model supports bundled offerings, but may not always
 be supported by the CO, in which case these offerings will be discarded.
+
+The "coProduct" is the same field as services/service specified in the CO endpoint [accesses API](../spec/accesses.md)
 
 * Data format: JSON array of [text](../common/dataformats.md#text)
 * Mandatory, must contain at least one item
