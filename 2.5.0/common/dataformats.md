@@ -13,11 +13,11 @@ Valid JSON values is expected.
 
 [ECMA-404 JSON Data Interchange format](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
-A JSON value can be an object, array, number, string, true, false.
+A JSON value can be an object, array, number, string, true, false, or null.
 
 All string values is encoded in UTF-8.
 
-Optional fields shall not be included when no values exist. Mandatory fields must provide a value.
+Optional fields can be omitted or be set to value null. Mandatory fields must provide a value.
 
 ## Generic data formats
 
@@ -461,3 +461,14 @@ Data format: [postalcode](dataformats.md#postalcode)
 #### customerDetails.city
 
 Data format: [text](dataformats.md#text)
+
+
+### File
+
+### Duration 
+
+[https://en.wikipedia.org/wiki/ISO_86010](https://en.wikipedia.org/wiki/ISO_8601)
+
+### Price
+
+SEK comma (,) to delimit decimals

@@ -16,6 +16,8 @@ A JSON value can be an object, array, number, string, true, false, or null.
 
 All string values is encoded in UTF-8.
 
+Optional fields can be omitted or be set to value null. Mandatory fields must provide a value.
+
 ## Generic data formats
 
 Basic guidelines for all other data formats. All specific data formats should refer to one of the following generic data

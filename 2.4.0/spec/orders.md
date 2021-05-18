@@ -556,6 +556,7 @@ Earliest date and time for the order to be executed. If date is omitted the orde
 the past is provided (current date is 2019-04-01 and provided date is 2019-03-28) order will be executed immediately.
 
 * Data format: [dateTime](../common/dataformats.md#datetime)
+* Optional
 
 ### expectedCompletionDate
 

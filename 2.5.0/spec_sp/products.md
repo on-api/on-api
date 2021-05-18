@@ -257,13 +257,13 @@ The type of file
 The full url to the file content
 
 * Data format: [text](../common/dataformats.md#text)
-* Required
+* Mandatory
 
 #### serviceProvider.files.updated
 
 The datetime when the file was last updated (ISO-8601)
 
-* Data format: [dateTime](../common/dataformats.md#dateTime)
+* Data format: [dateTime](../common/dataformats.md#datetime)
 * Mandatory
 
 ## products
@@ -352,7 +352,7 @@ The full url to the file content
 
 The datetime when the file was last updated (ISO-8601)
 
-* Data format: [dateTime](../common/dataformats.md#dateTime)
+* Data format: [dateTime](../common/dataformats.md#datetime)
 * Mandatory
 
 ### products.offerings

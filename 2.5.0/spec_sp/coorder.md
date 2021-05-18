@@ -32,7 +32,6 @@ Content-Type: application/json
 
 ```json
 {
-  "coId": "Acme",
   "coOrderId": "f3f26446f6e8407aae876ea8e52d7417",
   "coAccessId": "3d663ca5-9020-415c-9412-53282b168738",
   "operation": "ACTIVATE",
@@ -66,12 +65,6 @@ Content-Type: application/json
   }
 }
 ```
-## coId
-
-The unique Id of the CO network that this order is made from.
-
-* Data format: [id](../common/dataformats.md#id)
-* Optional
 
 ## coOrderId
 

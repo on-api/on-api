@@ -24,7 +24,6 @@ Content-Type: application/json
 
 ```json
 {
-  "coId": "Acme",
   "coAccessId": "8732c2f065e2490babce820e94b1011a",
   "operation": "ACTIVATE",
   "orderDateTime": "2021-05-03T20:31:15Z",
@@ -53,8 +52,6 @@ Content-Type: application/json
   }
 }
 ```
-
-### coId
 
 ### coAccessId
 
