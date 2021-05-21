@@ -1,19 +1,21 @@
-# Order API
+# Order
 
-This API is used to order a product that the SP connects.
+This API is used to order a product offering that the SP self activates in the CO network.
 
-Path /2.5/sp_spec/order/
+It is designed for external portals that never sends activation requests directly to the CO.
+
+## Usage
+
+The external portal captures the order details on a given access, including selected product offering and customer
+information, and places an order request to the SP. The SP receives and validates the order and activates 
+the CO transmission products in the CO network. The SP can also decide to reject the order, in which case 
+the portal is able to present a relevant message to end customer.
 
 Process option 1
 ![image](https://user-images.githubusercontent.com/48377287/114038491-3490b000-9882-11eb-8b65-7a90fb1970d0.png)
 
 Process option 2
 ![image](https://user-images.githubusercontent.com/906435/83942941-70895d80-a7f8-11ea-998f-840452e222f2.png)
-
-The sales leads API allows CO to notify SP about sales leads made by end customer. The end customer will select a
-service they want to order, as well as provide personal and billing information, and click to order. The CO will then
-send the order to SP, and the SP will either accept or deny the sales lead followed by creating an order to provision
-the service at requested date and time. If the order is denied, CO is able to present to end customer what went wrong.
 
 ## Request
 
@@ -55,7 +57,7 @@ Content-Type: application/json
 
 ### coAccessId
 
-Identifies a single access point in the CO population in the accesses API.
+Identifies a single access in the CO population in the accesses API.
 
 * Data format: [accessId](../common/dataformats.md#accessid)
 * Mandatory
@@ -75,7 +77,7 @@ The type of operation this order is intended to perform.
 
 ### orderDateTime
 
-Date and time when the order was first received.
+Date and time when the order was created.
 
 * Data format: [dateTime](../common/dataformats.md#datetime)
 * Mandatory
@@ -130,40 +132,22 @@ HTTP/1.1 200 OK Content-Type: application/json
 
 ### status
 
-One of the following values
+The status tells if the order is accepted or rejected.
+
+* Data format: [enumeration](../common/dataformats.md#enumeration)
+* Mandatory
+
+**Values**
 
 * ACTIVATED
-    * Order is accepted and completed, the services are delivered
+    * Order is accepted and completed, and transmission products have been activated 
 * RECEIVED
-    * Order is accepted and services will be delivered
+    * Order is accepted, but not yet completed
 * REJECTED
-    * Order is not accepted
+    * Order is not accepted. The `externalMessage` should provide a relevant message that can be presented for the customer.
 
 ### externalMessage
 
-Message that is intended for the customer
+Message that is intended for the customer.
 
-## Errors 
-
-Error handling according to [common responses](../common/responses.md) except for data input errors that are handled by
-a custom http code 400 error with the addition of the externalMessage field.
-
-```http
-HTTP/1.1 400 Bad Request Content-Type: application/json
-```
-
-```json
-{
-  "cause": "Bad customerDetails.personalIdentityNumber",
-  "externalMessage": "Social security number is missing or incorrect."
-}
-```
-
-### cause
-
-String An internal message not to be presented to the customer
-
-### externalMessage
-
-Message that is intended for the customer
-
+Error handling according to [common responses](../common/responses.md)
