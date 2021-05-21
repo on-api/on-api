@@ -15,13 +15,13 @@ the portal is able to present a relevant message to end customer.
 sequenceDiagram
 participant A as Customer
 participant B as Portal
-participant C as ON-API<br>SP
-participant D as ON-API<br>CO
-A->>B: I want to order product<br>Internet 1000/1000
+participant C as SP
+participant D as CO
+A->>B: Order [product]
 B->>C: [POST] /order
 alt Order possible
 C->>D: [POST] /order
-D->>C: Done
+D->>C: Done 
 C->>B: Done
 B->>A: Your order is done
 end
