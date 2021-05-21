@@ -11,11 +11,29 @@ information, and places an order request to the SP. The SP receives and validate
 the CO transmission products in the CO network. The SP can also decide to reject the order, in which case 
 the portal is able to present a relevant message to end customer.
 
-Process option 1
-![image](https://user-images.githubusercontent.com/48377287/114038491-3490b000-9882-11eb-8b65-7a90fb1970d0.png)
-
-Process option 2
-![image](https://user-images.githubusercontent.com/906435/83942941-70895d80-a7f8-11ea-998f-840452e222f2.png)
+sequenceDiagram
+participant A as Customer
+participant B as Portal
+participant C as ON-API<br>SP
+participant D as ON-API<br>CO
+A->>B: I want to order product<br>Internet 1000/1000
+B->>C: [POST] /order
+alt Order possible
+C->>D: [POST] /order
+D->>C: Done
+C->>B: Done
+B->>A: Your order is done
+end
+alt Order rejected by CO
+C->>D: [POST] /order
+D->>C: Failed [port occupied]
+C->>B: Failed
+B->>A: display [externalMessage]
+end
+alt Order rejected by SP
+C->>B: Failed
+B->>A: display [externalMessage]
+end
 
 ## Request
 
