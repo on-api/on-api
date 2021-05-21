@@ -11,6 +11,7 @@ information, and places an order request to the SP. The SP receives and validate
 the CO transmission products in the CO network. The SP can also decide to reject the order, in which case 
 the portal is able to present a relevant message to end customer.
 
+```mermaid
 sequenceDiagram
 participant A as Customer
 participant B as Portal
@@ -34,6 +35,7 @@ alt Order rejected by SP
 C->>B: Failed
 B->>A: display [externalMessage]
 end
+```
 
 ## Request
 
