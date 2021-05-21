@@ -1,15 +1,16 @@
-# Contact information to end user
+# Contact information for end customers
 
-## Description
-The API enables Communication Operators to query the Service Provider for contact details to an end user.
+The API enables the CO to request contact information for an end customer from the SP.
 
-_**Note:**_  This API is hosted by the service provider, and the communication operator is the client.
+## Usage
 
-## Specification
-The fields `reason` and `spTicketReference` is used to able to track requests of personal information.
-Providing spTicketReference makes `reason` unnecessary.
+The CO requests contact information for a customer identified with the `spReference` that was provided by the SP 
+during activation. The CO must also provide either a `reason` or a `spTicketReference` in the request.
+
+## Request
 
 Request information with a reason:
+
 ```http
 POST /2.4/contacts/{ spReference }
 
@@ -19,6 +20,7 @@ POST /2.4/contacts/{ spReference }
 ```
 
 Request information with a ticket reference:
+
 ```http
 POST /2.4/contacts/{ spReference }
 
@@ -27,13 +29,29 @@ POST /2.4/contacts/{ spReference }
 }
 ```
 
-|Field|Description|
-|-|-|
-|spReference|The spReference value for the service that the end user is using|
-|spTicketReference|spTicketReference is taken from the on-api ticket, used for tracking|
+### spReference
 
+The spReference value that was provided by the SP during activation.
 
-Response:
+* Data format: [text](../common/dataformats.md#text)
+* Mandatory
+
+### reason
+
+The reason for requesting this information.
+
+* Data format: [text](../common/dataformats.md#text)
+* Mandatory if spTicketReference is not provided
+
+### spTicketReference
+
+The spTicketReference, used for tracking, that was provided by the SP for a related ticket created via ON-API.
+
+* Data format: [text](../common/dataformats.md#text)
+* Mandatory if reason is not provided
+
+## Response
+
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -45,14 +63,5 @@ Content-Type: application/json
   "mobilePhone": ""
 }
 ```
-
-
-|Field|Description|
-|-|-|
-|name||
-|email||
-|phone||
-|mobilePhone||
-
 
 For data format, see [data formats](../../2.4.0/common/dataformats.md)
