@@ -13,27 +13,23 @@ the portal is able to present a relevant message to end customer.
 
 ```mermaid
 sequenceDiagram
-participant A as Customer
-participant B as Portal
-participant C as SP
-participant D as CO
-A->>B: Order [product]
-B->>C: [POST] /order
+Customer->>Portal: Order [product]
+Portal->>SP: [POST] /order
 alt Order possible
-C->>D: [POST] /order
-D->>C: Done 
-C->>B: Done
-B->>A: Your order is done
+SP->>CO: [POST] /order
+CO->>SP: Done
+SP->>Portal: Done
+Portal->>Customer: Your order is done
 end
 alt Order rejected by CO
-C->>D: [POST] /order
-D->>C: Failed [port occupied]
-C->>B: Failed
-B->>A: display [externalMessage]
+SP->>CO: [POST] /order
+CO->>SP: Failed [port occupied]
+SP->>Portal: Failed
+Portal->>Customer: display [externalMessage]
 end
 alt Order rejected by SP
-C->>B: Failed
-B->>A: display [externalMessage]
+SP->>Portal: Failed
+Portal->>Customer: display [externalMessage]
 end
 ```
 
