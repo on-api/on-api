@@ -23,7 +23,7 @@ additional information, such as characteristics.
 
 Depending on the results, the CO will present relevant feedback to the customer.
 
-#### Place CO order
+## Request
 
 ```http
 POST coorder/ HTTP/1.1
