@@ -25,11 +25,11 @@ alt Order rejected by CO
 SP->>CO: [POST] /order
 CO->>SP: Failed [port occupied]
 SP->>Portal: Failed
-Portal->>Customer: display [externalMessage]
+Portal->>Customer: Display [externalMessage]
 end
 alt Order rejected by SP
 SP->>Portal: Failed
-Portal->>Customer: display [externalMessage]
+Portal->>Customer: Display [externalMessage]
 end
 ```
 
