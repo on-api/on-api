@@ -80,7 +80,7 @@ Follows the SSNF specifikation, can contain duplicates from the above table if t
 |Junet| | | | | | | | | |
 |Ownit| |Yes|Yes|No|No|No|No|No| |
 |Serverado| Yes |Yes|Yes|No|No|Yes|No|No|No|
-|Tele2| | Q1 2021 | Q1 2021 | | | | | | |
+|Tele2|No|Yes|Yes|No|No|No|No|No|No|
 |Telenor| |No|No|No|No|No|No|No|No|
 |Th1ng| | | | | | | | | |
 |Viasat| | | | | | | | | |
