@@ -5,23 +5,51 @@ products.
 
 It is designed to support two main integration paths:
 
-* The CO captures and passes the order details directly to the SP for confirmation before any order is registered (
-  coOrderId is not set). The SP is required to send an ACTIVATE order.
 * The CO captures and registers an order, and then passes the order details to the SP for approval before allowing the
   order to proceed (coOrderId is set). The SP only needs to confirm or reject the order and should not send an ACTIVATE
   order.
+* The CO captures and passes the order details directly to the SP for confirmation before any order is registered 
+  (coOrderId is not set). The SP is required to send an ACTIVATE order.
 
 ## Usage
 
 The CO captures the order details on a given access, including selected product offering and customer information, and
 sends a CO order request to the SP. The SP validates the order and customer and either rejects or confirms the order. If
-the order has already been registered by the CO (path 2), the SP does not need to take any further actions. If the order
-is not yet registered (path 1), the SP is required to also send an ACTIVATE order. In any case the order will initially
-have the status AWAITINGCONFIRMATION. The SP may respond with CONFIRMEDNOTREADY, allowing the SP to stall the order
-until a PUT or PATCH operation has been carried out on the order. This allows the SP to complement the order with
-additional information, such as characteristics.
+the order has already been registered by the CO (path 1), the SP does not need to take any further actions. If the order
+is not yet registered (path 2), the SP is required to also send an ACTIVATE order. In any case the order will initially
+have the status AWAITINGCONFIRMATION. 
+
+The SP may respond with CONFIRMEDNOTREADY, allowing the SP to stall the order until a PUT or PATCH operation has been 
+carried out on the order. This allows the SP to complement the order with additional information, such as characteristics.
 
 Depending on the results, the CO will present relevant feedback to the customer.
+
+```mermaid
+sequenceDiagram
+Customer->>Portal: Order [product]
+Portal->>CO: Internal order
+alt Order confirmed by SP
+CO->>SP: [POST] /coorder [coOrderId]
+SP->>CO: Confirmed
+CO->>Portal: Done
+Portal->>Customer: Your order is confirmed
+end
+alt Order confirmed but not ready by SP
+CO->>SP: [POST] /coorder [coOrderId]
+SP->>CO: Confirmed not ready
+CO->>Portal: Done
+Portal->>Customer: Your order is confirmed
+SP->>CO: [PATCH] /order
+CO->>SP: Done
+end
+alt Order rejected by SP
+CO->>SP: [POST] /coorder [coOrderId]
+SP->>CO: Rejected [credit check failed]
+CO->>CO: Cancel order
+CO->>Portal: Failed
+Portal->>Customer: Display [externalMessage]
+end
+```
 
 ## Request
 
