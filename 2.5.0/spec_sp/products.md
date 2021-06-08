@@ -1,4 +1,4 @@
-# Product offerings API
+# Products
 
 This API lists product offerings that are available to end customers and information about the service provider.
 
