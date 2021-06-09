@@ -1,6 +1,6 @@
 # CO Order
 
-This API is intended to be used by the CO send an order for approval to the SP before connecting the transmission
+This API is intended to be used by the CO to send an order for approval to the SP before connecting the transmission
 products.
 
 It is designed to support two main integration paths:
