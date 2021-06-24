@@ -75,6 +75,7 @@ Follows the SSNF specifikation, can contain duplicates from the above table if t
 | SP                | [Endpoints](2.4.0/spec/endpoints.md) | [Accesses](2.4.0/spec/accesses.md) | [Order](2.4.0/spec/orders.md) | [Tickets](2.4.0/spec/tickets.md) | [Technical information](2.4.0/spec/technical_info.md) | [Contacts](2.4.0/spec/contacts.md) | [Subscriptions](2.4.0/spec/subscriptions.md) | [Invoice Specification](2.4.0/spec/invoice_specification.md) | [Web portal](2.4.0/spec/web_portal.md) |
 |-------------------|--------------------------------------|------------------------------------|-------------------------------|----------------------------------|-------------------------------------------------------|------------------------------------|----------------------------------------------|--------------------------------------------------------------|----------------------------------------|
 |A3 | | | | | | | | | |
+|Allente| | | | | | | | | |
 |Bahnhof| | | | | | | | | |
 |Bredband2| | | | | | | | | |
 |Junet| | | | | | | | | |
@@ -83,7 +84,6 @@ Follows the SSNF specifikation, can contain duplicates from the above table if t
 |Tele2|No|Yes|Yes|No|No|No|No|No|No|
 |Telenor| |No|No|No|No|No|No|No|No|
 |Th1ng| | | | | | | | | |
-|Viasat| | | | | | | | | |
 
 ### ON-API 2.3.1
 
@@ -104,6 +104,7 @@ Follows the SSNF specifikation, can contain duplicates from the above table if t
 | SP                | [Availability](2.3.1/availability.md) | [Feasibility](2.3.1/feasibility.md) | [Service Activation](2.3.1/service_activation.md) | [Link status](2.3.1/fm_linkstatus.md) | [Access customer info](2.3.1/access_customer_info.md) | [CO Active services](2.3.1/co_active_services.md) | [Web portal](2.3.1/web_portal.md) |
 |-------------------|---------------------------------------|-------------------------------------|---------------------------------------------------|---------------------------------------|-------------------------------------------------------|---------------------------------------------------|-----------------------------------|
 |A3| | | | | | | |
+|Allente| | | | | | | |
 |Bahnhof| | | | | | | |
 |Bredband2| | | | | | | |
 |Junet| | | | | | | |
@@ -112,4 +113,3 @@ Follows the SSNF specifikation, can contain duplicates from the above table if t
 |Tele2|Yes|Yes|Yes|No|No|No|No
 |Telenor|No|Yes|Yes|No|No|No|No
 |Th1ng| | | | | | | |
-|Viasat| | | | | | | |
