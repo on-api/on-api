@@ -69,6 +69,15 @@ Examples
 * true
 * false
 
+### integer
+
+Numeric integer value, not enclosed in double quotes in JSON representation.
+
+Examples
+
+* 0
+* 5663
+
 ### enumeration
 
 A predefined list of values that is valid for this field is provided where it is defined. No other values can be used.
