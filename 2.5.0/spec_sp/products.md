@@ -147,6 +147,11 @@ Content-Type: application/json
             "offeringName": "Halva priset 3 månader",
             "consumerTypes": ["residential", "business"],
             "description": "Första tre månaderna gratis, 12 månaders bindningstid",
+            "priceGroups": [
+              14,
+              15,
+              16
+            ],
             "startPrice": "0",
             "price": "125",
             "pricePeriod": "P1M",
@@ -402,6 +407,13 @@ Description of the product offering
 
 * Data format: [text](../common/dataformats.md#text)
 * Mandatory
+
+##### products.offerings.marketingInformation.priceGroups
+
+List of price groups that this offering is available for. The offering will only be presented on accesses with a matching priceGroup. The value must be an integer, of which each value's price group is defined by CO. If obmitted or empty, the offering is available on all accesses.
+
+* Data format: JSON array of [integer](../common/dataformats.md#integer)
+* Optional
 
 ##### products.offerings.marketingInformation.deliveryInformation
 
