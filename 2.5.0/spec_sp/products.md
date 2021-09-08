@@ -162,7 +162,7 @@ Content-Type: application/json
           }
         },
         {
-          "productsId": "c9c47535-ffa9-4456-9706-9ef590e1ce48",
+          "offeringId": "c9c47535-ffa9-4456-9706-9ef590e1ce48",
           "marketingInformation": {
             "name": "Inklusive wifi-router",
             "consumerTypes": ["residential"],
