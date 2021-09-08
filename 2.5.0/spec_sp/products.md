@@ -410,7 +410,7 @@ Description of the product offering
 
 ##### products.offerings.marketingInformation.priceGroups
 
-List of price groups that this offering is available for. The offering will only be presented on accesses with a matching priceGroup. The value must be an integer, of which each value's price group is defined by CO. If obmitted or empty, the offering is available on all accesses.
+List of price groups that this offering is available for. The offering will only be presented on accesses with a matching priceGroup. The value must be an integer, of which each value's price group is defined by CO. If omitted or empty, the offering is available on all accesses.
 
 * Data format: JSON array of [integer](../common/dataformats.md#integer)
 * Optional
