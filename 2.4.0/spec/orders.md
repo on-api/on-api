@@ -369,7 +369,7 @@ Content-Type: application/json
 ```
 
 
-#### Modify a service
+#### Modify spReference and/or spSubscriptionId
 Request
 ```HTTP
 POST /onapi/2.4/orders/ HTTP/1.1
