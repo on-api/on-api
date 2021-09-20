@@ -280,10 +280,8 @@ Content-Type: application/json
 ```JSON
 {
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "service": "BB-1000-100",
   "operation": "DEACTIVATE",
   "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
-  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "requestedDateTime": "2019-02-05T00:00:00Z"
 }
 ```
