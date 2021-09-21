@@ -284,8 +284,6 @@ Content-Type: application/json
   "accessId": "8732c2f065e2490babce820e94b1011a",
   "service": "BB-1000-100",
   "operation": "DEACTIVATE",
-  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
-  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "requestedDateTime": "2019-02-05T00:00:00Z"
 }
 ```
@@ -326,10 +324,8 @@ Content-Type: application/json
 ```JSON
 {
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "service": "BB-1000-100",
   "operation": "SUSPEND",
   "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
-  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "externalNote": "This is the reason I suspend you"
 }
 ```
@@ -371,7 +367,7 @@ Content-Type: application/json
 ```
 
 
-#### Modify a service
+#### Modify spReference and/or spSubscriptionId
 Request
 ```HTTP
 POST /onapi/2.4/orders/ HTTP/1.1
@@ -379,6 +375,7 @@ Content-Type: application/json
 ```
 ```JSON
 {
+  "accessId": "8732c2f065e2490babce820e94b1011a",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "operation": "MODIFY",
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
@@ -507,20 +504,21 @@ The type of operation this order is intended to perform.
   * DEACTIVATE
     * Deactivate the service
     * Remove the subscription
+    * Requires accessId, service and subscriptionId
   * SUSPEND
-    * Requires subscriptionId
     * Temporary suspend the service
     * Change subscription state to "SUSPENDED"
+    * Requires accessId and subscriptionId
   * RESUME
-    * Requires subscriptionId
     * Resume a temporary suspended service
     * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
+    * Requires accessId and subscriptionId
   * MODIFY
-    * Requires subscriptionId
     * Update a service with "spReference" and/or "spSubscriptionId"
+    * Requires accessId and subscriptionId
   * CHANGE
-    * Requires subscriptionId
     * Change the current service type to a new service type
+    * Requires accessId, subscriptionId and service
 
 ### requestedDateTime
 
