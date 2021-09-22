@@ -504,7 +504,7 @@ The type of operation this order is intended to perform.
   * DEACTIVATE
     * Deactivate the service
     * Remove the subscription
-    * Requires accessId, service and subscriptionId
+    * Requires accessId and service
   * SUSPEND
     * Temporary suspend the service
     * Change subscription state to "SUSPENDED"
