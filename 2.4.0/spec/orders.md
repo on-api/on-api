@@ -397,6 +397,35 @@ Content-Type: application/json
 ```
 
 
+#### Change service
+Request
+```HTTP
+POST /onapi/2.4/orders/ HTTP/1.1
+Content-Type: application/json
+```
+```JSON
+{
+  "accessId": "8732c2f065e2490babce820e94b1011a",
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "operation": "CHANGE",
+  "service": "BB-1000-1000"
+}
+```
+Response
+```HTTP
+HTTP/1.1 201 CREATED
+Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
+Content-Type: application/json
+```
+```JSON
+{
+  "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "orderId": "f3f26446f6e8407aae876ea8e52d7417",
+  "state": "DONE_SUCCESS"
+}
+```
+
+
 ### PUT
 With put it is possible to update an order for which the state is "RECEIVED", using the complete object.
 
