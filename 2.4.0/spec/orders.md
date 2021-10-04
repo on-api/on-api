@@ -367,6 +367,60 @@ Content-Type: application/json
 ```
 
 
+#### Resume a service 
+This operation is only used to resume a service that is suspended.
+
+Request
+```HTTP
+POST /onapi/2.4/orders/ HTTP/1.1
+Content-Type: application/json
+```
+
+```JSON
+{
+  "accessId": "8732c2f065e2490babce820e94b1011a",
+  "operation": "RESUME",
+  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5"
+}
+```
+
+Response
+
+```HTTP
+HTTP/1.1 201 CREATED
+Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
+Content-Type: application/json
+```
+
+```JSON
+{
+  "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "orderId": "f3f26446f6e8407aae876ea8e52d7417",
+  "accessId": "8732c2f065e2490babce820e94b1011a",
+  "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
+  "service": "BB-1000-100",
+  "operation": "SUSPEND",
+  "state": "DONE_SUCCESS",
+  "forcedTakeover": false,
+  "equipment": [
+    {
+      "vendorId": "ACME-ROUTER",
+      "macAddress": "AA:BB:CC:11:22:33"
+    }
+  ],
+  "spReference": "a6cc5da980034948ba654ae6ceda03f4",
+  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
+  "characteristics": {
+    "fixedIp": true,
+    "ipAddress": [
+      "1.2.3.4"
+    ],
+    "SLA": "SLA-3"
+  }
+}
+```
+
+
 #### Modify spReference and/or spSubscriptionId
 Request
 ```HTTP
