@@ -323,7 +323,6 @@ Content-Type: application/json
 
 ```JSON
 {
-  "accessId": "8732c2f065e2490babce820e94b1011a",
   "operation": "SUSPEND",
   "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5",
   "externalNote": "This is the reason I suspend you"
@@ -378,7 +377,6 @@ Content-Type: application/json
 
 ```JSON
 {
-  "accessId": "8732c2f065e2490babce820e94b1011a",
   "operation": "RESUME",
   "subscriptionId" : "35738e19ab534dff9f9becb3a064a7d5"
 }
@@ -589,11 +587,11 @@ The type of operation this order is intended to perform.
   * SUSPEND
     * Temporary suspend the service
     * Change subscription state to "SUSPENDED"
-    * Requires accessId and subscriptionId
+    * Requires subscriptionId
   * RESUME
     * Resume a temporary suspended service
     * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
-    * Requires accessId and subscriptionId
+    * Requires subscriptionId
   * MODIFY
     * Update a service with "spReference" and/or "spSubscriptionId"
     * Requires subscriptionId
