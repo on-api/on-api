@@ -596,10 +596,10 @@ The type of operation this order is intended to perform.
     * Requires accessId and subscriptionId
   * MODIFY
     * Update a service with "spReference" and/or "spSubscriptionId"
-    * Requires accessId and subscriptionId
+    * Requires subscriptionId
   * CHANGE
     * Change the current service type to a new service type
-    * Requires accessId, subscriptionId and service
+    * Requires subscriptionId and service
 
 ### requestedDateTime
 
