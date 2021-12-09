@@ -1,18 +1,33 @@
 ## Table of contents
 
+### Common documentation
+
 * [Changelog](changelog.md)
-* [Accesses](spec/accesses.md)
 * [Data formats](common/dataformats.md)
-* [Endpoints](spec/endpoints.md)
+* [Endpoints](common/endpoints.md)
 * [Responses](common/responses.md)
+
+### API's exposed by communication operators
+
+* [Accesses](spec/accesses.md)
+* [Events](spec/events.md)
+* [Invoice specification](spec/invoice_specification.md)
 * [Option82 lookup](spec/option82_lookup.md)
-* [Order](spec/orders.md)
 * [Order events](spec/orderevents.md)
-* [SP contacts](spec/contacts.md)
+* [Orders](spec/orders.md)
 * [Subscriptions - list active services](spec/subscriptions.md)
-* [Web portal - Forward customers to SP service portals](spec/web_portal.md)
-* [Tickets](spec/tickets.md)
 * [Technical information](spec/technical_info.md)
+* [Tickets](spec/tickets.md)
+
+### API's exposed by service providers
+
+* [SP contacts](spec_sp/contacts.md)
+* [CO order](spec_sp/coorder.md)
+* [Order](spec_sp/order.md)
+* [Order Notice](spec_sp/ordernotice.md)
+* [Products](spec_sp/products.md)
+* [Web portal - Forward customers to SP service portals](spec_sp/web_portal.md)
+
  
 ## General guidelines
 
