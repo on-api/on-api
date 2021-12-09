@@ -12,4 +12,4 @@ Update on existing services:
  * Orders
     * Clarification on OPERATION and mandatory data
  * Accesses
-    * connection, available and disconnection is now formatted as ISO 8601  
+    * connection, available and disconnection are now formatted as ISO 8601  
