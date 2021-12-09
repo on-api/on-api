@@ -1,12 +1,14 @@
 # Changelog
 
 ## Changes since 2.4
- * New service - CO Order
- * New service - Order
- * New service - Order Notice
- * New service - Products
 
-Update on existing services
+New services:
+ * CO Order
+ * Order
+ * Order Notice
+ * Products
+
+Update on existing services:
  * Orders
     * Clarification on OPERATION and mandatory data
  * Accesses
