@@ -2,14 +2,9 @@
 
 ## Changes since 2.4
 
-New services:
- * CO Order
- * Order
- * Order Notice
- * Products
-
-Update on existing services:
- * Orders
-    * Clarification on OPERATION and mandatory data
- * Accesses
-    * connection, available and disconnection are now formatted as ISO 8601  
+ * New API - [CO Order]
+ * New API - [Order]
+ * New API - [Order Notice]
+ * New API - [Products]
+ * Orders API - clarification on OPERATION and mandatory data
+ * Accesses API - connection, available and disconnection are now formatted as ISO 8601  
