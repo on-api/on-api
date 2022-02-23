@@ -22,7 +22,7 @@ Content-Type: application/json
     {
         "event": "2a6d6432e59d11e39a523c970e806452",
         "order": {
-            "path": "/api/2.3.1/orders/ec4bc7546a3011e2a5854fc569183061",
+            "path": "/api/2.4/orders/ec4bc7546a3011e2a5854fc569183061",
             "accessId": "STTA0001",
             "service": "BB-100-10",
             "operation": "DEACTIVATE",
