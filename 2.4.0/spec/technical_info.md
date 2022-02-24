@@ -23,14 +23,14 @@ Example service types:
 # Specification
 ## Reference index
 ### access
-* GET [access/{accessId}/hardware](#get-access-hardware)
-* GET [access/{accessId}/link/macaddresstable](#get-access-link-macaddresstable)
-* GET [access/{accessId}/link/leaseinfo](#get-access-link-leaseinfo)
-* GET [access/{accessId}/link/igmpsnooping](#get-access-link-igmpsnooping)
-* GET [access/{accessId}/link/status](#get-access-link-status)
+* GET [tech/access/{accessId}/hardware](#get-access-hardware)
+* GET [tech/access/{accessId}/link/macaddresstable](#get-access-link-macaddresstable)
+* GET [tech/access/{accessId}/link/leaseinfo](#get-access-link-leaseinfo)
+* GET [tech/access/{accessId}/link/igmpsnooping](#get-access-link-igmpsnooping)
+* GET [tech/access/{accessId}/link/status](#get-access-link-status)
 
 ### cpe
-* GET [cpe/{accessId}/status](#get-cpe-status)
+* GET [tech/cpe/{accessId}/status](#get-cpe-status)
 
 ## Requirements
 
