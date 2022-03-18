@@ -457,7 +457,7 @@ HTTP/1.1 204 No Content
 ```
 
 ### DELETE
-Used to cancel an order for which the state is "RECEIVED".
+Used to cancel an order for which the state is "RECEIVED". Example: could be used to cancel a previous order with operation DEACTIVATE, if the end customer no longer wants to cancel his or hers subscription.
 
 Request
 ```HTTP
