@@ -16,7 +16,7 @@ Content-Type: application/json
 
 { "cause": "An Unknown error has occured. Error number 12345" }
 ```
-## HTTP satus codes used (for full list, see RFC7231)
+## HTTP status codes used (for full list, see RFC7231)
 
 ### 400 Bad request
 Invalid data posted

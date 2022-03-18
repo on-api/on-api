@@ -383,7 +383,9 @@ Content-Type: application/json
 }
 ```
 
-#### Modify a service
+#### Modify a subscription
+
+Used to modify spReference and/or spSubscriptionId.
 
 Request
 
@@ -462,7 +464,7 @@ With patch it is possible to update an order for which the state is "RECEIVED", 
 Request
 
 ```HTTP
-PUT /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+PATCH /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -611,11 +613,11 @@ activated. If forcedTakeoverPossible is false this field must be omitted or be s
 * Data format: [equipment](../common/dataformats.md#equipment)
 * Optional
 
-### status
+### state
 
-The status of the order. This is returned from the communication operator.
+The state of the order. This is returned from the communication operator.
 
-* Data format: [orderState](../common/dataformats.md#orderState)
+* Data format: [orderState](../common/dataformats.md#orderstate)
 
 ### message
 

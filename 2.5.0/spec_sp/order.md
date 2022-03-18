@@ -1,34 +1,33 @@
 # Order
 
-This API is used to order a product offering that the SP self activates in the CO network.
-
-It is designed for external portals that never sends activation requests directly to the CO.
+This API is used to order a product offering from the service provider. The service provider is responsible for the
+delivery of the order.
 
 ## Usage
 
-The external portal captures the order details on a given access, including selected product offering and customer
-information, and places an order request to the SP. The SP receives and validates the order and activates 
-the CO transmission products in the CO network. The SP can also decide to reject the order, in which case 
-the portal is able to present a relevant message to end customer.
+The portal captures the order details on a given access, including selected product offering and customer information,
+and places an order request to the SP. The SP receives and validates the order and activates the CO transmission
+products in the CO network. The SP can also decide to reject the order, in which case the portal is able to present a
+relevant message to end customer.
 
 ```mermaid
 sequenceDiagram
 Customer->>Portal: Order [product]
 Portal->>SP: [POST] /order
-alt Order possible
+alt Order confirmed
 SP->>CO: [POST] /order
-CO->>SP: Done
-SP->>Portal: Done
-Portal->>Customer: Your order is done
+CO->>SP: DONE_SUCCESS
+SP->>Portal: CONFIRMED
+Portal->>Customer: Display [externalMessage]
 end
 alt Order rejected by CO
 SP->>CO: [POST] /order
-CO->>SP: Failed [port occupied]
-SP->>Portal: Failed
+CO->>SP: DONE_FAILED
+SP->>Portal: REJECTED
 Portal->>Customer: Display [externalMessage]
 end
 alt Order rejected by SP
-SP->>Portal: Failed
+SP->>Portal: REJECTED
 Portal->>Customer: Display [externalMessage]
 end
 ```
@@ -55,11 +54,13 @@ Content-Type: application/json
   "customerDetails": {
     "identifiedCustomer": true,
     "personalIdentityNumber": "string",
-    "customerFirstname": "string",
-    "customerLastName": "string",
-    "customerPhone": "string",
-    "customerMobilePhone": "string",
-    "customerEmail": "string",
+    "organizationNumber": "string",
+    "organizationName": "string",
+    "firstname": "string",
+    "lastName": "string",
+    "phone": "string",
+    "mobilePhone": "string",
+    "email": "string",
     "invoiceDetails": {
       "streetName": "string",
       "streetNumber": "string",
@@ -135,18 +136,34 @@ Customer details provided by the CO. This information should be validated by the
 
 ## Response
 
+CONFIRMED example response
+
 ```http
 HTTP/1.1 200 OK Content-Type: application/json
 ```
 
 ```json
 {
-  "status": "ACTIVATED",
+  "status": "CONFIRMED",
   "externalMessage": "Thanks for ordering. Your new service is now active. You will receive an email with order confirmation and information about how to get started."
 }
 ```
 
-### status
+REJECTED example response
+
+```HTTP
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
+{
+  "state": "REJECTED",
+  "externalMessage": "We are sorry, but the selected offering is no longer available on your location. Please contact us for more information and alternatives."
+}
+```
+
+### state
 
 The status tells if the order is accepted or rejected.
 
@@ -155,15 +172,15 @@ The status tells if the order is accepted or rejected.
 
 **Values**
 
-* ACTIVATED
-    * Order is accepted and completed, and transmission products have been activated 
-* RECEIVED
-    * Order is accepted, but not yet completed
+* CONFIRMED
+    * The SP confirms the order
 * REJECTED
-    * Order is not accepted. The `externalMessage` should provide a relevant message that can be presented for the customer.
+    * The SP rejects the order
 
 ### externalMessage
 
 Message that is intended for the customer.
+
+* Required in response
 
 Error handling according to [common responses](../common/responses.md)

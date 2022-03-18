@@ -3,24 +3,10 @@
 This API is intended to be used by the CO to send an order for approval to the SP before connecting the transmission
 products.
 
-It is designed to support two main integration paths:
-
-* The CO captures and registers an order, and then passes the order details to the SP for approval before allowing the
-  order to proceed (coOrderId is set). The SP only needs to confirm or reject the order and should not send an ACTIVATE
-  order.
-* The CO captures and passes the order details directly to the SP for confirmation before any order is registered 
-  (coOrderId is not set). The SP is required to send an ACTIVATE order.
-
 ## Usage
 
 The CO captures the order details on a given access, including selected product offering and customer information, and
-sends a CO order request to the SP. The SP validates the order and customer and either rejects or confirms the order. If
-the order has already been registered by the CO (path 1), the SP does not need to take any further actions. If the order
-is not yet registered (path 2), the SP is required to also send an ACTIVATE order. In any case the order will initially
-have the status AWAITINGCONFIRMATION. 
-
-The SP may respond with CONFIRMEDNOTREADY, allowing the SP to stall the order until a PUT or PATCH operation has been 
-carried out on the order. This allows the SP to complement the order with additional information, such as characteristics.
+sends a CO order request to the SP. The SP validates the order and customer and either rejects or confirms the order. 
 
 Depending on the results, the CO will present relevant feedback to the customer.
 
@@ -30,23 +16,15 @@ Customer->>Portal: Order [product]
 Portal->>CO: Internal order
 alt Order confirmed by SP
 CO->>SP: [POST] /coorder [coOrderId]
-SP->>CO: Confirmed
-CO->>Portal: Done
-Portal->>Customer: Your order is confirmed
-end
-alt Order confirmed but not ready by SP
-CO->>SP: [POST] /coorder [coOrderId]
-SP->>CO: Confirmed not ready
-CO->>Portal: Done
-Portal->>Customer: Your order is confirmed
-SP->>CO: [PATCH] /order
-CO->>SP: Done
+SP->>CO: CONFIRMED
+CO->>Portal: CONFIRMED
+Portal->>Customer: Display [externalMessage]
 end
 alt Order rejected by SP
 CO->>SP: [POST] /coorder [coOrderId]
-SP->>CO: Rejected [credit check failed]
+SP->>CO: REJECTED
 CO->>CO: Cancel order
-CO->>Portal: Failed
+CO->>Portal: REJECTED
 Portal->>Customer: Display [externalMessage]
 end
 ```
@@ -63,7 +41,6 @@ Content-Type: application/json
   "coOrderId": "f3f26446f6e8407aae876ea8e52d7417",
   "coAccessId": "3d663ca5-9020-415c-9412-53282b168738",
   "operation": "ACTIVATE",
-  "state": "AWAITINGCONFIRMATION",
   "orderDateTime": "2021-05-03T20:31:15Z",
   "requestedDateTime": "2019-02-05T00:00:00Z",
   "products": [
@@ -77,16 +54,17 @@ Content-Type: application/json
   "customerDetails": {
     "identifiedCustomer": true,
     "personalIdentityNumber": "string",
-    "customerFirstname": "string",
-    "customerLastName": "string",
-    "customerPhone": "string",
-    "customerMobilePhone": "string",
-    "customerEmail": "string",
+    "organizationNumber": "string",
+    "organizationName": "string",
+    "firstname": "string",
+    "lastName": "string",
+    "phone": "string",
+    "mobilePhone": "string",
+    "email": "string",
     "invoiceDetails": {
       "streetName": "string",
       "streetNumber": "string",
       "streetLittera": "string",
-      "apartmentNumber": "string",
       "postalCode": "string",
       "city": "string"
     }
@@ -96,11 +74,10 @@ Content-Type: application/json
 
 ## coOrderId
 
-The unique ID of the order on the CO side. If coOrderId is provided, the SP should never send an ACTIVATE order. If
-coOrderId is not provided, the SP is required to send an ACTIVATE order.
+The unique ID of the order on the CO side.
 
 * Data format: [id](../common/dataformats.md#id)
-* Optional
+* Required in request
 
 ## coAccessId
 
@@ -114,7 +91,7 @@ Identifies a single access point in the CO population in the accesses API.
 The type of operation this order is intended to perform.
 
 * Data format: [enumeration](../common/dataformats.md#enumeration)
-* Mandatory
+* Required in request
 * Only ACTIVATE is currently supported
 
 **Values**
@@ -127,20 +104,14 @@ The type of operation this order is intended to perform.
 The status of the order
 
 * Data format: [enumeration](../common/dataformats.md#enumeration)
-* Mandatory
-* Initially AWAITINGCONFIRMATION
+* Required in response
 
 **Values**
 
-* AWAITINGCONFIRMATION
-    * The order is waiting for confirmation
-* REJECTED
-    * The SP rejects the order
 * CONFIRMED
     * The SP confirms the order
-* CONFIRMEDNOTREADY
-    * The SP confirms the order, but instructs the CO that it is not ready for provisioning and that a PATCH or PUT
-      operation can be expected later.
+* REJECTED
+    * The SP rejects the order
 
 ## orderDateTime
 
@@ -226,6 +197,8 @@ Content-Type: application/json
 ### externalMessage
 
 Message that is intended for the customer
+
+* Required in response
 
 ### cause
 

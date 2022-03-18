@@ -84,33 +84,33 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "services": [
       {
         "service": "BB-100-100",
-        "connection": "1970-01-01T00:00:00Z",
-        "available": "1970-01-01T00:00:00Z",
-        "disconnection": ""
+        "connectionDateTime": "1970-01-01T00:00:00Z",
+        "availableDateTime": "1970-01-01T00:00:00Z",
+        "disconnectionDateTime": ""
       },
       {
         "service": "BB-100-10",
-        "connection": "2013-10-12T14:09:23Z",
-        "available": "2013-10-12T14:09:23Z",
-        "disconnection": ""
+        "connectionDateTime": "2013-10-12T14:09:23Z",
+        "availableDateTime": "2013-10-12T14:09:23Z",
+        "disconnectionDateTime": ""
       },
       {
         "service": "BB-10-10",
-        "connection": "2013-10-12T14:09:23Z",
-        "available": "2021-05-31T14:09:24Z",
-        "disconnection": "2021-05-31T14:09:23Z"
+        "connectionDateTime": "2013-10-12T14:09:23Z",
+        "availableDateTime": "2021-05-31T14:09:24Z",
+        "disconnectionDateTime": "2021-05-31T14:09:23Z"
       },
       {
         "service": "IPTV",
-        "connection": "",
-        "available": "",
-        "disconnection": ""
+        "connectionDateTime": "2013-10-12T14:09:23Z",
+        "availableDateTime": "2013-10-12T14:09:23Z",
+        "disconnectionDateTime": ""
       },
       {
         "service": "VOIP",
-        "connection": "2013-10-12T14:09:23Z",
-        "available": "2013-10-13T14:09:23Z",
-        "disconnection": ""
+        "connectionDateTime": "2013-10-12T14:09:23Z",
+        "availableDateTime": "2013-10-13T14:09:23Z",
+        "disconnectionDateTime": ""
       }
     ],
     "coFiberConverter": "LASER_3001X_MK2",
@@ -160,9 +160,9 @@ When a single access is requested the response contains a single JSON-object.
   "services": [
     {
       "service": "BB-1000-1000",
-      "connection": "2014-03-01T14:09:23Z",
-      "available": "2014-03-01T14:09:23Z",
-      "disconnection": "",
+      "connectionDateTime": "2014-03-01T14:09:23Z",
+      "availableDateTime": "2014-03-01T14:09:23Z",
+      "disconnectionDateTime": "",
       "forcedTakeoverPossible": false,
       "comments": [
         "This service is limited to 100 Mbps for up to two weeks after ordering"
@@ -190,30 +190,30 @@ When a single access is requested the response contains a single JSON-object.
     },
     {
       "service": "BB-100-100",
-      "connection": "2013-10-12T14:09:23Z",
-      "available": "2013-10-12T14:09:23Z",
-      "disconnection": "",
+      "connectionDateTime": "2013-10-12T14:09:23Z",
+      "availableDateTime": "2013-10-12T14:09:23Z",
+      "disconnectionDateTime": "",
       "forcedTakeoverPossible": false
     },
     {
       "service": "BB-10-10",
-      "connection": "2013-10-12T14:09:23Z",
-      "available": "2013-10-12T14:09:23Z",
-      "disconnection": "2018-12-31T14:09:23Z",
+      "connectionDateTime": "2013-10-12T14:09:23Z",
+      "availableDateTime": "2013-10-12T14:09:23Z",
+      "disconnectionDateTime": "2018-12-31T14:09:23Z",
       "forcedTakeoverPossible": false
     },
     {
       "service": "IPTV",
-      "connection": "2013-10-12T14:09:23Z",
-      "available": "3030-12-12T14:09:23Z",
-      "disconnection": "",
+      "connectionDateTime": "2013-10-12T14:09:23Z",
+      "availableDateTime": "3030-12-12T14:09:23Z",
+      "disconnectionDateTime": "",
       "forcedTakeoverPossible": false
     },
     {
       "service": "VOIP",
-      "connection": "3030-12-12T14:09:23Z",
-      "available": "3030-12-12T14:09:23Z",
-      "disconnection": "",
+      "connectionDateTime": "3030-12-12T14:09:23Z",
+      "availableDateTime": "3030-12-12T14:09:23Z",
+      "disconnectionDateTime": "",
       "forcedTakeoverPossible": true
     }
   ],
@@ -407,26 +407,26 @@ Name of the service, used as reference in the [order API](orders.md)
  * Data format: [text](../common/dataformats.md#text)
  * Mandatory
 
-### services/connection 
+### services/connectionDateTime
 
 Indicates when the service is technically deliverable for the first time. If you don't have a date when it was connected, you can specify the date as "1990-01-01T00:00:01Z". If you don't know when it will be connected, you can specify the date as "3030-12-12T00:00:01Z" for example.
 
- * Data format: [ISO 8601](../common/dataformats.md#date)
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime)
  * Mandatory
 
-### services/available 
+### services/availableDateTime 
 
 Indicates when the service can be ordered. If you don't know when it will be available, you can specify the date as empty string "". If a service will be available to a future date due to ongoing cancellation by another service provider, then the future available date can be provided for calling service provider.
 
- * Data format: [ISO 8601](../common/dataformats.md#date) (Valid values are also empty string "")
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime) (Valid values are also empty string "")
  * Mandatory
 
 
-### services/disconnection
+### services/disconnectionDateTime
 
 Specifies when a service is no longer available. This can indicate that a certain service will no longer be available after the given date or that the access itself will be unavailable and in that case all the services will have a disconnection date. 
  
- * Data format: [ISO 8601](../common/dataformats.md#date) (Valid values are also empty string "")
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime) (Valid values are also empty string "")
  * Mandatory but can be empty
 
 ### services/forcedTakeoverPossible

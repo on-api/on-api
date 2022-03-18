@@ -41,11 +41,13 @@ Content-Type: application/json
   "customerDetails": {
     "identifiedCustomer": true,
     "personalIdentityNumber": "string",
-    "customerFirstname": "string",
-    "customerLastName": "string",
-    "customerPhone": "string",
-    "customerMobilePhone": "string",
-    "customerEmail": "string",
+    "organizationNumber": "string",
+    "organizationName": "string",
+    "firstname": "string",
+    "lastName": "string",
+    "phone": "string",
+    "mobilePhone": "string",
+    "email": "string",
     "invoiceDetails": {
       "streetName": "string",
       "streetNumber": "string",

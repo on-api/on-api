@@ -1,4 +1,5 @@
 # Data formats
+# Data formats
 
 Within this document the conventions and formatting rules for all ON-API's are found. There are also descriptions of
 various data formats that are common for several API-endpoints.
@@ -128,8 +129,9 @@ References
 
 ### option82
 
-DHCPv4 Option82 should be hex encoded. The complete option82 TLV (typ, length, value) should be encoded. The data should
-always start with 52 which is hex for 82. This format is deprecated in favor dhcpIdentifier.
+DHCPv4 Option82 should be hex encoded. The complete option82 TLV (typ, length, value) should be encoded. The data 
+should always start with 52 which is hex for 82. 
+This format is deprecated in favor dhcpIdentifier.
 
 * Data format json string
 * [RFC 3046](https://www.ietf.org/rfc/rfc3046.txt)
@@ -287,7 +289,7 @@ The CO's ID for a single subscription.
 
 Reference that identifies the unique end-customer or service in the Service Provider's system. This information can be
 used by the CO to lookup information about the customer or service with the
-[contacts API](../spec/contacts.md)
+[contacts API](../spec_sp/contacts.md)
 
 * Data format: [ID](dataformats.md#id)
 
@@ -412,6 +414,11 @@ Data format: [text](dataformats.md#text)
 }
 ```
 
+### identityNumber
+Identity number for swedish personal identity numbers or organization numbers.
+"YYYYMMDD-XXXX" or "XXXXXXXX-XXXX".
+Validated with the [Luhn or modulus-10 -algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)
+
 ### customerDetails
 
 #### customerDetails.identifiedCustomer
@@ -423,27 +430,37 @@ Data format: [boolean](dataformats.md#boolean)
 
 #### customerDetails.personalIdentityNumber
 
-Valid personal identity number.
+Data format: [identitynumber](dataformats.md#identitynumber)
+
+#### customerDetails.organizationNumber
+
+Data format: [identitynumber](dataformats.md#identitynumber)
 
 Data format: [text](dataformats.md#text)
 
-#### customerDetails.customerFirstname
+#### customerDetails.firstName
 
 Data format: [text](dataformats.md#text)
 
-#### customerDetails.customerLastName
+#### customerDetails.lastName
+
+If there is no last name available it may be left blank.
 
 Data format: [text](dataformats.md#text)
 
-#### customerDetails.customerPhone
+#### customerDetails.organizationName
+
+Data format: [text](dataformats.md#text)
+
+#### customerDetails.phone
 
 Data format: [phoneno](dataformats.md#phoneno)
 
-#### customerDetails.customerMobilePhone
+#### customerDetails.mobilePhone
 
 Data format: [phoneno](dataformats.md#phoneno)
 
-#### customerDetails.customerEmail
+#### customerDetails.email
 
 Data format: [text](dataformats.md#text)
 
@@ -451,23 +468,23 @@ Data format: [text](dataformats.md#text)
 
 Object detailing invoice information.
 
-#### customerDetails.streetName
+#### customerDetails.invoiceDetails.streetName
 
 Data format: [text](dataformats.md#text)
 
-#### customerDetails.streetNumber
+#### customerDetails.invoiceDetails.streetNumber
 
 Data format: [text](dataformats.md#text)
 
-#### customerDetails.streetLittera
+#### customerDetails.invoiceDetails.streetLittera
 
 Data format: [text](dataformats.md#text)
 
-#### customerDetails.postalCode
+#### customerDetails.invoiceDetails.postalCode
 
 Data format: [postalcode](dataformats.md#postalcode)
 
-#### customerDetails.city
+#### customerDetails.invoiceDetails.city
 
 Data format: [text](dataformats.md#text)
 
@@ -480,4 +497,4 @@ Data format: [text](dataformats.md#text)
 
 ### Price
 
-SEK comma (,) to delimit decimals
+SEK comma (,) to delimit with at most two decimals

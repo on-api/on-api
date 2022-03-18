@@ -135,7 +135,7 @@ Content-Type: application/json
             "description": "Bra snabbt Internet utan bindingstid",
             "deliveryInformation": "Vi kontaktar dig om installation av CPE krävs",
             "startPrice": "0",
-            "price": "250",
+            "price": "250,50",
             "pricePeriod": "P1M",
             "periodOfNotice": "P1M",
             "agreementLength": "P1M"
@@ -470,7 +470,7 @@ When campaign length is set, a value in basePrice is required.
 If products.offerings.marketingInformation.price indicates a time limited reduced price, this field shows the base price
 charged after campaignLength.
 
-* Data format: [duration](../common/dataformats.md#duration)
+* Data format: [price](../common/dataformats.md#price)
 * Optional (Mandatory if campaignLength is set)
 
 ##### products.offerings.marketingInformation.campaignCodes
