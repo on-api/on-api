@@ -291,11 +291,8 @@ Content-Type: application/json
 
 ```JSON
 {
-  "accessId": "8732c2f065e2490babce820e94b1011a",
-  "service": "BB-1000-100",
   "operation": "DEACTIVATE",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
-  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "requestedDateTime": "2019-02-05T00:00:00Z"
 }
 ```
@@ -304,22 +301,54 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417
+Location: /onapi/2.5/orders/0e5152dbbe424fb0b82e7ab177ed4ab1
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
-  "orderId": "f3f26446f6e8407aae876ea8e52d7417",
-  "accessId": "8732c2f065e2490babce820e94b1011a",
+  "path": "/onapi/2.5/orders/0e5152dbbe424fb0b82e7ab177ed4ab1",
+  "orderId": "0e5152dbbe424fb0b82e7ab177ed4ab1",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
-  "service": "BB-1000-100",
   "operation": "DEACTIVATE",
   "state": "RECEIVED",
-  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-  "requestedDateTime": "2019-02-05T00:00:00Z",
   "expectedCompletionDate": "2019-02-05T00:00:01Z"
+}
+```
+
+#### Change service
+
+Request
+
+```HTTP
+POST /onapi/2.4/orders/ HTTP/1.1
+Content-Type: application/json
+```
+
+```JSON
+{
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "operation": "CHANGE",
+  "service": "BB-1000-1000"
+}
+```
+
+Response
+
+```HTTP
+HTTP/1.1 201 CREATED
+Location: /onapi/2.4/orders/8883168fb4354a189a164dc9a53522ba
+Content-Type: application/json
+```
+
+```JSON
+{
+  "path": "/onapi/2.5/orders/8883168fb4354a189a164dc9a53522ba",
+  "orderId": "8883168fb4354a189a164dc9a53522ba",
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "service": "BB-1000-1000",
+  "operation": "CHANGE",
+  "state": "DONE_SUCCESS"
 }
 ```
 
@@ -338,12 +367,44 @@ Content-Type: application/json
 
 ```JSON
 {
-  "accessId": "8732c2f065e2490babce820e94b1011a",
-  "service": "BB-1000-100",
   "operation": "SUSPEND",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
-  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "externalNote": "This is the reason I suspend you"
+}
+```
+
+```HTTP
+HTTP/1.1 201 CREATED
+Location: /onapi/2.4/orders/e52499d7ea1f4584a71d0a67addfb3aa
+Content-Type: application/json
+```
+
+```JSON
+{
+  "path": "/onapi/2.4/orders/e52499d7ea1f4584a71d0a67addfb3aa",
+  "orderId": "e52499d7ea1f4584a71d0a67addfb3aa",
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "operation": "SUSPEND",
+  "state": "DONE_SUCCESS",
+  "externalNote": "This is the reason I suspend you"
+}
+```
+
+### Resume a service
+
+This operation is only used to resume a service that is suspended.
+
+Request
+
+```HTTP
+POST /onapi/2.4/orders/ HTTP/1.1
+Content-Type: application/json
+```
+
+```JSON
+{
+  "operation": "RESUME",
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5"
 }
 ```
 
@@ -351,41 +412,23 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417
+Location: /onapi/2.4/orders/bd8ce555ee1d4983bc22fa4ec6937cf6
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
-  "orderId": "f3f26446f6e8407aae876ea8e52d7417",
-  "accessId": "8732c2f065e2490babce820e94b1011a",
+  "path": "/onapi/2.4/orders/bd8ce555ee1d4983bc22fa4ec6937cf6",
+  "orderId": "bd8ce555ee1d4983bc22fa4ec6937cf6",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
-  "service": "BB-1000-100",
-  "operation": "SUSPEND",
-  "state": "DONE_SUCCESS",
-  "forcedTakeover": false,
-  "equipment": [
-    {
-      "vendorId": "ACME-ROUTER",
-      "macAddress": "AA:BB:CC:11:22:33"
-    }
-  ],
-  "spReference": "a6cc5da980034948ba654ae6ceda03f4",
-  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
-  "characteristics": {
-    "fixedIp": true,
-    "ipAddress": [
-      "1.2.3.4"
-    ],
-    "SLA": "SLA-3"
-  }
+  "operation": "RESUME",
+  "state": "DONE_SUCCESS"
 }
 ```
 
 #### Modify a subscription
 
-Used to modify spReference and/or spSubscriptionId.
+Used to modify spReference and/or spSubscriptionId
 
 Request
 
@@ -407,15 +450,18 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417
+Location: /onapi/2.5/orders/64ff212a16dd42c09360a2bc683bfd8a
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
-  "orderId": "f3f26446f6e8407aae876ea8e52d7417",
-  "state": "DONE_SUCCESS"
+  "path": "/onapi/2.5/orders/64ff212a16dd42c09360a2bc683bfd8a",
+  "orderId": "64ff212a16dd42c09360a2bc683bfd8a",
+  "state": "DONE_SUCCESS",
+  "operation": "MODIFY",
+  "spReference": "a6cc5da980034948ba654ae6ceda03f4",
+  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac"
 }
 ```
 
@@ -431,11 +477,20 @@ Content-Type: application/json
 ```
 
 ```JSON
-{
+  {
+  "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "orderId": "f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
-  "service": "BB-1000-100",
+  "service": "BB-100-100",
   "operation": "ACTIVATE",
+  "forcedTakeover": false,
+  "equipment": [
+    {
+      "vendorId": "ACME-ROUTER",
+      "macAddress": "AA:BB:CC:11:22:33"
+    }
+  ],
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
   "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
   "requestedDateTime": "2019-02-05T00:00:00Z",
@@ -446,15 +501,14 @@ Content-Type: application/json
       "1.2.3.4"
     ],
     "SLA": "SLA-3"
-  },
-  "forcedTakeover": false,
-  "equipment": [
-    {
-      "vendorId": "ACME-ROUTER",
-      "macAddress": "AA:BB:CC:11:22:33"
-    }
-  ]
+  }
 }
+```
+
+Response
+
+```HTTP
+HTTP/1.1 204 No Content
 ```
 
 ### PATCH
@@ -501,18 +555,19 @@ HTTP/1.1 204 No Content
 ### orderId
 
 * Data format: ID
-* Mandatory in response
+* Required in response
 * Key for order
 
 ### path
 
 * API path for the specific order
-* Mandatory in response
+* Required in response
+* In response only
 
 ### accessId
 
 * Data format: ID
-* Mandatory
+* Required in response
 
 This field is a reference to accessId in the [accesses](accesses.md) API
 
@@ -521,36 +576,47 @@ This field is a reference to accessId in the [accesses](accesses.md) API
 The technical service offered by the CO. Listed in the [accesses](accesses.md) API
 
 * Data format: [service](../common/dataformats.md#service)
-* Mandatory
+* Required in response
 
 ### operation
 
 The type of operation this order is intended to perform.
 
 * Data format: [enumeration](../common/dataformats.md#enumeration)
+* Required in request and response
 
 **Values**
 
 * ACTIVATE
     * Activate a service
     * Creates a new subscription or active service
+    * Required fields in request
+        * [accessId](orders.md#accessid)
+        * [service](orders.md#service)
 * DEACTIVATE
     * Deactivate the service
     * Remove the subscription
+    * Required fields in request
+        * [subscriptionId](orders.md#subscriptionid)
 * SUSPEND
-    * Requires subscriptionId
     * Temporary suspend the service
     * Change subscription state to "SUSPENDED"
+    * Required fields in request
+        * [subscriptionId](orders.md#subscriptionid)
 * RESUME
-    * Requires subscriptionId
     * Resume a temporary suspended service
     * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
+    * Required fields in request
+        * [subscriptionId](orders.md#subscriptionid)
 * MODIFY
-    * Requires subscriptionId
     * Update a service with new parameters
+    * Required fields in request
+        * [subscriptionId](orders.md#subscriptionid)
 * CHANGE
-    * Requires subscriptionId
     * Change the current service type to a new service type
+    * Required fields in request
+        * [subscriptionId](orders.md#subscriptionid)
+        * [service](orders.md#service)
 
 ### requestedDateTime
 
@@ -558,35 +624,35 @@ Earliest date and time for the order to be executed. If date is omitted the orde
 the past is provided (current date is 2019-04-01 and provided date is 2019-03-28) order will be executed immediately.
 
 * Data format: [dateTime](../common/dataformats.md#datetime)
-* Optional
+* Required in response, if set
 
 ### expectedCompletionDate
 
 The date and time when the order is expected to be delivered. This is an estimated time.
 
 * Data format: [dateTime](../common/dataformats.md#datetime)
-* Response only
+* In response, if known
 
 ### spReference
 
 * Data format: [spReference](../common/dataformats.md#spreference)
-* Mandatory
+* Required in response, if set
 
 ### spSubscriptionId
 
 * Data format: [spSubscriptionId](../common/dataformats.md#spsubscriptionid)
-* Optional
+* Required in response, if set
 
 ### subscriptionId
 
 * Data format: [subscriptionId](../common/dataformats.md#subscriptionid)
-* Required for the operations SUSPEND, RESUME, MODIFY and CHANGE
-* Mandatory in response
+* Required in response
 
 ### externalNote
 
-Note that is formatted in such a way that it can be displayed to the end customer. Is used to inform the end customer of
-things like abuse blocks.
+Note that is formatted in such a way that it can be displayed to the end customer.
+
+* Required in response, if set
 
 * Data format: [text](../common/dataformats.md#text)
 
@@ -605,13 +671,11 @@ API responds with [forcedTakeoverPossible](accesses.md#servicesforcedtakeoverpos
 activated. If forcedTakeoverPossible is false this field must be omitted or be set to false.
 
 * Data format: boolean
-* Optional for operation "ACTIVATE"
 * Must be omitted or false if [forcedTakeoverPossible](accesses.md#servicesforcedtakeoverpossible) is false
 
 ### equipment
 
 * Data format: [equipment](../common/dataformats.md#equipment)
-* Optional
 
 ### state
 
@@ -624,5 +688,5 @@ The state of the order. This is returned from the communication operator.
 Can be used in the response to describe why the status is DONE_FAILED
 
 * Data format: [text](../common/dataformats.md#text)
-* Mandatory (but may be empty)
+* Required (but may be empty)
  
