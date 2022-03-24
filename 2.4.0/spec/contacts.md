@@ -20,7 +20,7 @@ POST /2.4/contacts/{ spReference }
 
 Request information with a ticket reference:
 ```http
-POST /2.4/contacts/{ spReference }
+POST /2.4/contacts/{ spTicketReference }
 
 {
   "spTicketReference": "123"
