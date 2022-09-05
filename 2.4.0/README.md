@@ -1,18 +1,20 @@
-## Table of contents
+## Table of content
 
-* [Changelog](changelog.md)
 * [Accesses](spec/accesses.md)
+* [Changelog](changelog.md)
 * [Data formats](common/dataformats.md)
 * [Endpoints](spec/endpoints.md)
-* [Responses](common/responses.md)
+* [Events](spec/events.md)
+* [Invoice specification](spec/invoice_specification.md)
 * [Option82 lookup](spec/option82_lookup.md)
 * [Order](spec/orders.md)
 * [Order events](spec/orderevents.md)
+* [Responses](common/responses.md)
 * [SP contacts](spec/contacts.md)
 * [Subscriptions - list active services](spec/subscriptions.md)
-* [Web portal - Forward customers to SP service portals](spec/web_portal.md)
-* [Tickets](spec/tickets.md)
 * [Technical information](spec/technical_info.md)
+* [Tickets](spec/tickets.md)
+* [Web portal - Forward customers to SP service portals](spec/web_portal.md)
  
 ## General guidelines
 

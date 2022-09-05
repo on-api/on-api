@@ -191,7 +191,14 @@ Examples
 
 References
  * [RFC 5952](https://tools.ietf.org/html/rfc5952)
- 
+
+### coID
+Identification of the communication operator.
+
+* May only concist of a-z, A-Z, 0-9, '-' and '.'
+* Matching regular expression [a-zA-Z0-9-.]+
+* Max length 32 characters
+
 ### dateTime
 Date and time according to ISO-8601 RFC-3339 in UTC time zone with up to 4 decimal places on seconds.
 

@@ -14,8 +14,17 @@ Response:
 HTTP/1.1 200 OK
 Content-Type: application/x-ldjson
 
-{ "service": "BB-1000-100", "accessId": "STTA0001", "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" }
-{ "service": "IPTV", "accessId": "STTA0001", "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" }
+[
+  {
+    "service":"BB-1000-100",
+    "accessId":"STTA0001",
+    "spReference":"WloKMvmArcCFiV679uhWpAAtNgyvHxma"
+  },
+  {
+    "service":"IPTV",
+    "accessId":"STTA0001",
+    "spReference":"WloKMvmArcCFiV679uhWpAAtNgyvHxma"
+  }
+]
 
 ```
-

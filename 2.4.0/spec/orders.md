@@ -4,15 +4,12 @@
 
 This API allows the service provider to activate, deactivate, suspend, resume, update and change services. Once an order
 is no longer in the state "RECEIVED" no changes can be made to that order.
-
+s
 ## States
 
-In the simplest implementation an order goes directly to DONE_SUCCESS or DONE_FAILED depending on if it is accepted or
-not. If an order goes to a queue it ends up in RECEIVED. If an order is RECEIVED changes can be made to it until it
-changes state. An order that is RECEIVED can also have the status checked and during processing the status can be
-IN_PROGRESS before reaching DONE_SUCCESS or DONE_FAILED.
+<img width="300" alt="Order states" src="https://user-images.githubusercontent.com/19879441/112462022-e26b6d00-8d60-11eb-869f-59accb033a11.PNG">
 
-## Operations
+## Operations 
 
 ### GET
 
@@ -281,6 +278,7 @@ Content-Type: application/json
 ```
 
 #### Deactivate a service
+Used to deactivate a service. Please note that it is recommended to place the order the same day with "requestedDateTime" one month in the future if the notice period is one month. 
 
 Request
 
@@ -409,6 +407,26 @@ Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
 Content-Type: application/json
 ```
 
+#### Modify a service
+Request
+```HTTP
+POST /onapi/2.4/orders/ HTTP/1.1
+Content-Type: application/json
+```
+```JSON
+{
+  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "operation": "MODIFY",
+  "spReference": "a6cc5da980034948ba654ae6ceda03f4",
+  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac"
+}
+```
+Response
+```HTTP
+HTTP/1.1 201 CREATED
+Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
+Content-Type: application/json
+```
 ```JSON
 {
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
@@ -479,8 +497,7 @@ HTTP/1.1 204 No Content
 ```
 
 ### DELETE
-
-Used to cancel an order for which the state is "RECEIVED".
+Used to cancel an order for which the state is "RECEIVED". Example: could be used to cancel a previous order with operation DEACTIVATE, if the end customer no longer wants to cancel his or hers subscription.
 
 Request
 
@@ -545,8 +562,8 @@ The type of operation this order is intended to perform.
     * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
 * MODIFY
     * Requires subscriptionId
-    * Update a service with new parameters
-* CHANGE
+    * Update a service with "spReference" and/or "spSubscriptionId"
+  * CHANGE
     * Requires subscriptionId
     * Change the current service type to a new service type
 
