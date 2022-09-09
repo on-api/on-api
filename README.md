@@ -18,5 +18,6 @@ An example is the manual order process, where the Service Provider must first ac
 
 ### Versions
 
+- [ON-API 2.5.0](2.5.0)
 - [ON-API 2.4.0](2.4.0)
 - [ON-API 2.3.1](2.3.1)
