@@ -15,7 +15,7 @@
 * [Option82 lookup](spec/option82_lookup.md)
 * [Order events](spec/orderevents.md)
 * [Orders](spec/orders.md)
-* [Subscriptions - list active services](spec/subscriptions.md)
+* [Subscriptions](spec/subscriptions.md)
 * [Technical information](spec/technical_info.md)
 * [Tickets](spec/tickets.md)
 
@@ -26,7 +26,7 @@
 * [Order](spec_sp/order.md)
 * [Order Notice](spec_sp/ordernotice.md)
 * [Products](spec_sp/products.md)
-* [Web portal - Forward customers to SP service portals](spec_sp/web_portal.md)
+* [Web portal](spec_sp/web_portal.md)
 
  
 ## General guidelines
