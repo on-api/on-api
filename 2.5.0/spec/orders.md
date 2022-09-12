@@ -550,7 +550,7 @@ The type of operation this order is intended to perform.
     * Update a service with new parameters
 * CHANGE
     * Requires subscriptionId
-    * Change the current service type to a new service type
+    * Change the current service to a new service
 
 ### requestedDateTime
 
