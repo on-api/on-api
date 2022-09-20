@@ -321,7 +321,7 @@ Content-Type: application/json
 Request
 
 ```HTTP
-POST /onapi/2.4/orders/ HTTP/1.1
+POST /onapi/2.5/orders/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -337,7 +337,7 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.4/orders/8883168fb4354a189a164dc9a53522ba
+Location: /onapi/2.5/orders/8883168fb4354a189a164dc9a53522ba
 Content-Type: application/json
 ```
 
@@ -377,13 +377,13 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.4/orders/e52499d7ea1f4584a71d0a67addfb3aa
+Location: /onapi/2.5/orders/e52499d7ea1f4584a71d0a67addfb3aa
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.4/orders/e52499d7ea1f4584a71d0a67addfb3aa",
+  "path": "/onapi/2.5/orders/e52499d7ea1f4584a71d0a67addfb3aa",
   "orderId": "e52499d7ea1f4584a71d0a67addfb3aa",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "operation": "SUSPEND",
@@ -399,7 +399,7 @@ This operation is only used to resume a service that is suspended.
 Request
 
 ```HTTP
-POST /onapi/2.4/orders/ HTTP/1.1
+POST /onapi/2.5/orders/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -414,13 +414,13 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.4/orders/bd8ce555ee1d4983bc22fa4ec6937cf6
+Location: /onapi/2.5/orders/bd8ce555ee1d4983bc22fa4ec6937cf6
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.4/orders/bd8ce555ee1d4983bc22fa4ec6937cf6",
+  "path": "/onapi/2.5/orders/bd8ce555ee1d4983bc22fa4ec6937cf6",
   "orderId": "bd8ce555ee1d4983bc22fa4ec6937cf6",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "operation": "RESUME",
