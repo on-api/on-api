@@ -563,7 +563,7 @@ The type of operation this order is intended to perform.
 * MODIFY
     * Requires subscriptionId
     * Update a service with "spReference" and/or "spSubscriptionId"
-  * CHANGE
+* CHANGE
     * Requires subscriptionId
     * Change the current service type to a new service type
 
