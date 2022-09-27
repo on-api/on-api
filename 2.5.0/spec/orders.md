@@ -616,7 +616,7 @@ The type of operation this order is intended to perform.
     * Required fields in request
         * [subscriptionId](orders.md#subscriptionid)
 * CHANGE
-    * Change the current service type to a new service type
+    * Change the current service to a new service
     * Required fields in request
         * [subscriptionId](orders.md#subscriptionid)
         * [service](orders.md#service)
