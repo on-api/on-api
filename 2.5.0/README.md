@@ -7,7 +7,7 @@
 * [Endpoints](common/endpoints.md)
 * [Responses](common/responses.md)
 
-### API's exposed by communication operators
+### Endpoints exposed by communication operators
 
 * [Accesses](spec/accesses.md)
 * [Events](spec/events.md)
@@ -19,7 +19,7 @@
 * [Technical information](spec/technical_info.md)
 * [Tickets](spec/tickets.md)
 
-### API's exposed by service providers
+### Endpoints exposed by service providers
 
 * [SP contacts](spec_sp/contacts.md)
 * [CO order](spec_sp/coorder.md)
