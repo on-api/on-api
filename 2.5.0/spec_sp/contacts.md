@@ -12,7 +12,7 @@ during activation. The CO must also provide either a `reason` or a `spTicketRefe
 Request information with a reason:
 
 ```http
-POST /2.4/contacts/{ spReference }
+POST /2.5/contacts/{ spReference }
 
 {
   "reason": "Reason for request"
@@ -22,7 +22,7 @@ POST /2.4/contacts/{ spReference }
 Request information with a ticket reference:
 
 ```http
-POST /2.4/contacts/{ spReference }
+POST /2.5/contacts/{ spReference }
 
 {
   "spTicketReference": "123"
@@ -64,4 +64,4 @@ Content-Type: application/json
 }
 ```
 
-For data format, see [data formats](../../2.4.0/common/dataformats.md)
+For data format, see [data formats](../../2.5.0/common/dataformats.md)
