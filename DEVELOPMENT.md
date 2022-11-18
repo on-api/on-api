@@ -1,61 +1,32 @@
 # Steering
+Open Network API is developed and maintained by representatives from the telecommunication industry.
+Responsibilities are divided into the following two groups:
 
-Parties and responsibilities
-#### Working Party
-Open group consisting of representatives from service providers, communication operators, citynets and system providers. Group responsibilities are
-  * Writing requirements for functionality according to the needs of the entire line of business
-  * Clarifying the needs of the company that one represents      
-      
-#### Technical Working Party
-Selected group consisting of representatives from service providers, communication operators, citynets and system providers. Group responsibilities are, based on requirements from Working Party as well as approved functionality by Steering Group,
-  * Continuous technical maintenance of workspaces (Github repositories and specifications, Slack etc.)
+### Working Group
+Open group consisting of representatives from, but not limited to, service providers, communication operators, citynets and system providers. 
+Group responsibilities:
+  * Development and maintenance of ON-API and other industry common projects
 
-##### Participants
-Peter Lundgren, Itux  
-Daniel Ericsson, Maintrac  
-Johannes Stenmark, Ownit  
-Teemu Frösén, Ownit  
-Joacim Wängdahl, Packetfront  
+### Steering Group
+Selected group consisting of representatives from Tjänsteleverantörsföreningen (Swedish Service Provider Association) and Svenska Stadsnätsföreningen (Swedish Citynet Association). 
+Group responsibilities:
+  * Management of projects and specfications driven by the companies involved in Swedish telecommunication industry
+  * Ensure that the working group has the tools needed for their work (software licenses etc.)
 
-#### Steering Group
-Selected group consisting of representatives from Tjänsteleverantörsföreningen and Svenska Stadsnätsföreningen. Group responsibilities are 
-  * Management of projects and specfications driven by the Swedish telecommunication companies (API, address, invoice)
-  * Approval and prioritizing requirements
-  * Ensure that the working group has the tools needed for their work (licenses, software etc.)
+# Process
+A summary of the workflow presented below. Anyone is able to create issues to the backlog, but the prioritization is done by the Working Group and Steering Group.
+All issues that are not included in the release of a version will be reviewed again when a new version is started.
 
-# Processes
+![image](/images/onapi_workflow.png)
 
-#### New API functionality
-1. Create issue and describe the suggested functionality, it's purpose and which version request applies to
-      1) Type: Enhancement
-      2) Priority: Low, Medium, High, Critical
-      3) Status: Available
-2. Working Party will complete suggestion or require completion from creator
-      1) Status: Review Needed
-3. Steering Group decides on suggestion
-      1) Milestone: version (if approved)
-      2) Status: Denied (if denied) and close issue
-      3) Priority: Low, Medium, High, Critical
-4. Technical Working Party manages issues approved by Steering Group
-      1) Status: In Progress
-5. Technical Working Party publishes changes
-      1) Status: Completed and close issue
-
-#### Maintenance of existing API functionality
-1. Create issue and describe the suggested functionality, it's purpose and which version request applies
-      1) Status: Available
-      2) Type: Bugfix, Maintenance
-      3) Priority: Low, Medium, High, Critical
-2. Working Party completes suggestion or requires completion from creator
-      1) Status: Review Needed
-3. Technical Working Party publishes changes
-      1) Status: Completed and close issue
-
-#### Other
-1. Create issue and describe the suggested functionality, it's purpose and intended recipient
-      1) Status: Available
-      2) Request type: Question, 
-      3) Priority: Low, Medium, High, Critical
-2. Working Party completes suggestion or requires completion from creator
-      1) Status: Review Needed
-3. Depending on the nature of the issue, the steps to follow will either be to approve by Steering Group or directly managed by Technical Working Group
+### Individual issue flow
+1. Create issue and describe the problem in detail, followed by a suggestion to how to solve it. 
+      1) Label: Type of issue & which endpoint(s) issue refers to
+2. Working Group and Steering Group decides on suggestion according to project workflow
+      1) Project: Version
+      2) Priority: Low, Medium, High
+      3) Size: Expected size of solution
+      4) Endpoint: Select endpoint that the issue applies to
+      5) Status: In progress
+3. Working Group creates a solution and publishes changes when new version is released
+      1) Status: Done and close issue
