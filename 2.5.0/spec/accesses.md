@@ -399,6 +399,7 @@ Specifies whether the end customer is required to have a separate contract with 
 Lists of deliverable services.
 
  * Data format: JSON array of JSON objects
+ * Mandatory
 
 ### services/service
 
