@@ -456,6 +456,12 @@ Content-Type: application/json
 }
 ```
 
+Response
+
+```HTTP
+HTTP/1.1 204 No Content
+```
+
 ### PATCH
 
 With patch it is possible to update an order for which the state is "RECEIVED", using only the changed part.
