@@ -11,7 +11,7 @@ access resides, available services, equipment and activated services.
 
 #### All accesses 
 ```HTTP
-accesses/ HTTP/1.1
+GET /onapi/2.4/accesses/ HTTP/1.1
 ```
 
 Response 
@@ -35,7 +35,7 @@ header from the previous response.
 
 Request
 ```HTTP
-accesses/ HTTP/1.1
+GET /onapi/2.4/accesses/ HTTP/1.1
 If-Modified-Since: Mon, 04 Feb 2019 18:12:33 GMT
 ```
 
