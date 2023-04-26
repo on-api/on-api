@@ -26,7 +26,7 @@ offeringId, the CO must provide the combination of both when placing orders.
 The request below is used to list all products and offerings made available by the SP in the CO network
 
 ```http
-GET products/
+GET /onapi/2.5/products/
 Content-Type: application/json
 ```
 
@@ -34,7 +34,7 @@ Add the "accessId" from the CO accesses API to list offerings available on the s
 The list shall only contain the offerings that the SP wants to deliver to the specific accessId. 
 
 ```http
-GET products/[accessId]
+GET /onapi/2.5/products/{accessId}
 Content-Type: application/json
 ```
 
@@ -47,7 +47,7 @@ available on the specific access.
 The "coProduct" is the same field as services/service specified in the CO endpoint [accesses API](../spec/accesses.md)
 
 ```http 
-POST products/[accessId]
+POST /onapi/2.5/products/{accessId}
 Content-Type: application/json
 ```
 
