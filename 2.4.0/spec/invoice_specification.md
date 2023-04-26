@@ -44,7 +44,9 @@ Content-Type: application/json
 ]
 ```
 
-A GET operation with a id from the previous list operation as key fetches the specification that invoice.
+#### Single invoice
+
+A GET operation with an `id` from the previous list operation as key fetches the specification for that invoice.
 
 ```HTTP
 GET /onapi/2.4/invoicespecification/201901 HTTP/1.1

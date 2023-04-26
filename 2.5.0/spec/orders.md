@@ -161,6 +161,8 @@ Content-Type: application/json
 
 #### Get a single order
 
+Use `orderId` as key.
+
 Request
 
 ```HTTP
@@ -430,7 +432,7 @@ Content-Type: application/json
 
 #### Modify a subscription
 
-Used to modify spReference and/or spSubscriptionId.
+Used to modify `spReference` and/or `spSubscriptionId`.
 
 Request
 
@@ -471,6 +473,7 @@ Content-Type: application/json
 ### PUT
 
 With put it is possible to update an order for which the state is "RECEIVED", using the complete object.
+Use `orderId` as key.
 
 Request
 
@@ -517,6 +520,7 @@ HTTP/1.1 204 No Content
 ### PATCH
 
 With patch it is possible to update an order for which the state is "RECEIVED", using only the changed part.
+Use `orderId` as key.
 
 Request
 
@@ -539,7 +543,7 @@ HTTP/1.1 204 No Content
 
 ### DELETE
 
-Used to cancel an order for which the state is "RECEIVED".
+Used to cancel an order for which the state is "RECEIVED". Use `orderId` as key.
 
 Request
 
@@ -692,4 +696,3 @@ Can be used in the response to describe why the status is DONE_FAILED
 
 * Data format: [text](../common/dataformats.md#text)
 * Required (but may be empty)
- 

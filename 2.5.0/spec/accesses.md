@@ -123,7 +123,7 @@ When all accesses or updates are requested the response contains a JSON-array wi
 
 #### Single access
 
-To get a single access use accessId as key. The single access contains details about activated services and the services
+To get a single access use `accessId` as key. The single access contains details about activated services and the services
  available for activation.
  
 Request
