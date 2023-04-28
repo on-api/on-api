@@ -480,7 +480,7 @@ With patch it is possible to update an order for which the state is "RECEIVED", 
 Request
 
 ```HTTP
-PUT /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+PATCH /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
 Content-Type: application/json
 ```
 
