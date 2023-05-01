@@ -314,6 +314,7 @@ Content-Type: application/json
 | linkSince                                     | string (iso8601)  | Timestamp when port changed status               |
 | speed                                         | string            | Configured speed                                 |
 | linkSpeed                                     | integer           | Link speed                                       |
+| adminDown                                     | bool              | Interface is administrative closed               |
 | configuredSpeed                               | list              | List of configured traffic shaping/policies      |
 | configuredSpeed.#.serviceType                 | string            | Service type                                     |
 | configuredSpeed.#.queue                       | string            | Queue index                                      |
