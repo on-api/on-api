@@ -47,7 +47,7 @@ Content-Type: application/json
 A GET operation with a id from the previous list operation as key fetches the specification that invoice.
 
 ```HTTP
-GET /onapi/2.4/invoicespecification/201901 HTTP/1.1
+GET /onapi/2.4/invoicespecification/{id} HTTP/1.1
 ```
 
 Response
