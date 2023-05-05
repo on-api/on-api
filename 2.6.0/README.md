@@ -15,7 +15,6 @@
 * [Option82 lookup](spec/option82_lookup.md)
 * [Order events](spec/orderevents.md)
 * [Orders](spec/orders.md)
-* [Services](spec/services.md)
 * [Subscriptions](spec/subscriptions.md)
 * [Technical information](spec/technical_info.md)
 * [Tickets](spec/tickets.md)
