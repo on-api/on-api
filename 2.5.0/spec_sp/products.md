@@ -26,7 +26,7 @@ offeringId, the CO must provide the combination of both when placing orders.
 The request below is used to list all products and offerings made available by the SP in the CO network
 
 ```http
-GET products/
+GET products/2.5/
 Content-Type: application/json
 ```
 

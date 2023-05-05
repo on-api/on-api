@@ -19,7 +19,7 @@ respond back with subscription and customer references.
 ## Request
 
 ```http
-POST activationnotice/ HTTP/1.1
+POST activationnotice/2.5/ HTTP/1.1
 Content-Type: application/json
 ```
 

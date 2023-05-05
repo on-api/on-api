@@ -35,7 +35,7 @@ end
 ## Request
 
 ```http
-POST order/ HTTP/1.1
+POST order/2.5 HTTP/1.1
 Content-Type: application/json
 ```
 
