@@ -79,6 +79,7 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "mduDistinguisher": "12121212",
     "outlet": "A-11-14",
     "population": "Hemsöhem",
+    "priceGroup": 0,
     "accessState": "CONNECTED",
     "coNetworkAgreement": "NOTREQUIRED",
     "coFiberConverter": "LASER_3001X_MK2",
@@ -123,6 +124,7 @@ When a single access is requested the response contains a single JSON-object.
   "mduDistinguisher": "12121212",
   "outlet": "A-11-14",
   "population": "Hemsöhem",
+  "priceGroup": 0,
   "accessState": "CONNECTED",
   "coNetworkAgreement": "NOTREQUIRED",
   "coFiberConverter": "LASER_3001X_MK2",
@@ -244,6 +246,14 @@ Describes a subset of all accesses. Used for grouping accesses together for comm
 
  * Data format: [text](../common/dataformats.md#text)
  * Optional
+
+##### priceGroup
+
+A price group  that this access is a part of. The value must be an integer larger or equal to 0 (unsigned integer). 
+The exact meaning and associated price list is defined by CO. 
+
+* Data format: [integer](../common/dataformats.md#integer)
+* Mandatory
 
 ### accessState
 
