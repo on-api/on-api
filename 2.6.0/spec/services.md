@@ -13,7 +13,7 @@ To get available services for a single access use accessId as key. The response 
  
 Request
 ```http
-GET /onapi/2.6/services/{accessId} HTTP/1.1
+GET /onapi/2.6/services/STTA0001 HTTP/1.1
 ```
 
 Response 

@@ -38,7 +38,7 @@ To get events the last event ID in the previous fetch is used as a parameter to 
 
 Request:
 ```http
-GET /onapi/2.6/orderevents/?since={event} HTTP/1.1
+GET /onapi/2.6/orderevents/?since=2a6d6432e59d11e39a523c970e806452 HTTP/1.1
 ```
 
 Response:

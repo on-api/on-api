@@ -34,7 +34,7 @@ Add the "accessId" from the CO accesses endpoint to list offerings available on 
 The list shall only contain the offerings that the SP wants to deliver to the specific accessId. 
 
 ```http
-GET /onapi/2.6/products/{accessId}
+GET /onapi/2.6/products/[accessId]
 Content-Type: application/json
 ```
 
@@ -47,7 +47,7 @@ available on the specific access.
 The "coProduct" is the same field as services/service specified in the CO endpoint [accesses endpoint](../spec/accesses.md)
 
 ```http 
-POST /onapi/2.6/products/{accessId}
+POST /onapi/2.6/products/[accessId]
 Content-Type: application/json
 ```
 

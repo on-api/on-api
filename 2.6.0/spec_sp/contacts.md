@@ -12,7 +12,7 @@ during activation. The CO must also provide either a `reason` or a `spTicketRefe
 Request information with a reason:
 
 ```http
-POST /onapi/2.6/contacts/{spReference}
+POST /onapi/2.6/contacts/{ spReference }
 
 {
   "reason": "Reason for request"
@@ -22,7 +22,7 @@ POST /onapi/2.6/contacts/{spReference}
 Request information with a ticket reference:
 
 ```http
-POST /onapi/2.6/contacts/{spReference}
+POST /onapi/2.6/contacts/{ spReference }
 
 {
   "spTicketReference": "123"
