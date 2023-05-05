@@ -238,6 +238,18 @@ Content-Type: application/json
       "1.2.3.4"
     ],
     "SLA": "SLA-3"
+  },
+  "customer": {
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "socialSecurityNumber": "192012317777",
+    "email": "donald@duck.com",
+    "phone": "031-119119",
+    "mobilePhone": "0123456789",
+    "street": "Mouse Road 100",
+    "zipCode": "10000",
+    "city": "Duckville",
+    "country": "Sweden"
   }
 }
 ```
@@ -692,4 +704,78 @@ Can be used in the response to describe why the status is DONE_FAILED
 
 * Data format: [text](../common/dataformats.md#text)
 * Required (but may be empty)
+
+### customer
+
+Can be sent to COs that require customer information.
+
+* Data format: JSON array of JSON objects
+* Mandatory if CO requires customer data, otherwise optional.
+* Note: CO that DO NOT require customer data should drop any incoming data if sent.
+* Note2: SP should develop settings to not send customer data to COs that do not require customer data.
+
+### customer/firstName
+
+Firstname of the customer
+
+ * Data format: [customerdetailsfirstname](../common/dataformats.md#customerdetailsfirstname)
  
+### customer/lastName
+
+Last name of the customer
+
+ * Data format: [customerdetailslastname](../common/dataformats.md#customerdetailslastname)
+ * Mandatory
+
+### customer/socialSecurityNumber
+
+Social security number of the customer
+
+ * Data format: [identitynumber](../common/dataformats.md#identitynumber)
+
+### customer/email
+
+Last name of the customer
+
+ * Data format: [customerdetailsemail](../common/dataformats.md#customerdetailsemail)
+ 
+ ### customer/phone
+
+Phone number of the customer
+
+ * Data format: [customerdetailsphone](../common/dataformats.md#customerdetailsphone)
+ 
+ ### customer/mobilePhone
+
+Mobile phone number of the customer
+
+ * Data format: [customerdetailsmobilephone](../common/dataformats.md#customerdetailsmobilephone)
+ 
+### customer/street
+
+Street address for post to the customer
+
+ * Data format: [customerdetailsinvoicedetailsstreetnumber](../common/dataformats.md#customerdetailsinvoicedetailsstreetnumber)
+ * Mandatory
+
+ ### customer/zipCode
+
+Zip code for post to the customer
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Note: By purpose not referencing [customerdetailsinvoicedetailspostalcode](../common/dataformats.md#customerdetailsinvoicedetailspostalcode) as customer might have address abroad violating the [postalCode](../common/dataformats.md#postalcode) syntax
+ * Mandatory
+
+ ### customer/city
+
+City for post to the customer
+
+ * Data format: [customerdetailsinvoicedetailscity](../common/dataformats.md#customerdetailsinvoicedetailscity)
+ * Mandatory
+
+ ### customer/country
+
+Country for post to the customer
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory if country is not Sweden 
