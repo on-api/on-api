@@ -1,5 +1,5 @@
 # Order Events API
-Path /2.5/orderevents/
+Path /2.6/orderevents/
 
 This API lists changes to orders. When an order state changes a event row is created that can be polled with this API. 
 The event list is immutable and shall not change after a event have been created.
@@ -10,7 +10,7 @@ The event list is immutable and shall not change after a event have been created
 
 #### All events
 ```http
-GET /onapi/2.5/orderevents/ HTTP/1.1
+GET /onapi/2.6/orderevents/ HTTP/1.1
 ```
 
 Response:
@@ -38,7 +38,7 @@ To get events the last event ID in the previous fetch is used as a parameter to 
 
 Request:
 ```http
-GET /onapi/2.5/orderevents/?since=2a6d6432e59d11e39a523c970e806452 HTTP/1.1
+GET /onapi/2.6/orderevents/?since=2a6d6432e59d11e39a523c970e806452 HTTP/1.1
 ```
 
 Response:
@@ -50,7 +50,7 @@ Content-Type: application/json
     {
         "event": "6b4f026bccf247efb39f22ec4b01c1be",
         "order": {
-            "path": "/api/2.5/orders/3393123ae59f11e393713c970e806452",
+            "path": "/api/2.6/orders/3393123ae59f11e393713c970e806452",
             "accessId": "STTA0002",
             "service": "BB-100-10",
             "operation": "ACTIVATE",

@@ -1,6 +1,6 @@
 # Accesses API
 
-Path /2.5/accesses/
+Path /2.6/accesses/
 
 The accesses API is used to get available access points. The accesses contain details about the address where the 
 access resides, available services, equipment and activated services. 
@@ -128,7 +128,7 @@ To get a single access use accessId as key. The single access contains details a
  
 Request
 ```http
-GET /onapi/2.5/accesses/STTA0001 HTTP/1.1
+GET /onapi/2.6/accesses/STTA0001 HTTP/1.1
 ```
 
 Response 

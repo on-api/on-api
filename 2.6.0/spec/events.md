@@ -1,6 +1,6 @@
 # Events
 
-Path: /onapi/2.5/events
+Path: /onapi/2.6/events
 
 Lists object changes. 
 
@@ -14,7 +14,7 @@ Events for the current second is omitted to ensure that events are not sent twic
 in the "If-Modified-Since" header that does not allow fractional seconds. 
 
 ```HTTP
-/onapi/2.5/events/ HTTP/1.1
+/onapi/2.6/events/ HTTP/1.1
 ```
 
 Response 
@@ -30,7 +30,7 @@ Last-Modified: Tue, 05 Feb 2019 13:03:15 GMT
     "type": "CREATE",
     "objectType": "order",
     "objectId": "b5314ed39557472098843fe0ab358069",
-    "path": "/onapi/2.5/order/b5314ed39557472098843fe0ab358069",
+    "path": "/onapi/2.6/order/b5314ed39557472098843fe0ab358069",
     "time": "2019-02-04T13:03:16.1252"
   },
   {
@@ -49,7 +49,7 @@ needs to be fairly lightweight on the API-server side to allow rapid requests.
 
 Request
 ```HTTP
-/onapi/2.5/events/ HTTP/1.1
+/onapi/2.6/events/ HTTP/1.1
 If-Modified-Since: Tue, 05 Feb 2019 13:03:15 GMT
 ```
 

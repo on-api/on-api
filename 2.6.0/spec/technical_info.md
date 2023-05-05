@@ -36,7 +36,7 @@ Example service types:
 
 
 **API Prefix:** `/tech` 
-eg: `domain.local/api/2.5/tech/access/equipment/423323449`
+eg: `domain.local/api/2.6/tech/access/equipment/423323449`
 
 Endpoints like leaseinfo should when empty return an empty array:
 ```http
@@ -62,7 +62,7 @@ Returns information about the customer-facing network element, eg. access switch
 
 Request:
 ```http
-GET /api/2.5/tech/{accessId}/access/hardware
+GET /api/2.6/tech/{accessId}/access/hardware
 ```
 
 Response when the network element is working as intended:
@@ -99,7 +99,7 @@ Fetch mac address table data from only the access interface.
 
 Request:
 ```http
-GET /api/2.5/tech/access/{accessId}/link/macaddresstable
+GET /api/2.6/tech/access/{accessId}/link/macaddresstable
 ```
 
 
@@ -131,7 +131,7 @@ Fetch lease data from the access interface.
 
 Request:
 ```http
-GET /api/2.5/tech/access/{accessId}/link/leaseinfo
+GET /api/2.6/tech/access/{accessId}/link/leaseinfo
 ```
 
 Response:
@@ -172,7 +172,7 @@ Fetch igmp snooping data from only the access interface.
 
 Request:
 ```http
-GET /api/2.5/tech/access/{accessId}/link/igmpsnooping/
+GET /api/2.6/tech/access/{accessId}/link/igmpsnooping/
 ```
 Response:
 ```http
@@ -206,7 +206,7 @@ Fetch access equipment access interface status.
 
 Request:
 ```http
-GET /api/2.5/tech/access/{accessId}/link/status
+GET /api/2.6/tech/access/{accessId}/link/status
 ```
 Response:
 ```http
@@ -327,7 +327,7 @@ Fetch full cpe state.
 
 Request:
 ```http
-GET /api/2.5/tech/cpe/{accessId}/status
+GET /api/2.6/tech/cpe/{accessId}/status
 ```
 Response:
 ```http
