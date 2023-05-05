@@ -164,7 +164,7 @@ Content-Type: application/json
 Request
 
 ```HTTP
-GET /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+GET /onapi/2.5/orders/{orderId} HTTP/1.1
 ```
 
 Response
@@ -475,7 +475,7 @@ With put it is possible to update an order for which the state is "RECEIVED", us
 Request
 
 ```HTTP
-PUT /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+PUT /onapi/2.5/orders/{orderId} HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -521,7 +521,7 @@ With patch it is possible to update an order for which the state is "RECEIVED", 
 Request
 
 ```HTTP
-PATCH /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+PATCH /onapi/2.5/orders/{orderId} HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -692,4 +692,3 @@ Can be used in the response to describe why the status is DONE_FAILED
 
 * Data format: [text](../common/dataformats.md#text)
 * Required (but may be empty)
- 
