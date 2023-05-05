@@ -1,4 +1,4 @@
-# Technical Info API
+# Technical Info endpoint
 
 ### Description
 
@@ -23,20 +23,20 @@ Example service types:
 # Specification
 ## Reference index
 ### access
-* GET [tech/access/{accessId}/hardware](#get-access-hardware)
-* GET [tech/access/{accessId}/link/macaddresstable](#get-access-link-macaddresstable)
-* GET [tech/access/{accessId}/link/leaseinfo](#get-access-link-leaseinfo)
-* GET [tech/access/{accessId}/link/igmpsnooping](#get-access-link-igmpsnooping)
-* GET [tech/access/{accessId}/link/status](#get-access-link-status)
+* GET [/onapi/2.6/tech/access/{accessId}/hardware](#get-access-hardware)
+* GET [/onapi/2.6/tech/access/{accessId}/link/macaddresstable](#get-access-link-macaddresstable)
+* GET [/onapi/2.6/tech/access/{accessId}/link/leaseinfo](#get-access-link-leaseinfo)
+* GET [/onapi/2.6/tech/access/{accessId}/link/igmpsnooping](#get-access-link-igmpsnooping)
+* GET [/onapi/2.6/tech/access/{accessId}/link/status](#get-access-link-status)
 
 ### cpe
-* GET [tech/cpe/{accessId}/status](#get-cpe-status)
+* GET [/onapi/2.6/tech/cpe/{accessId}/status](#get-cpe-status)
 
 ## Requirements
 
 
 **API Prefix:** `/tech` 
-eg: `domain.local/api/2.5/tech/access/equipment/423323449`
+eg: `/onapi/2.6/tech/access/equipment/423323449`
 
 Endpoints like leaseinfo should when empty return an empty array:
 ```http
@@ -62,7 +62,7 @@ Returns information about the customer-facing network element, eg. access switch
 
 Request:
 ```http
-GET /api/2.5/tech/{accessId}/access/hardware
+GET /onapi/2.6/tech/{accessId}/access/hardware
 ```
 
 Response when the network element is working as intended:
@@ -99,7 +99,7 @@ Fetch mac address table data from only the access interface.
 
 Request:
 ```http
-GET /api/2.5/tech/access/{accessId}/link/macaddresstable
+GET /onapi/2.6/tech/access/{accessId}/link/macaddresstable
 ```
 
 
@@ -131,7 +131,7 @@ Fetch lease data from the access interface.
 
 Request:
 ```http
-GET /api/2.5/tech/access/{accessId}/link/leaseinfo
+GET /onapi/2.6/tech/access/{accessId}/link/leaseinfo
 ```
 
 Response:
@@ -172,7 +172,7 @@ Fetch igmp snooping data from only the access interface.
 
 Request:
 ```http
-GET /api/2.5/tech/access/{accessId}/link/igmpsnooping/
+GET /onapi/2.6/tech/access/{accessId}/link/igmpsnooping/
 ```
 Response:
 ```http
@@ -206,7 +206,7 @@ Fetch access equipment access interface status.
 
 Request:
 ```http
-GET /api/2.5/tech/access/{accessId}/link/status
+GET /onapi/2.6/tech/access/{accessId}/link/status
 ```
 Response:
 ```http
@@ -327,7 +327,7 @@ Fetch full cpe state.
 
 Request:
 ```http
-GET /api/2.5/tech/cpe/{accessId}/status
+GET /onapi/2.6/tech/cpe/{accessId}/status
 ```
 Response:
 ```http

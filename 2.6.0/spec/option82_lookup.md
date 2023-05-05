@@ -1,14 +1,14 @@
-# DHCPv4 Option82 Lookup API
+# DHCPv4 Option82 Lookup endpoint
 
 ## Description
 
-The API enables service providers to lookup **access-id** using the **option82** from the DHCP log.
+The endpoint enables service providers to lookup **access-id** using the **option82** from the DHCP log.
 
-The DHCPv4 option82 from the DHCP log should be encoded in hex as is, without any parsing, before it is used in the API.
+The DHCPv4 option82 from the DHCP log should be encoded in hex as is, without any parsing, before it is used in the endpoint.
 
 ## Specification
 Request:
-<pre>GET /2.5/option82/<b>&lt;hex-encoded option82&gt;</b></pre>
+<pre>GET /onapi/2.6/option82/<b>&lt;hex-encoded option82&gt;</b></pre>
 
 Response:
 <pre>
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 Request:
 ```http
-GET /api/2.3.1/option82/5216010765746820302F31020B31302E31302E31302E3130
+GET /onapi/2.6/option82/5216010765746820302F31020B31302E31302E31302E3130
 ```
 
 Response:

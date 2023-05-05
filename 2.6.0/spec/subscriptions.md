@@ -1,6 +1,6 @@
-# Subscriptions API
+# Subscriptions endpoint
 
-Used to fetch a list of all active services or subscriptions from a CO belonging to the current SP.
+Used to fetch a list of all active subscriptions from a CO belonging to the current SP.
 
 ## Methods
 
@@ -9,13 +9,13 @@ Used to fetch a list of all active services or subscriptions from a CO belonging
 #### All subscriptions 
 Request:
 ```HTTP
-GET /api/2.5/subscriptions/
+GET /onapi/2.6/subscriptions/
 ```
 
 #### Subscriptions created or updated since a specific time
 Request:
 ```HTTP
-GET /api/2.5/subscriptions/
+GET /onapi/2.6/subscriptions/
 If-Modified-Since: Tue, 05 Feb 2019 14:03:15 GMT
 ```
 

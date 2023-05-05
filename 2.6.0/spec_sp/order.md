@@ -1,6 +1,6 @@
 # Order
 
-This API is used to order a product offering from the service provider. The service provider is responsible for the
+This endpoint is used to order a product offering from the service provider. The service provider is responsible for the
 delivery of the order.
 
 ## Usage
@@ -35,7 +35,7 @@ end
 ## Request
 
 ```http
-POST order/ HTTP/1.1
+POST /onapi/2.6/order/ HTTP/1.1
 Content-Type: application/json
 ```
 

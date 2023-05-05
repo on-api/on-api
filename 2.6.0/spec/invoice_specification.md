@@ -1,6 +1,6 @@
 # Invoice specification
 
- * Endpoint /2.5/invoicespecification/
+ * Endpoint /onapi/2.6/invoicespecification/
 
 This endpoint aims to provide the service provider (SP) with a specification of each billing item, this enables the SP 
 to follow up and verify the invoice and correct service delivery.
@@ -15,7 +15,7 @@ GET without a key lists all available invoice-specification periods.
 ### GET
 
 ```HTTP
-GET /onapi/2.5/invoicespecification/ HTTP/1.1
+GET /onapi/2.6/invoicespecification/ HTTP/1.1
 ```
 
 Response
@@ -47,7 +47,7 @@ Content-Type: application/json
 A GET operation with a id from the previous list operation as key fetches the specification that invoice.
 
 ```HTTP
-GET /onapi/2.5/invoicespecification/201901 HTTP/1.1
+GET /onapi/2.6/invoicespecification/201901 HTTP/1.1
 ```
 
 Response

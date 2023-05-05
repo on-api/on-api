@@ -1,22 +1,13 @@
 # Changelog
 
-## Changes since 2.4
+## Changes since 2.5
 
- * New API - [CO Order](spec_sp/coorder.md)
- * New API - [Order](spec_sp/order.md)
- * New API - [Order Notice](spec_sp/ordernotice.md)
- * New API - [Products](spec_sp/products.md)
- * Orders API - clarification on OPERATION and mandatory data
- * Accesses API
-   - services.connection is renamed to services.connectionDateTime
-   - services.connectionDateTime is now of the dataformat [dateTime](common/dataformats.md#datetime)
-   - services.available is renamed to services.availableDateTime
-   - services.availableDateTime is now of the dataformat [dateTime](common/dataformats.md#datetime)
-   - services.disconnection is renamed to services.disconnectionDateTime
-   - services.disconnectionDateTime is now of the dataformat [dateTime](common/dataformats.md#datetime)
- * Additions to dataformats
-   * [Integer](common/dataformats.md#integer)
-   * [CustomerDetails](common/dataformats.md#customerdetails)
-   * [File](common/dataformats.md#customerdetails)
-   * [Duration](common/dataformats.md#duration)
-   * [Price](common/dataformats.md#price)
+ * New Endpoint - [Service](spec/services.md)
+ * Accesses Endpoint
+   - services sub-part has been removed into its own endpoint [Service](spec/services.md)
+   - subscription sub-part has been removed into its own endpoint [Subscription](spec/subscriptions.md)
+ * Subscription Endpoint - Addition of get one subscription
+
+### Minor changes since 2.5
+ * Many endpoints was incorrectly labelled as APIs. It is one API with many endpoints.
+ * Added "/onapi/2.6/" to paths in examples where it was missed.

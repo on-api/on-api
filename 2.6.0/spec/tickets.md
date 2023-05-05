@@ -2,7 +2,7 @@
 
 ----------
 
-# Tickets API
+# Tickets endpoint
 
 
 ### Description
@@ -26,7 +26,7 @@ SP = Service Provider
 ## Requirements
 
 **API Prefix:** `/tickets` 
-eg: `domain.local/api/2.5/tickets/423323449`
+eg: `/onapi/2.6/tickets/423323449`
 
 ## Description on status
 
@@ -46,24 +46,24 @@ Fetch one or many tickets, able to filter by created timestamp or ticket status.
 
 Request all tickets:
 ```http
-GET /api/2.5/tickets
+GET /onapi/2.6/tickets
 ```
 
 Request ticket:
 ```http
-GET /api/2.5/tickets/{coTicketReference} 
+GET /onapi/2.6/tickets/{coTicketReference} 
 ```
 
 
 
 Request tickets modified after timestamp:
 ```http
-GET /api/2.5/tickets 
+GET /onapi/2.6/tickets 
 If-Modified-Since: Tue, 05 Feb 2019 14:03:15 GMT
 ```
 Request tickets with status IN_PROGRESS_CO:
 ```http
-GET /api/2.5/tickets?status=IN_PROGRESS_CO 
+GET /onapi/2.6/tickets?status=IN_PROGRESS_CO 
 ```
 
 | Header | Description |
@@ -162,7 +162,7 @@ Create at ticket.
 Request:
 
 ```http
-POST /api/2.5/tickets
+POST /onapi/2.6/tickets
 Content-Type: application/json
 
 {
@@ -220,7 +220,7 @@ Update ticket status and add comments to the ticket.
 This method is also used when closing a ticket.
 
 ```http
-PATCH /api/2.5/tickets/{coTicketReference}
+PATCH /onapi/2.6/tickets/{coTicketReference}
 Content-Type: application/json
 
 {

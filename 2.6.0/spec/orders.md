@@ -1,8 +1,8 @@
 # Orders
 
-* Endpoint /2.5/orders/
+* Endpoint /onapi/2.6/orders/
 
-This API allows the service provider to activate, deactivate, suspend, resume, update and change services. Once an order
+This endpoint allows the service provider to activate, deactivate, suspend, resume, update and change services. Once an order
 is no longer in the state "RECEIVED" no changes can be made to that order.
 
 ## States
@@ -23,7 +23,7 @@ Used to fetch placed orders.
 Request
 
 ```HTTP
-GET /onapi/2.5/orders/ HTTP/1.1
+GET /onapi/2.6/orders/ HTTP/1.1
 ```
 
 Response
@@ -36,7 +36,7 @@ Content-Type: application/json
 ```JSON
 [
   {
-    "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
     "orderId": "f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
     "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
@@ -70,7 +70,7 @@ Content-Type: application/json
 Request
 
 ```HTTP
-GET /onapi/2.5/orders/?accessId=8732c2f065e2490babce820e94b1011a HTTP/1.1
+GET /onapi/2.6/orders/?accessId=8732c2f065e2490babce820e94b1011a HTTP/1.1
 ```
 
 Response
@@ -83,7 +83,7 @@ Content-Type: application/json
 ```JSON
 [
   {
-    "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
     "orderId": "f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
     "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
@@ -117,7 +117,7 @@ Content-Type: application/json
 Request
 
 ```HTTP
-GET /onapi/2.5/orders/?state="RECEIVED" HTTP/1.1
+GET /onapi/2.6/orders/?state="RECEIVED" HTTP/1.1
 ```
 
 Response
@@ -130,7 +130,7 @@ Content-Type: application/json
 ```JSON
 [
   {
-    "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
+    "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
     "orderId": "f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
     "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
@@ -164,7 +164,7 @@ Content-Type: application/json
 Request
 
 ```HTTP
-GET /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+GET /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
 ```
 
 Response
@@ -176,7 +176,7 @@ Content-Type: application/json
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
@@ -213,7 +213,7 @@ Used to place a new order
 Request
 
 ```HTTP
-POST /onapi/2.5/orders/ HTTP/1.1
+POST /onapi/2.6/orders/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -246,13 +246,13 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417
+Location: /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
@@ -285,7 +285,7 @@ Content-Type: application/json
 Request
 
 ```HTTP
-POST /onapi/2.5/orders/ HTTP/1.1
+POST /onapi/2.6/orders/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -301,13 +301,13 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.5/orders/0e5152dbbe424fb0b82e7ab177ed4ab1
+Location: /onapi/2.6/orders/0e5152dbbe424fb0b82e7ab177ed4ab1
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/0e5152dbbe424fb0b82e7ab177ed4ab1",
+  "path": "/onapi/2.6/orders/0e5152dbbe424fb0b82e7ab177ed4ab1",
   "orderId": "0e5152dbbe424fb0b82e7ab177ed4ab1",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "operation": "DEACTIVATE",
@@ -321,7 +321,7 @@ Content-Type: application/json
 Request
 
 ```HTTP
-POST /onapi/2.5/orders/ HTTP/1.1
+POST /onapi/2.6/orders/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -337,13 +337,13 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.5/orders/8883168fb4354a189a164dc9a53522ba
+Location: /onapi/2.6/orders/8883168fb4354a189a164dc9a53522ba
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/8883168fb4354a189a164dc9a53522ba",
+  "path": "/onapi/2.6/orders/8883168fb4354a189a164dc9a53522ba",
   "orderId": "8883168fb4354a189a164dc9a53522ba",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-1000",
@@ -361,7 +361,7 @@ if possible.
 Request
 
 ```HTTP
-POST /onapi/2.5/orders/ HTTP/1.1
+POST /onapi/2.6/orders/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -377,13 +377,13 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.5/orders/e52499d7ea1f4584a71d0a67addfb3aa
+Location: /onapi/2.6/orders/e52499d7ea1f4584a71d0a67addfb3aa
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/e52499d7ea1f4584a71d0a67addfb3aa",
+  "path": "/onapi/2.6/orders/e52499d7ea1f4584a71d0a67addfb3aa",
   "orderId": "e52499d7ea1f4584a71d0a67addfb3aa",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "operation": "SUSPEND",
@@ -399,7 +399,7 @@ This operation is only used to resume a service that is suspended.
 Request
 
 ```HTTP
-POST /onapi/2.5/orders/ HTTP/1.1
+POST /onapi/2.6/orders/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -414,13 +414,13 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.5/orders/bd8ce555ee1d4983bc22fa4ec6937cf6
+Location: /onapi/2.6/orders/bd8ce555ee1d4983bc22fa4ec6937cf6
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/bd8ce555ee1d4983bc22fa4ec6937cf6",
+  "path": "/onapi/2.6/orders/bd8ce555ee1d4983bc22fa4ec6937cf6",
   "orderId": "bd8ce555ee1d4983bc22fa4ec6937cf6",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "operation": "RESUME",
@@ -435,7 +435,7 @@ Used to modify spReference and/or spSubscriptionId.
 Request
 
 ```HTTP
-POST /onapi/2.5/orders/ HTTP/1.1
+POST /onapi/2.6/orders/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -452,13 +452,13 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.5/orders/64ff212a16dd42c09360a2bc683bfd8a
+Location: /onapi/2.6/orders/64ff212a16dd42c09360a2bc683bfd8a
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/64ff212a16dd42c09360a2bc683bfd8a",
+  "path": "/onapi/2.6/orders/64ff212a16dd42c09360a2bc683bfd8a",
   "orderId": "64ff212a16dd42c09360a2bc683bfd8a",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "operation": "MODIFY",
@@ -475,13 +475,13 @@ With put it is possible to update an order for which the state is "RECEIVED", us
 Request
 
 ```HTTP
-PUT /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+PUT /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
 Content-Type: application/json
 ```
 
 ```JSON
 {
-  "path": "/onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417",
+  "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
@@ -521,7 +521,7 @@ With patch it is possible to update an order for which the state is "RECEIVED", 
 Request
 
 ```HTTP
-PATCH /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+PATCH /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -544,7 +544,7 @@ Used to cancel an order for which the state is "RECEIVED".
 Request
 
 ```HTTP
-DELETE /onapi/2.5/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+DELETE /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
 ```
 
 Response

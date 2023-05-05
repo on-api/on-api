@@ -1,25 +1,25 @@
 # Order Notice
 
-This API is intended to be used to notify the SP that the CO has activated a new SP product offering and corresponding
-CO transmission product. It is not possible to reject a subscription through this API. To disconnect a subscription that
-is unwanted, a DEACTIVATE order needs to be sent through the CO order API.
+This endpoint is intended to be used to notify the SP that the CO has activated a new SP product offering and corresponding
+CO transmission product. It is not possible to reject a subscription through this endpoint. To disconnect a subscription that
+is unwanted, a DEACTIVATE order needs to be sent through the CO order endpoint.
 
-The purpose of this API is to support integration paths used historically where the CO or external portal activates the
-CO transmission products and then notifies the SP, commonly via email. This API provides a more structured way to handle
-this in an automatic approach. This API allows exchanging subscription and customer references automatically.
+The purpose of this endpoint is to support integration paths used historically where the CO or external portal activates the
+CO transmission products and then notifies the SP, commonly via email. This endpoint provides a more structured way to handle
+this in an automatic approach. This endpoint allows exchanging subscription and customer references automatically.
 
 ## Usage
 
 The CO or external portal captures the order details on a given access, including selected product offering and customer
 information, and places an activation order to the CO. As part of handling the order, the CO or external portal sends an
 activation notice to the SP. The SP receives and validates the order, but is unable to reject the order directly in the
-response. If the order is unwanted, the SP must instead handle this through the CO order API. If order is OK, the SP may
+response. If the order is unwanted, the SP must instead handle this through the CO order endpoint. If order is OK, the SP may
 respond back with subscription and customer references.
 
 ## Request
 
 ```http
-POST activationnotice/ HTTP/1.1
+POST /onapi/2.6/activationnotice/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -68,7 +68,7 @@ The unique Id of the order on the CO side.
 
 ## coAccessId
 
-Identifies a single access in the CO population in the accesses API.
+Identifies a single access in the CO population in the accesses endpoint.
 
 * Data format: [accessId](../common/dataformats.md#accessid)
 * Mandatory

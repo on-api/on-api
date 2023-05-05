@@ -1,6 +1,6 @@
 # Products
 
-This API lists product offerings that are available to end customers and information about the service provider.
+This endpoint lists product offerings that are available to end customers and information about the service provider.
 
 The definition of product offerings include campaigns as well as standard offerings.
 
@@ -26,15 +26,15 @@ offeringId, the CO must provide the combination of both when placing orders.
 The request below is used to list all products and offerings made available by the SP in the CO network
 
 ```http
-GET products/
+GET /onapi/2.6/products/
 Content-Type: application/json
 ```
 
-Add the "accessId" from the CO accesses API to list offerings available on the specific access. 
+Add the "accessId" from the CO accesses endpoint to list offerings available on the specific access. 
 The list shall only contain the offerings that the SP wants to deliver to the specific accessId. 
 
 ```http
-GET products/[accessId]
+GET /onapi/2.6/products/[accessId]
 Content-Type: application/json
 ```
 
@@ -44,10 +44,10 @@ the CO has already performed a feasibility check and added the result in the req
 Given an array of CO transmission products, the service provider responds with a list of offerings 
 available on the specific access. 
 
-The "coProduct" is the same field as services/service specified in the CO endpoint [accesses API](../spec/accesses.md)
+The "coProduct" is the same field as services/service specified in the CO endpoint [accesses endpoint](../spec/accesses.md)
 
 ```http 
-POST products/[accessId]
+POST /onapi/2.6/products/[accessId]
 Content-Type: application/json
 ```
 
@@ -280,7 +280,7 @@ List of product relations between CO transmission products and SP end customer p
 List of coProducts associated to the product offering relation. The model supports bundled offerings, but may not always
 be supported by the CO, in which case these offerings will be discarded.
 
-The "coProduct" is the same field as services/service specified in the CO endpoint [accesses API](../spec/accesses.md)
+The "coProduct" is the same field as services/service specified in the CO endpoint [accesses endpoint](../spec/accesses.md)
 
 * Data format: JSON array of [text](../common/dataformats.md#text)
 * Mandatory, must contain at least one item

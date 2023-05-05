@@ -1,9 +1,9 @@
-# Endpoints API
+# Endpoints endpoint
 
-Path /2.5/
+Path /2.6/
 
-This API endpoint is mandatory. It is used to inform the consumer of the API of the available API endpoints and their 
-limitations. Can list legacy API endpoints for backwards compatibility.
+This endpoint is mandatory. It is used to inform the consumer of the API of the available API endpoints and their 
+limitations. Can list legacy endpoints for backwards compatibility.
 
 ## Operations
 
@@ -11,12 +11,12 @@ limitations. Can list legacy API endpoints for backwards compatibility.
 
 Request
 ```HTTP
-GET /onapi/2.5/ HTTP/1.1
+GET /onapi/2.6/ HTTP/1.1
 ```
 
 ```HTTP
 HTTP/1.1 200 OK
-Location: /onapi/2.5/
+Location: /onapi/2.6/
 Content-Type: application/json
 ```
 
@@ -24,25 +24,19 @@ Content-Type: application/json
 [
     {
         "name": "accesses",
-        "endpoint": "/onapi/2.5/accesses/",
-        "version": "2.5",
-        "documentation": "https://github.com/on-api/onapi-inprogress-2.5/blob/master/accesses.md"
+        "endpoint": "/onapi/2.6/accesses/",
+        "version": "2.6",
+        "documentation": "https://github.com/on-api/on-api/blob/master/2.6.0/spec/accesses.md"
     },
     { 
         "name": "order",
-        "endpoint": "/onapi/2.5/order/",
-        "version": "2.5",
-        "documentation": "https://github.com/on-api/onapi-inprogress-2.5/blob/master/orders.md",
+        "endpoint": "/onapi/2.6/order/",
+        "version": "2.6",
+        "documentation": "https://github.com/on-api/on-api/blob/master/2.6.0/spec/orders.md",
         "note": "Only supports direct activation, no scheduled orders",
         "unsupportedFields": [
           "requestedDateTime"
         ]
-    },
-    {
-        "name": "order",
-        "documentation": "https://github.com/on-api/on-api-release-2.3.1/blob/master/service_activation.md",
-        "endpoint": "https://example.com/onapi/2.5/opapi/2.3/order/",
-        "version": "2.3.1"
     }
 ]
 ```
@@ -50,21 +44,21 @@ Content-Type: application/json
 ## Fields
 
 ### name
-The name of the API.
+The name of the endpoint.
 
  * Mandatory
  * Data format: text
 
 ### endpoint
 
-URL or Path to the API endpoint. If the endpoint is on another server the full URL is used.
+URL or Path to the endpoint. If the endpoint is on another server the full URL is used.
 
  * Mandatory 
  * Data format: text
 
 Examples
- * /onapi/2.5/accesses/
- * https://example.com/onapi/2.5/accesses
+ * /onapi/2.6/accesses/
+ * https://example.com/onapi/2.6/accesses
 
 ### version
 Version number of the API
@@ -72,27 +66,28 @@ Version number of the API
  * Data format: text
 
 Examples
+ * 2.6
  * 2.5
  * 2.4
  * 2.3.1
 
 ### documentation
 
-URL to the documentation of the specific API endpoint.
+URL to the documentation of the specific endpoint.
 
  * Data format: URL
  * Mandatory
 
 ### note 
 
-Human readable notes about the API-endpoint.
+Human readable notes about the endpoint.
 
  * Data format: text
  * Optional
  
 ### unsupportedFields
 
-A list of fields that is not supported by the implementation of the API.
+A list of fields that is not supported by the implementation.
 
  * Data format: array of text
  * Optional

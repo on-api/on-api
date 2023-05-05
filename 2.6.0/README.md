@@ -40,6 +40,6 @@ The API URL must contain the API version number. The API subset must use the doc
 /[api version number]/[api endpoint]
 
 Examples: 
-   * https://server.com/onapi/2.5/accesses/
-   * https://server.com/2.5/accesses/ 
-   * https://server.com/some/longer/path/2.5/accesses/
+   * https://server.com/onapi/2.6/accesses/
+   * https://server.com/2.6/accesses/ 
+   * https://server.com/some/longer/path/2.6/accesses/

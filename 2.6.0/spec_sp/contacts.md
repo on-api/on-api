@@ -1,6 +1,6 @@
 # Contact information for end customers
 
-The API enables the CO to request contact information for an end customer from the SP.
+The endpoint enables the CO to request contact information for an end customer from the SP.
 
 ## Usage
 
@@ -12,7 +12,7 @@ during activation. The CO must also provide either a `reason` or a `spTicketRefe
 Request information with a reason:
 
 ```http
-POST /2.5/contacts/{ spReference }
+POST /onapi/2.6/contacts/{ spReference }
 
 {
   "reason": "Reason for request"
@@ -22,7 +22,7 @@ POST /2.5/contacts/{ spReference }
 Request information with a ticket reference:
 
 ```http
-POST /2.5/contacts/{ spReference }
+POST /onapi/2.6/contacts/{ spReference }
 
 {
   "spTicketReference": "123"
@@ -45,7 +45,7 @@ The reason for requesting this information.
 
 ### spTicketReference
 
-The spTicketReference, used for tracking, that was provided by the SP for a related ticket created via ON-API.
+The spTicketReference, used for tracking, that was provided by the SP for a related ticket created via ON-endpoint.
 
 * Data format: [text](../common/dataformats.md#text)
 * Mandatory if reason is not provided
@@ -64,4 +64,4 @@ Content-Type: application/json
 }
 ```
 
-For data format, see [data formats](../../2.5.0/common/dataformats.md)
+For data format, see [data formats](../common/dataformats.md)

@@ -1,9 +1,9 @@
-# Accesses API
+# Accesses Endpoint
 
-Path /2.5/accesses/
+Path /onapi/2.6/accesses/
 
-The accesses API is used to get available access points. The accesses contain details about the address where the 
-access resides, available services, equipment and activated services. 
+The accesses endpoint is used to get available accesses from a CO. The accesses contain details about the address where the 
+access resides and equipment. 
   
 ## Operations
 
@@ -11,7 +11,7 @@ access resides, available services, equipment and activated services.
 
 #### All accesses 
 ```HTTP
-accesses/ HTTP/1.1
+/onapi/2.6/accesses/ HTTP/1.1
 ```
 
 Response 
@@ -35,7 +35,7 @@ header from the previous response.
 
 Request
 ```HTTP
-accesses/ HTTP/1.1
+/onapi/2.6/accesses/ HTTP/1.1
 If-Modified-Since: Mon, 04 Feb 2019 18:12:33 GMT
 ```
 
@@ -128,7 +128,7 @@ To get a single access use accessId as key. The single access contains details a
  
 Request
 ```http
-GET /onapi/2.5/accesses/STTA0001 HTTP/1.1
+GET /onapi/2.6/accesses/STTA0001 HTTP/1.1
 ```
 
 Response 
