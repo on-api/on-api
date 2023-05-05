@@ -292,7 +292,7 @@ Content-Type: application/json
 ```JSON
 {
   "operation": "DEACTIVATE",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "requestedDateTime": "2019-02-05T00:00:00Z"
 }
 ```
@@ -310,6 +310,7 @@ Content-Type: application/json
   "path": "/onapi/2.6/orders/0e5152dbbe424fb0b82e7ab177ed4ab1",
   "orderId": "0e5152dbbe424fb0b82e7ab177ed4ab1",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "operation": "DEACTIVATE",
   "state": "RECEIVED",
   "expectedCompletionDate": "2019-02-05T00:00:01Z"
@@ -327,7 +328,7 @@ Content-Type: application/json
 
 ```JSON
 {
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "operation": "CHANGE",
   "service": "BB-1000-1000"
 }
@@ -346,6 +347,7 @@ Content-Type: application/json
   "path": "/onapi/2.6/orders/8883168fb4354a189a164dc9a53522ba",
   "orderId": "8883168fb4354a189a164dc9a53522ba",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "service": "BB-1000-1000",
   "operation": "CHANGE",
   "state": "DONE_SUCCESS"
@@ -368,7 +370,7 @@ Content-Type: application/json
 ```JSON
 {
   "operation": "SUSPEND",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "externalNote": "This is the reason I suspend you"
 }
 ```
@@ -386,6 +388,7 @@ Content-Type: application/json
   "path": "/onapi/2.6/orders/e52499d7ea1f4584a71d0a67addfb3aa",
   "orderId": "e52499d7ea1f4584a71d0a67addfb3aa",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "operation": "SUSPEND",
   "state": "DONE_SUCCESS",
   "externalNote": "This is the reason I suspend you"
@@ -406,7 +409,7 @@ Content-Type: application/json
 ```JSON
 {
   "operation": "RESUME",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5"
+  "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131"
 }
 ```
 
@@ -423,6 +426,7 @@ Content-Type: application/json
   "path": "/onapi/2.6/orders/bd8ce555ee1d4983bc22fa4ec6937cf6",
   "orderId": "bd8ce555ee1d4983bc22fa4ec6937cf6",
   "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "operation": "RESUME",
   "state": "DONE_SUCCESS"
 }
@@ -596,29 +600,31 @@ The type of operation this order is intended to perform.
     * Required fields in request
         * [accessId](orders.md#accessid)
         * [service](orders.md#service)
+        * [spSubscriptionId](orders.md#spsubscriptionid)
 * DEACTIVATE
     * Deactivate the service
     * Remove the subscription
     * Required fields in request
-        * [subscriptionId](orders.md#subscriptionid)
+        * [spSubscriptionId](orders.md#spsubscriptionid)
 * SUSPEND
     * Temporary suspend the service
     * Change subscription state to "SUSPENDED"
     * Required fields in request
-        * [subscriptionId](orders.md#subscriptionid)
+        * [spSubscriptionId](orders.md#spsubscriptionid)
 * RESUME
     * Resume a temporary suspended service
     * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
     * Required fields in request
-        * [subscriptionId](orders.md#subscriptionid)
+        * [spSubscriptionId](orders.md#spsubscriptionid)
 * MODIFY
     * Update a service with new parameters
     * Required fields in request
         * [subscriptionId](orders.md#subscriptionid)
+        * [spSubscriptionId](orders.md#spsubscriptionid)
 * CHANGE
     * Change the current service to a new service
     * Required fields in request
-        * [subscriptionId](orders.md#subscriptionid)
+        * [spSubscriptionId](orders.md#spsubscriptionid)
         * [service](orders.md#service)
 
 ### requestedDateTime
@@ -644,7 +650,7 @@ The date and time when the order is expected to be delivered. This is an estimat
 ### spSubscriptionId
 
 * Data format: [spSubscriptionId](../common/dataformats.md#spsubscriptionid)
-* Required in response, if set
+* Required
 
 ### subscriptionId
 
