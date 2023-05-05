@@ -12,3 +12,4 @@
 ### Minor changes since 2.5
  * Many endpoints was incorrectly labelled as APIs. It is one API (ON-api) with many endpoints (Accesses, Services, Subscriptions etc).
  * Added "/onapi/2.6/" to paths in examples where it was missed.
+ * Substituted Guids or strings of example values to instead specify the field used: for example GET /onapi/2.4/accesses/STTA0001 HTTP/1.1 was altered to GET /onapi/2.4/accesses/{accessId} HTTP/1.1 
