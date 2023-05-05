@@ -6,7 +6,6 @@
  * Accesses Endpoint
    - services sub-part has been removed into its own endpoint [Service](spec/services.md)
    - subscription sub-part has been removed into its own endpoint [Subscription](spec/subscriptions.md)
-   - Added priceGroup for CO price list management (new MANDATORY field)
  * Subscription Endpoint - Addition of get one subscription
 
 ### Minor changes since 2.5
