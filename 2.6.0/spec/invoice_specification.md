@@ -150,16 +150,16 @@ Content-Type: application/json
 | address/apartmentNumber         | Address: Apartment number     | [accesses/apartmentNumber](accesses.md#mduapartmentnumber)         |
 | address/apartmentAddress        | Address: Apartment address    | [accesses/streetName](accesses.md#streetname)                      |
 | address/apartmentOutlet         | Address: Apartment outlet     | [accesses/streetName](accesses.md#streetname)                      |
-| address/population              | Population                    | [accesses/population](accesses.md#population)                      |
-| address/premisesType            | PremisesType                  | [accesses/premisestype](accesses.md#premisestype)                      |
-| address/priceGroup              | PriceGroup                    | [accesses/pricegroup](accesses.md#pricegroup)                      |
+| address/population              | Address: Population           | [accesses/population](accesses.md#population)                      |
+| address/premisesType            | Address: PremisesType         | [accesses/premisestype](accesses.md#premisestype)                      |
+| address/priceGroup              | Address: PriceGroup           | [accesses/pricegroup](accesses.md#pricegroup)                      |
 | subscription/serviceName        | Service: Service Name         | [subscription/service](subscriptions.md#service)                   |
 | subscription/serviceDescription | Service: Service Description  |                                                                    |
 | subscription/connectionDate     | Service: Connection Date      |                                                                    |
 | subscription/disconnectionDate  | Service: Disconnection Date   |                                                                    |
-| subscription/spReference        | Service Provider: referenceID | [spReference](../common/dataformats.md#spreference)                         |
+| subscription/spReference        | SP: referenceID               | [spReference](../common/dataformats.md#spreference)                         |
 | subscription/spSubscriptionId   | SP: SubscriptionID            | [subscription/spSubscriptionId](subscriptions.md#spsubscriptionid) |
-| subscription/coSubscriptionId   |                               | [subscription/subscriptionId](subscriptions.md#subscriptionid)     |
+| subscription/coSubscriptionId   | CO: SubscriptionID            | [subscription/subscriptionId](subscriptions.md#subscriptionid)     |
 | invoice/listPrice               | Invoice: List price           |                                                                    |
 | invoice/billingItem             | Invoice: Billing Item         |                                                                    |
 | invoice/rowType                 | Invoice: Row Type             |                                                                    |
