@@ -72,7 +72,10 @@ Content-Type: application/json
             "city": "Somecity",
             "apartmentNumber": 1012,
             "apartmentAddress": "apartment 15",
-            "apartmentOutlet": "ABC123"
+            "apartmentOutlet": "ABC123",
+            "population": "Test population",
+            "premisesType": "RESIDENTIAL_HOUSE",
+            "priceGroup": "0"
         },
         "subscription": {
             "serviceName": "Acme 100/10",
@@ -90,8 +93,7 @@ Content-Type: application/json
             "toDate": "2019-01-03",
             "creditAmount": "0",
             "invoicedAmount": "0"
-        },
-        "population": "Test population"
+        }
     },
     {
         "coID": "Somecity-net",
@@ -107,7 +109,10 @@ Content-Type: application/json
             "city": "Somecity",
             "apartmentNumber": null,
             "apartmentAddress": null,
-            "apartmentOutlet": null
+            "apartmentOutlet": null,
+            "population": "Test population",
+            "premisesType": "RESIDENTIAL_HOUSE",
+            "priceGroup": "1"
         },
         "subscription": {
             "serviceName": "Acme 100/10",
@@ -125,8 +130,7 @@ Content-Type: application/json
             "toDate": "2019-01-03",
             "creditAmount": "0",
             "invoicedAmount": "0"
-        },
-        "population": "Test population"
+        }
     }
 ]
 ```
@@ -136,7 +140,7 @@ Content-Type: application/json
 | API                             | TLF-specification             | Reference in ON-API                                                |
 |---------------------------------|-------------------------------|--------------------------------------------------------------------|
 | coID                            | coID                          |                                                                    |
-| serviceProvider/name            | Service Provider:Name         |                                                                    |
+| serviceProvider/name            | Service Provider: Name        |                                                                    |
 | address/accessID                | Address: accessID             | [accesses/accessId](accesses.md#accessid)                          |
 | address/streetName              | Address: Street Name          | [accesses/streetName](accesses.md#streetname)                      |
 | address/streetNumber            | Address: Street Number        | [accesses/streetNumber](accesses.md#streetnumber)                  |
@@ -146,6 +150,9 @@ Content-Type: application/json
 | address/apartmentNumber         | Address: Apartment number     | [accesses/apartmentNumber](accesses.md#mduapartmentnumber)         |
 | address/apartmentAddress        | Address: Apartment address    | [accesses/streetName](accesses.md#streetname)                      |
 | address/apartmentOutlet         | Address: Apartment outlet     | [accesses/streetName](accesses.md#streetname)                      |
+| address/population              | Population                    | [accesses/population](accesses.md#population)                      |
+| address/premisesType            | PremisesType                  | [accesses/premisestype](accesses.md#premisestype)                      |
+| address/priceGroup              | PriceGroup                    | [accesses/pricegroup](accesses.md#pricegroup)                      |
 | subscription/serviceName        | Service: Service Name         | [subscription/service](subscriptions.md#service)                   |
 | subscription/serviceDescription | Service: Service Description  |                                                                    |
 | subscription/connectionDate     | Service: Connection Date      |                                                                    |
@@ -160,7 +167,6 @@ Content-Type: application/json
 | invoice/toDate                  | Invoice: To Date              |                                                                    |
 | invoice/creditAmount            | Invoice: Credit amount        |                                                                    |
 | invoice/invoicedAmount          | Invoice: Invoiced amount      |                                                                    |
-| population                      | Population                    | [accesses/population](accesses.md#population)                      |
 
 
  
