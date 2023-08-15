@@ -39,7 +39,7 @@ Content-Type: application/json
     "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
     "orderId": "f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -86,7 +86,7 @@ Content-Type: application/json
     "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
     "orderId": "f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -133,7 +133,7 @@ Content-Type: application/json
     "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
     "orderId": "f3f26446f6e8407aae876ea8e52d7417",
     "accessId": "8732c2f065e2490babce820e94b1011a",
-    "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+    "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
     "service": "BB-1000-100",
     "operation": "ACTIVATE",
     "state": "RECEIVED",
@@ -179,7 +179,7 @@ Content-Type: application/json
   "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "state": "RECEIVED",
@@ -255,7 +255,7 @@ Content-Type: application/json
   "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-1000-100",
   "operation": "ACTIVATE",
   "state": "RECEIVED",
@@ -309,7 +309,7 @@ Content-Type: application/json
 {
   "path": "/onapi/2.6/orders/0e5152dbbe424fb0b82e7ab177ed4ab1",
   "orderId": "0e5152dbbe424fb0b82e7ab177ed4ab1",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "operation": "DEACTIVATE",
   "state": "RECEIVED",
@@ -346,7 +346,7 @@ Content-Type: application/json
 {
   "path": "/onapi/2.6/orders/8883168fb4354a189a164dc9a53522ba",
   "orderId": "8883168fb4354a189a164dc9a53522ba",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "service": "BB-1000-1000",
   "operation": "CHANGE",
@@ -387,7 +387,7 @@ Content-Type: application/json
 {
   "path": "/onapi/2.6/orders/e52499d7ea1f4584a71d0a67addfb3aa",
   "orderId": "e52499d7ea1f4584a71d0a67addfb3aa",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "operation": "SUSPEND",
   "state": "DONE_SUCCESS",
@@ -425,7 +425,7 @@ Content-Type: application/json
 {
   "path": "/onapi/2.6/orders/bd8ce555ee1d4983bc22fa4ec6937cf6",
   "orderId": "bd8ce555ee1d4983bc22fa4ec6937cf6",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "spSubscriptionId": "0a67ef5d-8edf-11ea-a59f-000c29f11131",
   "operation": "RESUME",
   "state": "DONE_SUCCESS"
@@ -445,10 +445,10 @@ Content-Type: application/json
 
 ```JSON
 {
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "operation": "MODIFY",
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
-  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac"
+  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac",
+  "newSpSubscriptionId": "d02925f0083b4f64993b365accfbb1ac"
 }
 ```
 
@@ -464,7 +464,7 @@ Content-Type: application/json
 {
   "path": "/onapi/2.6/orders/64ff212a16dd42c09360a2bc683bfd8a",
   "orderId": "64ff212a16dd42c09360a2bc683bfd8a",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "operation": "MODIFY",
   "state": "DONE_SUCCESS",
   "spReference": "a6cc5da980034948ba654ae6ceda03f4",
@@ -488,7 +488,7 @@ Content-Type: application/json
   "path": "/onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417",
   "orderId": "f3f26446f6e8407aae876ea8e52d7417",
   "accessId": "8732c2f065e2490babce820e94b1011a",
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
+  "coSubscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
   "service": "BB-100-100",
   "operation": "ACTIVATE",
   "forcedTakeover": false,
@@ -562,19 +562,19 @@ HTTP/1.1 204 No Content
 ### orderId
 
 * Data format: ID
-* Required in response
+* Mandatory in response
 * Key for order
 
 ### path
 
 * API path for the specific order
-* Required in response
+* Mandatory in response
 * In response only
 
 ### accessId
 
 * Data format: ID
-* Required in response
+* Mandatory in response
 
 This field is a reference to accessId in the [accesses](accesses.md) API
 
@@ -583,47 +583,46 @@ This field is a reference to accessId in the [accesses](accesses.md) API
 The technical service offered by the CO. Listed in the [accesses](accesses.md) API
 
 * Data format: [service](../common/dataformats.md#service)
-* Required in response
+* Mandatory in response
 
 ### operation
 
 The type of operation this order is intended to perform.
 
 * Data format: [enumeration](../common/dataformats.md#enumeration)
-* Required in request and response
+* Mandatory in request and response
 
 **Values**
 
 * ACTIVATE
     * Activate a service
     * Creates a new subscription or active service
-    * Required fields in request
+    * Mandatory fields in request
         * [accessId](orders.md#accessid)
         * [service](orders.md#service)
         * [spSubscriptionId](orders.md#spsubscriptionid)
 * DEACTIVATE
     * Deactivate the service
     * Remove the subscription
-    * Required fields in request
+    * Mandatory fields in request
         * [spSubscriptionId](orders.md#spsubscriptionid)
 * SUSPEND
     * Temporary suspend the service
     * Change subscription state to "SUSPENDED"
-    * Required fields in request
+    * Mandatory fields in request
         * [spSubscriptionId](orders.md#spsubscriptionid)
 * RESUME
     * Resume a temporary suspended service
     * Only for subscriptions state from "SUSPENDED" to "ACTIVE"
-    * Required fields in request
+    * Mandatory fields in request
         * [spSubscriptionId](orders.md#spsubscriptionid)
 * MODIFY
     * Update a service with new parameters
-    * Required fields in request
-        * [subscriptionId](orders.md#subscriptionid)
+    * Mandatory fields in request
         * [spSubscriptionId](orders.md#spsubscriptionid)
 * CHANGE
     * Change the current service to a new service
-    * Required fields in request
+    * Mandatory fields in request
         * [spSubscriptionId](orders.md#spsubscriptionid)
         * [service](orders.md#service)
 
@@ -633,7 +632,7 @@ Earliest date and time for the order to be executed. If date is omitted the orde
 the past is provided (current date is 2019-04-01 and provided date is 2019-03-28) order will be executed immediately.
 
 * Data format: [dateTime](../common/dataformats.md#datetime)
-* Required in response, if set
+* Mandatory in response, if set
 
 ### expectedCompletionDate
 
@@ -645,24 +644,23 @@ The date and time when the order is expected to be delivered. This is an estimat
 ### spReference
 
 * Data format: [spReference](../common/dataformats.md#spreference)
-* Required in response, if set
+* Mandatory in response, if set
 
 ### spSubscriptionId
 
 * Data format: [spSubscriptionId](../common/dataformats.md#spsubscriptionid)
-* Required
+* Mandatory
 
-### subscriptionId
+### coSubscriptionId
 
-* Data format: [subscriptionId](../common/dataformats.md#subscriptionid)
-* Required for the operations SUSPEND, RESUME, MODIFY and CHANGE
-* Required in response
+* Data format: [coSubscriptionId](../common/dataformats.md#cosubscriptionid)
+* Mandatory in response
 
 ### externalNote
 
 Note that is formatted in such a way that it can be displayed to the end customer.
 * Data format: [text](../common/dataformats.md#text)
-* Required in response, if set
+* Mandatory in response, if set
 
 Examples:
 
@@ -697,5 +695,5 @@ The state of the order. This is returned from the communication operator.
 Can be used in the response to describe why the status is DONE_FAILED
 
 * Data format: [text](../common/dataformats.md#text)
-* Required (but may be empty)
+* Mandatory (but may be empty)
  

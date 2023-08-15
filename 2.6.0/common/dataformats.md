@@ -278,12 +278,12 @@ Identifies a single access. Used as key when fetching a single access or when or
 * Data format: [ID](dataformats.md#id)
 * References: [accesses/accessId](../spec/accesses.md#accessid)
 
-### subscriptionId
+### coSubscriptionId
 
 The CO's ID for a single subscription.
 
 * Data format: [ID](dataformats.md#id)
-* References: [subscriptions/subscriptionId](../spec/subscriptions.md#subscriptionid)
+* References: [subscriptions/coSubscriptionId](../spec/subscriptions.md#cosubscriptionid)
 
 ### spReference
 
