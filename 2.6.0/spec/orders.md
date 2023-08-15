@@ -242,7 +242,9 @@ Content-Type: application/json
   "customer": {
     "firstName": "Donald",
     "lastName": "Duck",
+    "organizationName": null,
     "socialSecurityNumber": "192012317777",
+    "organizationNumber": null,
     "email": "donald@duck.com",
     "phone": "031-119119",
     "mobilePhone": "0123456789",
@@ -710,9 +712,8 @@ Can be used in the response to describe why the status is DONE_FAILED
 Can be sent to COs that require customer information.
 
 * Data format: JSON array of JSON objects
-* Mandatory if CO requires customer data, otherwise optional.
-* Note: CO that DO NOT require customer data should drop any incoming data if sent.
-* Note2: SP should develop settings to not send customer data to COs that do not require customer data.
+* Mandatory if CO requires customer data, otherwise prohibited.
+* Note: CO that DO NOT require customer data should throw an exception if incoming data if sent.
 
 ### customer/firstName
 
@@ -725,7 +726,12 @@ Firstname of the customer
 Last name of the customer
 
  * Data format: [customerdetailslastname](../common/dataformats.md#customerdetailslastname)
- * Mandatory
+ * Mandatory if customer is not a company
+
+### customer/organizationName
+
+ * Data format: [customerdetailsorganizationname](../common/dataformats.md#customerdetailsorganizationname)
+ * Mandatory if customer is a company
 
 ### customer/socialSecurityNumber
 
@@ -733,9 +739,16 @@ Social security number of the customer
 
  * Data format: [identitynumber](../common/dataformats.md#identitynumber)
 
+### customer/organizationNumber
+
+Organizational number of the customer if customer is a company
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Note: By purpose not referencing [customerdetailsorganizationnumber](../common/dataformats.md#customerdetailsorganizationnumber) as customer might not have a Swedish organization number violating the [identityNumber](../common/dataformats.md#identityNumber) syntax
+
 ### customer/email
 
-Last name of the customer
+Email of the customer
 
  * Data format: [customerdetailsemail](../common/dataformats.md#customerdetailsemail)
  
