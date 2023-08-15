@@ -385,7 +385,7 @@ Describes a subset of all accesses. Used for grouping accesses together for comm
 
 ##### priceGroup
 
-A price group  that this access is a part of. The value must be an integer larger or equal to 0 (unsigned integer). 
+A price group that this access is a part of. The value must be an integer larger or equal to 0 (unsigned integer). 
 The exact meaning and associated price list is defined by CO. 
 
 * Data format: [integer](../common/dataformats.md#integer)
