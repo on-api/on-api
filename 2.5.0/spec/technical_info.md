@@ -191,7 +191,7 @@ Content-Type: application/json
 | serviceType               | serviceType       | Service type for lease                |
 | start                     | string (iso8601)  | Starting timestamp of lease           |
 | end                       | string (iso8601)  | End timestamp of lease                |
-| lastRenew                 | string (iso8601)  | Timestam of last renew                |
+| lastRenew                 | string (iso8601)  | Timestamp of last renew               |
 
 
 <h3 id="get-access-link-igmpsnooping">GET access/{accessId}/link/igmpsnooping</h3>
