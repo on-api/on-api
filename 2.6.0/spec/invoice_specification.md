@@ -5,8 +5,12 @@
 This endpoint aims to provide the service provider (SP) with a specification of each billing item, this enables the SP 
 to follow up and verify the invoice and correct service delivery.
 
-The JSON format includes the fields specified in TLF_Faktura-specifikation-2018-02-23_final. 
-See [Fields](invoice_specification.md#fields) for references between the different formats.
+This specification is the master and makes the previous specification (TLF_Faktura-specifikation-2018-02-23_final) obsolete.
+
+### Excel option
+The response may be implemented in CO Software systems to allow an Excel export option. The Excel should then follow the field specification below replacing forward slash (/) with dot (.).
+Example: The column for the Address AccessID should be named "address.accessID".
+
 
 ## Methods
 
