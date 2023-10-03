@@ -220,13 +220,13 @@ Note: All child objects are defined and specified in the [subscriptions](subscri
  * Mandatory
 
 #### subscription/disconnectionDate
- * Mandatory
+ * Mandatory if disconnection date is set.
 
 #### subscription/spReference
- * Mandatory
+ * Mandatory if value exists.
 
 #### subscription/spSubscriptionId
- * Mandatory
+ * Mandatory if value exists.
 
 #### subscription/coSubscriptionId
  * Mandatory
