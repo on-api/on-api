@@ -1,5 +1,4 @@
 # Data formats
-# Data formats
 
 Within this document the conventions and formatting rules for all ON-API's are found. There are also descriptions of
 various data formats that are common for several API-endpoints.
@@ -12,7 +11,7 @@ Personal data should not be entered as any value unless the data format is speci
 
 Valid JSON values is expected.
 
-[ECMA-404 JSON Data Interchange format](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+[ECMA-404 JSON Data Interchange format](https://www.ecma-international.org/publications-and-standards/standards/ecma-404).
 
 A JSON value can be an object, array, number, string, true, false, or null.
 
@@ -78,6 +77,15 @@ Examples
 
 * 0
 * 5663
+
+### number
+
+Numeric decimal value, not enclosed in double quotes in JSON representation and separated with dot (.).
+
+Examples
+
+* 0.00
+* 5663.00
 
 ### enumeration
 

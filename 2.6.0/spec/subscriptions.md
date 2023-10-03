@@ -31,6 +31,8 @@ Content-Type: application/json
     "accessId": "8732c2f065e2490babce820e94b1011a",
     "service": "BB-1000-1000",
     "operationalState": "ACTIVATED",
+    "connectionDate": "2019-01-03",
+    "disconnectionDate": "",
     "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma",
     "spSubscriptionId": "b49797aaed934642bc8ae136b87ed12b",
     "option82": "52270123434F2D38373332633266303635653234393062616263653832306539346231303131610200",
@@ -51,6 +53,8 @@ Content-Type: application/json
     "accessId": "8732c2f065e2490babce820e94b1011a",
     "service": "IPTV",
     "operationalState": "ACTIVATED",
+    "connectionDate": "2019-01-03",
+    "disconnectionDate": "",
     "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma",
     "spSubscriptionId": "55498978c4c446d0bbc2ae347a61e78d",
     "option82": "52270123434F2D38373332633266303635653234393062616263653832306539346231303131610200",
@@ -92,7 +96,21 @@ Content-Type: application/json
 
  * Data format: [operationalState](../common/dataformats.md#operationalstate)
  * Mandatory
-  
+
+#### connectionDate
+
+Date when the subscription was activated.
+
+ * Data format: [date](../common/dataformats.md#date)
+ * Mandatory
+
+#### disconnectionDate
+
+Date when the subscription was deactivated.
+
+ * Data format: [date](../common/dataformats.md#date)
+ * Mandatory when date is set
+
 ### spReference
 
  * Data format: [ID](../common/dataformats.md#spreference)

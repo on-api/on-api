@@ -9,7 +9,7 @@ This specification is the master and makes the previous specification (TLF_Faktu
 
 ### Excel option
 The response may be implemented in CO Software systems to allow an Excel export option. The Excel should then follow the field specification below replacing forward slash (/) with dot (.).
-Example: The column for the Address AccessID should be named "address.accessID".
+Example: The column for the Access AccessID should be named "access.accessID".
 
 
 ## Methods
@@ -63,26 +63,25 @@ Content-Type: application/json
 ```JSON
 [
     {
-        "coID": "Somecity-net",
-        "serviceProvider": {
-            "name": "Acme"
-        },
-        "address": {
-            "accessID": "6748f377-0d01-49f9-ae62-f18c3a4f719b",
+        "coId": "Somecity-net",
+        "spName": "Acme",
+        "access": {
+            "accessId": "6748f377-0d01-49f9-ae62-f18c3a4f719b",
             "streetName": "Some street",
             "streetNumber": "6",
             "streetLittera": "A",
             "postalCode": "12345",
             "city": "Somecity",
-            "apartmentNumber": 1012,
-            "apartmentAddress": "apartment 15",
-            "apartmentOutlet": "ABC123",
+            "countryCode": "SE",
+            "mduApartmentNumber": 1012,
+            "mduDistinguisher": "apartment 15",
+            "outlet": "ABC123",
             "population": "Test population",
             "premisesType": "RESIDENTIAL_HOUSE",
             "priceGroup": "0"
         },
         "subscription": {
-            "serviceName": "Acme 100/10",
+            "service": "Acme 100/10",
             "connectionDate": "2019-01-03",
             "disconnectionDate": "2019-01-03",
             "spReference": "5d014d56-e86e-4ffc-bdaf-4aaab9a4f4f1",
@@ -95,31 +94,29 @@ Content-Type: application/json
             "rowType": "PERIODIC_FEE",
             "fromDate": "2019-01-03",
             "toDate": "2019-01-03",
-            "creditAmount": "0",
             "invoicedAmount": "0"
         }
     },
     {
-        "coID": "Somecity-net",
-        "serviceProvider": {
-            "name": "Acme"
-        },
-        "address": {
-            "accessID": "8e81db10-f10a-430f-9bac-ec361306d809",
+        "coId": "Somecity-net",
+        "spName": "Acme",
+        "access": {
+            "accessId": "8e81db10-f10a-430f-9bac-ec361306d809",
             "streetName": "Some street",
             "streetNumber": "7",
-            "streetLittera": null,
+            "streetLittera": "",
             "postalCode": "12345",
             "city": "Somecity",
-            "apartmentNumber": null,
-            "apartmentAddress": null,
-            "apartmentOutlet": null,
+            "countryCode": "SE",
+            "mduApartmentNumber": "",
+            "mduDistinguisher": "",
+            "outlet": "",
             "population": "Test population",
             "premisesType": "RESIDENTIAL_HOUSE",
             "priceGroup": "1"
         },
         "subscription": {
-            "serviceName": "Acme 100/10",
+            "service": "Acme 100/10",
             "connectionDate": "2019-01-03",
             "disconnectionDate": "2019-01-03",
             "spReference": "2fce9449-44c2-4b2d-9c8c-e8a50bacd77c",
@@ -132,7 +129,6 @@ Content-Type: application/json
             "rowType": "PERIODIC_FEE",
             "fromDate": "2019-01-03",
             "toDate": "2019-01-03",
-            "creditAmount": "0",
             "invoicedAmount": "0"
         }
     }
@@ -141,38 +137,160 @@ Content-Type: application/json
 
 ## Fields
 
-| API                             | TLF-specification             | Reference in ON-API                                                |
-|---------------------------------|-------------------------------|--------------------------------------------------------------------|
-| coID                            | coID                          |                                                                    |
-| serviceProvider/name            | Service Provider: Name        |                                                                    |
-| address/accessID                | Address: accessID             | [accesses/accessId](accesses.md#accessid)                          |
-| address/streetName              | Address: Street Name          | [accesses/streetName](accesses.md#streetname)                      |
-| address/streetNumber            | Address: Street Number        | [accesses/streetNumber](accesses.md#streetnumber)                  |
-| address/streetLittera           | Address: Street Littera       | [accesses/streetLittera](accesses.md#streetlittera)                |
-| address/postalCode              | Address: Postal Code          | [accesses/postalCode](accesses.md#postalcode)                      |
-| address/city                    | Address: City                 | [accesses/city](accesses.md#city)                                  |
-| address/apartmentNumber         | Address: Apartment number     | [accesses/apartmentNumber](accesses.md#mduapartmentnumber)         |
-| address/apartmentAddress        | Address: Apartment address    | [accesses/streetName](accesses.md#streetname)                      |
-| address/apartmentOutlet         | Address: Apartment outlet     | [accesses/streetName](accesses.md#streetname)                      |
-| address/population              | Address: Population           | [accesses/population](accesses.md#population)                      |
-| address/premisesType            | Address: PremisesType         | [accesses/premisestype](accesses.md#premisestype)                      |
-| address/priceGroup              | Address: PriceGroup           | [accesses/pricegroup](accesses.md#pricegroup)                      |
-| subscription/serviceName        | Service: Service Name         | [subscription/service](subscriptions.md#service)                   |
-| subscription/serviceDescription | Service: Service Description  |                                                                    |
-| subscription/connectionDate     | Service: Connection Date      |                                                                    |
-| subscription/disconnectionDate  | Service: Disconnection Date   |                                                                    |
-| subscription/spReference        | SP: referenceID               | [spReference](../common/dataformats.md#spreference)                         |
-| subscription/spSubscriptionId   | SP: SubscriptionID            | [subscription/spSubscriptionId](subscriptions.md#spsubscriptionid) |
-| subscription/coSubscriptionId   | CO: SubscriptionID            | [subscription/subscriptionId](subscriptions.md#subscriptionid)     |
-| invoice/listPrice               | Invoice: List price           |                                                                    |
-| invoice/billingItem             | Invoice: Billing Item         |                                                                    |
-| invoice/rowType                 | Invoice: Row Type             |                                                                    |
-| invoice/fromDate                | Invoice: From Date            |                                                                    |
-| invoice/toDate                  | Invoice: To Date              |                                                                    |
-| invoice/creditAmount            | Invoice: Credit amount        |                                                                    |
-| invoice/invoicedAmount          | Invoice: Invoiced amount      |                                                                    |
+General rules:
+
+ * Null is not a valid value for any field
+ * Mandatory fields cannot be empty string ("")
+
+### coId
+
+Name of the current CO.
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory
+
+ ### spName
+
+Name of the SP the specification is generated for.
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory
 
 
+### access 
+
+Information about the current access.
+Note: All child objects are defined and specified in the [accesses](accesses.md) endpoint and must follow data formats defined there.
+
+ * Data format: JSON array of JSON objects. 
+ * Mandatory
+
+#### access/accessId
+ * Mandatory
+
+#### access/streetName
+ * Mandatory
+
+#### access/streetNumber
+ * Optional
+
+#### access/streetLittera
+ * Optional
  
+#### access/postalCode
+ * Mandatory
+  
+#### access/city
+ * Mandatory
  
+#### access/countryCode
+ * Mandatory
+
+#### access/mduApartmentNumber
+ * Mandatory if premisesType is set to MDU_APARTMENT and mduDistinguisher is omitted
+
+#### access/mduDistinguisher
+ * Mandatory if premisesType is set to MDU_APARTMENT and mduApartmentNumber is omitted
+
+#### access/outlet
+ * Optional
+
+#### access/population
+ * Optional
+
+#### access/premisesType
+ * Mandatory
+
+#### access/priceGroup
+ * Mandatory
+
+
+### subscription 
+
+Information about the current subscription.
+Note: All child objects are defined and specified in the [subscriptions](subscriptions.md) endpoint and must follow data formats defined there.
+
+ * Data format: JSON array of JSON objects. 
+ * Mandatory
+
+#### subscription/service
+ * Mandatory
+
+#### subscription/connectionDate
+ * Mandatory
+
+#### subscription/disconnectionDate
+ * Mandatory
+
+#### subscription/spReference
+ * Mandatory
+
+#### subscription/spSubscriptionId
+ * Mandatory
+
+#### subscription/coSubscriptionId
+ * Mandatory
+
+
+### invoice 
+
+Information about the current subscription's invoice items.
+
+ * Data format: JSON array of JSON objects. 
+ * Mandatory
+
+#### invoice/listPrice
+
+The standard price fot the item.
+
+ * Data format: [number](../common/dataformats.md#number)
+ * Mandatory
+
+#### invoice/billingItem
+
+Invoiced transmission product name.
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Mandatory
+
+#### invoice/rowType
+
+An enumeration of the type the current invoice item.
+
+ * Data format: [enumeration](../common/dataformats.md#enumeration)
+ * Mandatory
  
+**Valid values**
+| Enumeration Value | Specification |
+|---------------------------------|-------------------------------|
+| PERIODIC_FEE | Normal (standard) periodic fee |
+| PARTIAL_PERIODIC_FEE | Used when a the invoiced period is less than a full invoice period or when listPrice has changed during the period. |
+| START_FEE | One time start fee |
+| UPGRADE_FEE | One time upgrade fee |
+| DOWNGRADE_FEE | One time downgrade fee |
+| MOVE_FEE | One time move fee |
+| END_FEE | One time end/termination fee |
+
+#### invoice/fromDate
+
+Transmission product invoiced from this date.
+
+ * Data format: [date](../common/dataformats.md#date)
+ * Mandatory
+
+#### invoice/toDate
+
+Transmission product invoiced to this date.
+
+ * Data format: [date](../common/dataformats.md#date)
+ * Mandatory
+
+
+#### invoice/invoicedAmount
+
+The calculated sum for the specific transmission product, rowType and dates that CO intends to invoice SP.
+If positive number then it is a debet sum.
+If negative number then it is a credit sum.
+ 
+ * Data format: [number](../common/dataformats.md#number)
+ * Mandatory
