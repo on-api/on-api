@@ -91,10 +91,11 @@ Content-Type: application/json
         "invoice": {
             "listPrice": "0",
             "billingItem": "Acme 100/10",
+            "invoiceType": "DEBET",
             "rowType": "PERIODIC_FEE",
             "fromDate": "2019-01-03",
             "toDate": "2019-01-03",
-            "invoicedAmount": "0"
+            "invoicedAmount": "200"
         }
     },
     {
@@ -126,10 +127,12 @@ Content-Type: application/json
         "invoice": {
             "listPrice": "0",
             "billingItem": "Acme 100/10",
+            "invoiceType": "CREDIT",
             "rowType": "PERIODIC_FEE",
             "fromDate": "2019-01-03",
             "toDate": "2019-01-03",
-            "invoicedAmount": "0"
+            "invoicedAmount": "-100",
+            "comment": "Credit due to wrong port connected"
         }
     }
 ]
@@ -253,7 +256,7 @@ Invoiced transmission product name.
  * Data format: [text](../common/dataformats.md#text)
  * Mandatory
 
-#### invoice/rowType
+#### invoice/invoiceType
 
 An enumeration of the type the current invoice item.
 
@@ -263,13 +266,30 @@ An enumeration of the type the current invoice item.
 **Valid values**
 | Enumeration Value | Specification |
 |---------------------------------|-------------------------------|
+| DEBET | Normal invoice row |
+| CREDIT | Credit invoice row. Should be used with a specification in Comment |
+
+#### invoice/rowType
+
+An enumeration of the type of fee for the current invoice item.
+
+ * Data format: [enumeration](../common/dataformats.md#enumeration)
+ * Mandatory
+ 
+**Valid values**
+| Enumeration Value | Specification |
+|---------------------------------|-------------------------------|
 | PERIODIC_FEE | Normal (standard) periodic fee |
-| PARTIAL_PERIODIC_FEE | Used when a the invoiced period is less than a full invoice period or when listPrice has changed during the period. |
+| PARTIAL_PERIODIC_FEE | Used when a the invoiced period is less than a full invoice period or when listPrice has changed during the period |
+| USAGE_FEE | Periodic fee for metered subscriptions |
+| TRANSMISSION_FEE | Periodic transmission (fixed) fee |
 | START_FEE | One time start fee |
 | UPGRADE_FEE | One time upgrade fee |
 | DOWNGRADE_FEE | One time downgrade fee |
 | MOVE_FEE | One time move fee |
 | END_FEE | One time end/termination fee |
+| TROUBLESHOOTING_FEE | One time troubleshooting fee |
+| OTHER | Other fees not matching any of the above. Should be used with a specification in Comment |
 
 #### invoice/fromDate
 
@@ -294,3 +314,10 @@ If negative number then it is a credit sum.
  
  * Data format: [number](../common/dataformats.md#number)
  * Mandatory
+
+#### invoice/comment
+
+Free text comment. Should be used with invoiceType CREDIT and for rowType OTHER.
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Optional
