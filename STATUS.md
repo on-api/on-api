@@ -16,7 +16,7 @@ To update your company's status, or if your company is not on the list, send a p
 |Falu Energi & Vatten| Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 | Q3 2020 |
 |Fibra| Yes | Yes | Yes | No | Yes | No | No | No | No |
 |IP-Only| | | | | | | | | |
-|Itux| Yes | Yes | Q4 2023 | | | | Yes | | |
+|Itux| Yes | Yes | Yes | | | | Yes | | |
 |Lunet| | | | | | | | | |
 |Utsikt| Q3 2021 | Q3 2021 | Q3 2021 | Q3 2021 | Q3 2021 | Q3 2021 | Q3 2021 | Q3 2021 | Q3 2021 |
 |Open Infra| Yes | Yes  | Yes  | | | | | Yes  | |
