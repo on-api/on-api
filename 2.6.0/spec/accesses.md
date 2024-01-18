@@ -80,6 +80,10 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "outlet": "A-11-14",
     "population": "Hemsöhem",
     "accessState": "CONNECTED",
+    "technicalStartDateTime": "1970-01-01T00:00:00Z",
+    "technicalEndDateTime": "2024-12-01T00:00:00Z",
+    "commercialStartDateTime": "1970-01-01T00:00:00Z",
+    "commercialEndDateTime": "2024-12-01T00:00:00Z",
     "coNetworkAgreement": "NOTREQUIRED",
     "services": [
       {
@@ -156,6 +160,10 @@ When a single access is requested the response contains a single JSON-object.
   "outlet": "A-11-14",
   "population": "Hemsöhem",
   "accessState": "CONNECTED",
+  "technicalStartDateTime": "1970-01-01T00:00:00Z",
+  "technicalEndDateTime": "2024-12-01T00:00:00Z",
+  "commercialStartDateTime": "1970-01-01T00:00:00Z",
+  "commercialEndDateTime": "2024-12-01T00:00:00Z",
   "coNetworkAgreement": "NOTREQUIRED",
   "services": [
     {
@@ -387,6 +395,34 @@ Describes the current state of whether the access is connected and can be used.
 
  * Data format: One of PLANNED, DEPLOYING, HOMESPASSED, CONNECTED, DISCONNECTED
  * Mandatory 
+
+### technicalStartDateTime
+
+Indicates when the access is technically deliverable for the first time. If you don't have a date when it was connected, you can specify the date as "1990-01-01T00:00:01Z". If you don't know when it will be connected, you can specify the date as "3030-12-12T00:00:01Z" for example.
+
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime)
+ * Mandatory
+
+### technicalEndDateTime
+
+Indicates when the access is technically deliverable for the last time.
+
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime)
+ * Optional
+
+### commercialStartDateTime
+
+Indicates when the access is commercially debitable for the first time. If you don't have a date , you can specify the date as "1990-01-01T00:00:01Z". If you don't know when it will be connected, you can specify the date as "3030-12-12T00:00:01Z" for example.
+
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime)
+ * Mandatory
+
+### commercialEndDateTime
+
+Indicates when the access is commercially debitable for the last time.
+
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime)
+ * Optional
 
 ### coNetworkAgreement
 
