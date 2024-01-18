@@ -81,6 +81,7 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "population": "Hemsöhem",
     "accessState": "CONNECTED",
     "coNetworkAgreement": "NOTREQUIRED",
+    "nationalAddressUUID": "1ce88c93-b310-11eb-bdc2-000c29f11131",
     "services": [
       {
         "service": "BB-100-100",
@@ -157,6 +158,7 @@ When a single access is requested the response contains a single JSON-object.
   "population": "Hemsöhem",
   "accessState": "CONNECTED",
   "coNetworkAgreement": "NOTREQUIRED",
+  "nationalAddressUUID": "1ce88c93-b310-11eb-bdc2-000c29f11131",
   "services": [
     {
       "service": "BB-1000-1000",
@@ -394,6 +396,14 @@ Specifies whether the end customer is required to have a separate contract with 
 
  * Data format: One of REQUIRED_NOT_VALID, REQUIRED_VALID, NOT_REQUIRED or empty string ""
  * Mandatory 
+
+### nationalAddressUUID
+
+Universally Unique Identifier (UUID) for the Address. May differ from country to country depending on national preferences. 
+Sweden: PTS (The Swedish Post and Telecom Authority) uses the [Lantmäteriet Real Property UUID](https://www.lantmateriet.se/en/geodata/geodata-products/product-list/real-property-information-download/)
+
+ * Data format: [uuid](../common/dataformats.md#uuid)
+ * Required
 
 ### services 
 Lists of deliverable services.
