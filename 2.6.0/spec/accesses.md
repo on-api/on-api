@@ -385,7 +385,7 @@ Describes a subset of all accesses. Used for grouping accesses together for comm
 
 Describes the current state of whether the access is connected and can be used.
 
- * Data format: One of PLANNED, DEPLOYING, HOMESPASSED, CONNECTED, DISCONNECTED
+ * Data format: One of PLANNED, DEPLOYING, PASSED, CONNECTED, DISCONNECTED
  * Mandatory 
 
 ### coNetworkAgreement
