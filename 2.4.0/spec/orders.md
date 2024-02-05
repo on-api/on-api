@@ -4,7 +4,6 @@
 
 This API allows the service provider to activate, deactivate, suspend, resume, update and change services. Once an order
 is no longer in the state "RECEIVED" no changes can be made to that order.
-s
 ## States
 
 <img width="300" alt="Order states" src="https://user-images.githubusercontent.com/19879441/112462022-e26b6d00-8d60-11eb-869f-59accb033a11.PNG">
@@ -62,7 +61,7 @@ Content-Type: application/json
 ]
 ```
 
-#### Get all orders pertaining a specific acccessId
+#### Get all orders pertaining a specific accessId
 
 Request
 
