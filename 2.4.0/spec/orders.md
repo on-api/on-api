@@ -61,7 +61,7 @@ Content-Type: application/json
 ]
 ```
 
-#### Get all orders pertaining a specific acccessId
+#### Get all orders pertaining a specific accessId
 
 Request
 
