@@ -390,6 +390,7 @@ The exact meaning and associated price list is defined by CO.
 
 * Data format: [integer](../common/dataformats.md#integer)
 * Mandatory
+* Default value: 0. The default price list has the number 0 and 0 should only be used for that.
 
 ### accessState
 
