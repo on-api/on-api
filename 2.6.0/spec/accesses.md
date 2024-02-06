@@ -342,10 +342,12 @@ Premises type describes the type of building/premises of the access.
 **Valid values**
  * COMMERCIAL Offices, stores, municipality buildings
  * MDU_APARTMENT Apartment in a apartment building (multi dwelling unit)
+ * MDU_APARTMENT_HOLIDAY Apartment in a apartment building (multi dwelling unit) typed as a holiday home
  * MDU_COMMON  Common area in a apartment building (multi dwelling unit)
  * MDU_TECHNICAL Machine room or space intended for technical equipment
  * PUBLIC Location where the public has access
- * RESIDENTIAL_HOUSE Single family house (single dwelling unit)
+ * SDU Single dwelling unit. It could be a single residential (family) house or an unit directly connected without on-premise access switch, in effect everyhing opposite to MDU
+ * SDU_HOLIDAY Single dwelling unit typed as a holiday home
  * UNKNOWN Unknown, preferably not used
 
 ### mduApartmentNumber
