@@ -128,7 +128,7 @@ To get a single access use accessId as key. The single access contains details a
  
 Request
 ```http
-GET /onapi/2.4/accesses/STTA0001 HTTP/1.1
+GET /onapi/2.4/accesses/{accessId} HTTP/1.1
 ```
 
 Response 
