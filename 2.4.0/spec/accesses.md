@@ -305,7 +305,7 @@ is "550-70".
  * Numeric or meter's address
  * Matching regular expression ^(([0-9]+)|([0-9]{1,4}-[0-9]{1,4}))$
 
-See [lantmateriets guide (swedish)](https://www.lantmateriet.se/contentassets/45acf232634c44c1a47c5ebcb7598e07/handbok_adress.pdf) 
+See [lantmateriets guide (swedish)](https://www.lantmateriet.se/globalassets/om-lantmateriet/var-samverkan-med-andra/byggnad-adress-lagenhet-och-topografi/handbok_belagenhetsadress.pdf) 
 for more information on meter's address 
 
 ### streetLittera
@@ -355,7 +355,7 @@ Used to distinguish between individual apartments in apartment buildings sharing
  * Data format: JSON number
  * Four digits
  * Matching regexp ^[0-9]{4}$
- * See [Lantmäteriet Apartmentnumber](https://www.lantmateriet.se/en/real-property/Fastighetsinformation/Lagenhetsregistret/apartment-register-content/)
+ * See [Lantmäteriet Apartmentnumber](https://www.lantmateriet.se/en/real-property/property-information-/real-property-register/contents-of-the-property-register/)
  * Mandatory if premisesType is set to MDU_APARTMENT and mduDistinguisher is omitted
 
 ### mduDistinguisher
