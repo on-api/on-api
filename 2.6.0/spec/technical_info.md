@@ -1,10 +1,10 @@
-# Technical Info endpoint
+# Technical Info API
 
 ### Description
 
 The information communicated is intended for troubleshooting purposes and is sourced from network elements.
 
-Technical decisions and data structure design are taken with regards to network element resource utilization, and to promote programmatic decision making. 
+Technical decisions and data structure design are taken with regards to network element resource utilization, and to promote programmatic decision making.
 
 Information should be sanitized or formatted in regard to keep data as raw as possible, but enabling a standardized way to communicate this data. For example converting timestamps in an unified manner, or translating vlan tags to service names.
 
@@ -23,20 +23,20 @@ Example service types:
 # Specification
 ## Reference index
 ### access
-* GET [/onapi/2.6/tech/access/{accessId}/hardware](#get-access-hardware)
-* GET [/onapi/2.6/tech/access/{accessId}/link/macaddresstable](#get-access-link-macaddresstable)
-* GET [/onapi/2.6/tech/access/{accessId}/link/leaseinfo](#get-access-link-leaseinfo)
-* GET [/onapi/2.6/tech/access/{accessId}/link/igmpsnooping](#get-access-link-igmpsnooping)
-* GET [/onapi/2.6/tech/access/{accessId}/link/status](#get-access-link-status)
+* GET [tech/access/{accessId}/hardware](#get-access-hardware)
+* GET [tech/access/{accessId}/link/macaddresstable](#get-access-link-macaddresstable)
+* GET [tech/access/{accessId}/link/leaseinfo](#get-access-link-leaseinfo)
+* GET [tech/access/{accessId}/link/igmpsnooping](#get-access-link-igmpsnooping)
+* GET [tech/access/{accessId}/link/status](#get-access-link-status)
 
 ### cpe
-* GET [/onapi/2.6/tech/cpe/{accessId}/status](#get-cpe-status)
+* GET [tech/cpe/{accessId}/status](#get-cpe-status)
 
 ## Requirements
 
 
-**API Prefix:** `/tech` 
-eg: `/onapi/2.6/tech/access/equipment/423323449`
+**API Prefix:** `/tech`
+eg: `domain.local/api/2.4/tech/access/equipment/423323449`
 
 Endpoints like leaseinfo should when empty return an empty array:
 ```http
@@ -62,7 +62,7 @@ Returns information about the customer-facing network element, eg. access switch
 
 Request:
 ```http
-GET /onapi/2.6/tech/{accessId}/access/hardware
+GET /api/2.4/tech/{accessId}/access/hardware
 ```
 
 Response when the network element is working as intended:
@@ -99,7 +99,7 @@ Fetch mac address table data from only the access interface.
 
 Request:
 ```http
-GET /onapi/2.6/tech/access/{accessId}/link/macaddresstable
+GET /api/2.4/tech/access/{accessId}/link/macaddresstable
 ```
 
 
@@ -120,10 +120,13 @@ Content-Type: application/json
 ]
 ```
 
-| Parameter | Type        | Description                                     |
-|-----------|-------------|-------------------------------------------------|
-| mac       | string (17) | Mac address of device                           |
-| serviceType   | string      | Which network service the mac originates from   |
+| Parameter     | Type              | Description                                           |
+|---------------|-------------------|-------------------------------------------------------|
+| mac           | string (17)       | Mac address of device                                 |
+| serviceType   | string            | Which network service the mac originates from         |
+| vlan          | integer           | Some services can exist on multiple vlans             |
+| port          | string            | Distinguish port, In case uplink mac's are included   |
+| learntAt      | string (iso8601)  | Some switches keep age of mac table entry             |
 
 <h3 id="get-access-link-leaseinfo">GET access/{accessId}/link/leaseinfo</h3>
 
@@ -131,7 +134,7 @@ Fetch lease data from the access interface.
 
 Request:
 ```http
-GET /onapi/2.6/tech/access/{accessId}/link/leaseinfo
+GET /api/2.4/tech/access/{accessId}/link/leaseinfo
 ```
 
 Response:
@@ -148,22 +151,47 @@ Content-Type: application/json
     "end": "2004-08-14T14:09:23Z"
   },
   {
-    "lease": "10.0.0.1",
-    "mac": "00:00:00:00:00:00",
+    "lease": "10.0.0.2",
+    "mac": "00:00:00:00:00:01",
     "serviceType": "iptv",
     "start": "2004-08-14T14:09:23Z",
     "end": "2004-08-14T14:09:23Z"
+  },
+  {
+    "lease": "198.51.100.95",
+    "mac": "00:11:22:aa:bb:cc",
+    "serviceType": "bb",
+    "start": "2022-01-25T09:52:27+00:00",
+    "end": "2022-02-10T08:33:39+00:00",
+    "lastRenew": "2022-02-10T08:13:39+00:00"
+  },
+  {
+    "lease": "2001:db8:c00f:4::2e/128",
+    "mac": "00:11:22:aa:bb:cc",
+    "serviceType": "bb",
+    "start": "2022-01-25T09:43:08+00:00",
+    "end": "2022-02-10T08:25:23+00:00",
+    "lastRenew": "2022-02-10T08:05:23+00:00"
+  },
+  {
+    "lease": "2001:db8:400:2a00::/56",
+    "mac": "00:11:22:aa:bb:cc",
+    "serviceType": "bb",
+    "start": "2022-01-25T09:43:08+00:00",
+    "end": "2022-02-10T08:25:23+00:00",
+    "lastRenew": "2022-02-10T08:05:23+00:00"
   }
 ]
 ```
 
-|Parameter|Type|Description|
-|--|--|--|
-|lease|ip|ip address|
-|mac|mac|mac address|
-|serviceType|serviceType|Service type for lease|
-|start|timestamp|Starting timestamp of lease|
-|end|timestamp|End timestamp of lease|
+| Parameter                 | Type              | Description                           |
+|---------------------------|-------------------|---------------------------------------|
+| lease                     | ip                | ipv4 address or ipv6 prefix           |
+| mac                       | mac               | MAC address                           |
+| serviceType               | serviceType       | Service type for lease                |
+| start                     | string (iso8601)  | Starting timestamp of lease           |
+| end                       | string (iso8601)  | End timestamp of lease                |
+| lastRenew                 | string (iso8601)  | Timestamp of last renew               |
 
 
 <h3 id="get-access-link-igmpsnooping">GET access/{accessId}/link/igmpsnooping</h3>
@@ -172,7 +200,7 @@ Fetch igmp snooping data from only the access interface.
 
 Request:
 ```http
-GET /onapi/2.6/tech/access/{accessId}/link/igmpsnooping/
+GET /api/2.4/tech/access/{accessId}/link/igmpsnooping/
 ```
 Response:
 ```http
@@ -206,7 +234,7 @@ Fetch access equipment access interface status.
 
 Request:
 ```http
-GET /onapi/2.6/tech/access/{accessId}/link/status
+GET /api/2.4/tech/access/{accessId}/link/status
 ```
 Response:
 ```http
@@ -243,7 +271,7 @@ Content-Type: application/json
       "counter": 30000,
       "timestamp": "2014-08-14T14:09:23Z"
     },
-    "lastFiveInput": { 
+    "lastFiveInput": {
       "packets": 100,
       "bytes": 10000,
     },
@@ -286,16 +314,17 @@ Content-Type: application/json
 | linkSince                                     | string (iso8601)  | Timestamp when port changed status               |
 | speed                                         | string            | Configured speed                                 |
 | linkSpeed                                     | integer           | Link speed                                       |
+| adminDown                                     | bool              | Interface is administrative closed               |
 | configuredSpeed                               | list              | List of configured traffic shaping/policies      |
-| configuredSpeed.#.serviceType                     | string            | Service type                                     |
+| configuredSpeed.#.serviceType                 | string            | Service type                                     |
 | configuredSpeed.#.queue                       | string            | Queue index                                      |
-| configuredSpeed.#.cir                         | string            | Committed rate                                    |
+| configuredSpeed.#.cir                         | string            | Committed rate                                   |
 | configuredSpeed.#.pir                         | string            | Peak rate                                        |
 | statistics.counterResetAt                     | string (iso8601)  | Timestamp when statistics counter was started    |
-| statistics.peakInputRate.counter                 | integer           | Bytes per second                                 |
-| statistics.peakInputRate.timestamp                   | string (iso8601)  | Timestamp of peak                                |
-| statistics.peakOutputRate.counter                | string            | Bytes per second                                 |
-| statistics.peakOutputRate.timestamp|string (iso8601) | Timestamp of peak |                                                  |
+| statistics.peakInputRate.counter              | integer           | Bytes per second                                 |
+| statistics.peakInputRate.timestamp            | string (iso8601)  | Timestamp of peak                                |
+| statistics.peakOutputRate.counter             | string            | Bytes per second                                 |
+| statistics.peakOutputRate.timestamp           | string (iso8601)  | Timestamp of peak                                |
 | statistics.lastFiveInput.packets              | integer           | Ingress count of packets last five minutes       |
 | statistics.lastFiveInput.bytes                | integer           | Ingress count of bytes last five minutes         |
 | statistics.lastFiveOutput.packets             | integer           | Egress count of packets last five minutes        |
@@ -316,9 +345,14 @@ Content-Type: application/json
 | statistics.output.pauses                      | integer           | Egress count of pauses                           |
 | statistics.output.errors                      | integer           | Egress count of errors                           |
 | statistics.output.crcErrors                   | integer           | Egress count of crc errors                       |
-| fiber.dbmRx                                   | string            | Fiber receiver dampening                          |
-| fiber.dbmTx                                   | string            | Fiber transceiver dampening                       | 
+| fiber.dbmRx                                   | string            | Fiber receiver dampening                         |
+| fiber.dbmTx                                   | string            | Fiber transceiver dampening                      |
 | fiber.temp                                    | string            | SFP temperature                                  |
+| fiber.biasTx                                  | string            | SFP TX bias current                              |
+| fiber.supplyVoltage                           | string            | SFP Supply voltage                               |
+| fiber.vendor                                  | string            | SFP Vendor                                       |
+| fiber.partNumber                              | string            | SFP Part Number                                  |
+| fiber.serialNumber                            | string            | SFP Serial Number                                |
 
 
 <h3 id="get-cpe-status">GET cpe/{accessId}/status</h3>
@@ -327,7 +361,7 @@ Fetch full cpe state.
 
 Request:
 ```http
-GET /onapi/2.6/tech/cpe/{accessId}/status
+GET /api/2.4/tech/cpe/{accessId}/status
 ```
 Response:
 ```http
@@ -449,12 +483,12 @@ Content-Type: application/json
 | ports.#.link                                  | bool              | duplex status                                    |
 | ports.#.fullDuplex                            | bool              | duplex status                                    |
 | ports.#.changedAt                             | string (iso8601)  | Timestamp when port changed state                |
-| ports.#.loopDetectionStatus                   | string            | Loop detection status                            | 
-| ports.#.freeSeating                           | bool              | Free seating status                              | 
+| ports.#.loopDetectionStatus                   | string            | Loop detection status                            |
+| ports.#.freeSeating                           | bool              | Free seating status                              |
 | ports.#.configuredSpeed                       | string            | Configured speed                                 |
 | ports.#.linkSpeed                             | integer           | Link speed                                       |
 | ports.#.fiber.dbmRx                           | string            | Fiber receive dampening                          |
-| ports.#.fiber.dbmTx                           | string            | Fiber transceiver dampening                       |
+| ports.#.fiber.dbmTx                           | string            | Fiber transceiver dampening                      |
 | ports.#.fiber.temp                            | string            | SFP temperature                                  |
 | ports.#.fiber.biasTx                          | string            | SFP TX bias current                              |
 | ports.#.fiber.supplyVoltage                   | string            | SFP Supply voltage                               |
@@ -479,12 +513,12 @@ Content-Type: application/json
 | ports.#.statistics.output.packets             | integer           | Egress count of total packets                    |
 | ports.#.statistics.output.multicastPackets    | integer           | Egress count of multicast packets                |
 | ports.#.statistics.output.unicastPackets      | integer           | Egress count of unicast packets                  |
-| macAddressTable                               |list               | List of mac address objects                      |
-| macAddressTable.#.mac                         |string             | Mac address of device                            |
-| macAddressTable.#.serviceType                     |string             | Which network service the mac originates from    |
-| macAddressTable.#.port                        |string             | Which CPE port index the mac originates from     |
-| dhcpSnooping                                  |list               | List of dhcp snooping objects                    |
-| dhcpSnooping.#.ip                             |string             | IP lease                                         |
-| dhcpSnooping.#.mac                            |string             | Mac address of device                            |
-| dhcpSnooping.#.serviceType                        |string             | Which network service the lease originates from  |
-| dhcpSnooping.#.timeout                        |string (iso8601)   | DHCP Lease timeout                               |
+| macAddressTable                               | list              | List of mac address objects                      |
+| macAddressTable.#.mac                         | string            | Mac address of device                            |
+| macAddressTable.#.serviceType                 | string            | Which network service the mac originates from    |
+| macAddressTable.#.port                        | string            | Which CPE port index the mac originates from     |
+| dhcpSnooping                                  | list              | List of dhcp snooping objects                    |
+| dhcpSnooping.#.ip                             | string            | IP lease                                         |
+| dhcpSnooping.#.mac                            | string            | Mac address of device                            |
+| dhcpSnooping.#.serviceType                    | string            | Which network service the lease originates from  |
+| dhcpSnooping.#.timeout                        | string (iso8601)  | DHCP Lease timeout                               |
