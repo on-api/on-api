@@ -2,7 +2,7 @@
 
 ### Description
 
-The information communicated is intended for troubleshooting purposes and is sourced from network elements.
+The information communicated is intended for troubleshooting purposes and is sourced from network elements. All parameters are optional.
 
 Technical decisions and data structure design are taken with regards to network element resource utilization, and to promote programmatic decision making.
 
@@ -46,9 +46,6 @@ Content-Type: application/json
 []
 ```
 
-
-
-
 ## Parameters
 
 | Parameter  | Data format |
@@ -88,10 +85,10 @@ Content-Type: application/json
 ```
 | Parameter | Type              | Description                                                       |
 |-----------|-------------------|-------------------------------------------------------------------|
-|up         | bool              | Status of network element, eg. pingable/management is reachable   |
-|upSince    | string (iso8601)  | Timestamp when hardware was started                               |
-|vendor     | string            | Hardware vendor                                                   |
-|model      | string            | Hardware model                                                    |
+| up        | bool              | Status of network element, eg. pingable/management is reachable   |
+| upSince   | string (iso8601)  | Timestamp when hardware was started                               |
+| vendor    | string            | Hardware vendor                                                   |
+| model     | string            | Hardware model                                                    |
 
 <h3 id="get-access-link-macaddresstable">GET access/{accessId}/link/macaddresstable</h3>
 
@@ -101,7 +98,6 @@ Request:
 ```http
 GET /api/2.4/tech/access/{accessId}/link/macaddresstable
 ```
-
 
 Response:
 ```http
@@ -223,9 +219,8 @@ Content-Type: application/json
 | Parameter  | Type             | Description                            |
 |------------|------------------|----------------------------------------|
 | multicast  | string (7-19)    | Multicast address                      |
-| timestamp| string (iso8601) | Timestamp when latest join was sent|
+| timestamp  | string (iso8601) | Timestamp when latest join was sent    |
 | counter    | integer          | Traffic counter                        |
-
 
 
 <h3 id="get-access-link-status">GET access/{accessId}/link/status</h3>
@@ -300,7 +295,7 @@ Content-Type: application/json
       "crcErrors": 0
     }
   },
-  "fiber": {
+  "transceiver": {
     "dbmRx": "-12",
     "dbmTx": "-8",
     "temp": "35"
@@ -345,19 +340,19 @@ Content-Type: application/json
 | statistics.output.pauses                      | integer           | Egress count of pauses                           |
 | statistics.output.errors                      | integer           | Egress count of errors                           |
 | statistics.output.crcErrors                   | integer           | Egress count of crc errors                       |
-| fiber.dbmRx                                   | string            | Fiber receiver dampening                         |
-| fiber.dbmTx                                   | string            | Fiber transceiver dampening                      |
-| fiber.temp                                    | string            | SFP temperature                                  |
-| fiber.biasTx                                  | string            | SFP TX bias current                              |
-| fiber.supplyVoltage                           | string            | SFP Supply voltage                               |
-| fiber.vendor                                  | string            | SFP Vendor                                       |
-| fiber.partNumber                              | string            | SFP Part Number                                  |
-| fiber.serialNumber                            | string            | SFP Serial Number                                |
+| transceiver.dbmRx                             | string            | Transceiver receive dampening                    |
+| transceiver.dbmTx                             | string            | Transceiver transmit dampening                   |
+| transceiver.temp                              | string            | Transceiver temperature                          |
+| transceiver.biasTx                            | string            | Transceiver TX bias current                      |
+| transceiver.supplyVoltage                     | string            | Transceiver Supply voltage                       |
+| transceiver.vendor                            | string            | Transceiver Vendor                               |
+| transceiver.partNumber                        | string            | Transceiver Part Number                          |
+| transceiver.serialNumber                      | string            | Transceiver Serial Number                        |
 
 
 <h3 id="get-cpe-status">GET cpe/{accessId}/status</h3>
 
-Fetch full cpe state.
+Fetch full cpe state. If parameters are supported, always return firmware, vendor, model, mac and up parameters even if cpe is unreachable.
 
 Request:
 ```http
@@ -387,7 +382,7 @@ Content-Type: application/json
       "freeSeating": false,
       "configuredSpeed": "auto",
       "linkSpeed": 1000,
-      "fiber": {
+      "transceiver": {
         "dbmRx": "-12",
         "dbmTx": "-8",
         "temp": "35"
@@ -420,7 +415,7 @@ Content-Type: application/json
       "freeSeating": false,
       "configuredSpeed": "auto",
       "linkSpeed": 1000,
-      "fiber": null,
+      "transceiver": null,
       "statistics": {
         "input": {
           "errors": 123,
@@ -470,11 +465,11 @@ Content-Type: application/json
 
 | Parameter                                     | Type              | Description                                      |
 |-----------------------------------------------|-------------------|--------------------------------------------------|
-|firmware                                       | string            | CPE firmware name                                |
-| vendor                                        | string            | CPE vendor name                                  |
-| model                                         | string            | CPE model name                                   |
-| mac                                           | string            | CPE mgmt interface mac address                   |
-| up                                            | bool              | Power status                                     |
+|firmware                                       | string            | CPE firmware name                (always return) |
+| vendor                                        | string            | CPE vendor name                  (always return) |
+| model                                         | string            | CPE model name                   (always return) |
+| mac                                           | string            | CPE mgmt interface mac address   (always return) |
+| up                                            | bool              | Power status                     (always return) |
 | upSince                                       | string            | Uptime of CPE                                    |
 | ports                                         | list              | List of port objects                             |
 | ports.#.index                                 | integer           | Interface number                                 |
@@ -487,14 +482,14 @@ Content-Type: application/json
 | ports.#.freeSeating                           | bool              | Free seating status                              |
 | ports.#.configuredSpeed                       | string            | Configured speed                                 |
 | ports.#.linkSpeed                             | integer           | Link speed                                       |
-| ports.#.fiber.dbmRx                           | string            | Fiber receive dampening                          |
-| ports.#.fiber.dbmTx                           | string            | Fiber transceiver dampening                      |
-| ports.#.fiber.temp                            | string            | SFP temperature                                  |
-| ports.#.fiber.biasTx                          | string            | SFP TX bias current                              |
-| ports.#.fiber.supplyVoltage                   | string            | SFP Supply voltage                               |
-| ports.#.fiber.vendor                          | string            | SFP Vendor                                       |
-| ports.#.fiber.partNumber                      | string            | SFP Part Number                                  |
-| ports.#.fiber.serialNumber                    | string            | SFP Serial Number                                |
+| ports.#.transceiver.dbmRx                     | string            | Transceiver receive dampening                    |
+| ports.#.transceiver.dbmTx                     | string            | Transceiver transmit dampening                   |
+| ports.#.transceiver.temp                      | string            | Transceiver temperature                          |
+| ports.#.transceiver.biasTx                    | string            | Transceiver TX bias current                      |
+| ports.#.transceiver.supplyVoltage             | string            | Transceiver Supply voltage                       |
+| ports.#.transceiver.vendor                    | string            | Transceiver Vendor                               |
+| ports.#.transceiver.partNumber                | string            | Transceiver Part Number                          |
+| ports.#.transceiver.serialNumber              | string            | Transceiver Serial Number                        |
 | ports.#.statistics.input.errors               | integer           | Ingress count of total errors                    |
 | ports.#.statistics.input.crcErrors            | integer           | Ingress count of crc errors                      |
 | ports.#.statistics.input.pause                | integer           | Ingress count of pause frames                    |
