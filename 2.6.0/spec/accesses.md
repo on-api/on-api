@@ -399,11 +399,12 @@ Specifies whether the end customer is required to have a separate contract with 
 
 ### nationalAddressUUID
 
-Universally Unique Identifier (UUID) for the Address. May differ from country to country depending on national preferences. 
-Sweden: PTS (The Swedish Post and Telecom Authority) uses the [Lantmäteriet Real Property UUID](https://www.lantmateriet.se/en/geodata/geodata-products/product-list/real-property-information-download/)
+Universally Unique Identifier for the property the address belongs to. 
+The value may differ from country to country depending on national preferences. 
 
- * Data format: [uuid](../common/dataformats.md#uuid)
- * Required
+ * Data format: [text](../common/dataformats.md#text)
+ * Sweden: [uuid](../common/dataformats.md#uuid). PTS (The Swedish Post and Telecom Authority) uses the [Lantmäteriet Real Property UUID](https://www.lantmateriet.se/en/geodata/geodata-products/product-list/real-property-information-download/)
+ * Optional
 
 ### services 
 Lists of deliverable services.
