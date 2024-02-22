@@ -6,14 +6,13 @@ Used to fetch a list of all active subscriptions from a CO belonging to the curr
 
 ### GET
 
-#### Available services for a single Access
+#### Available subscriptions for a single Access
 
-To get available services for a single access use accessId as key. The response contains details about activated services and the services
- available for activation.
+To get available subscriptions for a single access use accessId as key. The response contains details about activated subscriptions.
  
 Request
 ```http
-GET /onapi/2.6/services/{accessId} HTTP/1.1
+GET /onapi/2.6/subscriptions/{accessId} HTTP/1.1
 ```
 
 Response 

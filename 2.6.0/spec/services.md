@@ -8,8 +8,7 @@ Used to fetch a list of all available services from a CO belonging to the curren
 
 #### Available services for a single Access
 
-To get available services for a single access use accessId as key. The response contains details about activated services and the services
- available for activation.
+To get available services for a single access use accessId as key. The response contains details about the services available for activation.
  
 Request
 ```http
