@@ -465,7 +465,7 @@ Content-Type: application/json
 
 | Parameter                                     | Type              | Description                                      |
 |-----------------------------------------------|-------------------|--------------------------------------------------|
-|firmware                                       | string            | CPE firmware name                (always return) |
+| firmware                                      | string            | CPE firmware name                (always return) |
 | vendor                                        | string            | CPE vendor name                  (always return) |
 | model                                         | string            | CPE model name                   (always return) |
 | mac                                           | string            | CPE mgmt interface mac address   (always return) |
