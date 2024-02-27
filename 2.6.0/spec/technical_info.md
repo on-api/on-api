@@ -340,8 +340,8 @@ Content-Type: application/json
 | statistics.output.pauses                      | integer           | Egress count of pauses                           |
 | statistics.output.errors                      | integer           | Egress count of errors                           |
 | statistics.output.crcErrors                   | integer           | Egress count of crc errors                       |
-| transceiver.dbmRx                             | string            | Transceiver receive dampening                    |
-| transceiver.dbmTx                             | string            | Transceiver transmit dampening                   |
+| transceiver.dbmRx                             | string            | Transceiver receive optical power                |
+| transceiver.dbmTx                             | string            | Transceiver transmit optical power               |
 | transceiver.temp                              | string            | Transceiver temperature                          |
 | transceiver.biasTx                            | string            | Transceiver TX bias current                      |
 | transceiver.supplyVoltage                     | string            | Transceiver Supply voltage                       |
@@ -482,8 +482,8 @@ Content-Type: application/json
 | ports.#.freeSeating                           | bool              | Free seating status                              |
 | ports.#.configuredSpeed                       | string            | Configured speed                                 |
 | ports.#.linkSpeed                             | integer           | Link speed                                       |
-| ports.#.transceiver.dbmRx                     | string            | Transceiver receive dampening                    |
-| ports.#.transceiver.dbmTx                     | string            | Transceiver transmit dampening                   |
+| ports.#.transceiver.dbmRx                     | string            | Transceiver receive optical power                |
+| ports.#.transceiver.dbmTx                     | string            | Transceiver transmit optical power               |
 | ports.#.transceiver.temp                      | string            | Transceiver temperature                          |
 | ports.#.transceiver.biasTx                    | string            | Transceiver TX bias current                      |
 | ports.#.transceiver.supplyVoltage             | string            | Transceiver Supply voltage                       |
