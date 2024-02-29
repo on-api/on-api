@@ -7,7 +7,7 @@ _**Note:**_  This API is hosted by the service provider, and the communication o
 
 ## Specification
 The fields `reason` and `spTicketReference` is used to able to track requests of personal information.
-Providing spTicketReference makes `reason` unnecessary.
+Providing `spTicketReference` makes `reason` unnecessary.
 
 Request information with a reason:
 ```http
