@@ -70,7 +70,7 @@ Content-Type: application/json
 Request
 
 ```HTTP
-GET /onapi/2.6/orders/?accessId=8732c2f065e2490babce820e94b1011a HTTP/1.1
+GET /onapi/2.6/orders/?accessId={accessId} HTTP/1.1
 ```
 
 Response
@@ -161,10 +161,12 @@ Content-Type: application/json
 
 #### Get a single order
 
+Use `orderId` as key.
+
 Request
 
 ```HTTP
-GET /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+GET /onapi/2.6/orders/{orderId} HTTP/1.1
 ```
 
 Response
@@ -246,7 +248,7 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417
+Location: /onapi/2.6/orders/{orderId}
 Content-Type: application/json
 ```
 
@@ -301,7 +303,7 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.6/orders/0e5152dbbe424fb0b82e7ab177ed4ab1
+Location: /onapi/2.6/orders/{orderId}
 Content-Type: application/json
 ```
 
@@ -337,7 +339,7 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.6/orders/8883168fb4354a189a164dc9a53522ba
+Location: /onapi/2.6/orders/{orderId}
 Content-Type: application/json
 ```
 
@@ -377,7 +379,7 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.6/orders/e52499d7ea1f4584a71d0a67addfb3aa
+Location: /onapi/2.6/orders/{orderId}
 Content-Type: application/json
 ```
 
@@ -414,7 +416,7 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.6/orders/bd8ce555ee1d4983bc22fa4ec6937cf6
+Location: /onapi/2.6/orders/{orderId}
 Content-Type: application/json
 ```
 
@@ -430,7 +432,7 @@ Content-Type: application/json
 
 #### Modify a subscription
 
-Used to modify spReference and/or spSubscriptionId.
+Used to modify `spReference` and/or `spSubscriptionId`.
 
 Request
 
@@ -452,7 +454,7 @@ Response
 
 ```HTTP
 HTTP/1.1 201 CREATED
-Location: /onapi/2.6/orders/64ff212a16dd42c09360a2bc683bfd8a
+Location: /onapi/2.6/orders/{orderId}
 Content-Type: application/json
 ```
 
@@ -471,11 +473,12 @@ Content-Type: application/json
 ### PUT
 
 With put it is possible to update an order for which the state is "RECEIVED", using the complete object.
+Use `orderId` as key.
 
 Request
 
 ```HTTP
-PUT /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+PUT /onapi/2.6/orders/{orderId} HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -517,11 +520,12 @@ HTTP/1.1 204 No Content
 ### PATCH
 
 With patch it is possible to update an order for which the state is "RECEIVED", using only the changed part.
+Use `orderId` as key.
 
 Request
 
 ```HTTP
-PATCH /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+PATCH /onapi/2.6/orders/{orderId} HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -539,12 +543,12 @@ HTTP/1.1 204 No Content
 
 ### DELETE
 
-Used to cancel an order for which the state is "RECEIVED".
+Used to cancel an order for which the state is "RECEIVED". Use `orderId` as key.
 
 Request
 
 ```HTTP
-DELETE /onapi/2.6/orders/f3f26446f6e8407aae876ea8e52d7417 HTTP/1.1
+DELETE /onapi/2.6/orders/{orderId} HTTP/1.1
 ```
 
 Response
