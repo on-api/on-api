@@ -79,8 +79,8 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "mduDistinguisher": "12121212",
     "outlet": "A-11-14",
     "population": "Hemsöhem",
+    "priceGroup": 0,
     "accessState": "CONNECTED",
-    "coNetworkAgreement": "NOTREQUIRED",
     "services": [
       {
         "service": "BB-100-100",
@@ -112,10 +112,7 @@ When all accesses or updates are requested the response contains a JSON-array wi
         "availableDateTime": "2013-10-13T14:09:23Z",
         "disconnectionDateTime": ""
       }
-    ],
-    "coFiberConverter": "LASER_3001X_MK2",
-    "coCpeSwitch": "",
-    "coCpeRouter": "NETGEAR WNDR4000"
+    ]
   }
 ]
 ```
@@ -155,8 +152,8 @@ When a single access is requested the response contains a single JSON-object.
   "mduDistinguisher": "12121212",
   "outlet": "A-11-14",
   "population": "Hemsöhem",
+  "priceGroup": 0,
   "accessState": "CONNECTED",
-  "coNetworkAgreement": "NOTREQUIRED",
   "services": [
     {
       "service": "BB-1000-1000",
@@ -260,10 +257,7 @@ When a single access is requested the response contains a single JSON-object.
         }
       ]
     }
-  ],
-  "coFiberConverter": "LASER_3001X_MK2",
-  "coCpeSwitch": "",
-  "coCpeRouter": "NETGEAR WNDR4000"
+  ]
 }
 ```
 
@@ -381,18 +375,20 @@ Describes a subset of all accesses. Used for grouping accesses together for comm
  * Data format: [text](../common/dataformats.md#text)
  * Optional
 
+##### priceGroup
+
+A price group that this access is a part of. The value must be an integer larger or equal to 0 (unsigned integer). 
+The exact meaning and associated price list is defined by CO. 
+
+* Data format: [integer](../common/dataformats.md#integer)
+* Mandatory
+* Default value: 0. The default price list has the number 0 and 0 should only be used for that.
+
 ### accessState
 
 Describes the current state of whether the access is connected and can be used.
 
  * Data format: One of PLANNED, DEPLOYING, HOMESPASSED, CONNECTED, DISCONNECTED
- * Mandatory 
-
-### coNetworkAgreement
-
-Specifies whether the end customer is required to have a separate contract with the CO for services to be allowed on the access. The attribute is mandatory but can be empty which should be intepreted as NOT_REQUIRED.
-
- * Data format: One of REQUIRED_NOT_VALID, REQUIRED_VALID, NOT_REQUIRED or empty string ""
  * Mandatory 
 
 ### services 
@@ -475,29 +471,3 @@ for the accessId that can be omitted here. If there are no subscription for this
  * Data format: [see subscriptions](subscriptions.md)
  * Mandatory
  * Available with single access
-
-### coFiberConverter
-
-Make and model of equipment placed at the customer and provided by the CO.
-
- * Data format: [text](../common/dataformats.md#text)
- * Optional
- * If the equipment is a fiber converter
-
-### coCpeSwitch
-
-Make and model of equipment placed at the customer and provided by the CO.
-
- * Data format: [text](../common/dataformats.md#text)
- * Optional
- * If the equipment is a network-switch
- * Empty if coCpeRouter not empty
-
-### coCpeRouter
-
-Make and model of equipment placed at the customer and provided by the CO.
-
- * Data format: [text](../common/dataformats.md#text)
- * Optional
- * If the equipment type is a network-router
- * Empty if coCpeSwitch not empty
