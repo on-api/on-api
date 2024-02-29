@@ -11,7 +11,7 @@ access resides, available services, equipment and activated services.
 
 #### All accesses 
 ```HTTP
-accesses/ HTTP/1.1
+GET /onapi/2.5/accesses/ HTTP/1.1
 ```
 
 Response 
@@ -35,7 +35,7 @@ header from the previous response.
 
 Request
 ```HTTP
-accesses/ HTTP/1.1
+GET /onapi/2.5/accesses/ HTTP/1.1
 If-Modified-Since: Mon, 04 Feb 2019 18:12:33 GMT
 ```
 
@@ -123,7 +123,7 @@ When all accesses or updates are requested the response contains a JSON-array wi
 
 #### Single access
 
-To get a single access use accessId as key. The single access contains details about activated services and the services
+To get a single access use `accessId` as key. The single access contains details about activated services and the services
  available for activation.
  
 Request
