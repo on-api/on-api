@@ -158,6 +158,8 @@ Content-Type: application/json
 
 #### Get a single order
 
+Use `orderId` as key.
+
 Request
 
 ```HTTP
@@ -407,26 +409,6 @@ Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
 Content-Type: application/json
 ```
 
-#### Modify a service
-Request
-```HTTP
-POST /onapi/2.4/orders/ HTTP/1.1
-Content-Type: application/json
-```
-```JSON
-{
-  "subscriptionId": "35738e19ab534dff9f9becb3a064a7d5",
-  "operation": "MODIFY",
-  "spReference": "a6cc5da980034948ba654ae6ceda03f4",
-  "spSubscriptionId": "d02925f0083b4f64993b365accfbb1ac"
-}
-```
-Response
-```HTTP
-HTTP/1.1 201 CREATED
-Location: /onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417
-Content-Type: application/json
-```
 ```JSON
 {
   "path": "/onapi/2.4/orders/f3f26446f6e8407aae876ea8e52d7417",
@@ -438,6 +420,7 @@ Content-Type: application/json
 ### PUT
 
 With put it is possible to update an order for which the state is "RECEIVED", using the complete object.
+Use `orderId` as key.
 
 Request
 
@@ -473,9 +456,16 @@ Content-Type: application/json
 }
 ```
 
+Response
+
+```HTTP
+HTTP/1.1 204 No Content
+```
+
 ### PATCH
 
 With patch it is possible to update an order for which the state is "RECEIVED", using only the changed part.
+Use `orderId` as key.
 
 Request
 
@@ -497,7 +487,9 @@ HTTP/1.1 204 No Content
 ```
 
 ### DELETE
-Used to cancel an order for which the state is "RECEIVED". Example: could be used to cancel a previous order with operation DEACTIVATE, if the end customer no longer wants to cancel his or hers subscription.
+Used to cancel an order for which the state is "RECEIVED". Use `orderId` as key.
+Example: could be used to cancel a previous order with operation DEACTIVATE, if the end customer no longer wants to
+cancel his or hers subscription.
 
 Request
 
