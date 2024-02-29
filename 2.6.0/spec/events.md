@@ -14,7 +14,7 @@ Events for the current second is omitted to ensure that events are not sent twic
 in the "If-Modified-Since" header that does not allow fractional seconds. 
 
 ```HTTP
-/onapi/2.6/events/ HTTP/1.1
+GET /onapi/2.6/events/ HTTP/1.1
 ```
 
 Response 
@@ -49,7 +49,7 @@ needs to be fairly lightweight on the API-server side to allow rapid requests.
 
 Request
 ```HTTP
-/onapi/2.6/events/ HTTP/1.1
+GET /onapi/2.6/events/ HTTP/1.1
 If-Modified-Since: Tue, 05 Feb 2019 13:03:15 GMT
 ```
 

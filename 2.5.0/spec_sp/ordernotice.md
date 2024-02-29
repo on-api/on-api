@@ -19,7 +19,7 @@ respond back with subscription and customer references.
 ## Request
 
 ```http
-POST activationnotice/ HTTP/1.1
+POST /onapi/2.5/activationnotice/ HTTP/1.1
 Content-Type: application/json
 ```
 
