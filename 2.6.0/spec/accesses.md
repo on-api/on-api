@@ -380,16 +380,25 @@ Describes a subset of all accesses. Used for grouping accesses together for comm
 A price group that this access is a part of. The value must be an integer larger or equal to 0 (unsigned integer). 
 The exact meaning and associated price list is defined by CO. 
 
-* Data format: [integer](../common/dataformats.md#integer)
-* Mandatory
-* Default value: 0. The default price list has the number 0 and 0 should only be used for that.
+ * Data format: [enumeration](../common/dataformats.md#enumeration)
+ * Mandatory 
 
 ### accessState
 
 Describes the current state of whether the access is connected and can be used.
 
  * Data format: One of PLANNED, DEPLOYING, HOMESPASSED, CONNECTED, DISCONNECTED
- * Mandatory 
+ * Mandatory
+
+**Valid values**
+ * PLANNED The CO is planning to connect the access in the future. The field "connectionDateTime" may reflect the planned date for activation, with some uncertainty (+/- a week).
+ * DEPLOYING The CO is currently building the access. The field "connectionDateTime" should be set and reflect the planned date for activation, with a minimum of uncertainty (+/- a few days).
+ * PASSED The accesss is close to the built out network of the CO. For an SDU address the could be ducts waiting in the street. For an MDU address the appartment might not have been connected, e.g. if a tenant refuse to allow access.  
+ * CONNECTED The access is operational and services may be sold freely. If a new CO CPE is required, this should be reflected in the field "availableDateTime" being the needed days in the future. 
+ * DISCONNECTED The access has been disconnected from the COs network.
+ * INMIGRATION The access is in the process of being migrated into the COs network. The field "connectionDateTime" should be set and reflect the planned date for activation with a minimum of uncertainty (+/- 1-2 days). The access should be freezed during the migration. Orders with delivery date after "availableDateTime" might be accepted, but there is a risk that all services to be migrated are not yet created. 
+ * OUTMIGRATION The access is in the process of being migrated out of the COs network. The field "disconnectionDateTime" should be set and reflect the planned date for deactivation with a minimum of uncertainty (+/- 1-2 days). The access should be freezed during the migration. Orders should not be accepted on the access.
+
 
 ### services 
 Lists of deliverable services.
