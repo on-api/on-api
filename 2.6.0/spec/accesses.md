@@ -81,6 +81,7 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "population": "Hemsöhem",
     "priceGroup": 0,
     "accessState": "CONNECTED",
+    "nationalAddressUUID": "1ce88c93-b310-11eb-bdc2-000c29f11131"
   }
 ]
 ```
@@ -122,6 +123,7 @@ When a single access is requested the response contains a single JSON-object.
   "population": "Hemsöhem",
   "priceGroup": 0,
   "accessState": "CONNECTED",
+  "nationalAddressUUID": "1ce88c93-b310-11eb-bdc2-000c29f11131"
 }
 ```
 
@@ -262,3 +264,14 @@ Describes the current state of whether the access is connected and can be used.
  * DISCONNECTED The access has been disconnected from the COs network.
  * INMIGRATION The access is in the process of being migrated into the COs network. The field "connectionDateTime" should be set and reflect the planned date for activation with a minimum of uncertainty (+/- 1-2 days). The access should be freezed during the migration. Orders with delivery date after "availableDateTime" might be accepted, but there is a risk that all services to be migrated are not yet created. 
  * OUTMIGRATION The access is in the process of being migrated out of the COs network. The field "disconnectionDateTime" should be set and reflect the planned date for deactivation with a minimum of uncertainty (+/- 1-2 days). The access should be freezed during the migration. Orders should not be accepted on the access.
+
+### nationalAddressUUID
+
+Universally Unique Identifier for the property the address belongs to. 
+The value may differ from country to country depending on national preferences. 
+
+ * Data format: [text](../common/dataformats.md#text)
+ * Sweden: [uuid](../common/dataformats.md#uuid). PTS (The Swedish Post and Telecom Authority) uses the [Lantmäteriet Real Property UUID](https://www.lantmateriet.se/en/geodata/geodata-products/product-list/real-property-information-download/)
+ * Optional
+
+
