@@ -352,7 +352,7 @@ Content-Type: application/json
 
 <h3 id="get-cpe-status">GET cpe/{accessId}/status</h3>
 
-Fetch full cpe state. If parameters are supported, always return firmware, vendor, model, mac and up parameters even if cpe is unreachable.
+Fetch full cpe state.
 
 Request:
 ```http
@@ -465,11 +465,11 @@ Content-Type: application/json
 
 | Parameter                                     | Type              | Description                                      |
 |-----------------------------------------------|-------------------|--------------------------------------------------|
-| firmware                                      | string            | CPE firmware name                (always return) |
-| vendor                                        | string            | CPE vendor name                  (always return) |
-| model                                         | string            | CPE model name                   (always return) |
-| mac                                           | string            | CPE mgmt interface mac address   (always return) |
-| up                                            | bool              | Power status                     (always return) |
+| firmware                                      | string            | CPE firmware name                                |
+| vendor                                        | string            | CPE vendor name                                  |
+| model                                         | string            | CPE model name                                   |
+| mac                                           | string            | CPE mgmt interface mac address                   |
+| up                                            | bool              | Power status                                     |
 | upSince                                       | string            | Uptime of CPE                                    |
 | ports                                         | list              | List of port objects                             |
 | ports.#.index                                 | integer           | Interface number                                 |
