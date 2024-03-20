@@ -81,6 +81,10 @@ When all accesses or updates are requested the response contains a JSON-array wi
     "population": "Hemsöhem",
     "priceGroup": 0,
     "accessState": "CONNECTED",
+    "technicalStartDateTime": "1970-01-01T00:00:00Z",
+    "technicalEndDateTime": "2024-12-01T00:00:00Z",
+    "commercialStartDateTime": "1970-01-01T00:00:00Z",
+    "commercialEndDateTime": "2024-12-01T00:00:00Z",
     "nationalAddressUUID": "1ce88c93-b310-11eb-bdc2-000c29f11131"
   }
 ]
@@ -123,6 +127,10 @@ When a single access is requested the response contains a single JSON-object.
   "population": "Hemsöhem",
   "priceGroup": 0,
   "accessState": "CONNECTED",
+  "technicalStartDateTime": "1970-01-01T00:00:00Z",
+  "technicalEndDateTime": "2024-12-01T00:00:00Z",
+  "commercialStartDateTime": "1970-01-01T00:00:00Z",
+  "commercialEndDateTime": "2024-12-01T00:00:00Z",
   "nationalAddressUUID": "1ce88c93-b310-11eb-bdc2-000c29f11131"
 }
 ```
@@ -241,7 +249,7 @@ Describes a subset of all accesses. Used for grouping accesses together for comm
  * Data format: [text](../common/dataformats.md#text)
  * Optional
 
-##### priceGroup
+### priceGroup
 
 A price group that this access is a part of. The value must be an integer larger or equal to 0 (unsigned integer). 
 The exact meaning and associated price list is defined by CO. 
@@ -253,7 +261,7 @@ The exact meaning and associated price list is defined by CO.
 
 Describes the current state of whether the access is connected and can be used.
 
- * Data format: One of PLANNED, DEPLOYING, HOMESPASSED, CONNECTED, DISCONNECTED
+ * Data format: One of PLANNED, DEPLOYING, HOMESPASSED, CONNECTED, DISCONNECTED, INMIGRATION and OUTMIGRATION
  * Mandatory
 
 **Valid values**
@@ -265,6 +273,34 @@ Describes the current state of whether the access is connected and can be used.
  * INMIGRATION The access is in the process of being migrated into the COs network. The field "connectionDateTime" should be set and reflect the planned date for activation with a minimum of uncertainty (+/- 1-2 days). The access should be freezed during the migration. Orders with delivery date after "availableDateTime" might be accepted, but there is a risk that all services to be migrated are not yet created. 
  * OUTMIGRATION The access is in the process of being migrated out of the COs network. The field "disconnectionDateTime" should be set and reflect the planned date for deactivation with a minimum of uncertainty (+/- 1-2 days). The access should be freezed during the migration. Orders should not be accepted on the access.
 
+### technicalStartDateTime
+
+Indicates when the access is technically deliverable for the first time. If you don't have a date when it was connected, you can specify the date as "1990-01-01T00:00:01Z". If you don't know when it will be connected, you can specify the date as "3030-12-12T00:00:01Z" for example.
+
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime)
+ * Mandatory
+
+### technicalEndDateTime
+
+Indicates when the access is technically deliverable for the last time.
+
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime)
+ * Optional
+
+### commercialStartDateTime
+
+Indicates when the access is commercially debitable for the first time. If you don't have a date , you can specify the date as "1990-01-01T00:00:01Z". If you don't know when it will be connected, you can specify the date as "3030-12-12T00:00:01Z" for example.
+
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime)
+ * Mandatory
+
+### commercialEndDateTime
+
+Indicates when the access is commercially debitable for the last time.
+
+ * Data format: [ISO 8601 date time](../common/dataformats.md#datetime)
+ * Optional
+ 
 ### nationalAddressUUID
 
 Universally Unique Identifier for the property the address belongs to. 
