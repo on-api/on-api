@@ -87,6 +87,21 @@ Examples
 * 0.00
 * 5663.00
 
+### uuid
+
+A Universally Unique Identifier (UUID) is a 128-bit label used for information in computer systems. The term Globally Unique Identifier (GUID) is also used.
+
+* The most used format is the 8-4-4-4-12 format, xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx, where every x represents 4 bits.
+
+Examples
+
+* 00000000-0000-0000-0000-000000000000
+* 95f27b60-a42a-11eb-bdc2-000c29f11131
+
+References
+
+* [Wikipedia UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+
 ### enumeration
 
 A predefined list of values that is valid for this field is provided where it is defined. No other values can be used.

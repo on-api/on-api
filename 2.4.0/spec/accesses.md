@@ -11,7 +11,7 @@ access resides, available services, equipment and activated services.
 
 #### All accesses 
 ```HTTP
-accesses/ HTTP/1.1
+GET /onapi/2.4/accesses/ HTTP/1.1
 ```
 
 Response 
@@ -35,7 +35,7 @@ header from the previous response.
 
 Request
 ```HTTP
-accesses/ HTTP/1.1
+GET /onapi/2.4/accesses/ HTTP/1.1
 If-Modified-Since: Mon, 04 Feb 2019 18:12:33 GMT
 ```
 
@@ -123,12 +123,12 @@ When all accesses or updates are requested the response contains a JSON-array wi
 
 #### Single access
 
-To get a single access use accessId as key. The single access contains details about activated services and the services
+To get a single access use `accessId` as key. The single access contains details about activated services and the services
  available for activation.
  
 Request
 ```http
-GET /onapi/2.4/accesses/STTA0001 HTTP/1.1
+GET /onapi/2.4/accesses/{accessId} HTTP/1.1
 ```
 
 Response 
@@ -305,7 +305,7 @@ is "550-70".
  * Numeric or meter's address
  * Matching regular expression ^(([0-9]+)|([0-9]{1,4}-[0-9]{1,4}))$
 
-See [lantmateriets guide (swedish)](https://www.lantmateriet.se/contentassets/45acf232634c44c1a47c5ebcb7598e07/handbok_adress.pdf) 
+See [lantmateriets guide (swedish)](https://www.lantmateriet.se/globalassets/om-lantmateriet/var-samverkan-med-andra/byggnad-adress-lagenhet-och-topografi/handbok_belagenhetsadress.pdf) 
 for more information on meter's address 
 
 ### streetLittera
@@ -355,7 +355,7 @@ Used to distinguish between individual apartments in apartment buildings sharing
  * Data format: JSON number
  * Four digits
  * Matching regexp ^[0-9]{4}$
- * See [Lantmäteriet Apartmentnumber](https://www.lantmateriet.se/en/real-property/Fastighetsinformation/Lagenhetsregistret/apartment-register-content/)
+ * See [Lantmäteriet Apartmentnumber](https://www.lantmateriet.se/en/real-property/property-information-/real-property-register/contents-of-the-property-register/)
  * Mandatory if premisesType is set to MDU_APARTMENT and mduDistinguisher is omitted
 
 ### mduDistinguisher
