@@ -32,7 +32,7 @@ end
 ## Request
 
 ```http
-POST coorder/ HTTP/1.1
+POST /onapi/2.5/coorder/ HTTP/1.1
 Content-Type: application/json
 ```
 
