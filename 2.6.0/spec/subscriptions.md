@@ -106,6 +106,8 @@ When subscriptions for all accesses are requested the response contains a JSON-a
         "subscriptionId": "8b2ad40b4ffd45e5b48425f57821a7eb",
         "service": "BB-1000-1000",
         "operationalState": "ACTIVATED",
+        "connectionDate": "2019-01-03",
+        "disconnectionDate": "",
         "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma",
         "spSubscriptionId": "b49797aaed934642bc8ae136b87ed12b",
         "option82": "52270123434F2D38373332633266303635653234393062616263653832306539346231303131610200",
@@ -174,7 +176,21 @@ Lists of subscriptions.
 
  * Data format: [operationalState](../common/dataformats.md#operationalstate)
  * Mandatory
-  
+
+#### subscriptions/connectionDate
+
+Date when the subscription was activated.
+
+ * Data format: [date](../common/dataformats.md#date)
+ * Mandatory
+
+#### subscriptions/disconnectionDate
+
+Date when the subscription was deactivated.
+
+ * Data format: [date](../common/dataformats.md#date)
+ * Mandatory when date is set
+ 
 ### subscriptions/spReference
 
  * Data format: [ID](../common/dataformats.md#spreference)
