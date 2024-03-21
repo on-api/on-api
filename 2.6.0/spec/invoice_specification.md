@@ -93,7 +93,7 @@ Content-Type: application/json
         "invoice": {
             "listPrice": "0",
             "billingItem": "Acme 100/10",
-            "invoiceType": "DEBET",
+            "invoiceType": "DEBIT",
             "rowType": "PERIODIC_FEE",
             "fromDate": "2019-01-03",
             "toDate": "2019-01-03",
@@ -268,7 +268,7 @@ An enumeration of the type the current invoice item.
 **Valid values**
 | Enumeration Value | Specification |
 |---------------------------------|-------------------------------|
-| DEBET | Normal invoice row |
+| DEBIT | Normal invoice row |
 | CREDIT | Credit invoice row. Should be used with a specification in Comment |
 
 #### invoice/rowType
@@ -311,7 +311,7 @@ Transmission product invoiced to this date.
 #### invoice/invoicedAmount
 
 The calculated sum for the specific transmission product, rowType and dates that CO intends to invoice SP.
-If positive number then it is a debet sum.
+If positive number then it is a debit sum.
 If negative number then it is a credit sum.
  
  * Data format: [number](../common/dataformats.md#number)

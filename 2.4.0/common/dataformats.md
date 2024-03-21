@@ -195,7 +195,7 @@ References
 ### coID
 Identification of the communication operator.
 
-* May only concist of a-z, A-Z, 0-9, '-' and '.'
+* May only consist of a-z, A-Z, 0-9, '-' and '.'
 * Matching regular expression [a-zA-Z0-9-.]+
 * Max length 32 characters
 
@@ -306,7 +306,7 @@ A name of a specific service offered by the CO listed in the [accesses API](../s
 ### equipment
 
 List of equipment which is used to deliver a service. This can be used to tie the service to specific 
-equipment, such as VOIP or IPTV-equipment. 
+equipment, such as VOIP or IPTV equipment. 
 
  * Data format: JSON array of JSON objects
 

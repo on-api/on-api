@@ -56,7 +56,7 @@ Content-Type: application/json
     "personalIdentityNumber": "string",
     "organizationNumber": "string",
     "organizationName": "string",
-    "firstname": "string",
+    "firstName": "string",
     "lastName": "string",
     "phone": "string",
     "mobilePhone": "string",
@@ -159,7 +159,7 @@ order. It is recommended that the SP validates that this match is correct.
 ### products.coSubscriptionId
 
 Reference to the subscription on CO side. If it is not set, the SP will receive this later when order has been handled.
-It may however be required in case coOrderId is set if the susbcription have already been created on the CO side.
+It may however be required in case coOrderId is set if the subscription have already been created on the CO side.
 
 * Data format: [subscriptionId](../common/dataformats.md#subscriptionid)
 * Optional

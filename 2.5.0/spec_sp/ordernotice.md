@@ -43,7 +43,7 @@ Content-Type: application/json
     "personalIdentityNumber": "string",
     "organizationNumber": "string",
     "organizationName": "string",
-    "firstname": "string",
+    "firstName": "string",
     "lastName": "string",
     "phone": "string",
     "mobilePhone": "string",

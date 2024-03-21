@@ -1,4 +1,4 @@
-# Technical Info API
+# Technical Info endpoint
 
 ### Description
 

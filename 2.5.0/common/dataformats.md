@@ -337,7 +337,7 @@ A name of a specific service offered by the CO listed in the [accesses API](../s
 ### equipment
 
 List of equipment which is used to deliver a service. This can be used to tie the service to specific equipment, such as
-VOIP or IPTV-equipment.
+VOIP or IPTV equipment.
 
 * Data format: JSON array of JSON objects
 

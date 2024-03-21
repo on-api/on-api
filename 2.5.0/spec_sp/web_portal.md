@@ -3,7 +3,7 @@
 The purpose of this APi is to enable the hand over of an end-user from the portal of a communication operator to the portal of a service provider.
 The communication provider identifies the port that the request originated at, and adds accessId and mac-address to a link that is either given to the customer or used by a HTTP redirect. 
 
-The API doesnt specify what the portals are used for. It could for example be to activate an subscription, to buy a subscription or to do some kind of control.
+The API doesn't specify what the portals are used for. It could for example be to activate an subscription, to buy a subscription or to do some kind of control.
 
 The Web-portal URL has the following format
 <pre>
@@ -59,7 +59,7 @@ Host name and path are set by the service provider and are used by the communica
 		</td>
 		<td>
   			<p>Time stamp when the URL was created.</p> 
-            <p>Depending on the use case and the sensitivty of the data, the service provider can choose to only trust the information in a certain time intervall.</p>
+            <p>Depending on the use case and the sensitivity of the data, the service provider can choose to only trust the information in a certain time interval.</p>
 			<p>See dateTime in <a href="../common/dataformats.md#datetime">dataformats</a> for data format</p>
 		</td>
 	</tr>

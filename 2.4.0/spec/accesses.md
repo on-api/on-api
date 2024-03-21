@@ -390,7 +390,7 @@ Describes the current state of whether the access is connected and can be used.
 
 ### coNetworkAgreement
 
-Specifies whether the end customer is required to have a separate contract with the CO for services to be allowed on the access. The attribute is mandatory but can be empty which should be intepreted as NOT_REQUIRED.
+Specifies whether the end customer is required to have a separate contract with the CO for services to be allowed on the access. The attribute is mandatory but can be empty which should be interpreted as NOT_REQUIRED.
 
  * Data format: One of REQUIRED_NOT_VALID, REQUIRED_VALID, NOT_REQUIRED or empty string ""
  * Mandatory 
