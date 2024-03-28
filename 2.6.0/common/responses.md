@@ -53,10 +53,10 @@ If the order is correctly formed the response should be like this:
 ```http
 HTTP/1.1 201 CREATED
 Content-Type: application/json
-Location: /api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061
+Location: /onapi/api/2.6/orders/ec4bc754-6a30-11e2-a585-4fc569183061
 
 {
-    "path": "/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
+    "path": "/onapi/api/2.6/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "ACTIVATE",
@@ -104,7 +104,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-    "path": "/api/2.3.1/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
+    "path": "/onapi/api/2.6/orders/ec4bc754-6a30-11e2-a585-4fc569183061",
     "accessId": "STTA0001",
     "service": "BB-100-10",
     "operation": "ACTIVATE",

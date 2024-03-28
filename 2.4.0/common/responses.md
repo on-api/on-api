@@ -14,7 +14,7 @@ Example 2:
 HTTP/1.1 500 Internal Server Error
 Content-Type: application/json
 
-{ "cause": "An Unknown error has occured. Error number 12345" }
+{ "cause": "An Unknown error has occurred. Error number 12345" }
 ```
 ## HTTP satus codes used (for full list, see RFC7231)
 
@@ -78,7 +78,7 @@ This error should be presented for:
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
 
-{ "cause": "Unknown service: 'INTERRNET'" }
+{ "cause": "Unknown service: 'INTERNET'" }
 ```
 
 If another service for the same service type is already active.

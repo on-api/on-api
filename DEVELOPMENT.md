@@ -10,7 +10,7 @@ Group responsibilities:
 ### Steering Group
 Selected group consisting of representatives from Tjänsteleverantörsföreningen (Swedish Service Provider Association) and Svenska Stadsnätsföreningen (Swedish Citynet Association). 
 Group responsibilities:
-  * Management of projects and specfications driven by the companies involved in Swedish telecommunication industry
+  * Management of projects and specifications driven by the companies involved in Swedish telecommunication industry
   * Ensure that the working group has the tools needed for their work (software licenses etc.)
 
 # Process

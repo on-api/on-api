@@ -1,6 +1,6 @@
 # CO Order
 
-This API is intended to be used by the CO to send an order for approval to the SP before connecting the transmission
+This endpoint is intended to be used by the CO to send an order for approval to the SP before connecting the transmission
 products.
 
 ## Usage
@@ -32,7 +32,7 @@ end
 ## Request
 
 ```http
-POST /onapi/2.5/coorder/ HTTP/1.1
+POST /onapi/2.6/coorder/ HTTP/1.1
 Content-Type: application/json
 ```
 
@@ -81,7 +81,7 @@ The unique ID of the order on the CO side.
 
 ## coAccessId
 
-Identifies a single access point in the CO population in the accesses API.
+Identifies a single access point in the CO population in the accesses endpoint.
 
 * Data format: [accessId](../common/dataformats.md#accessid)
 * Mandatory

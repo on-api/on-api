@@ -1,5 +1,4 @@
 # Data formats
-# Data formats
 
 Within this document the conventions and formatting rules for all ON-API's are found. There are also descriptions of
 various data formats that are common for several API-endpoints.
@@ -12,7 +11,7 @@ Personal data should not be entered as any value unless the data format is speci
 
 Valid JSON values is expected.
 
-[ECMA-404 JSON Data Interchange format](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+[ECMA-404 JSON Data Interchange format](https://www.ecma-international.org/publications-and-standards/standards/ecma-404).
 
 A JSON value can be an object, array, number, string, true, false, or null.
 
@@ -78,6 +77,30 @@ Examples
 
 * 0
 * 5663
+
+### number
+
+Numeric decimal value, not enclosed in double quotes in JSON representation and separated with dot (.).
+
+Examples
+
+* 0.00
+* 5663.00
+
+### uuid
+
+A Universally Unique Identifier (UUID) is a 128-bit label used for information in computer systems. The term Globally Unique Identifier (GUID) is also used.
+
+* The most used format is the 8-4-4-4-12 format, xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx, where every x represents 4 bits.
+
+Examples
+
+* 00000000-0000-0000-0000-000000000000
+* 95f27b60-a42a-11eb-bdc2-000c29f11131
+
+References
+
+* [Wikipedia UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)
 
 ### enumeration
 
