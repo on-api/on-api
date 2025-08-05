@@ -18,16 +18,18 @@
    - Addition of get one subscription
  * Technical Info Endpoint
    - Clarification that all parameters are optional
-   - Renamed parameter fiber to transceiver
+   - Renamed parameter fiber to transceiver (link/status)
    - Added parameters
-     - learnAt
-     - lastRenew
-     - adminDown
-     - transceiver.biasTx
-     - transceiver.supplyVoltage
-     - transceiver.vendor
-     - transceiver.partNumber
-     - transceiver.serialNumber
+     - vlan (macaddresstable)
+     - port (macaddresstable)
+     - learnAt (macaddresstable)
+     - lastRenew (leaseinfo)
+     - adminDown (link/status)
+     - transceiver.biasTx (link/status)
+     - transceiver.supplyVoltage (link/status)
+     - transceiver.vendor (link/status)
+     - transceiver.partNumber (link/status)
+     - transceiver.serialNumber (link/status)
  * Invoice Specification Endpoint
    - Updated field descriptions
    - Added support for Excel option
